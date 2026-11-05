@@ -949,10 +949,24 @@
   },
   "rule": "因果因子（有机制+历史可复现）可改 action；相关因子只进评分，永不投票",
   "asof": "2026-11-04",
-  "builtAt": "2026-11-05 10:39:28"
+  "builtAt": "2026-11-05 10:39:28",
+  "yields": {
+   "record": {
+    "value": 4.9,
+    "date": "2026-11-04",
+    "src": "东财 datacenter"
+   },
+   "check": {
+    "value": 4.95,
+    "date": "2026-11-03",
+    "src": "FRED"
+   },
+   "deltaBp": -5.0,
+   "verdict": "日期不同（记录源 2026-11-04 / 校验源 2026-11-03），差值 -5bp 属 T+1 差异，不视为矛盾"
+  }
  },
  "freshness": {
-  "builtAt": "2026-11-05 10:29:01",
+  "builtAt": "2026-11-05 10:41:04",
   "inSession": true,
   "items": [
    {
@@ -960,7 +974,7 @@
     "name": "A股四大指数",
     "tier": "quote",
     "source": "新浪实时（本机）/ VPS",
-    "asof": "2026-11-05 10:28",
+    "asof": "2026-11-05 10:39",
     "ageHours": 0.0,
     "valid": true,
     "limitHours": 0.5,
@@ -974,7 +988,7 @@
     "tier": "daily",
     "source": "东财 datacenter（收盘口径，唯一记录源）",
     "asof": "2026-11-04 16:00",
-    "ageHours": 18.5,
+    "ageHours": 18.7,
     "valid": true,
     "limitHours": 40,
     "invalidIf": "中国10Y 超过 40 小时未更新（含一个交易日）；美债 T+1，放宽到 96 小时",
@@ -986,7 +1000,7 @@
     "name": "商品盘中观测",
     "tier": "quote",
     "source": "新浪 hf_（非判定口径）",
-    "asof": "2026-11-05 10:28",
+    "asof": "2026-11-05 10:39",
     "ageHours": 0.0,
     "valid": true,
     "limitHours": 40,
@@ -999,7 +1013,7 @@
     "name": "投资引擎裁决",
     "tier": "daily",
     "source": "invest-engine core_engine_v1_1（收盘序列）",
-    "asof": "2026-11-05 10:28",
+    "asof": "2026-11-05 10:39",
     "ageHours": 0.0,
     "valid": true,
     "limitHours": 40,
@@ -1012,7 +1026,7 @@
     "name": "扩展指数/商品主力",
     "tier": "quote",
     "source": "VPS 海外层 / 新浪",
-    "asof": "2026-11-05 10:28",
+    "asof": "2026-11-05 10:39",
     "ageHours": 0.0,
     "valid": true,
     "limitHours": 40,
@@ -1025,7 +1039,7 @@
     "name": "海外宏观（VIX/美元/金/美债）",
     "tier": "quote",
     "source": "Yahoo + FRED（VPS 直连）",
-    "asof": "2026-11-05 10:28",
+    "asof": "2026-11-05 10:39",
     "ageHours": 0.0,
     "valid": true,
     "limitHours": 40,
@@ -1038,7 +1052,7 @@
     "name": "因子推演（因果层 C1-C4）",
     "tier": "daily",
     "source": "macro_causal.build（东财+腾讯日线）",
-    "asof": "2026-11-05 10:28",
+    "asof": "2026-11-05 10:39",
     "ageHours": 0.0,
     "valid": true,
     "limitHours": 40,
@@ -1052,7 +1066,7 @@
     "tier": "daily",
     "source": "~/projects/daily-news/digest_*.md",
     "asof": "2026-11-05 16:00",
-    "ageHours": -5.5,
+    "ageHours": -5.3,
     "valid": true,
     "limitHours": 40,
     "invalidIf": "digest 不是当天的（超过 40 小时）或条目为空",
@@ -1065,7 +1079,7 @@
     "tier": "daily",
     "source": "DeepSeek 打分（按 digest 日期缓存）",
     "asof": "2026-11-05 16:00",
-    "ageHours": -5.5,
+    "ageHours": -5.3,
     "valid": true,
     "limitHours": 40,
     "invalidIf": "与 digest 不同日 / 打分报错",
@@ -1078,7 +1092,7 @@
     "tier": "manual",
     "source": "手工登记（券商/建行/支付宝）+ ~/.dsh/finwatch",
     "asof": "2026-11-03 16:00",
-    "ageHours": 42.5,
+    "ageHours": 42.7,
     "valid": true,
     "limitHours": 168,
     "invalidIf": "超过 7 天未更新（手工快照，不自动采）",
@@ -1090,7 +1104,7 @@
     "name": "告警",
     "tier": "quote",
     "source": "finwatch alerts.json",
-    "asof": "2026-11-05 10:28",
+    "asof": "2026-11-05 10:39",
     "ageHours": 0.0,
     "valid": true,
     "limitHours": 168,
@@ -1104,7 +1118,7 @@
     "tier": "daily",
     "source": "E:/q4-2026/reports/chain-model.md + daily-log",
     "asof": "2026-11-05 16:00",
-    "ageHours": -5.5,
+    "ageHours": -5.3,
     "valid": true,
     "limitHours": 96,
     "invalidIf": "超过 96 小时未更新",
@@ -1123,24 +1137,24 @@
   "confidenceAdjust": "正常"
  },
  "burst": {
-  "builtAt": "2026-11-05 10:29:01",
+  "builtAt": "2026-11-05 10:41:04",
   "poll": {
    "ok": true,
    "cached": false,
-   "newItems": 13,
+   "newItems": 16,
    "error": null
   },
   "cluster": {
    "windowHours": 6,
-   "recent": 253,
+   "recent": 267,
    "clusters": [
     {
      "keyword": "亿美元",
      "n": 16,
      "sample": [
-      "美国财政部单周国债拍卖规模创纪录达8390亿美元",
       "摩托罗拉解决方案第三财季调整后营业利润为11亿美元",
-      "Snap预计第四财季营收19.5亿美元至19.9亿美元 市场预估19.6亿美元"
+      "Snap预计第四财季营收19.5亿美元至19.9亿美元 市场预估19.6亿美元",
+      "AppLovin第四财季预计总营收23.7亿至24亿美元 高于市场预期"
      ]
     },
     {
@@ -1189,21 +1203,21 @@
      ]
     },
     {
+     "keyword": "鹏华涨超",
+     "n": 4,
+     "sample": [
+      "腾讯混元发布最新一代大语言模型Hy4，港股通互联网ETF鹏华涨超4%",
+      "三季度中国新增光伏装机约38.76GW，科创新能源ETF鹏华、光伏ETF鹏华涨超6%",
+      "五部门发文推进化工行业节能降碳改造，化工ETF鹏华涨超3%"
+     ]
+    },
+    {
      "keyword": "盘后跌超",
      "n": 3,
      "sample": [
       "Arm盘后跌超4%",
       "Snap盘后跌超10%",
       "高通业绩展望平淡 盘后跌超5%"
-     ]
-    },
-    {
-     "keyword": "亿至",
-     "n": 3,
-     "sample": [
-      "AppLovin第四财季预计总营收23.7亿至24亿美元 高于市场预期",
-      "Arm Holdings预计第三财季营收为14.9亿至15.9亿美元",
-      "Arm预计第三财季营收为14.9亿至15.9亿美元 市场预估为15.3亿美元"
      ]
     }
    ]
@@ -1220,19 +1234,6 @@
     "buckets": [
      "黄金",
      "原油"
-    ],
-    "type": "watch",
-    "note": "单关键词或密度不足，只进观察清单"
-   },
-   {
-    "event": "异动行情",
-    "confidence": "mid",
-    "keywords": [
-     "暴涨"
-    ],
-    "clusterDocs": 0,
-    "buckets": [
-     "权益"
     ],
     "type": "watch",
     "note": "单关键词或密度不足，只进观察清单"
