@@ -1,0 +1,2272 @@
+{
+    "schema":  "board/v1",
+    "generatedAt":  "2026-11-05 10:14:24",
+    "generatedBy":  "[已移除]",
+    "ips":  {
+                "asOf":  "2026-11-02 22:58:24",
+                "items":  [
+                              {
+                                  "status":  "ok",
+                                  "name":  "80/20 口径",
+                                  "source":  "timing_core.py:62-67 POLICY_V1；20% = 15% 风险 + 5% 生活备用金",
+                                  "value":  "市值比例",
+                                  "note":  "不是风险预算口径"
+                              },
+                              {
+                                  "status":  "ok",
+                                  "name":  "风险仓硬顶",
+                                  "source":  "engine_v2.py:87 HARD_MAX_RISKY_POSITION_PCT（硬编码）",
+                                  "value":  "15%",
+                                  "note":  "rules.json 只能收紧、不能放宽"
+                              },
+                              {
+                                  "status":  "warn",
+                                  "name":  "再平衡方式",
+                                  "source":  "研究引擎 engine_v2.py:376 min(HARD,cap+band)=15 ｜ 生产规则 [已移除] bandHigh=target+band=22（无裁剪）",
+                                  "value":  "阈值式（口径冲突未决）",
+                                  "note":  "两个实现不一致：研究引擎 [8,15]、生产规则 [8,22]。红队 2026-11-03 实测生产 evaluateRules() 输出「无交易带 [8%, 22%]」。此冲突待裁定，页面不得单选一个"
+                              },
+                              {
+                                  "status":  "warn",
+                                  "name":  "风险预算",
+                                  "source":  "rules.json riskBudgetYearPct / dyn_sim.py:581 消费",
+                                  "value":  "11%/年",
+                                  "note":  "参数在用，但 11% 与 15% 仓位的换算关系未定义"
+                              },
+                              {
+                                  "status":  "warn",
+                                  "name":  "回撤熔断",
+                                  "source":  "engine_v2.py:120 max_drawdown_pct；计算链 :629-660",
+                                  "value":  "−25%",
+                                  "note":  "需≥3 同步快照；现仅 3 个且最新=峰值 ⇒ computable=False，且数据停在 10-12"
+                              },
+                              {
+                                  "status":  "gap",
+                                  "name":  "交易频率上限",
+                                  "source":  "仅三道隐含闸：min_trade_amount=100(:129) / 带宽7% / 每日1次校准",
+                                  "value":  "无显式规则",
+                                  "note":  "建议每周≤1次调仓窗口，待用户确认"
+                              }
+                          ],
+                "alerts":  [
+                               "回撤熔断当前 computable=False：最新值即历史峰值，前无更高点，回撤算不出（不是\"没风险\"，是\"看不见\"）",
+                               "持仓快照停在 2026-10-12：近 3 周（含 10/30 美股黑色星期五）的组合回撤从未被观测",
+                               "10-25 减仓执行单由推演直接产出，违反 PROJECT.md §7.5 第 2 条（推演不直接触发交易）"
+                           ],
+                "footer":  "口径根 = investment-engine 源码；契约 = contracts/engine-policy.json（带源码 sha256）"
+            },
+    "factors":  {
+                    "asOf":  "2026-11-02T23:30:00+08:00",
+                    "factors":  [
+                                    {
+                                        "id":  "exposure/real_rate",
+                                        "label":  "真实利率（资产类别口径）",
+                                        "kind":  "exposure",
+                                        "variant":  "asset-class",
+                                        "direction":  "该因子暴露越高，组合对实际利率上行的敏感度越高（负向暴露）。",
+                                        "updateFrequency":  "随持仓快照刷新而更新（当前持仓快照 asof=2026-10-12，已过期，见 _unknowns）。",
+                                        "invalidation":  "若黄金腿被清空或该桶不再持有，则该暴露因子归零；若实际利率不再构成该腿的主要驱动（例如转为投机型持有），则该映射失效。",
+                                        "correlations":  {
+
+                                                         }
+                                    },
+                                    {
+                                        "id":  "exposure/growth_risk",
+                                        "label":  "成长风险（资产类别口径）",
+                                        "kind":  "exposure",
+                                        "variant":  "asset-class",
+                                        "direction":  "该因子暴露越高，组合对成长风格杀估值行情的敏感度越高（负向暴露）。",
+                                        "updateFrequency":  "随持仓快照刷新而更新。",
+                                        "invalidation":  "若成长腿全部清仓，该暴露归零；若这些持仓的驱动因素转为非成长逻辑（如纯红利属性的科技龙头），该分类失效。",
+                                        "correlations":  {
+
+                                                         }
+                                    },
+                                    {
+                                        "id":  "exposure/policy_green",
+                                        "label":  "绿色政策（资产类别口径）",
+                                        "kind":  "exposure",
+                                        "variant":  "asset-class",
+                                        "direction":  "该因子暴露越高，组合对绿色政策边际变化的敏感度越高（双向，取决于政策方向）。",
+                                        "updateFrequency":  "随持仓快照刷新而更新。",
+                                        "invalidation":  "若无绿色电力持仓则归零；若该腿的收益来源与政策脱钩（如转为纯发电量驱动），该分类失效。",
+                                        "correlations":  {
+
+                                                         }
+                                    },
+                                    {
+                                        "id":  "exposure/commodity",
+                                        "label":  "商品/上游（资产类别口径）",
+                                        "kind":  "exposure",
+                                        "variant":  "asset-class",
+                                        "direction":  "该因子暴露越高，组合对商品价格周期越敏感（正向暴露）。",
+                                        "updateFrequency":  "随持仓快照刷新而更新。",
+                                        "invalidation":  "若无有色/上游资源持仓则归零；若该腿的驱动因素转为非商品价格（如纯份额提升逻辑），该分类失效。",
+                                        "correlations":  {
+
+                                                         }
+                                    },
+                                    {
+                                        "id":  "exposure/broad",
+                                        "label":  "宽基 Beta（资产类别口径）",
+                                        "kind":  "exposure",
+                                        "variant":  "asset-class",
+                                        "direction":  "该因子暴露越高，组合对市场整体涨跌越敏感（双向 beta）。",
+                                        "updateFrequency":  "随持仓快照刷新而更新。",
+                                        "invalidation":  "若无宽基持仓则归零；分类口径改变（如兜底规则变更）会直接改变该因子的构成。",
+                                        "correlations":  {
+
+                                                         }
+                                    },
+                                    {
+                                        "id":  "exposure/broad_dividend",
+                                        "label":  "红利低波（资产类别口径）",
+                                        "kind":  "exposure",
+                                        "variant":  "asset-class",
+                                        "direction":  "该因子暴露越高，组合对利率下行与低波风格的资金流入越敏感（正向暴露）。",
+                                        "updateFrequency":  "随持仓快照刷新而更新。",
+                                        "invalidation":  "若无红利低波持仓则归零；若该腿的驱动因素转为成长再评级，则归类失效。",
+                                        "correlations":  {
+
+                                                         }
+                                    },
+                                    {
+                                        "id":  "exposure/duration",
+                                        "label":  "久期（资产类别口径）",
+                                        "kind":  "exposure",
+                                        "variant":  "asset-class",
+                                        "direction":  "该因子暴露越高，组合对利率上行越敏感（负向暴露）。",
+                                        "updateFrequency":  "随持仓快照刷新而更新。",
+                                        "invalidation":  "若无债券持仓则归零；当前 26 条持仓无一携带 modifiedDuration 字段，故 H4/D1 久期规则实际未运行（见 _unknowns）。",
+                                        "correlations":  {
+
+                                                         }
+                                    },
+                                    {
+                                        "id":  "exposure/liquidity",
+                                        "label":  "流动性（资产类别口径）",
+                                        "kind":  "exposure",
+                                        "variant":  "asset-class",
+                                        "direction":  "该因子暴露越高，组合在市场下行时的机动性越强（正向=防御）。",
+                                        "updateFrequency":  "随持仓快照刷新而更新。",
+                                        "invalidation":  "若现金被全部投出则归零。注意：H3 流动性规则用的是人工入参 liquidityPct，与 cash/wealth 无关，两者不可混用（见 _unknowns）。",
+                                        "correlations":  {
+
+                                                         }
+                                    },
+                                    {
+                                        "id":  "exposure-causal/real_rate",
+                                        "label":  "真实利率（宏观传导链口径）",
+                                        "kind":  "exposure",
+                                        "variant":  "causal-chain",
+                                        "direction":  "该因子暴露越高，组合对实际利率上行的敏感度越高（负向暴露）。",
+                                        "updateFrequency":  "随持仓快照刷新而更新。",
+                                        "invalidation":  "若四个桶全部清空则归零；若黄金与成长的实际利率敏感度不同号（例如黄金转为避险主导），合并前提失效，该口径需拆开。",
+                                        "correlations":  {
+
+                                                         }
+                                    },
+                                    {
+                                        "id":  "exposure-causal/inflation_commodity",
+                                        "label":  "通胀商品（宏观传导链口径）",
+                                        "kind":  "exposure",
+                                        "variant":  "causal-chain",
+                                        "direction":  "该因子暴露越高，组合对通胀上行越受益（正向暴露）、对通胀压制估值的其他腿有对冲效应。",
+                                        "updateFrequency":  "随持仓快照刷新而更新。",
+                                        "invalidation":  "若无 resource 桶持仓则归零；若该腿的定价逻辑转为非通胀（如产能政策主导），该分类失效。",
+                                        "correlations":  {
+
+                                                         }
+                                    },
+                                    {
+                                        "id":  "exposure-causal/policy_green",
+                                        "label":  "绿色政策（宏观传导链口径）",
+                                        "kind":  "exposure",
+                                        "variant":  "causal-chain",
+                                        "direction":  "该因子暴露越高，组合对绿色政策边际变化越敏感（双向）。",
+                                        "updateFrequency":  "随持仓快照刷新而更新。",
+                                        "invalidation":  "若无 green_power 桶持仓则归零；若政策驱动转为市场化电价驱动，该分类失效。",
+                                        "correlations":  {
+
+                                                         }
+                                    },
+                                    {
+                                        "id":  "exposure-causal/broad_beta",
+                                        "label":  "宽基 Beta（宏观传导链口径）",
+                                        "kind":  "exposure",
+                                        "variant":  "causal-chain",
+                                        "direction":  "该因子暴露越高，组合对市场整体涨跌越敏感（双向 beta）。",
+                                        "updateFrequency":  "随持仓快照刷新而更新。",
+                                        "invalidation":  "若 broad 与 dividend 两桶皆空则归零；若红利腿的驱动完全独立于宽基 beta，该合并前提需重审。",
+                                        "correlations":  {
+
+                                                         }
+                                    },
+                                    {
+                                        "id":  "exposure-causal/duration",
+                                        "label":  "久期（宏观传导链口径）",
+                                        "kind":  "exposure",
+                                        "variant":  "causal-chain",
+                                        "direction":  "该因子暴露越高，组合对利率上行越敏感（负向暴露）、对利率下行越受益。",
+                                        "updateFrequency":  "随持仓快照刷新而更新。",
+                                        "invalidation":  "若无债券持仓则归零；当前持仓缺 modifiedDuration，无法量化久期长度，该因子只能定性使用。",
+                                        "correlations":  {
+
+                                                         }
+                                    },
+                                    {
+                                        "id":  "exposure-causal/liquidity",
+                                        "label":  "流动性（宏观传导链口径）",
+                                        "kind":  "exposure",
+                                        "variant":  "causal-chain",
+                                        "direction":  "该因子暴露越高，组合在冲击期的机动性越强（正向=防御）。",
+                                        "updateFrequency":  "随持仓快照刷新而更新。",
+                                        "invalidation":  "若现金归零则该因子消失。注意与 H3 流动性阈值（人工入参 liquidityPct）不是同一口径，不可互相替代。",
+                                        "correlations":  {
+
+                                                         }
+                                    },
+                                    {
+                                        "id":  "predictive/F1_OIL",
+                                        "label":  "F1 布伦特/油价（新浪 hf_OIL 连续合约收盘）",
+                                        "kind":  "predictive",
+                                        "variant":  null,
+                                        "direction":  "油价上行 → 通胀预期抬升 → 长端利率上行 → 成长腿承压（对成长负向）。",
+                                        "updateFrequency":  "日频（交易日内更新）。",
+                                        "invalidation":  "若改用 ICE Brent Dec-2026 官方结算价口径，或源文件停更导致有效观测跌破 20，则该因子在矩阵中失效。",
+                                        "correlations":  [
+                                                             {
+                                                                 "with":  "US10Y",
+                                                                 "r":  0.5256,
+                                                                 "n":  175,
+                                                                 "source":  "factor-matrix-2026-11-02.json:133（US10Y→F1_OIL）"
+                                                             },
+                                                             {
+                                                                 "with":  "US20Y",
+                                                                 "r":  0.4999,
+                                                                 "n":  175,
+                                                                 "source":  "factor-matrix-2026-11-02.json:185（US20Y→F1_OIL）"
+                                                             },
+                                                             {
+                                                                 "with":  "F3_US30Y",
+                                                                 "r":  0.4937,
+                                                                 "n":  175,
+                                                                 "source":  "factor-matrix-2026-11-02.json:211（F3_US30Y→F1_OIL）"
+                                                             },
+                                                             {
+                                                                 "with":  "US5Y",
+                                                                 "r":  0.48,
+                                                                 "n":  175,
+                                                                 "source":  "factor-matrix-2026-11-02.json:146（US5Y→F1_OIL）"
+                                                             },
+                                                             {
+                                                                 "with":  "US2Y",
+                                                                 "r":  0.3857,
+                                                                 "n":  175,
+                                                                 "source":  "factor-matrix-2026-11-02.json:224（US2Y→F1_OIL）"
+                                                             },
+                                                             {
+                                                                 "with":  "XAU",
+                                                                 "r":  -0.1178,
+                                                                 "n":  175,
+                                                                 "source":  "factor-matrix-2026-11-02.json:198（XAU→F1_OIL）"
+                                                             },
+                                                             {
+                                                                 "with":  "SZZ",
+                                                                 "r":  0.0271,
+                                                                 "n":  175,
+                                                                 "source":  "factor-matrix-2026-11-02.json:250（SZZ→F1_OIL）"
+                                                             },
+                                                             {
+                                                                 "with":  "HS300",
+                                                                 "r":  -0.0109,
+                                                                 "n":  175,
+                                                                 "source":  "factor-matrix-2026-11-02.json:237（HS300→F1_OIL）"
+                                                             },
+                                                             {
+                                                                 "with":  "SZCOMP",
+                                                                 "r":  -0.0537,
+                                                                 "n":  175,
+                                                                 "source":  "factor-matrix-2026-11-02.json:159（SZCOMP→F1_OIL）"
+                                                             },
+                                                             {
+                                                                 "with":  "CYB",
+                                                                 "r":  -0.0592,
+                                                                 "n":  175,
+                                                                 "source":  "factor-matrix-2026-11-02.json:172（CYB→F1_OIL）"
+                                                             }
+                                                         ]
+                                    },
+                                    {
+                                        "id":  "predictive/XAU",
+                                        "label":  "XAU 现货黄金（新浪 XAU 日 K 收盘）",
+                                        "kind":  "predictive",
+                                        "variant":  null,
+                                        "direction":  "实际利率下行 → 黄金上行（正向暴露于实际利率下行）。",
+                                        "updateFrequency":  "日频（交易日内更新）。",
+                                        "invalidation":  "若改用 COMEX 口径或有效观测跌破 20，则该因子在矩阵中失效；P9 判定场景下口径变更即作废。",
+                                        "correlations":  [
+                                                             {
+                                                                 "with":  "SZZ",
+                                                                 "r":  0.2914,
+                                                                 "n":  175,
+                                                                 "source":  "factor-matrix-2026-11-02.json:246（SZZ→XAU）"
+                                                             },
+                                                             {
+                                                                 "with":  "HS300",
+                                                                 "r":  0.2318,
+                                                                 "n":  175,
+                                                                 "source":  "factor-matrix-2026-11-02.json:233（HS300→XAU）"
+                                                             },
+                                                             {
+                                                                 "with":  "SZCOMP",
+                                                                 "r":  0.2305,
+                                                                 "n":  175,
+                                                                 "source":  "factor-matrix-2026-11-02.json:155（SZCOMP→XAU）"
+                                                             },
+                                                             {
+                                                                 "with":  "CYB",
+                                                                 "r":  0.1065,
+                                                                 "n":  175,
+                                                                 "source":  "factor-matrix-2026-11-02.json:168（CYB→XAU）"
+                                                             },
+                                                             {
+                                                                 "with":  "F1_OIL",
+                                                                 "r":  -0.1178,
+                                                                 "n":  175,
+                                                                 "source":  "factor-matrix-2026-11-02.json:198（XAU→F1_OIL）"
+                                                             },
+                                                             {
+                                                                 "with":  "F3_US30Y",
+                                                                 "r":  -0.1366,
+                                                                 "n":  175,
+                                                                 "source":  "factor-matrix-2026-11-02.json:194（F3_US30Y→XAU）"
+                                                             },
+                                                             {
+                                                                 "with":  "US20Y",
+                                                                 "r":  -0.1918,
+                                                                 "n":  175,
+                                                                 "source":  "factor-matrix-2026-11-02.json:180（US20Y→XAU）"
+                                                             },
+                                                             {
+                                                                 "with":  "US10Y",
+                                                                 "r":  -0.2503,
+                                                                 "n":  175,
+                                                                 "source":  "factor-matrix-2026-11-02.json:128（US10Y→XAU）"
+                                                             },
+                                                             {
+                                                                 "with":  "US5Y",
+                                                                 "r":  -0.2634,
+                                                                 "n":  175,
+                                                                 "source":  "factor-matrix-2026-11-02.json:141（US5Y→XAU）"
+                                                             },
+                                                             {
+                                                                 "with":  "US2Y",
+                                                                 "r":  -0.3007,
+                                                                 "n":  175,
+                                                                 "source":  "factor-matrix-2026-11-02.json:219（US2Y→XAU）"
+                                                             }
+                                                         ]
+                                    },
+                                    {
+                                        "id":  "predictive/F3_US30Y",
+                                        "label":  "F3 美 30Y（美国财政部官方曲线）",
+                                        "kind":  "predictive",
+                                        "variant":  null,
+                                        "direction":  "长端利率上行 → 折现率抬升 → 黄金与成长股承压（负向暴露于成长与黄金）。",
+                                        "updateFrequency":  "日频（美债交易日，美国财政部每日发布）。",
+                                        "invalidation":  "若换用非财政部口径或有效观测跌破 20 则矩阵中失效；封存判定值 F3 美 30Y = 5.31 已锁（ERRATA 19/28/35），口径变更即与封存件脱钩。",
+                                        "correlations":  [
+                                                             {
+                                                                 "with":  "US20Y",
+                                                                 "r":  0.9703,
+                                                                 "n":  175,
+                                                                 "source":  "factor-matrix-2026-11-02.json:181（US20Y→F3_US30Y）"
+                                                             },
+                                                             {
+                                                                 "with":  "US10Y",
+                                                                 "r":  0.923,
+                                                                 "n":  175,
+                                                                 "source":  "factor-matrix-2026-11-02.json:207（F3_US30Y→US10Y）"
+                                                             },
+                                                             {
+                                                                 "with":  "US5Y",
+                                                                 "r":  0.7964,
+                                                                 "n":  175,
+                                                                 "source":  "factor-matrix-2026-11-02.json:202（F3_US30Y→US5Y）"
+                                                             },
+                                                             {
+                                                                 "with":  "US2Y",
+                                                                 "r":  0.6029,
+                                                                 "n":  175,
+                                                                 "source":  "factor-matrix-2026-11-02.json:208（F3_US30Y→US2Y）"
+                                                             },
+                                                             {
+                                                                 "with":  "US10Y_dup",
+                                                                 "r":  0.923,
+                                                                 "n":  175,
+                                                                 "source":  "factor-matrix-2026-11-02.json:133（US10Y→F3_US30Y）"
+                                                             },
+                                                             {
+                                                                 "with":  "F1_OIL",
+                                                                 "r":  0.4937,
+                                                                 "n":  175,
+                                                                 "source":  "factor-matrix-2026-11-02.json:211（F3_US30Y→F1_OIL）"
+                                                             },
+                                                             {
+                                                                 "with":  "SZZ",
+                                                                 "r":  0.0663,
+                                                                 "n":  175,
+                                                                 "source":  "factor-matrix-2026-11-02.json:210（F3_US30Y→SZZ）"
+                                                             },
+                                                             {
+                                                                 "with":  "HS300",
+                                                                 "r":  0.0625,
+                                                                 "n":  175,
+                                                                 "source":  "factor-matrix-2026-11-02.json:207（F3_US30Y→HS300）"
+                                                             },
+                                                             {
+                                                                 "with":  "CYB",
+                                                                 "r":  0.0253,
+                                                                 "n":  175,
+                                                                 "source":  "factor-matrix-2026-11-02.json:169（CYB→F3_US30Y）"
+                                                             },
+                                                             {
+                                                                 "with":  "SZCOMP",
+                                                                 "r":  0.0216,
+                                                                 "n":  175,
+                                                                 "source":  "factor-matrix-2026-11-02.json:155（SZCOMP→F3_US30Y）"
+                                                             },
+                                                             {
+                                                                 "with":  "XAU",
+                                                                 "r":  -0.1366,
+                                                                 "n":  175,
+                                                                 "source":  "factor-matrix-2026-11-02.json:194（F3_US30Y→XAU）"
+                                                             }
+                                                         ]
+                                    },
+                                    {
+                                        "id":  "predictive/US10Y",
+                                        "label":  "美 10Y（美国财政部官方曲线）",
+                                        "kind":  "predictive",
+                                        "variant":  null,
+                                        "direction":  "利率上行 → 折现率抬升 → 久期资产承压（负向暴露）。",
+                                        "updateFrequency":  "日频（美债交易日）。",
+                                        "invalidation":  "若改用非财政部口径或有效观测跌破 20 则矩阵中失效；按冗余管理建议，该因子与 F3_US30Y 属同一簇（r=0.923），报告建议剔除以避免纯冗余。",
+                                        "correlations":  [
+                                                             {
+                                                                 "with":  "US20Y",
+                                                                 "r":  0.9531,
+                                                                 "n":  175,
+                                                                 "source":  "factor-matrix-2026-11-02.json:129（US10Y→US20Y）"
+                                                             },
+                                                             {
+                                                                 "with":  "US5Y",
+                                                                 "r":  0.947,
+                                                                 "n":  175,
+                                                                 "source":  "factor-matrix-2026-11-02.json:124（US10Y→US5Y）"
+                                                             },
+                                                             {
+                                                                 "with":  "F3_US30Y",
+                                                                 "r":  0.923,
+                                                                 "n":  175,
+                                                                 "source":  "factor-matrix-2026-11-02.json:132（US10Y→F3_US30Y）"
+                                                             },
+                                                             {
+                                                                 "with":  "US2Y",
+                                                                 "r":  0.8056,
+                                                                 "n":  175,
+                                                                 "source":  "factor-matrix-2026-11-02.json:130（US10Y→US2Y）"
+                                                             },
+                                                             {
+                                                                 "with":  "F1_OIL",
+                                                                 "r":  0.5256,
+                                                                 "n":  175,
+                                                                 "source":  "factor-matrix-2026-11-02.json:133（US10Y→F1_OIL）"
+                                                             },
+                                                             {
+                                                                 "with":  "SZZ",
+                                                                 "r":  0.0182,
+                                                                 "n":  175,
+                                                                 "source":  "factor-matrix-2026-11-02.json:131（US10Y→SZZ）"
+                                                             },
+                                                             {
+                                                                 "with":  "HS300",
+                                                                 "r":  0.0063,
+                                                                 "n":  175,
+                                                                 "source":  "factor-matrix-2026-11-02.json:131（US10Y→HS300）"
+                                                             },
+                                                             {
+                                                                 "with":  "CYB",
+                                                                 "r":  -0.0066,
+                                                                 "n":  175,
+                                                                 "source":  "factor-matrix-2026-11-02.json:126（US10Y→CYB）"
+                                                             },
+                                                             {
+                                                                 "with":  "SZCOMP",
+                                                                 "r":  -0.0205,
+                                                                 "n":  175,
+                                                                 "source":  "factor-matrix-2026-11-02.json:125（US10Y→SZCOMP）"
+                                                             },
+                                                             {
+                                                                 "with":  "XAU",
+                                                                 "r":  -0.2503,
+                                                                 "n":  175,
+                                                                 "source":  "factor-matrix-2026-11-02.json:128（US10Y→XAU）"
+                                                             }
+                                                         ]
+                                    },
+                                    {
+                                        "id":  "predictive/US5Y",
+                                        "label":  "美 5Y（美国财政部官方曲线）",
+                                        "kind":  "predictive",
+                                        "variant":  null,
+                                        "direction":  "利率上行 → 贴现率抬升 → 久期资产承压（负向暴露）。",
+                                        "updateFrequency":  "日频（美债交易日）。",
+                                        "invalidation":  "若改用非财政部口径或有效观测跌破 20 则矩阵中失效；按冗余管理建议，与 US2Y 二选一、与 F3_US30Y 高度冗余。",
+                                        "correlations":  [
+                                                             {
+                                                                 "with":  "US10Y",
+                                                                 "r":  0.947,
+                                                                 "n":  175,
+                                                                 "source":  "factor-matrix-2026-11-02.json:136（US5Y→US10Y）"
+                                                             },
+                                                             {
+                                                                 "with":  "US2Y",
+                                                                 "r":  0.9176,
+                                                                 "n":  175,
+                                                                 "source":  "factor-matrix-2026-11-02.json:143（US5Y→US2Y）"
+                                                             },
+                                                             {
+                                                                 "with":  "US20Y",
+                                                                 "r":  0.8486,
+                                                                 "n":  175,
+                                                                 "source":  "factor-matrix-2026-11-02.json:138（US5Y→US20Y）"
+                                                             },
+                                                             {
+                                                                 "with":  "F3_US30Y",
+                                                                 "r":  0.7964,
+                                                                 "n":  175,
+                                                                 "source":  "factor-matrix-2026-11-02.json:137（US5Y→F3_US30Y）"
+                                                             },
+                                                             {
+                                                                 "with":  "F1_OIL",
+                                                                 "r":  0.48,
+                                                                 "n":  175,
+                                                                 "source":  "factor-matrix-2026-11-02.json:146（US5Y→F1_OIL）"
+                                                             },
+                                                             {
+                                                                 "with":  "SZZ",
+                                                                 "r":  0.0191,
+                                                                 "n":  175,
+                                                                 "source":  "factor-matrix-2026-11-02.json:145（US5Y→SZZ）"
+                                                             },
+                                                             {
+                                                                 "with":  "HS300",
+                                                                 "r":  -0.0026,
+                                                                 "n":  175,
+                                                                 "source":  "factor-matrix-2026-11-02.json:144（US5Y→HS300）"
+                                                             },
+                                                             {
+                                                                 "with":  "CYB",
+                                                                 "r":  -0.022,
+                                                                 "n":  175,
+                                                                 "source":  "factor-matrix-2026-11-02.json:139（US5Y→CYB）"
+                                                             },
+                                                             {
+                                                                 "with":  "SZCOMP",
+                                                                 "r":  -0.0321,
+                                                                 "n":  175,
+                                                                 "source":  "factor-matrix-2026-11-02.json:138（US5Y→SZCOMP）"
+                                                             },
+                                                             {
+                                                                 "with":  "XAU",
+                                                                 "r":  -0.2634,
+                                                                 "n":  175,
+                                                                 "source":  "factor-matrix-2026-11-02.json:141（US5Y→XAU）"
+                                                             }
+                                                         ]
+                                    },
+                                    {
+                                        "id":  "predictive/US2Y",
+                                        "label":  "美 2Y（美国财政部官方曲线）",
+                                        "kind":  "predictive",
+                                        "variant":  null,
+                                        "direction":  "利率上行 → 贴现率抬升 + 风险偏好收缩 → 久期资产承压（负向暴露）。",
+                                        "updateFrequency":  "日频（美债交易日）。",
+                                        "invalidation":  "若改用非财政部口径或有效观测跌破 20 则矩阵中失效；按冗余管理建议，短端只保留 US2Y 一个代表。",
+                                        "correlations":  [
+                                                             {
+                                                                 "with":  "US5Y",
+                                                                 "r":  0.9176,
+                                                                 "n":  175,
+                                                                 "source":  "factor-matrix-2026-11-02.json:143（US2Y→US5Y）"
+                                                             },
+                                                             {
+                                                                 "with":  "US10Y",
+                                                                 "r":  0.8056,
+                                                                 "n":  175,
+                                                                 "source":  "factor-matrix-2026-11-02.json:223（US2Y→US10Y）"
+                                                             },
+                                                             {
+                                                                 "with":  "US20Y",
+                                                                 "r":  0.6615,
+                                                                 "n":  175,
+                                                                 "source":  "factor-matrix-2026-11-02.json:182（US2Y→US20Y）"
+                                                             },
+                                                             {
+                                                                 "with":  "F3_US30Y",
+                                                                 "r":  0.6029,
+                                                                 "n":  175,
+                                                                 "source":  "factor-matrix-2026-11-02.json:208（F3_US30Y→US2Y）"
+                                                             },
+                                                             {
+                                                                 "with":  "F1_OIL",
+                                                                 "r":  0.3857,
+                                                                 "n":  175,
+                                                                 "source":  "factor-matrix-2026-11-02.json:224（US2Y→F1_OIL）"
+                                                             },
+                                                             {
+                                                                 "with":  "SZZ",
+                                                                 "r":  -0.0021,
+                                                                 "n":  175,
+                                                                 "source":  "factor-matrix-2026-11-02.json:223（US2Y→SZZ）"
+                                                             },
+                                                             {
+                                                                 "with":  "HS300",
+                                                                 "r":  -0.0162,
+                                                                 "n":  175,
+                                                                 "source":  "factor-matrix-2026-11-02.json:223（US2Y→HS300）"
+                                                             },
+                                                             {
+                                                                 "with":  "CYB",
+                                                                 "r":  -0.0279,
+                                                                 "n":  175,
+                                                                 "source":  "factor-matrix-2026-11-02.json:170（CYB→US2Y）"
+                                                             },
+                                                             {
+                                                                 "with":  "SZCOMP",
+                                                                 "r":  -0.0362,
+                                                                 "n":  175,
+                                                                 "source":  "factor-matrix-2026-11-02.json:156（SZCOMP→US2Y）"
+                                                             },
+                                                             {
+                                                                 "with":  "XAU",
+                                                                 "r":  -0.3007,
+                                                                 "n":  175,
+                                                                 "source":  "factor-matrix-2026-11-02.json:219（US2Y→XAU）"
+                                                             }
+                                                         ]
+                                    },
+                                    {
+                                        "id":  "predictive/US20Y",
+                                        "label":  "美 20Y（美国财政部官方曲线）",
+                                        "kind":  "predictive",
+                                        "variant":  null,
+                                        "direction":  "利率上行 → 折现率抬升 → 久期资产承压（负向暴露）。",
+                                        "updateFrequency":  "日频（美债交易日）。",
+                                        "invalidation":  "若改用非财政部口径或有效观测跌破 20 则矩阵中失效；按冗余管理建议，该因子与 F3_US30Y 属同一簇（r=0.9703），报告明确建议剔除。",
+                                        "correlations":  [
+                                                             {
+                                                                 "with":  "F3_US30Y",
+                                                                 "r":  0.9703,
+                                                                 "n":  175,
+                                                                 "source":  "factor-matrix-2026-11-02.json:181（US20Y→F3_US30Y）"
+                                                             },
+                                                             {
+                                                                 "with":  "US10Y",
+                                                                 "r":  0.9531,
+                                                                 "n":  175,
+                                                                 "source":  "factor-matrix-2026-11-02.json:176（US20Y→US10Y）"
+                                                             },
+                                                             {
+                                                                 "with":  "US5Y",
+                                                                 "r":  0.8486,
+                                                                 "n":  175,
+                                                                 "source":  "factor-matrix-2026-11-02.json:177（US20Y→US5Y）"
+                                                             },
+                                                             {
+                                                                 "with":  "US2Y",
+                                                                 "r":  0.6615,
+                                                                 "n":  175,
+                                                                 "source":  "factor-matrix-2026-11-02.json:182（US20Y→US2Y）"
+                                                             },
+                                                             {
+                                                                 "with":  "F1_OIL",
+                                                                 "r":  0.4999,
+                                                                 "n":  175,
+                                                                 "source":  "factor-matrix-2026-11-02.json:185（US20Y→F1_OIL）"
+                                                             },
+                                                             {
+                                                                 "with":  "SZZ",
+                                                                 "r":  0.0409,
+                                                                 "n":  175,
+                                                                 "source":  "factor-matrix-2026-11-02.json:184（US20Y→SZZ）"
+                                                             },
+                                                             {
+                                                                 "with":  "HS300",
+                                                                 "r":  0.0407,
+                                                                 "n":  175,
+                                                                 "source":  "factor-matrix-2026-11-02.json:183（US20Y→HS300）"
+                                                             },
+                                                             {
+                                                                 "with":  "CYB",
+                                                                 "r":  0.0245,
+                                                                 "n":  175,
+                                                                 "source":  "factor-matrix-2026-11-02.json:178（CYB→US20Y）"
+                                                             },
+                                                             {
+                                                                 "with":  "SZCOMP",
+                                                                 "r":  0.0124,
+                                                                 "n":  175,
+                                                                 "source":  "factor-matrix-2026-11-02.json:153（SZCOMP→US20Y）"
+                                                             },
+                                                             {
+                                                                 "with":  "XAU",
+                                                                 "r":  -0.1918,
+                                                                 "n":  175,
+                                                                 "source":  "factor-matrix-2026-11-02.json:180（US20Y→XAU）"
+                                                             }
+                                                         ]
+                                    },
+                                    {
+                                        "id":  "predictive/HS300",
+                                        "label":  "沪深300 收盘",
+                                        "kind":  "predictive",
+                                        "variant":  null,
+                                        "direction":  "沪深300 上涨 → A 股大盘风险偏好改善 → 组合风险腿受益（正向暴露于 A 股 beta）。",
+                                        "updateFrequency":  "日频（A股交易日）。",
+                                        "invalidation":  "若 nav 缓存停更导致有效观测跌破 20 则矩阵中失效；按冗余管理建议，A 股簇只保留一个代表指数，报告建议保留 HS300。",
+                                        "correlations":  [
+                                                             {
+                                                                 "with":  "SZCOMP",
+                                                                 "r":  0.9389,
+                                                                 "n":  175,
+                                                                 "source":  "factor-matrix-2026-11-02.json:157（SZCOMP→HS300）"
+                                                             },
+                                                             {
+                                                                 "with":  "SZZ",
+                                                                 "r":  0.9276,
+                                                                 "n":  175,
+                                                                 "source":  "factor-matrix-2026-11-02.json:236（HS300→SZZ）"
+                                                             },
+                                                             {
+                                                                 "with":  "CYB",
+                                                                 "r":  0.8941,
+                                                                 "n":  175,
+                                                                 "source":  "factor-matrix-2026-11-02.json:170（HS300→CYB）"
+                                                             },
+                                                             {
+                                                                 "with":  "XAU",
+                                                                 "r":  0.2318,
+                                                                 "n":  175,
+                                                                 "source":  "factor-matrix-2026-11-02.json:233（HS300→XAU）"
+                                                             },
+                                                             {
+                                                                 "with":  "F3_US30Y",
+                                                                 "r":  0.0625,
+                                                                 "n":  175,
+                                                                 "source":  "factor-matrix-2026-11-02.json:207（F3_US30Y→HS300）"
+                                                             },
+                                                             {
+                                                                 "with":  "US20Y",
+                                                                 "r":  0.0407,
+                                                                 "n":  175,
+                                                                 "source":  "factor-matrix-2026-11-02.json:183（US20Y→HS300）"
+                                                             },
+                                                             {
+                                                                 "with":  "SZZ_dup",
+                                                                 "r":  0.9276,
+                                                                 "n":  175,
+                                                                 "source":  "factor-matrix-2026-11-02.json:236（HS300→SZZ）"
+                                                             },
+                                                             {
+                                                                 "with":  "US10Y",
+                                                                 "r":  0.0063,
+                                                                 "n":  175,
+                                                                 "source":  "factor-matrix-2026-11-02.json:131（US10Y→HS300）"
+                                                             },
+                                                             {
+                                                                 "with":  "US5Y",
+                                                                 "r":  -0.0026,
+                                                                 "n":  175,
+                                                                 "source":  "factor-matrix-2026-11-02.json:144（US5Y→HS300）"
+                                                             },
+                                                             {
+                                                                 "with":  "US2Y",
+                                                                 "r":  -0.0162,
+                                                                 "n":  175,
+                                                                 "source":  "factor-matrix-2026-11-02.json:223（US2Y→HS300）"
+                                                             },
+                                                             {
+                                                                 "with":  "F1_OIL",
+                                                                 "r":  -0.0109,
+                                                                 "n":  175,
+                                                                 "source":  "factor-matrix-2026-11-02.json:237（HS300→F1_OIL）"
+                                                             }
+                                                         ]
+                                    },
+                                    {
+                                        "id":  "predictive/CYB",
+                                        "label":  "创业板指 收盘",
+                                        "kind":  "predictive",
+                                        "variant":  null,
+                                        "direction":  "创业板指上涨 → 成长风格风险偏好改善 → 组合成长腿受益（正向暴露于成长 beta）。",
+                                        "updateFrequency":  "日频（A股交易日）。",
+                                        "invalidation":  "若 nav 缓存停更导致有效观测跌破 20 则矩阵中失效；按冗余管理建议，与 SZCOMP 同属深市成长一簇（r=0.9627），报告建议两者都可剔除。",
+                                        "correlations":  [
+                                                             {
+                                                                 "with":  "SZCOMP",
+                                                                 "r":  0.9627,
+                                                                 "n":  175,
+                                                                 "source":  "factor-matrix-2026-11-02.json:152（SZCOMP→CYB）"
+                                                             },
+                                                             {
+                                                                 "with":  "HS300",
+                                                                 "r":  0.8941,
+                                                                 "n":  175,
+                                                                 "source":  "factor-matrix-2026-11-02.json:170（HS300→CYB）"
+                                                             },
+                                                             {
+                                                                 "with":  "SZZ",
+                                                                 "r":  0.7698,
+                                                                 "n":  175,
+                                                                 "source":  "factor-matrix-2026-11-02.json:171（CYB→SZZ）"
+                                                             },
+                                                             {
+                                                                 "with":  "XAU",
+                                                                 "r":  0.1065,
+                                                                 "n":  175,
+                                                                 "source":  "factor-matrix-2026-11-02.json:168（CYB→XAU）"
+                                                             },
+                                                             {
+                                                                 "with":  "F3_US30Y",
+                                                                 "r":  0.0253,
+                                                                 "n":  175,
+                                                                 "source":  "factor-matrix-2026-11-02.json:169（CYB→F3_US30Y）"
+                                                             },
+                                                             {
+                                                                 "with":  "US20Y",
+                                                                 "r":  0.0245,
+                                                                 "n":  175,
+                                                                 "source":  "factor-matrix-2026-11-02.json:178（CYB→US20Y）"
+                                                             },
+                                                             {
+                                                                 "with":  "SZCOMP_dup",
+                                                                 "r":  0.9627,
+                                                                 "n":  175,
+                                                                 "source":  "factor-matrix-2026-11-02.json:152（SZCOMP→CYB）"
+                                                             },
+                                                             {
+                                                                 "with":  "US10Y",
+                                                                 "r":  -0.0066,
+                                                                 "n":  175,
+                                                                 "source":  "factor-matrix-2026-11-02.json:126（US10Y→CYB）"
+                                                             },
+                                                             {
+                                                                 "with":  "US5Y",
+                                                                 "r":  -0.022,
+                                                                 "n":  175,
+                                                                 "source":  "factor-matrix-2026-11-02.json:139（US5Y→CYB）"
+                                                             },
+                                                             {
+                                                                 "with":  "US2Y",
+                                                                 "r":  -0.0279,
+                                                                 "n":  175,
+                                                                 "source":  "factor-matrix-2026-11-02.json:170（CYB→US2Y）"
+                                                             },
+                                                             {
+                                                                 "with":  "F1_OIL",
+                                                                 "r":  -0.0592,
+                                                                 "n":  175,
+                                                                 "source":  "factor-matrix-2026-11-02.json:172（CYB→F1_OIL）"
+                                                             }
+                                                         ]
+                                    },
+                                    {
+                                        "id":  "predictive/SZZ",
+                                        "label":  "上证指数 收盘",
+                                        "kind":  "predictive",
+                                        "variant":  null,
+                                        "direction":  "上证指数上涨 → A 股大盘风险偏好改善 → 组合风险腿受益（正向暴露于 A 股 beta）。",
+                                        "updateFrequency":  "日频（A股交易日）。",
+                                        "invalidation":  "若 nav 缓存停更导致有效观测跌破 20 则矩阵中失效；按冗余管理建议，与 HS300 同属沪市大盘一簇（r=0.9276），报告建议可剔除。",
+                                        "correlations":  [
+                                                             {
+                                                                 "with":  "HS300",
+                                                                 "r":  0.9276,
+                                                                 "n":  175,
+                                                                 "source":  "factor-matrix-2026-11-02.json:236（HS300→SZZ）"
+                                                             },
+                                                             {
+                                                                 "with":  "SZCOMP",
+                                                                 "r":  0.8786,
+                                                                 "n":  175,
+                                                                 "source":  "factor-matrix-2026-11-02.json:158（SZZ→SZCOMP）"
+                                                             },
+                                                             {
+                                                                 "with":  "CYB",
+                                                                 "r":  0.7698,
+                                                                 "n":  175,
+                                                                 "source":  "factor-matrix-2026-11-02.json:171（CYB→SZZ）"
+                                                             },
+                                                             {
+                                                                 "with":  "XAU",
+                                                                 "r":  0.2914,
+                                                                 "n":  175,
+                                                                 "source":  "factor-matrix-2026-11-02.json:246（SZZ→XAU）"
+                                                             },
+                                                             {
+                                                                 "with":  "F3_US30Y",
+                                                                 "r":  0.0663,
+                                                                 "n":  175,
+                                                                 "source":  "factor-matrix-2026-11-02.json:210（F3_US30Y→SZZ）"
+                                                             },
+                                                             {
+                                                                 "with":  "US20Y",
+                                                                 "r":  0.0409,
+                                                                 "n":  175,
+                                                                 "source":  "factor-matrix-2026-11-02.json:184（US20Y→SZZ）"
+                                                             },
+                                                             {
+                                                                 "with":  "US10Y",
+                                                                 "r":  0.0182,
+                                                                 "n":  175,
+                                                                 "source":  "factor-matrix-2026-11-02.json:131（US10Y→SZZ）"
+                                                             },
+                                                             {
+                                                                 "with":  "US5Y",
+                                                                 "r":  0.0191,
+                                                                 "n":  175,
+                                                                 "source":  "factor-matrix-2026-11-02.json:145（US5Y→SZZ）"
+                                                             },
+                                                             {
+                                                                 "with":  "US2Y",
+                                                                 "r":  -0.0021,
+                                                                 "n":  175,
+                                                                 "source":  "factor-matrix-2026-11-02.json:223（US2Y→SZZ）"
+                                                             },
+                                                             {
+                                                                 "with":  "F1_OIL",
+                                                                 "r":  0.0271,
+                                                                 "n":  175,
+                                                                 "source":  "factor-matrix-2026-11-02.json:250（SZZ→F1_OIL）"
+                                                             }
+                                                         ]
+                                    },
+                                    {
+                                        "id":  "predictive/SZCOMP",
+                                        "label":  "深证成指 收盘",
+                                        "kind":  "predictive",
+                                        "variant":  null,
+                                        "direction":  "深证成指上涨 → 深市风险偏好改善 → 组合风险腿受益（正向暴露于 A 股 beta）。",
+                                        "updateFrequency":  "日频（A股交易日）。",
+                                        "invalidation":  "若 nav 缓存停更导致有效观测跌破 20 则矩阵中失效；按冗余管理建议，与 CYB 同属深市成长一簇（r=0.9627），报告建议两者都可剔除。",
+                                        "correlations":  [
+                                                             {
+                                                                 "with":  "CYB",
+                                                                 "r":  0.9627,
+                                                                 "n":  175,
+                                                                 "source":  "factor-matrix-2026-11-02.json:152（SZCOMP→CYB）"
+                                                             },
+                                                             {
+                                                                 "with":  "HS300",
+                                                                 "r":  0.9389,
+                                                                 "n":  175,
+                                                                 "source":  "factor-matrix-2026-11-02.json:157（SZCOMP→HS300）"
+                                                             },
+                                                             {
+                                                                 "with":  "SZZ",
+                                                                 "r":  0.8786,
+                                                                 "n":  175,
+                                                                 "source":  "factor-matrix-2026-11-02.json:158（SZZ→SZCOMP）"
+                                                             },
+                                                             {
+                                                                 "with":  "XAU",
+                                                                 "r":  0.2305,
+                                                                 "n":  175,
+                                                                 "source":  "factor-matrix-2026-11-02.json:155（SZCOMP→XAU）"
+                                                             },
+                                                             {
+                                                                 "with":  "F3_US30Y",
+                                                                 "r":  0.0216,
+                                                                 "n":  175,
+                                                                 "source":  "factor-matrix-2026-11-02.json:155（SZCOMP→F3_US30Y）"
+                                                             },
+                                                             {
+                                                                 "with":  "US20Y",
+                                                                 "r":  0.0124,
+                                                                 "n":  175,
+                                                                 "source":  "factor-matrix-2026-11-02.json:153（SZCOMP→US20Y）"
+                                                             },
+                                                             {
+                                                                 "with":  "CYB_dup",
+                                                                 "r":  0.9627,
+                                                                 "n":  175,
+                                                                 "source":  "factor-matrix-2026-11-02.json:152（SZCOMP→CYB）"
+                                                             },
+                                                             {
+                                                                 "with":  "US10Y",
+                                                                 "r":  -0.0205,
+                                                                 "n":  175,
+                                                                 "source":  "factor-matrix-2026-11-02.json:125（US10Y→SZCOMP）"
+                                                             },
+                                                             {
+                                                                 "with":  "US5Y",
+                                                                 "r":  -0.0321,
+                                                                 "n":  175,
+                                                                 "source":  "factor-matrix-2026-11-02.json:138（US5Y→SZCOMP）"
+                                                             },
+                                                             {
+                                                                 "with":  "US2Y",
+                                                                 "r":  -0.0362,
+                                                                 "n":  175,
+                                                                 "source":  "factor-matrix-2026-11-02.json:156（SZCOMP→US2Y）"
+                                                             },
+                                                             {
+                                                                 "with":  "F1_OIL",
+                                                                 "r":  -0.0537,
+                                                                 "n":  175,
+                                                                 "source":  "factor-matrix-2026-11-02.json:159（SZCOMP→F1_OIL）"
+                                                             }
+                                                         ]
+                                    }
+                                ],
+                    "summary":  {
+                                    "note":  "8(暴露/资产类别) / 6(暴露/因果) / 11(预测)，三者不可相加"
+                                },
+                    "unknowns":  [
+                                     {
+                                         "id":  "U1",
+                                         "topic":  "暴露因子之间无法计算 Pearson 相关",
+                                         "detail":  "8 个资产类别暴露因子与 6 个因果暴露因子都是持仓桶/桶合并的结果，不是时间序列，算不了 Pearson。因此这 14 个因子的 correlations 一律为空数组 []。",
+                                         "whatToUseInstead":  "暴露因子之间需改用持仓重合度（同桶市值占比的交并比 / Jaccard），不可算 Pearson。",
+                                         "source":  "dyn_sim.py:104-115、381-410（暴露因子只有持仓市值口径，无时间序列）；任务指令第三步"
+                                     },
+                                     {
+                                         "id":  "U2",
+                                         "topic":  "暴露因子的持仓快照已过期",
+                                         "detail":  "所有 exposure 因子的暴露占比来自 holdings.json 快照，asof=2026-10-12，至 2026-11-02 已 21 天未更新。故本登记表的 exposure 因子只登记定义/机制/映射，不登记具体占比数值。",
+                                         "whatToUseInstead":  "引用暴露占比前必须先刷新持仓快照；本表不承载占比数值。",
+                                         "source":  "metrics.json:358-375（holdings_snapshot_age_days 登记项）；dyn_sim.py:159（load_latest_portfolio）；IPS.md:258（数据时效警告）"
+                                     },
+                                     {
+                                         "id":  "U3",
+                                         "topic":  "债券腿缺修正久期",
+                                         "detail":  "当前 26 条持仓无一携带 modifiedDuration 字段，故 exposure/duration 与 exposure-causal/duration 只能定性使用；finwatch 的 H4/D1 久期规则实际未运行（阈值 D1\u003e6 年建议 / H4\u003e8 年硬性）。",
+                                         "whatToUseInstead":  "下次 finwatch_upload 给这批固收带上修正久期；在此之前久期因子不得用于量化判定。",
+                                         "source":  "dyn_sim.py:601-607"
+                                     },
+                                     {
+                                         "id":  "U4",
+                                         "topic":  "H3 流动性与 exposure/liquidity 不是同一口径",
+                                         "detail":  "H3 用的是人工入参 liquidityPct（rules.json 的 liquidityAlertPct，dyn_sim.py:534），与 cash/wealth 无关；而 exposure/liquidity 是现金桶的持仓占比。两者不可互相替代，也不可互相验证。",
+                                         "whatToUseInstead":  "引用流动性时必须写明是「H3 人工入参」还是「cash/wealth」。",
+                                         "source":  "dyn_sim.py:496-499、534-541"
+                                     },
+                                     {
+                                         "id":  "U5",
+                                         "topic":  "预测因子的 r 是「因子变动共线」而非「预测力」",
+                                         "detail":  "11 个预测因子的 Pearson r 是价格/指数一阶对数差分、收益率一阶差分（bp）之间的相关，用于冗余管理；不是因子对未来收益的预测力（那需要前向检验 / 滚动 IC），本项目尚未做。",
+                                         "whatToUseInstead":  "引用这些 r 时必须写明是冗余管理口径，不得写成「预测相关性」。",
+                                         "source":  "factor-correlation-2026-11-02.md:6（口径声明）与 :59-68（变换口径）、:201（预测信号口径未做）"
+                                     },
+                                     {
+                                         "id":  "U6",
+                                         "topic":  "F1_OIL 口径与判定口径不同",
+                                         "detail":  "矩阵中的 F1_OIL 是新浪 hf_OIL 连续合约收盘，与本项目 P7/P21 的判定口径（ICE Brent Dec-2026 官方结算价，ERRATA 19/28/35 锁定）不同。仅可用于相关结构观察。",
+                                         "whatToUseInstead":  "不得用矩阵里的 F1_OIL 序列替代判定值；判定一律回 conventions.json 的 brent-judge 条目。",
+                                         "source":  "factor-correlation-2026-11-02.md:44（口径警示）；factor-correlation.ps1:30-33；conventions.json:7-24"
+                                     },
+                                     {
+                                         "id":  "U7",
+                                         "topic":  "metrics.json 实际只有 10 项，不是 11 项",
+                                         "detail":  "任务指令称 metrics.json 的 11 个是组合指标。逐项点数 metrics 数组实为 10 项：risk_position_pct、reduce_needed_cny、gold_leg_cny、gold_pct_of_risky、total_wealth_cny、actual_rate_factor_pct、max_position_pct、target_position_pct、brent_judge_usd、holdings_snapshot_age_days。",
+                                         "whatToUseInstead":  "按 10 项登记，以 metrics.json 数组实际条目为准。",
+                                         "source":  "metrics.json:14-377（metrics 数组逐项计数 = 10）"
+                                     },
+                                     {
+                                         "id":  "U8",
+                                         "topic":  "「27 因子」无权威定义文件",
+                                         "detail":  "全库检索未找到把「27 因子」定义为 27 个可计算指标的清单。故本登记表不登记任何编号 27 的因子集合，也不得由本表反推 27 这个数。",
+                                         "whatToUseInstead":  "需要有人给出权威定义文件（每个因子的计算公式 + 序列来源）才能登记。",
+                                         "source":  "factor-correlation-2026-11-02.md:14-17、:194"
+                                     },
+                                     {
+                                         "id":  "U9",
+                                         "topic":  "暴露因子的两套口径未做一致性断言",
+                                         "detail":  "8 个资产类别因子与 6 个因果因子的映射并非一一对应（real_rate/growth_risk/broad/broad_dividend 四者在因果口径下分别被并入 real_rate / real_rate / broad_beta / broad_beta）。本表按两套口径各自登记，不做统一，也不声明哪一套是「正解」。",
+                                         "whatToUseInstead":  "引用暴露结构时必须写明用的是哪一套口径（variant 字段）；两套口径并列呈现，其差值本身是信息。",
+                                         "source":  "dyn_sim.py:371-380（docstring：两套并列呈现，差值本身就是信息）"
+                                     },
+                                     {
+                                         "id":  "U10",
+                                         "topic":  "预测因子没有机制层面的失效阈值",
+                                         "detail":  "11 个预测因子的 invalidation 只能写「口径变更 / 有效观测跌破 20 / 源停更」这类可判定的数据与口径条件。它们的「经济机制何时失效」（如实际利率传导链断裂）没有预注册的量化阈值，本表不得编造。",
+                                         "whatToUseInstead":  "机制层面的失效需另做前向检验并预注册阈值；在此之前只保留数据/口径型失效条件。",
+                                         "source":  "factor-correlation.ps1:64-66（MinObs 阈值与剔除纪律）；IPS.md:284-293（链式推演可证伪性要求）"
+                                     },
+                                     {
+                                         "id":  "U11",
+                                         "topic":  "因果口径 6 个因子的 hedge 值是按桶继承的推论，不是源码字段",
+                                         "detail":  "源码 economic_exposure().groups（dyn_sim.py:381-388）只有 6 个组名与桶列表，没有 hedge 字段。hedge 属性只存在于第一套口径的 BUCKETS（dyn_sim.py:105-114）。故 6 个因果因子的 hedge 值是按其成员桶的 hedge 继承而来，已在每个因果因子的 hedgeSource 字段显式标注为 inferred-by-bucket-inheritance。",
+                                         "whatToUseInstead":  "引用因果因子的 hedge 前必须先看 hedgeSource 字段；该值不可当作源码直读，只能作为待确认的推论。",
+                                         "source":  "dyn_sim.py:381-388（groups 块无 hedge 字段）；dyn_sim.py:105-114（BUCKETS 有 hedge 字段）"
+                                     }
+                                 ]
+                },
+    "news":  {
+                 "events":  [
+                                {
+                                    "eventType":  "央行货币政策与宏观数据发布",
+                                    "frequency":  "实测 60 条 / 共 687 条（去重后）",
+                                    "affectedFactors":  [
+                                                            "predictive/US2Y",
+                                                            "predictive/US10Y",
+                                                            "predictive/F3_US30Y",
+                                                            "exposure-causal/liquidity",
+                                                            "exposure/duration",
+                                                            "exposure-causal/real_rate"
+                                                        ],
+                                    "assetImpact":  [
+                                                        {
+                                                            "asset":  "长久期美债",
+                                                            "direction":  "偏空（加息/超预期鹰派）",
+                                                            "strength":  "强",
+                                                            "lag":  "T+0~T+1",
+                                                            "note":  "利率路径重定价最快反映在 2Y~10Y 段"
+                                                        },
+                                                        {
+                                                            "asset":  "短久期美债",
+                                                            "direction":  "偏多（降息/鸽派）",
+                                                            "strength":  "中",
+                                                            "lag":  "T+0~T+1",
+                                                            "note":  "US2Y 对政策预期最敏感"
+                                                        },
+                                                        {
+                                                            "asset":  "黄金",
+                                                            "direction":  "偏多（降息预期）",
+                                                            "strength":  "中",
+                                                            "lag":  "T+1~T+3",
+                                                            "note":  "实际利率下行支撑金价"
+                                                        },
+                                                        {
+                                                            "asset":  "风险资产",
+                                                            "direction":  "偏多（宽松）/偏空（紧缩）",
+                                                            "strength":  "中",
+                                                            "lag":  "T+1~T+5",
+                                                            "note":  "Hermes 原文示例：央行降准→流动性/久期因子→风险资产偏多但有时滞"
+                                                        }
+                                                    ],
+                                    "confidence":  "A"
+                                },
+                                {
+                                    "eventType":  "AI/科技股抛售与回撤",
+                                    "frequency":  "实测 55 条 / 共 687 条（去重后）",
+                                    "affectedFactors":  [
+                                                            "predictive/HS300",
+                                                            "predictive/CYB",
+                                                            "predictive/SZCOMP",
+                                                            "exposure/growth_risk"
+                                                        ],
+                                    "assetImpact":  [
+                                                        {
+                                                            "asset":  "创业板指",
+                                                            "direction":  "偏空",
+                                                            "strength":  "强",
+                                                            "lag":  "T+0~T+1",
+                                                            "note":  "成长/AI 权重最高，对科技股回撤弹性最大"
+                                                        },
+                                                        {
+                                                            "asset":  "沪深300",
+                                                            "direction":  "偏空",
+                                                            "strength":  "中",
+                                                            "lag":  "T+0~T+2",
+                                                            "note":  "跌幅通常小于创业板，但会拖累指数贝塔"
+                                                        },
+                                                        {
+                                                            "asset":  "深证成指",
+                                                            "direction":  "偏空",
+                                                            "strength":  "中",
+                                                            "lag":  "T+0~T+2",
+                                                            "note":  "电子/计算机权重高"
+                                                        },
+                                                        {
+                                                            "asset":  "美债长端",
+                                                            "direction":  "偏多（避险）",
+                                                            "strength":  "弱",
+                                                            "lag":  "T+0~T+1",
+                                                            "note":  "risk-off 时长端常与股票同跌（本次样本出现 bond yields spike + stock sinks 组合），方向不稳定，仅作观察项"
+                                                        }
+                                                    ],
+                                    "confidence":  "B"
+                                },
+                                {
+                                    "eventType":  "原油与能源价格变动",
+                                    "frequency":  "实测 29 条 / 共 687 条（去重后）",
+                                    "affectedFactors":  [
+                                                            "predictive/F1_OIL",
+                                                            "predictive/XAU",
+                                                            "predictive/US10Y",
+                                                            "exposure/commodity",
+                                                            "exposure-causal/inflation_commodity"
+                                                        ],
+                                    "assetImpact":  [
+                                                        {
+                                                            "asset":  "原油（布伦特近月）",
+                                                            "direction":  "与新闻方向同向",
+                                                            "strength":  "强",
+                                                            "lag":  "T+0",
+                                                            "note":  "价格因子本身，最直接"
+                                                        },
+                                                        {
+                                                            "asset":  "通胀预期（US10Y）",
+                                                            "direction":  "偏多（油价上行）",
+                                                            "strength":  "中",
+                                                            "lag":  "T+1~T+3",
+                                                            "note":  "能源是当前美国通胀主导项，直接传导到长端利率"
+                                                        },
+                                                        {
+                                                            "asset":  "黄金",
+                                                            "direction":  "偏空（油价上行推高通胀压制实际利率）",
+                                                            "strength":  "弱",
+                                                            "lag":  "T+1~T+3",
+                                                            "note":  "本次样本同时出现油价跌→金价回升，方向依赖政策路径，非机械反向"
+                                                        },
+                                                        {
+                                                            "asset":  "航空/运输业",
+                                                            "direction":  "偏空（油价上行）",
+                                                            "strength":  "中",
+                                                            "lag":  "T+1~T+5",
+                                                            "note":  "本次样本有『中国三大航全年亏损，燃油成本承压』"
+                                                        }
+                                                    ],
+                                    "confidence":  "B"
+                                },
+                                {
+                                    "eventType":  "地缘冲突与战争风险",
+                                    "frequency":  "实测 11 条 / 共 687 条（去重后）",
+                                    "affectedFactors":  [
+                                                            "predictive/F1_OIL",
+                                                            "predictive/XAU",
+                                                            "predictive/US10Y",
+                                                            "exposure/commodity",
+                                                            "exposure-causal/inflation_commodity",
+                                                            "exposure/growth_risk"
+                                                        ],
+                                    "assetImpact":  [
+                                                        {
+                                                            "asset":  "原油",
+                                                            "direction":  "偏多（冲突升级）",
+                                                            "strength":  "强",
+                                                            "lag":  "T+0~T+1",
+                                                            "note":  "供给风险溢价最快计入油价"
+                                                        },
+                                                        {
+                                                            "asset":  "黄金",
+                                                            "direction":  "偏多",
+                                                            "strength":  "中",
+                                                            "lag":  "T+0~T+1",
+                                                            "note":  "避险需求，同时受实际利率牵制"
+                                                        },
+                                                        {
+                                                            "asset":  "美债长端",
+                                                            "direction":  "偏空（通胀风险推高期限溢价）",
+                                                            "strength":  "中",
+                                                            "lag":  "T+1~T+3",
+                                                            "note":  "供给冲击型通胀对长端不利，对短端中性"
+                                                        },
+                                                        {
+                                                            "asset":  "风险资产",
+                                                            "direction":  "偏空",
+                                                            "strength":  "中",
+                                                            "lag":  "T+0~T+2",
+                                                            "note":  "risk-off 压制股票估值"
+                                                        }
+                                                    ],
+                                    "confidence":  "C"
+                                },
+                                {
+                                    "eventType":  "财报/业绩与业绩指引",
+                                    "frequency":  "实测 65 条 / 共 687 条（去重后）",
+                                    "affectedFactors":  [
+                                                            "predictive/HS300",
+                                                            "predictive/CYB",
+                                                            "predictive/SZCOMP",
+                                                            "predictive/XAU",
+                                                            "exposure/growth_risk",
+                                                            "exposure/broad"
+                                                        ],
+                                    "assetImpact":  [
+                                                        {
+                                                            "asset":  "个股/所属行业",
+                                                            "direction":  "与指引方向同向",
+                                                            "strength":  "强",
+                                                            "lag":  "T+0",
+                                                            "note":  "最直接的个体定价事件"
+                                                        },
+                                                        {
+                                                            "asset":  "创业板指",
+                                                            "direction":  "偏空（业绩不及预期）",
+                                                            "strength":  "中",
+                                                            "lag":  "T+0~T+2",
+                                                            "note":  "本次样本中 AI/存储链业绩是指数级驱动"
+                                                        },
+                                                        {
+                                                            "asset":  "沪深300",
+                                                            "direction":  "偏空（权重股业绩拖累）",
+                                                            "strength":  "弱",
+                                                            "lag":  "T+1~T+3",
+                                                            "note":  "银行/消费权重占主导，业绩敏感度低于成长股"
+                                                        }
+                                                    ],
+                                    "confidence":  "B"
+                                },
+                                {
+                                    "eventType":  "A股板块/概念异动与公司行动",
+                                    "frequency":  "实测 21 条 / 共 687 条（去重后）",
+                                    "affectedFactors":  [
+                                                            "predictive/HS300",
+                                                            "predictive/SZZ",
+                                                            "predictive/SZCOMP",
+                                                            "predictive/CYB",
+                                                            "exposure/broad",
+                                                            "exposure/broad_dividend"
+                                                        ],
+                                    "assetImpact":  [
+                                                        {
+                                                            "asset":  "对应板块/行业",
+                                                            "direction":  "与异动方向同向",
+                                                            "strength":  "强",
+                                                            "lag":  "T+0",
+                                                            "note":  "板块资金流入流出为当日直接定价"
+                                                        },
+                                                        {
+                                                            "asset":  "上证指数",
+                                                            "direction":  "偏多（权重板块走强）/偏空（权重走弱）",
+                                                            "strength":  "弱",
+                                                            "lag":  "T+0~T+1",
+                                                            "note":  "SZZ 对银行/资源权重敏感"
+                                                        },
+                                                        {
+                                                            "asset":  "沪深300",
+                                                            "direction":  "偏多（金融/消费权重走强）",
+                                                            "strength":  "弱",
+                                                            "lag":  "T+0~T+1",
+                                                            "note":  "样本中银行板块反复活跃、工商银行 A+H 总市值破 3 万亿"
+                                                        }
+                                                    ],
+                                    "confidence":  "B"
+                                },
+                                {
+                                    "eventType":  "国债收益率变动与债券供给",
+                                    "frequency":  "实测 38 条 / 共 687 条（去重后）",
+                                    "affectedFactors":  [
+                                                            "predictive/US2Y",
+                                                            "predictive/US10Y",
+                                                            "predictive/F3_US30Y",
+                                                            "exposure/duration",
+                                                            "exposure-causal/real_rate"
+                                                        ],
+                                    "assetImpact":  [
+                                                        {
+                                                            "asset":  "美债长端（30Y/10Y）",
+                                                            "direction":  "与收益率方向反向",
+                                                            "strength":  "强",
+                                                            "lag":  "T+0~T+1",
+                                                            "note":  "价格因子与收益率严格反向，机械可算"
+                                                        },
+                                                        {
+                                                            "asset":  "美债短端（2Y）",
+                                                            "direction":  "中性（跟随政策预期）",
+                                                            "strength":  "中",
+                                                            "lag":  "T+0~T+1",
+                                                            "note":  "长端供给冲击对短端影响有限"
+                                                        },
+                                                        {
+                                                            "asset":  "黄金",
+                                                            "direction":  "偏空（收益率上行）",
+                                                            "strength":  "弱",
+                                                            "lag":  "T+1~T+3",
+                                                            "note":  "实际利率渠道"
+                                                        },
+                                                        {
+                                                            "asset":  "成长股/高估值资产",
+                                                            "direction":  "偏空（长端利率上行）",
+                                                            "strength":  "中",
+                                                            "lag":  "T+1~T+5",
+                                                            "note":  "贴现率渠道，样本中 CoreWeave 案例为『bond yields spike and stock sinks』"
+                                                        }
+                                                    ],
+                                    "confidence":  "B"
+                                }
+                            ],
+                 "sourceWhitelist":  [
+                                         {
+                                             "id":  "bloomberg",
+                                             "name":  "Bloomberg（Markets/Economics/Politics/Technology/Industries）",
+                                             "tier":  "B",
+                                             "note":  "一手财经终端报道；本次实测 245 条（去重后）",
+                                             "observedSources":  [
+                                                                     "Bloomberg Markets",
+                                                                     "Bloomberg Economics",
+                                                                     "Bloomberg Politics",
+                                                                     "Bloomberg Technology",
+                                                                     "Bloomberg Industries"
+                                                                 ]
+                                         },
+                                         {
+                                             "id":  "cls",
+                                             "name":  "财联社（cls.cn）",
+                                             "tier":  "B",
+                                             "note":  "国内财经快讯；实测 100 条（去重后）。公告口径类消息为一手，但其评论为二手",
+                                             "observedSources":  "NewsNow/cls"
+                                         },
+                                         {
+                                             "id":  "wallstreetcn",
+                                             "name":  "华尔街见闻（wallstreetcn.com）",
+                                             "tier":  "B",
+                                             "note":  "国内财经快讯转载源；实测 111 条（去重后）",
+                                             "observedSources":  "NewsNow/wallstreetcn"
+                                         },
+                                         {
+                                             "id":  "cnbc",
+                                             "name":  "CNBC",
+                                             "tier":  "B",
+                                             "note":  "主流财经媒体；实测 75 条",
+                                             "observedSources":  "CNBC Top News"
+                                         },
+                                         {
+                                             "id":  "wsj",
+                                             "name":  "The Wall Street Journal",
+                                             "tier":  "B",
+                                             "note":  "主流财经媒体；实测 58 条",
+                                             "observedSources":  [
+                                                                     "WSJ (Google News)",
+                                                                     "WSJ Markets",
+                                                                     "WSJ Tech",
+                                                                     "WSJ Opinion"
+                                                                 ]
+                                         },
+                                         {
+                                             "id":  "reuters",
+                                             "name":  "Reuters",
+                                             "tier":  "B",
+                                             "note":  "主流财经媒体；实测 37 条",
+                                             "observedSources":  "Reuters (Google News)"
+                                         },
+                                         {
+                                             "id":  "ft",
+                                             "name":  "Financial Times",
+                                             "tier":  "B",
+                                             "note":  "主流财经媒体；实测 13 条",
+                                             "observedSources":  "Financial Times"
+                                         },
+                                         {
+                                             "id":  "guardian",
+                                             "name":  "The Guardian Business",
+                                             "tier":  "C",
+                                             "note":  "聚合/二手转载；实测 10 条",
+                                             "observedSources":  "Guardian Business"
+                                         },
+                                         {
+                                             "id":  "times",
+                                             "name":  "The Times",
+                                             "tier":  "C",
+                                             "note":  "聚合/二手转载；实测 1 条",
+                                             "observedSources":  "The Times (Google News)"
+                                         },
+                                         {
+                                             "id":  "arxiv",
+                                             "name":  "arXiv cs.AI",
+                                             "tier":  "C",
+                                             "note":  "论文预印本，非市场事实；本次全部排除出映射（实测 19 条）",
+                                             "observedSources":  "arXiv cs.AI"
+                                         },
+                                         {
+                                             "id":  "hn",
+                                             "name":  "Hacker News",
+                                             "tier":  "D",
+                                             "note":  "未核实/单一来源聚合；本次全部排除出映射（实测 17 条）",
+                                             "observedSources":  "Hacker News"
+                                         },
+                                         {
+                                             "id":  "sspl",
+                                             "name":  "少数派 / 阮一峰的网络日志",
+                                             "tier":  "D",
+                                             "note":  "非财经源；本次全部排除出映射（实测 3 条）",
+                                             "observedSources":  [
+                                                                     "少数派",
+                                                                     "阮一峰的网络日志"
+                                                                 ]
+                                         }
+                                     ]
+             },
+    "chain":  {
+                  "knownDeviations":  [
+                                          {
+                                              "id":  "DEV-01",
+                                              "severity":  "high",
+                                              "status":  "已声明、未执行",
+                                              "title":  "10-25 减仓执行单由推演结论直接产出，当前违反 tradeGate",
+                                              "detail":  "[已移除] B）由链式推演结论直接产出（黄金腿减 [金额已移除] + 成长腿减 [金额已移除]，商品腿不动；10/26 周一开盘后尽快），未经过独立的交易闸门。该执行单同时与 P9 的 FAIL、以及执行单 §五规则二的日期口径分歧（A 常设条件式 / B 仅对 10/26 有效而已过期）绑在一起。",
+                                              "violates":  "tradeGate.mayTriggerTrade = false；PROJECT.md §7.5 第 2 条",
+                                              "source":  "[已移除] §7.5 第 2 条（原文：『⚠ 当前状态：违反。……本条已声明但未执行，如实记录，不粉饰。』）",
+                                              "remediation":  "未执行。契约只是把该状态登记为已知偏离，不代替裁定，也不回改历史执行单。"
+                                          },
+                                          {
+                                              "id":  "DEV-02",
+                                              "severity":  "medium",
+                                              "status":  "已声明、未执行",
+                                              "title":  "推演结论已进入组合权重与持仓传导链",
+                                              "detail":  "chain-model.md §3 权重表（每交易日重标定，规则：新证据同向 ×1.15 / 反向 ×0.75）与 §4 传导矩阵把推演节点直接换算成持仓方向；daily-log §5『持仓传导』与 §7『结论』逐日据此给出减仓金额（如 11-02 的 [金额已移除] 元、15:00 场外截止窗口）。⇒ 推演事实上在影响仓位决策，而不只是『假设』。",
+                                              "violates":  "tradeGate.mayTriggerTrade = false（实质上推演已构成交易理由）",
+                                              "source":  "[已移除] §3 / §4；[已移除] §5 / §7",
+                                              "remediation":  "未执行。与 DEV-01 同源，一并待裁定。"
+                                          },
+                                          {
+                                              "id":  "DEV-03",
+                                              "severity":  "medium",
+                                              "status":  "现存范式与契约的字段口径差异",
+                                              "title":  "daily-log 的两段式裁决没有逐跳标注 probability 与 evidence[]",
+                                              "detail":  "ERRATA 33 的两段式在 daily-log 里以散文形式记录（段一/段二 + ⇒ 裁决 + ⚠ 口径限定），逐跳的 probability 与结构化 evidence[] 数组并不存在。链式模型里的『权重』是节点权重（N0 0.68→0.78 等），不是单跳的条件概率。⇒ 本契约要求的逐跳 probability / evidence[] 属于新增字段，存量 daily-log 无法直接满足；示例记录是首次按契约结构化的手工转写。",
+                                              "violates":  "无（属记录格式的现状说明，非违规）",
+                                              "source":  "[已移除] 条目 33 §二；[已移除] §3",
+                                              "remediation":  "不追溯改写 daily-log（PROJECT.md §4：封存件不改、勘误只追加）。新推演一律按本契约结构化。"
+                                          },
+                                          {
+                                              "id":  "DEV-04",
+                                              "severity":  "low",
+                                              "status":  "已登记",
+                                              "title":  "事后校准命中率无系统性闭环",
+                                              "detail":  "契约要求『所有推演进入日志，事后校准命中率』。当前只有封存预注册件（sealed\\forecast-v1.0.md 的 P1–P22）有完整 Brier 记分通道；daily-log 的日常推演没有命中率统计口径，没有『多少条推演被事后证伪』的账。⇒ 本契约的 calibration 段目前只有 P21 一个真实范例可依据，其余推演的记分通道尚未建立。",
+                                              "violates":  "calibration.reviewCycle 尚未有实现载体",
+                                              "source":  "[已移除] §0 反污染协议；[已移除] Brier = 0.6400 记于条目 35 前后与 §四.5 统计）",
+                                              "remediation":  "未执行。logPath 下的记录带 reviewDate / outcome 字段，等第一条到期结算。"
+                                          }
+                                      ],
+                  "example":  {
+                                  "recordId":  "chain-2026-11-02-01",
+                                  "observationDate":  "2026-11-02",
+                                  "hops":  [
+                                               {
+                                                   "hop":  1,
+                                                   "claim":  "如果油价稳（Brent 未破 115）则『供给冲击定价成立』—— 本日该前提不成立（形态是『先冲高、后回落』，不是『稳』），故不得宣布供给冲击定价成立",
+                                                   "probability":  0.42,
+                                                   "observable":  "Brent Dec-2026 官方结算价（美元/桶，F1 锁定口径）；形态判定需同时看方向与波动形态 —— 『稳』的判据是连续结算价序列不破 115 美元/桶且不呈单日冲高回落。数据源：ICE 官方结算价（daily-log §1 因子表 F1 列），取不到写『未取得』并说明是源不可用还是尚未产生。",
+                                                   "invalidation":  "失效条件：若 Brent Dec-2026 结算价 ≥ 115.00 美元/桶 ⇒ 本跳前提『油价稳』成立、供给冲击定价可宣布，hop1 的『不成立』裁决作废；若结算价序列呈先冲高后回落形态（如 10/30 117.64 连续第二日 +2.40% 后 11/02 盘中 -2.82%）⇒ 『稳』的前提即判不满足，本跳结论维持成立。口径未确证（仅有近月 Jan-2027 报价）时本跳只作方向性证据，不得据以判定 PASS/FAIL。"
+                                               },
+                                               {
+                                                   "hop":  2,
+                                                   "claim":  "如果长端实际下行（美 30Y \u003c 5.40 且现货金同步走强）则『成长修复』—— 本日仅长端侧单侧满足、黄金侧不成立，故成长修复整体不成立",
+                                                   "probability":  0.30,
+                                                   "observable":  "美 30Y 收益率（%，F3 口径，美国财政部官方曲线收盘值）与伦敦金现货收盘价（美元/盎司，hf_XAU；P9 下界 3950）须同时满足：30Y \u003c 5.40 且现货金涨幅足以构成『同步走强』。数据源：美国财政部官方 CSV、腾讯 hf_XAU。观测日唯一性按 ERRATA 条目 86 §三（S-57）：一行对应一个观测日，同一观测日只登记一次，登记日可为其后的第一个日历日。",
+                                                   "invalidation":  "失效条件：若现货金收盘 ≥ 3950 美元/盎司且日内涨幅达到『同步走强』量级（而非本日 +0.47% 这种幅度），同时美 30Y 收盘仍 \u003c 5.40% ⇒ hop2 的『黄金侧不成立』被推翻、成长修复成立；若美 30Y 收盘 ≥ 5.40% ⇒ 长端侧也不成立，成长修复同样不成立。两者皆不满足时，hop2 的『整体不成立』维持。"
+                                               }
+                                           ],
+                                  "conclusion":  {
+                                                     "verdict":  "第三态",
+                                                     "text":  "裁决结果：仍为第三态（既非供给冲击定价成立，也非成长修复成立）。本日出现一个明确的机制解释候选（二手）：东财期货页标题『避险资金转投美债，金价短期或难改颓势』⇒ 把『长端下行 + 黄金同跌』解释为『资金进了债、没进金』，而不是『风险偏好修复』；券商概括亦同向（地缘推升能源价格中枢 + 加息预期升温压制无息资产，同一宏观冲击在不同品种产生方向相反的传导）。⇒ 这两条均为媒体/机构表述（二手观点），仅登记为对背离的解释候选，不作为事实结论。事实层面的新增只有两件：① 油价盘中回落（Brent 近月 -2.82%）② A 股盘中反弹（创业板指 +1.04%）。这两件都不改变『第三态』的判定。",
+                                                     "weightEffect":  "本日唯一权重变化：N0 地缘升级 0.68 → 0.78（×1.15，同向，cap 0.85 未触及）。触发证据：① 10/31 05:29 报道『特朗普计划在中期选举次日恢复对伊朗的打击』⇒ 11/04 为已知升级窗口；② 10/30 霍尔木兹『4 艘油轮爆炸』+ 伊朗拉万岛船只遭袭起火 + 英国海事行动办公室通报两起船舶遇袭 + 伊朗称在格什姆岛上空击落一架美军无人机。理由：两条均为 10/30 之后新增、且未被现有 0.68 覆盖的具体升级承诺与时点 ⇒ 方向一致，按同向乘子 ×1.15。其余各腿本轮无新信息 ⇒ 乘子 ×1.0，权重逐项不动（含 N0 破120：盘中油价双杀方向与该腿相反，但 F1 锁定口径今日未取得 ⇒ 按 S-48 不判）。",
+                                                     "whatWouldChangeIt":  "若 F1 锁定口径（ICE Brent Dec-2026 11/02 官方结算价）取得且序列显示『稳』⇒ 段一前提成立，供给冲击定价可宣布，hop1 结论作废；若同时现货金收盘 ≥ 3950 美元/盎司且美 30Y 收盘仍 \u003c 5.40% ⇒ 段二两条件齐备，成长修复成立，本裁决作废并须按 ERRATA 30 的乘子规则重标定相关腿。⇒ 即『如果错了，我怎么知道』的答案：以上三条读数是机械可判的，不需要事后叙述。"
+                                                 }
+                              },
+                  "rules":  {
+                                "maxHops":  3,
+                                "requiredPerHop":  [
+                                                       "claim",
+                                                       "evidence",
+                                                       "probability",
+                                                       "observable",
+                                                       "invalidation"
+                                                   ],
+                                "mustAnswer":  "如果错了，我怎么知道",
+                                "mayTriggerTrade":  false,
+                                "calibration":  "Brier (p - outcome)^2；例 P21=0.6400"
+                            }
+              },
+    "decisions":  {
+                      "byAction":  {
+                                       "confirm":  1,
+                                       "note":  2
+                                   },
+                      "items":  [
+                                    {
+                                        "id":  "[金额已移除]-P9-现货金-10-30-判定-1",
+                                        "decidedAt":  "2026-11-02T23:43:30+08:00",
+                                        "action":  "note",
+                                        "subject":  "P9 现货金 10-30 判定",
+                                        "reason":  "主源 122.XAU 10-30 收 3875.55 \u003c3950 ⇒ FAIL，已登记更正",
+                                        "source":  "cli",
+                                        "actor":  "lead",
+                                        "dataAsOf":  "2026-10-30",
+                                        "supersedes":  null
+                                    },
+                                    {
+                                        "id":  "[金额已移除]-P11-美元指数-10-30-判定-1",
+                                        "decidedAt":  "2026-11-02T23:43:31+08:00",
+                                        "action":  "note",
+                                        "subject":  "P11 美元指数 10-30 判定",
+                                        "reason":  "主源 100.UDI 10-30 收 101.97 ∈[[金额已移除]] ⇒ PASS",
+                                        "source":  "cli",
+                                        "actor":  "lead",
+                                        "dataAsOf":  "2026-10-30",
+                                        "supersedes":  null
+                                    },
+                                    {
+                                        "id":  "[金额已移除]-FinHub-公开仓库脱敏-1",
+                                        "decidedAt":  "2026-11-02T23:43:31+08:00",
+                                        "action":  "confirm",
+                                        "subject":  "FinHub 公开仓库脱敏",
+                                        "reason":  "脱敏+历史重写13→1+finhub-data转私有；旧sha仍可寻址待GC",
+                                        "source":  "cli",
+                                        "actor":  "lead",
+                                        "dataAsOf":  null,
+                                        "supersedes":  null
+                                    }
+                                ],
+                      "count":  3
+                  },
+    "today":  {
+                  "date":  "2026-11-05",
+                  "position":  {
+                                   "currentPct":  35.62,
+                                   "authorityPct":  35.92,
+                                   "hardMaxPct":  15,
+                                   "dataAsOf":  "2026-11-04",
+                                   "dataAgeDays":  0.5,
+                                   "stale":  false,
+                                   "note":  "L1 真值：直接由 holdings.json 快照按名称归类算四桶；无快照时才回落 metrics 派生值",
+                                   "source":  "holdings.json（用户上传快照，非推算）"
+                               },
+                  "rebalance":  {
+                                    "bandLowPct":  8,
+                                    "bandHighPct":  15,
+                                    "inBand":  false,
+                                    "action":  "TRIM"
+                                },
+                  "pending":  [
+                                  {
+                                      "what":  "**T-3**",
+                                      "why":  "**待批（已全量核实）**",
+                                      "owner":  "user"
+                                  },
+                                  {
+                                      "what":  "**T-4**",
+                                      "why":  "**待批**",
+                                      "owner":  "user"
+                                  },
+                                  {
+                                      "what":  "**T-7**",
+                                      "why":  "**待批**",
+                                      "owner":  "user"
+                                  },
+                                  {
+                                      "what":  "G1 根目录收敛",
+                                      "why":  "0%（方案就绪，待批）",
+                                      "owner":  "user"
+                                  },
+                                  {
+                                      "what":  "G2 去冗余",
+                                      "why":  "20%（R0 已清 154 空目录；R1 可回收量已重算为 73.2MB；待批）",
+                                      "owner":  "user"
+                                  }
+                              ],
+                  "pendingCnt":  5,
+                  "freshness":  [
+                                    {
+                                        "item":  "持仓快照 holdings.json",
+                                        "asOf":  "2026-11-04",
+                                        "ageDays":  0.5,
+                                        "stale":  false
+                                    },
+                                    {
+                                        "item":  "引擎政策契约",
+                                        "asOf":  "2026-11-02 22:58:24",
+                                        "ageDays":  null,
+                                        "stale":  false
+                                    },
+                                    {
+                                        "item":  "决策账本",
+                                        "asOf":  "2026-11-05 10:14",
+                                        "ageDays":  0,
+                                        "stale":  false
+                                    }
+                                ]
+              },
+    "_missing":  {
+
+                 },
+    "_publicPolicy":  {
+                          "sanitizer":  "tools/export-board-public.ps1",
+                          "dropsAmounts":  true,
+                          "droppedCategories":  "绝对金额 / 持仓明细字段 / 内部路径 / 隧道地址 / 决策金额",
+                          "rationale":  "公开页面只放比例/计数/状态；绝对金额与内部路径、隧道地址一律不出口",
+                          "fullVersion":  "仅本地 contracts/board.json（不得直接推公开仓）"
+                      },
+    "_freshness":  {
+                       "checkedAt":  "2026-11-05 10:14:25",
+                       "worst":  "ok",
+                       "staleCount":  0,
+                       "items":  [
+                                     {
+                                         "id":  "holdings",
+                                         "label":  "持仓快照",
+                                         "asOf":  "2026-11-04 22:52",
+                                         "ageDays":  0.47,
+                                         "maxAgeDays":  3,
+                                         "stale":  false
+                                     },
+                                     {
+                                         "id":  "engine-policy",
+                                         "label":  "引擎政策契约",
+                                         "asOf":  "2026-11-02 22:58",
+                                         "ageDays":  2.47,
+                                         "maxAgeDays":  14,
+                                         "stale":  false
+                                     },
+                                     {
+                                         "id":  "factor-registry",
+                                         "label":  "因子登记表",
+                                         "asOf":  "2026-11-02 23:27",
+                                         "ageDays":  2.45,
+                                         "maxAgeDays":  30,
+                                         "stale":  false
+                                     },
+                                     {
+                                         "id":  "news-mapping",
+                                         "label":  "新闻映射",
+                                         "asOf":  "2026-11-02 23:26",
+                                         "ageDays":  2.45,
+                                         "maxAgeDays":  30,
+                                         "stale":  false
+                                     },
+                                     {
+                                         "id":  "chain-rules",
+                                         "label":  "推演规则",
+                                         "asOf":  "2026-11-02 23:23",
+                                         "ageDays":  2.45,
+                                         "maxAgeDays":  30,
+                                         "stale":  false
+                                     },
+                                     {
+                                         "id":  "decisions",
+                                         "label":  "决策账本",
+                                         "asOf":  "2026-11-02 23:43",
+                                         "ageDays":  2.44,
+                                         "maxAgeDays":  7,
+                                         "stale":  false
+                                     },
+                                     {
+                                         "id":  "rules",
+                                         "label":  "风控规则",
+                                         "asOf":  "2026-11-03 22:26",
+                                         "ageDays":  1.49,
+                                         "maxAgeDays":  14,
+                                         "stale":  false
+                                     },
+                                     {
+                                         "id":  "market-live",
+                                         "label":  "行情快照",
+                                         "asOf":  "2026-11-05 10:14",
+                                         "ageDays":  0,
+                                         "maxAgeDays":  0.25,
+                                         "stale":  false
+                                     }
+                                 ],
+                       "banner":  "全部数据在有效期内"
+                   },
+    "nationalTeam":  {
+                         "ok":  true,
+                         "lastSuccess":  "2026-11-05 10:03:09",
+                         "asOf":  "2026-11-05 10:03:09",
+                         "note":  "",
+                         "items":  [
+                                       {
+                                           "code":  "159845",
+                                           "name":  "159845",
+                                           "shares":  4269425606,
+                                           "deltaShares":  1011000000,
+                                           "deltaPct":  31.03,
+                                           "deltaWan":  101100
+                                       },
+                                       {
+                                           "code":  "512100",
+                                           "name":  "中证1000ETF",
+                                           "shares":  19759217600,
+                                           "deltaShares":  2844000000,
+                                           "deltaPct":  16.81,
+                                           "deltaWan":  284400
+                                       },
+                                       {
+                                           "code":  "159922",
+                                           "name":  "159922",
+                                           "shares":  3559676765,
+                                           "deltaShares":  459000000,
+                                           "deltaPct":  14.8,
+                                           "deltaWan":  45900
+                                       },
+                                       {
+                                           "code":  "510500",
+                                           "name":  "中证500ETF",
+                                           "shares":  9963368600,
+                                           "deltaShares":  1161200000,
+                                           "deltaPct":  13.19,
+                                           "deltaWan":  116120
+                                       },
+                                       {
+                                           "code":  "510350",
+                                           "name":  "510350",
+                                           "shares":  855114700,
+                                           "deltaShares":  38700000,
+                                           "deltaPct":  4.74,
+                                           "deltaWan":  3870
+                                       },
+                                       {
+                                           "code":  "159915",
+                                           "name":  "创业板ETF",
+                                           "shares":  44909454936,
+                                           "deltaShares":  1968000000,
+                                           "deltaPct":  4.58,
+                                           "deltaWan":  196800
+                                       },
+                                       {
+                                           "code":  "510310",
+                                           "name":  "510310",
+                                           "shares":  25872044000,
+                                           "deltaShares":  1119600000,
+                                           "deltaPct":  4.52,
+                                           "deltaWan":  111960
+                                       },
+                                       {
+                                           "code":  "510300",
+                                           "name":  "沪深300ETF",
+                                           "shares":  46363087700,
+                                           "deltaShares":  1775700000,
+                                           "deltaPct":  3.98,
+                                           "deltaWan":  177570
+                                       },
+                                       {
+                                           "code":  "510320",
+                                           "name":  "510320",
+                                           "shares":  907068500,
+                                           "deltaShares":  27000000,
+                                           "deltaPct":  3.07,
+                                           "deltaWan":  2700
+                                       },
+                                       {
+                                           "code":  "510210",
+                                           "name":  "上证综指ETF",
+                                           "shares":  20129192600,
+                                           "deltaShares":  -606000000,
+                                           "deltaPct":  -2.92,
+                                           "deltaWan":  -60600
+                                       },
+                                       {
+                                           "code":  "159949",
+                                           "name":  "创业板50ETF",
+                                           "shares":  22964785113,
+                                           "deltaShares":  -542000000,
+                                           "deltaPct":  -2.31,
+                                           "deltaWan":  -54200
+                                       },
+                                       {
+                                           "code":  "588000",
+                                           "name":  "科创50ETF(华夏)",
+                                           "shares":  107174668200,
+                                           "deltaShares":  2403000000,
+                                           "deltaPct":  2.29,
+                                           "deltaWan":  240300
+                                       },
+                                       {
+                                           "code":  "510100",
+                                           "name":  "510100",
+                                           "shares":  1049006800,
+                                           "deltaShares":  -13500000,
+                                           "deltaPct":  -1.27,
+                                           "deltaWan":  -1350
+                                       },
+                                       {
+                                           "code":  "510330",
+                                           "name":  "510330",
+                                           "shares":  15510849800,
+                                           "deltaShares":  178200000,
+                                           "deltaPct":  1.16,
+                                           "deltaWan":  17820
+                                       },
+                                       {
+                                           "code":  "510880",
+                                           "name":  "红利ETF",
+                                           "shares":  6182175700,
+                                           "deltaShares":  -71500000,
+                                           "deltaPct":  -1.14,
+                                           "deltaWan":  -7150
+                                       },
+                                       {
+                                           "code":  "510050",
+                                           "name":  "上证50ETF",
+                                           "shares":  16333866800,
+                                           "deltaShares":  -126900000,
+                                           "deltaPct":  -0.77,
+                                           "deltaWan":  -12690
+                                       },
+                                       {
+                                           "code":  "512880",
+                                           "name":  "证券ETF",
+                                           "shares":  54155291500,
+                                           "deltaShares":  -244000000,
+                                           "deltaPct":  -0.45,
+                                           "deltaWan":  -24400
+                                       },
+                                       {
+                                           "code":  "588080",
+                                           "name":  "科创50ETF(易方达)",
+                                           "shares":  32101628100,
+                                           "deltaShares":  -54000000,
+                                           "deltaPct":  -0.17,
+                                           "deltaWan":  -5400
+                                       },
+                                       {
+                                           "code":  "510180",
+                                           "name":  "上证180ETF",
+                                           "shares":  4447057700,
+                                           "deltaShares":  -1000000,
+                                           "deltaPct":  -0.02,
+                                           "deltaWan":  -100
+                                       },
+                                       {
+                                           "code":  "510270",
+                                           "name":  "510270",
+                                           "shares":  17832100,
+                                           "deltaShares":  0,
+                                           "deltaPct":  0,
+                                           "deltaWan":  0
+                                       },
+                                       {
+                                           "code":  "510060",
+                                           "name":  "510060",
+                                           "shares":  34959200,
+                                           "deltaShares":  0,
+                                           "deltaPct":  0,
+                                           "deltaWan":  0
+                                       },
+                                       {
+                                           "code":  "510190",
+                                           "name":  "510190",
+                                           "shares":  25150800,
+                                           "deltaShares":  0,
+                                           "deltaPct":  0,
+                                           "deltaWan":  0
+                                       }
+                                   ],
+                         "error":  null,
+                         "discipline":  "ETF 份额变化来自全市场申赎，机构/套利/个人共同参与。「净申购=国家队买入」属推断，不得写成确证。",
+                         "dateCurrent":  "2026-11-05",
+                         "datePrev":  "2026-11-04",
+                         "summary":  {
+                                         "total":  22,
+                                         "up":  11,
+                                         "down":  8,
+                                         "flat":  3
+                                     }
+                     },
+    "notifications":  {
+                          "generatedAt":  "2026-11-05 10:14:26",
+                          "count":  2,
+                          "byLevel":  {
+                                          "urgent":  1,
+                                          "watch":  0,
+                                          "info":  1
+                                      },
+                          "items":  [
+                                        {
+                                            "id":  "H2-position-cap",
+                                            "level":  "urgent",
+                                            "title":  "H2 风险仓超上限",
+                                            "body":  "风险仓位超过硬顶，需按 IPS 执行减仓（金额请解锁查看）",
+                                            "rule":  "H2",
+                                            "asOf":  "2026-11-04"
+                                        },
+                                        {
+                                            "id":  "T1-thesis",
+                                            "level":  "info",
+                                            "title":  "T1 投资逻辑已被置否",
+                                            "body":  "基本面/逻辑判定为不成立，减仓理由链仅剩敞口规则",
+                                            "rule":  "T1",
+                                            "asOf":  null
+                                        }
+                                    ],
+                          "policy":  "通知内容脱敏：不含金额、不含持仓名称；明细需解锁查看"
+                      },
+    "market":  {
+                   "generatedAt":  "2026-11-05 10:14:23",
+                   "source":  "qt.gtimg.cn（指数）+ hq.sinajs.cn（外盘/汇率）",
+                   "note":  "cn10y / us30y 无可用公开接口，已如实标 missing；下游不得把缺失当 0 或沿用旧值。",
+                   "okCount":  5,
+                   "failCount":  2,
+                   "sources":  {
+                                   "indices":  {
+                                                   "ok":  true,
+                                                   "kind":  "quote-list",
+                                                   "error":  null,
+                                                   "asOf":  "2026-11-05 10:14:21",
+                                                   "value":  {
+                                                                 "items":  [
+                                                                               {
+                                                                                   "code":  "sh000300",
+                                                                                   "name":  "沪深300",
+                                                                                   "price":  4121.78,
+                                                                                   "prevClose":  4101.34,
+                                                                                   "changePct":  0.5,
+                                                                                   "asOf":  "2026-11-05 10:14:21"
+                                                                               },
+                                                                               {
+                                                                                   "code":  "sz399001",
+                                                                                   "name":  "深证成指",
+                                                                                   "price":  11545.82,
+                                                                                   "prevClose":  11335.69,
+                                                                                   "changePct":  1.85,
+                                                                                   "asOf":  "2026-11-05 10:14:18"
+                                                                               },
+                                                                               {
+                                                                                   "code":  "sz399006",
+                                                                                   "name":  "创业板指",
+                                                                                   "price":  2599.25,
+                                                                                   "prevClose":  2544.73,
+                                                                                   "changePct":  2.14,
+                                                                                   "asOf":  "2026-11-05 10:14:18"
+                                                                               },
+                                                                               {
+                                                                                   "code":  "sh000001",
+                                                                                   "name":  "上证指数",
+                                                                                   "price":  3693.2,
+                                                                                   "prevClose":  3686.17,
+                                                                                   "changePct":  0.19,
+                                                                                   "asOf":  "2026-11-05 10:14:21"
+                                                                               }
+                                                                           ],
+                                                                 "asOf":  "2026-11-05 10:14:21"
+                                                             }
+                                               },
+                                   "brent":  {
+                                                 "ok":  true,
+                                                 "kind":  "quote",
+                                                 "error":  null,
+                                                 "asOf":  "2026-11-05 10:14:21",
+                                                 "value":  {
+                                                               "code":  "hf_OIL",
+                                                               "name":  "布伦特原油",
+                                                               "price":  93.778,
+                                                               "asOf":  "2026-11-05 10:14:21",
+                                                               "label":  "布伦特原油"
+                                                           }
+                                             },
+                                   "wti":  {
+                                               "ok":  true,
+                                               "kind":  "quote",
+                                               "error":  null,
+                                               "asOf":  "2026-11-05 10:14:19",
+                                               "value":  {
+                                                             "code":  "hf_CL",
+                                                             "name":  "纽约原油",
+                                                             "price":  87.09,
+                                                             "asOf":  "2026-11-05 10:14:19",
+                                                             "label":  "纽约原油"
+                                                         }
+                                           },
+                                   "gold":  {
+                                                "ok":  true,
+                                                "kind":  "quote",
+                                                "error":  null,
+                                                "asOf":  "2026-11-05 10:14:21",
+                                                "value":  {
+                                                              "code":  "hf_GC",
+                                                              "name":  "纽约黄金",
+                                                              "price":  4140.828,
+                                                              "asOf":  "2026-11-05 10:14:21",
+                                                              "label":  "纽约黄金"
+                                                          }
+                                            },
+                                   "usdcny":  {
+                                                  "ok":  true,
+                                                  "kind":  "quote",
+                                                  "error":  null,
+                                                  "asOf":  "2026-11-05 10:13:00",
+                                                  "value":  {
+                                                                "code":  "USDCNY",
+                                                                "name":  "美元人民币",
+                                                                "price":  6.6705,
+                                                                "asOf":  "2026-11-05 10:13:00",
+                                                                "label":  "美元人民币"
+                                                            }
+                                              },
+                                   "cn10y":  {
+                                                 "ok":  false,
+                                                 "kind":  "yield",
+                                                 "error":  "无可用公开接口（腾讯 CN10Y 返回 none_match；东财 push2 本机不可达）",
+                                                 "asOf":  null,
+                                                 "value":  null
+                                             },
+                                   "us30y":  {
+                                                 "ok":  false,
+                                                 "kind":  "yield",
+                                                 "error":  "无可用公开接口（腾讯 US10Y/US30Y 返回 none_match）",
+                                                 "asOf":  null,
+                                                 "value":  null
+                                             }
+                               }
+               },
+    "automation":  {
+                       "generatedAt":  "2026-11-05 10:14:26",
+                       "source":  "harness schedule store + _audit/refresh-log.jsonl",
+                       "note":  "单向耦合：Harness 定时任务 → 本文件 → board.json → 页面。页面无法反向触发任务。",
+                       "schedules":  [
+                                         {
+                                             "id":  "schedule-687eacfd-760a-4e6d-b0a1-503c58afd292",
+                                             "title":  "数据实时性流水线",
+                                             "kind":  "every",
+                                             "everySeconds":  1800,
+                                             "scheduledAt":  "2026-11-05T02:43:56.989Z",
+                                             "nextRunAt":  "2026-11-05 10:43:56"
+                                         }
+                                     ],
+                       "lastRuns":  [
+                                        {
+                                            "at":  "2026-11-05T00:21:02+08:00",
+                                            "overall":  "OK",
+                                            "durationMs":  75728,
+                                            "dataAgeMin":  1.2
+                                        },
+                                        {
+                                            "at":  "2026-11-05T00:49:12+08:00",
+                                            "overall":  "OK",
+                                            "durationMs":  291236,
+                                            "dataAgeMin":  4.8
+                                        },
+                                        {
+                                            "at":  "2026-11-05T01:16:01+08:00",
+                                            "overall":  "OK",
+                                            "durationMs":  68595,
+                                            "dataAgeMin":  1.1
+                                        },
+                                        {
+                                            "at":  "2026-11-05T01:49:27+08:00",
+                                            "overall":  "OK",
+                                            "durationMs":  307304,
+                                            "dataAgeMin":  5.1
+                                        },
+                                        {
+                                            "at":  "2026-11-05T02:15:34+08:00",
+                                            "overall":  "OK",
+                                            "durationMs":  74572,
+                                            "dataAgeMin":  1.2
+                                        },
+                                        {
+                                            "at":  "2026-11-05T02:49:01+08:00",
+                                            "overall":  "OK",
+                                            "durationMs":  280636,
+                                            "dataAgeMin":  4.6
+                                        },
+                                        {
+                                            "at":  "2026-11-05T03:15:31+08:00",
+                                            "overall":  "OK",
+                                            "durationMs":  68016,
+                                            "dataAgeMin":  1.1
+                                        },
+                                        {
+                                            "at":  "2026-11-05T03:45:28+08:00",
+                                            "overall":  "OK",
+                                            "durationMs":  67680,
+                                            "dataAgeMin":  1.1
+                                        },
+                                        {
+                                            "at":  "2026-11-05T04:15:29+08:00",
+                                            "overall":  "OK",
+                                            "durationMs":  68940,
+                                            "dataAgeMin":  1.1
+                                        },
+                                        {
+                                            "at":  "2026-11-05T04:49:30+08:00",
+                                            "overall":  "OK",
+                                            "durationMs":  310568,
+                                            "dataAgeMin":  5.1
+                                        },
+                                        {
+                                            "at":  "2026-11-05T05:15:28+08:00",
+                                            "overall":  "OK",
+                                            "durationMs":  67700,
+                                            "dataAgeMin":  1.1
+                                        },
+                                        {
+                                            "at":  "2026-11-05T05:49:28+08:00",
+                                            "overall":  "OK",
+                                            "durationMs":  307185,
+                                            "dataAgeMin":  5.1
+                                        },
+                                        {
+                                            "at":  "2026-11-05T06:19:12+08:00",
+                                            "overall":  "WARN",
+                                            "durationMs":  291388,
+                                            "dataAgeMin":  4.8
+                                        },
+                                        {
+                                            "at":  "2026-11-05T06:45:28+08:00",
+                                            "overall":  "OK",
+                                            "durationMs":  67414,
+                                            "dataAgeMin":  1.1
+                                        },
+                                        {
+                                            "at":  "2026-11-05T07:19:20+08:00",
+                                            "overall":  "OK",
+                                            "durationMs":  296608,
+                                            "dataAgeMin":  4.9
+                                        },
+                                        {
+                                            "at":  "2026-11-05T07:45:29+08:00",
+                                            "overall":  "OK",
+                                            "durationMs":  68102,
+                                            "dataAgeMin":  1.1
+                                        },
+                                        {
+                                            "at":  "2026-11-05T08:15:31+08:00",
+                                            "overall":  "OK",
+                                            "durationMs":  68171,
+                                            "dataAgeMin":  1.1
+                                        },
+                                        {
+                                            "at":  "2026-11-05T08:45:24+08:00",
+                                            "overall":  "OK",
+                                            "durationMs":  67765,
+                                            "dataAgeMin":  1.1
+                                        },
+                                        {
+                                            "at":  "2026-11-05T09:18:21+08:00",
+                                            "overall":  "OK",
+                                            "durationMs":  252173,
+                                            "dataAgeMin":  4.2
+                                        },
+                                        {
+                                            "at":  "2026-11-05T09:54:18+08:00",
+                                            "overall":  "WARN",
+                                            "durationMs":  608670,
+                                            "dataAgeMin":  10.1
+                                        }
+                                    ],
+                       "stats":  {
+                                     "total":  20,
+                                     "ok":  18,
+                                     "warn":  2,
+                                     "fail":  0,
+                                     "consecutiveBad":  1,
+                                     "lastRunAt":  "2026-11-05T09:54:18+08:00",
+                                     "lastOverall":  "WARN"
+                                 },
+                       "health":  {
+                                      "status":  "warning",
+                                      "reason":  "最近一次 WARN（部分采集失败或线上未确认）"
+                                  },
+                       "degraded":  [
+
+                                    ]
+                   }
+}
