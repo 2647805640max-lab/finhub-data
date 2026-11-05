@@ -1,8 +1,8 @@
 {
- "generatedAt": "2026-11-05 15:42:03",
- "ts": 1793864523656,
+ "generatedAt": "2026-11-05 16:13:08",
+ "ts": 1793866388592,
  "overseas": {
-  "fetchedAt": 1793864483696,
+  "fetchedAt": 1793866298040,
   "quotes": {
    "items": [
     {
@@ -37,18 +37,18 @@
      "name": "恒生指数",
      "kind": "idx",
      "unit": "",
-     "price": 24779.06,
-     "chgPct": 3.59,
-     "asof": "2026-11-05 07:26"
+     "price": 24793.44,
+     "chgPct": 3.65,
+     "asof": "2026-11-05 07:56"
     },
     {
      "code": "^DJI",
      "name": "道琼斯",
      "kind": "idx",
      "unit": "",
-     "price": 53356.12,
+     "price": 53356.1,
      "chgPct": 3.03,
-     "asof": "2026-11-04 21:51"
+     "asof": "2026-11-04 21:00"
     },
     {
      "code": "^IXIC",
@@ -66,7 +66,7 @@
      "unit": "",
      "price": 7688.62,
      "chgPct": 1.58,
-     "asof": "2026-11-04 21:51"
+     "asof": "2026-11-04 21:00"
     },
     {
      "code": "^VIX",
@@ -82,36 +82,36 @@
      "name": "美元指数",
      "kind": "idx",
      "unit": "",
-     "price": 101.4,
-     "chgPct": -0.16,
-     "asof": "2026-11-05 07:31"
+     "price": 101.43,
+     "chgPct": -0.14,
+     "asof": "2026-11-05 08:01"
     },
     {
      "code": "GC=F",
      "name": "COMEX黄金",
      "kind": "fut",
      "unit": "usd",
-     "price": 4128.7,
-     "chgPct": 1.37,
-     "asof": "2026-11-05 07:31"
+     "price": 4133.2,
+     "chgPct": 1.48,
+     "asof": "2026-11-05 08:01"
     },
     {
      "code": "CL=F",
      "name": "WTI原油",
      "kind": "fut",
      "unit": "usd",
-     "price": 87.87,
-     "chgPct": -0.28,
-     "asof": "2026-11-05 07:31"
+     "price": 88.08,
+     "chgPct": -0.04,
+     "asof": "2026-11-05 08:01"
     },
     {
      "code": "HG=F",
      "name": "COMEX铜",
      "kind": "fut",
      "unit": "usd",
-     "price": 6.37,
-     "chgPct": -0.93,
-     "asof": "2026-11-05 07:31"
+     "price": 6.35,
+     "chgPct": -1.23,
+     "asof": "2026-11-05 08:01"
     },
     {
      "code": "^TNX",
@@ -133,7 +133,7 @@
     }
    ],
    "errors": null,
-   "fetchedAt": 1793864486050
+   "fetchedAt": 1793866300572
   },
   "fred": {
    "items": [
@@ -851,7 +851,7 @@
     "amount": 127022935.0
    }
   ],
-  "fetchedAt": 1793864482936
+  "fetchedAt": 1793866296518
  },
  "bonds": {
   "asof": "2026-11-04",
@@ -876,22 +876,22 @@
  },
  "commodity": {
   "OIL": {
-   "price": 95.103,
+   "price": 94.893,
    "prev": 94.62,
-   "chgPct": 0.51,
-   "time": "15:41:27"
+   "chgPct": 0.29,
+   "time": "16:11:37"
   },
   "CL": {
-   "price": 87.893,
+   "price": 87.838,
    "prev": 88.12,
-   "chgPct": -0.26,
-   "time": "15:41:26"
+   "chgPct": -0.32,
+   "time": "16:11:42"
   },
   "XAU": {
-   "price": 4120.69,
+   "price": 4126.84,
    "prev": 4060.01,
-   "chgPct": 1.49,
-   "time": "15:41:00"
+   "chgPct": 1.65,
+   "time": "16:11:00"
   }
  },
  "engine": {
@@ -1028,18 +1028,18 @@
     "code": "^HSI",
     "name": "恒生指数",
     "kind": "idx",
-    "price": 24779.06,
-    "chgPct": 3.59,
-    "asof": "2026-11-05 07:26",
+    "price": 24793.44,
+    "chgPct": 3.65,
+    "asof": "2026-11-05 07:56",
     "src": "yahoo"
    },
    {
     "code": "^DJI",
     "name": "道琼斯",
     "kind": "idx",
-    "price": 53356.12,
+    "price": 53356.1,
     "chgPct": 3.03,
-    "asof": "2026-11-04 21:51",
+    "asof": "2026-11-04 21:00",
     "src": "yahoo"
    },
    {
@@ -1066,7 +1066,7 @@
     "kind": "idx",
     "price": 7688.62,
     "chgPct": 1.58,
-    "asof": "2026-11-04 21:51",
+    "asof": "2026-11-04 21:00",
     "src": "yahoo"
    },
    {
@@ -1101,7 +1101,7 @@
    }
   ],
   "errors": null,
-  "fetchedAt": 1793864488364
+  "fetchedAt": 1793866302399
  },
  "causal": {
   "tier": "causal",
@@ -1189,7 +1189,7 @@
     },
     {
      "name": "恒生指数",
-     "chgPct": 3.59,
+     "chgPct": 3.65,
      "note": "情绪/联动，无稳定传导机制"
     },
     {
@@ -1239,20 +1239,6 @@
   },
   "rule": "因果因子（有机制+历史可复现）可改 action；相关因子只进评分，永不投票",
   "asof": "2026-11-04",
-  "builtAt": "2026-11-05 15:41:35",
-  "yields": {
-   "record": {
-    "value": 4.9,
-    "date": "2026-11-04",
-    "src": "东财 datacenter"
-   },
-   "check": {
-    "value": 4.95,
-    "date": "2026-11-03",
-    "src": "FRED"
-   },
-   "deltaBp": -5.0,
-   "verdict": "日期不同（记录源 2026-11-04 / 校验源 2026-11-03），差值 -5bp 属 T+1 差异，不视为矛盾"
-  }
+  "builtAt": "2026-11-05 16:11:49"
  }
 }
