@@ -1,6 +1,6 @@
 {
     "schema":  "board/v1",
-    "generatedAt":  "2026-11-05 21:44:17",
+    "generatedAt":  "2026-11-05 22:14:18",
     "generatedBy":  "[已移除]",
     "ips":  {
                 "asOf":  "2026-11-02 22:58:24",
@@ -1706,7 +1706,7 @@
                                     },
                                     {
                                         "item":  "决策账本",
-                                        "asOf":  "2026-11-05 21:44",
+                                        "asOf":  "2026-11-05 22:14",
                                         "ageDays":  0,
                                         "stale":  false
                                     }
@@ -1739,7 +1739,7 @@
                           "fullVersion":  "仅本地 contracts/board.json（不得直接推公开仓）"
                       },
     "_freshness":  {
-                       "checkedAt":  "2026-11-05 21:44:18",
+                       "checkedAt":  "2026-11-05 22:14:19",
                        "worst":  "ok",
                        "staleCount":  0,
                        "items":  [
@@ -1747,7 +1747,7 @@
                                          "id":  "holdings",
                                          "label":  "持仓快照",
                                          "asOf":  "2026-11-04 22:52",
-                                         "ageDays":  0.95,
+                                         "ageDays":  0.97,
                                          "maxAgeDays":  3,
                                          "stale":  false
                                      },
@@ -1755,7 +1755,7 @@
                                          "id":  "engine-policy",
                                          "label":  "引擎政策契约",
                                          "asOf":  "2026-11-02 22:58",
-                                         "ageDays":  2.95,
+                                         "ageDays":  2.97,
                                          "maxAgeDays":  14,
                                          "stale":  false
                                      },
@@ -1763,7 +1763,7 @@
                                          "id":  "factor-registry",
                                          "label":  "因子登记表",
                                          "asOf":  "2026-11-02 23:27",
-                                         "ageDays":  2.93,
+                                         "ageDays":  2.95,
                                          "maxAgeDays":  30,
                                          "stale":  false
                                      },
@@ -1771,7 +1771,7 @@
                                          "id":  "news-mapping",
                                          "label":  "新闻映射",
                                          "asOf":  "2026-11-02 23:26",
-                                         "ageDays":  2.93,
+                                         "ageDays":  2.95,
                                          "maxAgeDays":  30,
                                          "stale":  false
                                      },
@@ -1779,7 +1779,7 @@
                                          "id":  "chain-rules",
                                          "label":  "推演规则",
                                          "asOf":  "2026-11-02 23:23",
-                                         "ageDays":  2.93,
+                                         "ageDays":  2.95,
                                          "maxAgeDays":  30,
                                          "stale":  false
                                      },
@@ -1787,7 +1787,7 @@
                                          "id":  "decisions",
                                          "label":  "决策账本",
                                          "asOf":  "2026-11-02 23:43",
-                                         "ageDays":  2.92,
+                                         "ageDays":  2.94,
                                          "maxAgeDays":  7,
                                          "stale":  false
                                      },
@@ -1795,14 +1795,14 @@
                                          "id":  "rules",
                                          "label":  "风控规则",
                                          "asOf":  "2026-11-03 22:26",
-                                         "ageDays":  1.97,
+                                         "ageDays":  1.99,
                                          "maxAgeDays":  14,
                                          "stale":  false
                                      },
                                      {
                                          "id":  "market-live",
                                          "label":  "行情快照",
-                                         "asOf":  "2026-11-05 21:44",
+                                         "asOf":  "2026-11-05 22:14",
                                          "ageDays":  0,
                                          "maxAgeDays":  0.25,
                                          "stale":  false
@@ -1812,8 +1812,8 @@
                    },
     "nationalTeam":  {
                          "ok":  true,
-                         "lastSuccess":  "2026-11-05 21:33:51",
-                         "asOf":  "2026-11-05 21:33:51",
+                         "lastSuccess":  "2026-11-05 22:03:53",
+                         "asOf":  "2026-11-05 22:03:53",
                          "note":  "",
                          "items":  [
                                        {
@@ -2005,7 +2005,7 @@
                                      }
                      },
     "notifications":  {
-                          "generatedAt":  "2026-11-05 21:44:18",
+                          "generatedAt":  "2026-11-05 22:14:22",
                           "count":  2,
                           "byLevel":  {
                                           "urgent":  1,
@@ -2033,7 +2033,7 @@
                           "policy":  "通知内容脱敏：不含金额、不含持仓名称；明细需解锁查看"
                       },
     "market":  {
-                   "generatedAt":  "2026-11-05 21:44:15",
+                   "generatedAt":  "2026-11-05 22:14:16",
                    "source":  "qt.gtimg.cn（指数）+ hq.sinajs.cn（外盘/汇率）",
                    "note":  "cn10y / us30y 无可用公开接口，已如实标 missing；下游不得把缺失当 0 或沿用旧值。",
                    "okCount":  5,
@@ -2086,12 +2086,12 @@
                                                  "ok":  true,
                                                  "kind":  "quote",
                                                  "error":  null,
-                                                 "asOf":  "2026-11-05 21:44:13",
+                                                 "asOf":  "2026-11-05 22:14:14",
                                                  "value":  {
                                                                "code":  "hf_OIL",
                                                                "name":  "布伦特原油",
-                                                               "price":  96.865,
-                                                               "asOf":  "2026-11-05 21:44:13",
+                                                               "price":  97.502,
+                                                               "asOf":  "2026-11-05 22:14:14",
                                                                "label":  "布伦特原油"
                                                            }
                                              },
@@ -2099,12 +2099,12 @@
                                                "ok":  true,
                                                "kind":  "quote",
                                                "error":  null,
-                                               "asOf":  "2026-11-05 21:44:14",
+                                               "asOf":  "2026-11-05 22:14:15",
                                                "value":  {
                                                              "code":  "hf_CL",
                                                              "name":  "纽约原油",
-                                                             "price":  89.494,
-                                                             "asOf":  "2026-11-05 21:44:14",
+                                                             "price":  89.853,
+                                                             "asOf":  "2026-11-05 22:14:15",
                                                              "label":  "纽约原油"
                                                          }
                                            },
@@ -2112,12 +2112,12 @@
                                                 "ok":  true,
                                                 "kind":  "quote",
                                                 "error":  null,
-                                                "asOf":  "2026-11-05 21:44:15",
+                                                "asOf":  "2026-11-05 22:14:08",
                                                 "value":  {
                                                               "code":  "hf_GC",
                                                               "name":  "纽约黄金",
-                                                              "price":  4132.432,
-                                                              "asOf":  "2026-11-05 21:44:15",
+                                                              "price":  4135.46,
+                                                              "asOf":  "2026-11-05 22:14:08",
                                                               "label":  "纽约黄金"
                                                           }
                                             },
@@ -2125,12 +2125,12 @@
                                                   "ok":  true,
                                                   "kind":  "quote",
                                                   "error":  null,
-                                                  "asOf":  "2026-11-05 21:43:00",
+                                                  "asOf":  "2026-11-05 22:13:00",
                                                   "value":  {
                                                                 "code":  "USDCNY",
                                                                 "name":  "美元人民币",
                                                                 "price":  6.668,
-                                                                "asOf":  "2026-11-05 21:43:00",
+                                                                "asOf":  "2026-11-05 22:13:00",
                                                                 "label":  "美元人民币"
                                                             }
                                               },
@@ -2151,7 +2151,7 @@
                                }
                },
     "automation":  {
-                       "generatedAt":  "2026-11-05 21:44:19",
+                       "generatedAt":  "2026-11-05 22:14:23",
                        "source":  "harness schedule store + _audit/refresh-log.jsonl",
                        "note":  "单向耦合：Harness 定时任务 → 本文件 → board.json → 页面。页面无法反向触发任务。",
                        "schedules":  [
@@ -2160,17 +2160,11 @@
                                              "title":  "数据实时性流水线",
                                              "kind":  "every",
                                              "everySeconds":  1800,
-                                             "scheduledAt":  "2026-11-05T14:13:56.989Z",
-                                             "nextRunAt":  "2026-11-05 22:13:56"
+                                             "scheduledAt":  "2026-11-05T14:43:56.989Z",
+                                             "nextRunAt":  "2026-11-05 22:43:56"
                                          }
                                      ],
                        "lastRuns":  [
-                                        {
-                                            "at":  "2026-11-05T13:18:03+08:00",
-                                            "overall":  "OK",
-                                            "durationMs":  234754,
-                                            "dataAgeMin":  3.9
-                                        },
                                         {
                                             "at":  "2026-11-05T13:47:57+08:00",
                                             "overall":  "OK",
@@ -2284,6 +2278,12 @@
                                             "overall":  "OK",
                                             "durationMs":  88890,
                                             "dataAgeMin":  1.4
+                                        },
+                                        {
+                                            "at":  "2026-11-05T21:44:42+08:00",
+                                            "overall":  "OK",
+                                            "durationMs":  28436,
+                                            "dataAgeMin":  0.4
                                         }
                                     ],
                        "stats":  {
@@ -2292,7 +2292,7 @@
                                      "warn":  3,
                                      "fail":  0,
                                      "consecutiveBad":  0,
-                                     "lastRunAt":  "2026-11-05T21:15:45+08:00",
+                                     "lastRunAt":  "2026-11-05T21:44:42+08:00",
                                      "lastOverall":  "OK"
                                  },
                        "health":  {
