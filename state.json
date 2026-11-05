@@ -1,8 +1,8 @@
 {
- "generatedAt": "2026-11-06 01:05:14",
- "ts": 1793898314348,
+ "generatedAt": "2026-11-06 01:36:28",
+ "ts": 1793900188954,
  "overseas": {
-  "fetchedAt": 1793897151525,
+  "fetchedAt": 1793898963910,
   "quotes": {
    "items": [
     {
@@ -19,9 +19,9 @@
      "name": "费城半导体",
      "kind": "idx",
      "unit": "",
-     "price": 9326.37,
-     "chgPct": -9.18,
-     "asof": "2026-11-05 16:45"
+     "price": 9271.13,
+     "chgPct": -9.71,
+     "asof": "2026-11-05 17:15"
     },
     {
      "code": "^N225",
@@ -46,81 +46,81 @@
      "name": "道琼斯",
      "kind": "idx",
      "unit": "",
-     "price": 52084.85,
-     "chgPct": -2.38,
-     "asof": "2026-11-05 16:45"
+     "price": 51966.3,
+     "chgPct": -2.6,
+     "asof": "2026-11-05 17:16"
     },
     {
      "code": "^IXIC",
      "name": "纳斯达克",
      "kind": "idx",
      "unit": "",
-     "price": 24630.83,
-     "chgPct": -4.3,
-     "asof": "2026-11-05 16:45"
+     "price": 24567.42,
+     "chgPct": -4.54,
+     "asof": "2026-11-05 17:16"
     },
     {
      "code": "^GSPC",
      "name": "标普500",
      "kind": "idx",
      "unit": "",
-     "price": 7444.95,
-     "chgPct": -3.17,
-     "asof": "2026-11-05 16:45"
+     "price": 7426.57,
+     "chgPct": -3.41,
+     "asof": "2026-11-05 17:16"
     },
     {
      "code": "^VIX",
      "name": "VIX恐慌指数",
      "kind": "idx",
      "unit": "",
-     "price": 22.49,
-     "chgPct": 35.53,
-     "asof": "2026-11-05 16:30"
+     "price": 24.33,
+     "chgPct": 46.87,
+     "asof": "2026-11-05 17:01"
     },
     {
      "code": "DX-Y.NYB",
      "name": "美元指数",
      "kind": "idx",
      "unit": "",
-     "price": 101.52,
-     "chgPct": -0.05,
-     "asof": "2026-11-05 16:35"
+     "price": 101.43,
+     "chgPct": -0.13,
+     "asof": "2026-11-05 17:06"
     },
     {
      "code": "GC=F",
      "name": "COMEX黄金",
      "kind": "fut",
      "unit": "usd",
-     "price": 4124.8,
-     "chgPct": 1.27,
-     "asof": "2026-11-05 16:35"
+     "price": 4128.5,
+     "chgPct": 1.36,
+     "asof": "2026-11-05 17:06"
     },
     {
      "code": "CL=F",
      "name": "WTI原油",
      "kind": "fut",
      "unit": "usd",
-     "price": 90.0,
-     "chgPct": 2.13,
-     "asof": "2026-11-05 16:35"
+     "price": 90.16,
+     "chgPct": 2.31,
+     "asof": "2026-11-05 17:06"
     },
     {
      "code": "HG=F",
      "name": "COMEX铜",
      "kind": "fut",
      "unit": "usd",
-     "price": 6.32,
-     "chgPct": -1.7,
-     "asof": "2026-11-05 16:35"
+     "price": 6.29,
+     "chgPct": -2.17,
+     "asof": "2026-11-05 17:06"
     },
     {
      "code": "^TNX",
      "name": "美10Y收益率",
      "kind": "yld",
      "unit": "%",
-     "price": 4.85,
-     "chgPct": -0.96,
-     "asof": "2026-11-05 16:30"
+     "price": 4.83,
+     "chgPct": -1.21,
+     "asof": "2026-11-05 17:00"
     },
     {
      "code": "^TYX",
@@ -128,12 +128,12 @@
      "kind": "yld",
      "unit": "%",
      "price": 5.25,
-     "chgPct": -0.51,
-     "asof": "2026-11-05 16:30"
+     "chgPct": -0.68,
+     "asof": "2026-11-05 17:01"
     }
    ],
    "errors": null,
-   "fetchedAt": 1793897153039
+   "fetchedAt": 1793898965330
   },
   "fred": {
    "items": [
@@ -837,7 +837,7 @@
     "amount": 127022935.0
    }
   ],
-  "fetchedAt": 1793897150656
+  "fetchedAt": 1793898963113
  },
  "bonds": {
   "asof": "2026-11-05",
@@ -862,22 +862,22 @@
  },
  "commodity": {
   "OIL": {
-   "price": 96.878,
+   "price": 97.195,
    "prev": 94.62,
-   "chgPct": 2.39,
-   "time": "00:45:49"
+   "chgPct": 2.72,
+   "time": "01:16:04"
   },
   "CL": {
-   "price": 90.162,
+   "price": 90.567,
    "prev": 88.12,
-   "chgPct": 2.32,
-   "time": "00:45:54"
+   "chgPct": 2.78,
+   "time": "01:16:08"
   },
   "XAU": {
-   "price": 4115.34,
+   "price": 4119.34,
    "prev": 4060.01,
-   "chgPct": 1.36,
-   "time": "00:45:00"
+   "chgPct": 1.46,
+   "time": "01:15:00"
   }
  },
  "engine": {
@@ -996,9 +996,9 @@
     "code": "^SOX",
     "name": "费城半导体",
     "kind": "idx",
-    "price": 9326.37,
-    "chgPct": -9.18,
-    "asof": "2026-11-05 16:45",
+    "price": 9271.13,
+    "chgPct": -9.71,
+    "asof": "2026-11-05 17:15",
     "src": "yahoo"
    },
    {
@@ -1023,9 +1023,9 @@
     "code": "^DJI",
     "name": "道琼斯",
     "kind": "idx",
-    "price": 52084.85,
-    "chgPct": -2.38,
-    "asof": "2026-11-05 16:45",
+    "price": 51966.3,
+    "chgPct": -2.6,
+    "asof": "2026-11-05 17:16",
     "src": "yahoo"
    },
    {
@@ -1041,18 +1041,18 @@
     "code": "^IXIC",
     "name": "纳斯达克",
     "kind": "idx",
-    "price": 24630.83,
-    "chgPct": -4.3,
-    "asof": "2026-11-05 16:45",
+    "price": 24567.42,
+    "chgPct": -4.54,
+    "asof": "2026-11-05 17:16",
     "src": "yahoo"
    },
    {
     "code": "^GSPC",
     "name": "标普500",
     "kind": "idx",
-    "price": 7444.95,
-    "chgPct": -3.17,
-    "asof": "2026-11-05 16:45",
+    "price": 7426.57,
+    "chgPct": -3.41,
+    "asof": "2026-11-05 17:16",
     "src": "yahoo"
    },
    {
@@ -1087,7 +1087,7 @@
    }
   ],
   "errors": null,
-  "fetchedAt": 1793897154907
+  "fetchedAt": 1793898968458
  },
  "causal": {
   "tier": "causal",
@@ -1161,11 +1161,11 @@
    }
   ],
   "correlation": {
-   "score": -17.5,
+   "score": -18.7,
    "items": [
     {
      "name": "费城半导体",
-     "chgPct": -9.18,
+     "chgPct": -9.71,
      "note": "情绪/联动，无稳定传导机制"
     },
     {
@@ -1180,7 +1180,7 @@
     },
     {
      "name": "道琼斯",
-     "chgPct": -2.38,
+     "chgPct": -2.6,
      "note": "情绪/联动，无稳定传导机制"
     },
     {
@@ -1190,12 +1190,12 @@
     },
     {
      "name": "纳斯达克",
-     "chgPct": -4.3,
+     "chgPct": -4.54,
      "note": "情绪/联动，无稳定传导机制"
     },
     {
      "name": "标普500",
-     "chgPct": -3.17,
+     "chgPct": -3.41,
      "note": "情绪/联动，无稳定传导机制"
     },
     {
@@ -1225,46 +1225,12 @@
   },
   "rule": "因果因子（有机制+历史可复现）可改 action；相关因子只进评分，永不投票",
   "asof": "2026-11-04",
-  "builtAt": "2026-11-06 00:46:02",
-  "yields": {
-   "record": {
-    "value": 4.9,
-    "date": "2026-11-04",
-    "src": "东财 datacenter"
-   },
-   "check": {
-    "value": 4.95,
-    "date": "2026-11-03",
-    "src": "FRED"
-   },
-   "deltaBp": -5.0,
-   "verdict": "日期不同（记录源 2026-11-04 / 校验源 2026-11-03），差值 -5bp 属 T+1 差异，不视为矛盾"
-  }
+  "builtAt": "2026-11-06 01:16:15"
  },
  "runtime": {
   "source": "local",
   "degraded": false,
   "reason": null,
-  "observedAt": "2026-11-06 01:05:42"
- },
- "discipline": {
-  "status": "COMPLIANT",
-  "strictRiskPct": 10.71,
-  "strictRiskCapPct": 15,
-  "targetStrictRiskPct": 15,
-  "goldPct": 27.81,
-  "goldAlertPct": 30,
-  "goldMaxPct": 35,
-  "thesisGate": "invalid",
-  "breaches": []
- },
- "externalSignal": {
-  "marketAction": "WAIT",
-  "addRiskAllowed": false,
-  "marketRegime": "external-caution",
-  "confidence": "observed"
- },
- "combined": "HOLD_NO_NEW_RISK",
- "disciplineAsOf": "2026-11-05",
- "disciplineGeneratedAt": "2026-11-05T17:06:12.406Z"
+  "observedAt": "2026-11-06 01:36:57"
+ }
 }
