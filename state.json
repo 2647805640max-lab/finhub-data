@@ -603,7 +603,7 @@
     "tier": "quote",
     "source": "新浪 hf_（非判定口径）",
     "asof": "2026-11-05 23:08",
-    "ageHours": 0.0,
+    "ageHours": 0,
     "valid": true,
     "limitHours": 96,
     "invalidIf": "超过 96 小时未更新",
@@ -616,7 +616,7 @@
     "tier": "daily",
     "source": "invest-engine core_engine_v1_1（收盘序列）",
     "asof": "2026-11-05 23:08",
-    "ageHours": 0.0,
+    "ageHours": 0,
     "valid": true,
     "limitHours": 96,
     "invalidIf": "超过 40 小时未重跑（引擎按日线，盘中不重跑属正常）",
@@ -707,7 +707,7 @@
     "tier": "quote",
     "source": "finwatch alerts.json",
     "asof": "2026-11-05 23:08",
-    "ageHours": 0.0,
+    "ageHours": 0,
     "valid": true,
     "limitHours": 168,
     "invalidIf": "超过 7 天无数据",
@@ -777,7 +777,7 @@
     "price": 8.42,
     "prev": 8.229,
     "chgPct": 2.32,
-    "amount": 7738467734.0
+    "amount": 7738467734
    },
    {
     "code": "sh512400",
@@ -785,7 +785,7 @@
     "price": 1.496,
     "prev": 1.469,
     "chgPct": 1.84,
-    "amount": 899474361.0
+    "amount": 899474361
    },
    {
     "code": "sh512480",
@@ -793,7 +793,7 @@
     "price": 0.799,
     "prev": 0.772,
     "chgPct": 3.5,
-    "amount": 1955887791.0
+    "amount": 1955887791
    },
    {
     "code": "sh515790",
@@ -801,7 +801,7 @@
     "price": 0.757,
     "prev": 0.726,
     "chgPct": 4.27,
-    "amount": 1117932868.0
+    "amount": 1117932868
    },
    {
     "code": "sh516010",
@@ -809,7 +809,7 @@
     "price": 1.082,
     "prev": 1.06,
     "chgPct": 2.08,
-    "amount": 127022935.0
+    "amount": 127022935
    }
   ],
   "fetchedAt": 1793889895842
@@ -896,8 +896,8 @@
      "W": "low",
      "M": "high"
     },
-    "opp": 10.0,
-    "risk": 40.0,
+    "opp": 10,
+    "risk": 40,
     "dd60": -7.53,
     "posInRangePct": 14.1
    },
@@ -910,8 +910,8 @@
      "W": "low",
      "M": "high"
     },
-    "opp": 15.0,
-    "risk": 40.0,
+    "opp": 15,
+    "risk": 40,
     "dd60": -13.24,
     "posInRangePct": 11.9
    },
@@ -924,8 +924,8 @@
      "W": "low",
      "M": "high"
     },
-    "opp": 15.0,
-    "risk": 75.0,
+    "opp": 15,
+    "risk": 75,
     "dd60": -21.99,
     "posInRangePct": 11.5
    },
@@ -938,8 +938,8 @@
      "W": "low",
      "M": "high"
     },
-    "opp": 15.0,
-    "risk": 75.0,
+    "opp": 15,
+    "risk": 75,
     "dd60": -31.37,
     "posInRangePct": 8.8
    }
@@ -1034,8 +1034,8 @@
     "code": "nf_LC0",
     "name": "碳酸锂主连",
     "kind": "fut",
-    "price": 91580.0,
-    "prev": 88360.0,
+    "price": 91580,
+    "prev": 88360,
     "chgPct": 3.64,
     "asof": "2026-11-05",
     "src": "sina"
@@ -1044,8 +1044,8 @@
     "code": "nf_FG0",
     "name": "玻璃主连",
     "kind": "fut",
-    "price": 895.0,
-    "prev": 886.0,
+    "price": 895,
+    "prev": 886,
     "chgPct": 1.02,
     "asof": "2026-11-05",
     "src": "sina"
@@ -1054,8 +1054,8 @@
     "code": "nf_M0",
     "name": "豆粕主连",
     "kind": "fut",
-    "price": 3123.0,
-    "prev": 3116.0,
+    "price": 3123,
+    "prev": 3116,
     "chgPct": 0.22,
     "asof": "2026-11-05",
     "src": "sina"
@@ -1193,7 +1193,7 @@
    "note": "等权平均涨跌幅×10，压到±100；只用于描述风险偏好，不参与 ADD/TRIM/EXIT 判定"
   },
   "context": {
-   "us10Chg": -37.0,
+   "us10Chg": -37,
    "cn10Chg": -8.3,
    "goldMom20": -0.64,
    "growthMom20": -15.47
@@ -1212,8 +1212,28 @@
     "date": "2026-11-03",
     "src": "FRED"
    },
-   "deltaBp": -5.0,
+   "deltaBp": -5,
    "verdict": "日期不同（记录源 2026-11-04 / 校验源 2026-11-03），差值 -5bp 属 T+1 差异，不视为矛盾"
   }
- }
+ },
+ "discipline": {
+  "status": "COMPLIANT",
+  "strictRiskPct": 10.71,
+  "strictRiskCapPct": 15,
+  "targetStrictRiskPct": 15,
+  "goldPct": 27.81,
+  "goldAlertPct": 30,
+  "goldMaxPct": 35,
+  "thesisGate": "invalid",
+  "breaches": []
+ },
+ "externalSignal": {
+  "marketAction": "WAIT",
+  "addRiskAllowed": false,
+  "marketRegime": "external-caution",
+  "confidence": "observed"
+ },
+ "combined": "HOLD_NO_NEW_RISK",
+ "disciplineAsOf": "2026-11-05",
+ "disciplineGeneratedAt": "2026-11-05T15:30:04.040Z"
 }
