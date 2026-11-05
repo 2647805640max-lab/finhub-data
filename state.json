@@ -1,8 +1,8 @@
 {
- "generatedAt": "2026-11-05 16:44:08",
- "ts": 1793868248909,
+ "generatedAt": "2026-11-05 17:15:11",
+ "ts": 1793870111874,
  "overseas": {
-  "fetchedAt": 1793868112251,
+  "fetchedAt": 1793869943935,
   "quotes": {
    "items": [
     {
@@ -66,43 +66,43 @@
      "unit": "",
      "price": 7688.62,
      "chgPct": 1.58,
-     "asof": "2026-11-04 21:00"
+     "asof": "2026-11-04 21:51"
     },
     {
      "code": "^VIX",
      "name": "VIX恐慌指数",
      "kind": "idx",
      "unit": "",
-     "price": 17.1,
-     "chgPct": 2.95,
-     "asof": "2026-11-05 08:26"
+     "price": 17.17,
+     "chgPct": 3.37,
+     "asof": "2026-11-05 08:57"
     },
     {
      "code": "DX-Y.NYB",
      "name": "美元指数",
      "kind": "idx",
      "unit": "",
-     "price": 101.43,
-     "chgPct": -0.13,
-     "asof": "2026-11-05 08:31"
+     "price": 101.39,
+     "chgPct": -0.17,
+     "asof": "2026-11-05 09:02"
     },
     {
      "code": "GC=F",
      "name": "COMEX黄金",
      "kind": "fut",
      "unit": "usd",
-     "price": 4131.9,
-     "chgPct": 1.45,
-     "asof": "2026-11-05 08:31"
+     "price": 4135.5,
+     "chgPct": 1.53,
+     "asof": "2026-11-05 09:02"
     },
     {
      "code": "CL=F",
      "name": "WTI原油",
      "kind": "fut",
      "unit": "usd",
-     "price": 88.06,
-     "chgPct": -0.07,
-     "asof": "2026-11-05 08:31"
+     "price": 88.28,
+     "chgPct": 0.18,
+     "asof": "2026-11-05 09:02"
     },
     {
      "code": "HG=F",
@@ -110,8 +110,8 @@
      "kind": "fut",
      "unit": "usd",
      "price": 6.38,
-     "chgPct": -0.76,
-     "asof": "2026-11-05 08:31"
+     "chgPct": -0.72,
+     "asof": "2026-11-05 09:02"
     },
     {
      "code": "^TNX",
@@ -133,7 +133,7 @@
     }
    ],
    "errors": null,
-   "fetchedAt": 1793868114584
+   "fetchedAt": 1793869946106
   },
   "fred": {
    "items": [
@@ -837,7 +837,7 @@
     "amount": 127022935.0
    }
   ],
-  "fetchedAt": 1793868111332
+  "fetchedAt": 1793869943289
  },
  "bonds": {
   "asof": "2026-11-04",
@@ -862,22 +862,22 @@
  },
  "commodity": {
   "OIL": {
-   "price": 95.315,
+   "price": 95.318,
    "prev": 94.62,
-   "chgPct": 0.73,
-   "time": "16:42:14"
+   "chgPct": 0.74,
+   "time": "17:12:26"
   },
   "CL": {
-   "price": 88.218,
+   "price": 88.193,
    "prev": 88.12,
-   "chgPct": 0.11,
-   "time": "16:42:13"
+   "chgPct": 0.08,
+   "time": "17:12:28"
   },
   "XAU": {
-   "price": 4124.81,
+   "price": 4132.69,
    "prev": 4060.01,
-   "chgPct": 1.6,
-   "time": "16:42:00"
+   "chgPct": 1.79,
+   "time": "17:12:00"
   }
  },
  "engine": {
@@ -1052,7 +1052,7 @@
     "kind": "idx",
     "price": 7688.62,
     "chgPct": 1.58,
-    "asof": "2026-11-04 21:00",
+    "asof": "2026-11-04 21:51",
     "src": "yahoo"
    },
    {
@@ -1087,7 +1087,7 @@
    }
   ],
   "errors": null,
-  "fetchedAt": 1793868129182
+  "fetchedAt": 1793869948181
  },
  "causal": {
   "tier": "causal",
@@ -1225,20 +1225,6 @@
   },
   "rule": "因果因子（有机制+历史可复现）可改 action；相关因子只进评分，永不投票",
   "asof": "2026-11-04",
-  "builtAt": "2026-11-05 16:42:22",
-  "yields": {
-   "record": {
-    "value": 4.9,
-    "date": "2026-11-04",
-    "src": "东财 datacenter"
-   },
-   "check": {
-    "value": 4.95,
-    "date": "2026-11-03",
-    "src": "FRED"
-   },
-   "deltaBp": -5.0,
-   "verdict": "日期不同（记录源 2026-11-04 / 校验源 2026-11-03），差值 -5bp 属 T+1 差异，不视为矛盾"
-  }
+  "builtAt": "2026-11-05 17:12:35"
  }
 }
