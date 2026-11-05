@@ -1,6 +1,6 @@
 {
- "generatedAt": "2026-11-05 12:29:21",
- "ts": 1793852961326,
+ "generatedAt": "2026-11-05 12:31:32",
+ "ts": 1793853092774,
  "source": "vps",
  "tunnelUrl": "https://daughter-rates-integral-ownership.trycloudflare.com",
  "market": {
@@ -76,7 +76,7 @@
     "amount": 82599491.0
    }
   ],
-  "fetchedAt": 1793852962264
+  "fetchedAt": 1793853093646
  },
  "bonds": {
   "asof": "2026-11-04",
@@ -100,7 +100,7 @@
   }
  },
  "overseas": {
-  "fetchedAt": 1793852963213,
+  "fetchedAt": 1793853094677,
   "quotes": {
    "items": [
     {
@@ -108,9 +108,9 @@
      "name": "韩国KOSPI",
      "kind": "idx",
      "unit": "",
-     "price": 5438.81,
-     "chgPct": -4.31,
-     "asof": "2026-11-05 04:09"
+     "price": 5433.44,
+     "chgPct": -4.41,
+     "asof": "2026-11-05 04:11"
     },
     {
      "code": "^SOX",
@@ -126,9 +126,9 @@
      "name": "日经225",
      "kind": "idx",
      "unit": "",
-     "price": 61406.27,
-     "chgPct": -1.26,
-     "asof": "2026-11-05 04:14"
+     "price": 61370.89,
+     "chgPct": -1.32,
+     "asof": "2026-11-05 04:16"
     },
     {
      "code": "^HSI",
@@ -180,27 +180,27 @@
      "name": "美元指数",
      "kind": "idx",
      "unit": "",
-     "price": 101.22,
-     "chgPct": -0.34,
-     "asof": "2026-11-05 04:19"
+     "price": 101.21,
+     "chgPct": -0.35,
+     "asof": "2026-11-05 04:21"
     },
     {
      "code": "GC=F",
      "name": "COMEX黄金",
      "kind": "fut",
      "unit": "usd",
-     "price": 4147.2,
-     "chgPct": 1.82,
-     "asof": "2026-11-05 04:19"
+     "price": 4146.4,
+     "chgPct": 1.8,
+     "asof": "2026-11-05 04:21"
     },
     {
      "code": "CL=F",
      "name": "WTI原油",
      "kind": "fut",
      "unit": "usd",
-     "price": 86.84,
-     "chgPct": -1.45,
-     "asof": "2026-11-05 04:19"
+     "price": 86.96,
+     "chgPct": -1.32,
+     "asof": "2026-11-05 04:21"
     },
     {
      "code": "HG=F",
@@ -208,8 +208,8 @@
      "kind": "fut",
      "unit": "usd",
      "price": 6.41,
-     "chgPct": -0.26,
-     "asof": "2026-11-05 04:19"
+     "chgPct": -0.3,
+     "asof": "2026-11-05 04:21"
     },
     {
      "code": "^TNX",
@@ -231,7 +231,7 @@
     }
    ],
    "errors": null,
-   "fetchedAt": 1793852964515
+   "fetchedAt": 1793853096034
   },
   "fred": {
    "items": [
@@ -599,9 +599,9 @@
     "code": "^N225",
     "name": "日经225",
     "kind": "idx",
-    "price": 61406.27,
-    "chgPct": -1.26,
-    "asof": "2026-11-05 04:14",
+    "price": 61370.89,
+    "chgPct": -1.32,
+    "asof": "2026-11-05 04:16",
     "src": "yahoo"
    },
    {
@@ -626,9 +626,9 @@
     "code": "^KS11",
     "name": "韩国KOSPI",
     "kind": "idx",
-    "price": 5438.81,
-    "chgPct": -4.31,
-    "asof": "2026-11-05 04:09",
+    "price": 5433.44,
+    "chgPct": -4.41,
+    "asof": "2026-11-05 04:11",
     "src": "yahoo"
    },
    {
@@ -681,26 +681,26 @@
    }
   ],
   "errors": null,
-  "fetchedAt": 1793852965900
+  "fetchedAt": 1793853097336
  },
  "commodity": {
   "OIL": {
-   "price": 93.78,
+   "price": 93.826,
    "prev": 94.62,
-   "chgPct": -0.89,
-   "time": "12:29:17"
+   "chgPct": -0.84,
+   "time": "12:31:34"
   },
   "CL": {
-   "price": 86.871,
+   "price": 86.908,
    "prev": 88.12,
-   "chgPct": -1.42,
-   "time": "12:29:24"
+   "chgPct": -1.38,
+   "time": "12:31:32"
   },
   "XAU": {
-   "price": 4135.08,
+   "price": 4133.23,
    "prev": 4060.01,
-   "chgPct": 1.85,
-   "time": "12:29:00"
+   "chgPct": 1.8,
+   "time": "12:31:00"
   }
  },
  "engine": {
@@ -885,7 +885,7 @@
    }
   ],
   "correlation": {
-   "score": 5.7,
+   "score": 5.5,
    "items": [
     {
      "name": "费城半导体",
@@ -894,7 +894,7 @@
     },
     {
      "name": "日经225",
-     "chgPct": -1.26,
+     "chgPct": -1.32,
      "note": "情绪/联动，无稳定传导机制"
     },
     {
@@ -909,7 +909,7 @@
     },
     {
      "name": "韩国KOSPI",
-     "chgPct": -4.31,
+     "chgPct": -4.41,
      "note": "情绪/联动，无稳定传导机制"
     },
     {
@@ -949,7 +949,7 @@
   },
   "rule": "因果因子（有机制+历史可复现）可改 action；相关因子只进评分，永不投票",
   "asof": "2026-11-04",
-  "builtAt": "2026-11-05 12:29:32"
+  "builtAt": "2026-11-05 12:31:44"
  },
  "freshness": {
   "builtAt": "2026-11-05 12:25:45",
