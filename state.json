@@ -487,16 +487,16 @@
   "errors": null
  },
  "burst": {
-  "builtAt": "2026-11-05 12:01:32",
+  "builtAt": "2026-11-05 12:13:55",
   "poll": {
    "ok": true,
    "cached": false,
-   "newItems": 2,
+   "newItems": 5,
    "error": null
   },
   "cluster": {
    "windowHours": 6,
-   "recent": 301,
+   "recent": 302,
    "clusters": [
     {
      "keyword": "亿美元",
@@ -535,6 +535,15 @@
      ]
     },
     {
+     "keyword": "恒生科技指数",
+     "n": 5,
+     "sample": [
+      "恒生科技指数上涨3%",
+      "港股开盘：恒生科技指数涨1.43% 恒生指数涨1.66%",
+      "恒生科技指数涨幅扩大至4%"
+     ]
+    },
+    {
      "keyword": "连板",
      "n": 5,
      "sample": [
@@ -559,15 +568,6 @@
       "科创50指数涨超3%",
       "创业板指涨逾3% 科创50涨近5%",
       "不到1小时 科创50ETF华夏（588000）成交额突破100亿"
-     ]
-    },
-    {
-     "keyword": "恒生科技指数",
-     "n": 4,
-     "sample": [
-      "恒生科技指数上涨3%",
-      "港股开盘：恒生科技指数涨1.43% 恒生指数涨1.66%",
-      "恒生科技指数涨幅扩大至4%"
      ]
     }
    ]
@@ -607,7 +607,7 @@
   "rule": "单条快讯永不触发推演；假设卡只是待验证项，不改 action；缺口优先于结论"
  },
  "freshness": {
-  "builtAt": "2026-11-05 12:11:05",
+  "builtAt": "2026-11-05 12:13:55",
   "inSession": true,
   "items": [
    {
@@ -615,7 +615,7 @@
     "name": "A股四大指数",
     "tier": "quote",
     "source": "新浪实时（本机）/ VPS",
-    "asof": "2026-11-05 12:09",
+    "asof": "2026-11-05 12:11",
     "ageHours": 0.0,
     "valid": true,
     "limitHours": 0.5,
@@ -641,7 +641,7 @@
     "name": "商品盘中观测",
     "tier": "quote",
     "source": "新浪 hf_（非判定口径）",
-    "asof": "2026-11-05 12:09",
+    "asof": "2026-11-05 12:13",
     "ageHours": 0.0,
     "valid": true,
     "limitHours": 40,
@@ -654,7 +654,7 @@
     "name": "投资引擎裁决",
     "tier": "daily",
     "source": "invest-engine core_engine_v1_1（收盘序列）",
-    "asof": "2026-11-05 12:09",
+    "asof": "2026-11-05 12:13",
     "ageHours": 0.0,
     "valid": true,
     "limitHours": 40,
@@ -667,7 +667,7 @@
     "name": "扩展指数/商品主力",
     "tier": "quote",
     "source": "VPS 海外层 / 新浪",
-    "asof": "2026-11-05 12:09",
+    "asof": "2026-11-05 12:11",
     "ageHours": 0.0,
     "valid": true,
     "limitHours": 40,
@@ -680,7 +680,7 @@
     "name": "海外宏观（VIX/美元/金/美债）",
     "tier": "quote",
     "source": "Yahoo + FRED（VPS 直连）",
-    "asof": "2026-11-05 12:09",
+    "asof": "2026-11-05 12:11",
     "ageHours": 0.0,
     "valid": true,
     "limitHours": 40,
@@ -693,7 +693,7 @@
     "name": "因子推演（因果层 C1-C4）",
     "tier": "daily",
     "source": "macro_causal.build（东财+腾讯日线）",
-    "asof": "2026-11-05 12:09",
+    "asof": "2026-11-05 12:11",
     "ageHours": 0.0,
     "valid": true,
     "limitHours": 40,
@@ -745,7 +745,7 @@
     "name": "告警",
     "tier": "quote",
     "source": "finwatch alerts.json",
-    "asof": "2026-11-05 12:09",
+    "asof": "2026-11-05 12:13",
     "ageHours": 0.0,
     "valid": true,
     "limitHours": 168,
@@ -1239,6 +1239,20 @@
   },
   "rule": "因果因子（有机制+历史可复现）可改 action；相关因子只进评分，永不投票",
   "asof": "2026-11-04",
-  "builtAt": "2026-11-05 12:11:56"
+  "builtAt": "2026-11-05 12:11:56",
+  "yields": {
+   "record": {
+    "value": 4.9,
+    "date": "2026-11-04",
+    "src": "东财 datacenter"
+   },
+   "check": {
+    "value": 4.95,
+    "date": "2026-11-03",
+    "src": "FRED"
+   },
+   "deltaBp": -5.0,
+   "verdict": "日期不同（记录源 2026-11-04 / 校验源 2026-11-03），差值 -5bp 属 T+1 差异，不视为矛盾"
+  }
  }
 }
