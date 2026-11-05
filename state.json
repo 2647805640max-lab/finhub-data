@@ -487,42 +487,24 @@
   "errors": null
  },
  "burst": {
-  "builtAt": "2026-11-05 20:29:46",
+  "builtAt": "2026-11-05 20:41:32",
   "poll": {
    "ok": true,
    "cached": false,
-   "newItems": 4,
+   "newItems": 1,
    "error": null
   },
   "cluster": {
    "windowHours": 6,
-   "recent": 325,
+   "recent": 311,
    "clusters": [
     {
      "keyword": "亿港元",
-     "n": 7,
-     "sample": [
-      "南向资金净卖出额达100亿港元",
-      "南向资金净卖出额达130亿港元",
-      "南向资金净卖出额达120亿港元"
-     ]
-    },
-    {
-     "keyword": "南向资金净卖",
      "n": 6,
      "sample": [
-      "南向资金净卖出额达100亿港元",
       "南向资金净卖出额达130亿港元",
-      "南向资金净卖出额达120亿港元"
-     ]
-    },
-    {
-     "keyword": "日从",
-     "n": 6,
-     "sample": [
-      "摩根士丹利在中际旭创H股的持股比例于11月2日从5.42%降至4.61%",
-      "摩根士丹利在壁仞科技H股的持股比例于11月2日从5.59%降至4.71%",
-      "贝莱德在建滔集团H股的持股比例于11月2日从5.04%降至4.35%"
+      "南向资金净卖出额达120亿港元",
+      "南向资金净卖出额达150亿港元"
      ]
     },
     {
@@ -535,12 +517,21 @@
      ]
     },
     {
-     "keyword": "出额达",
+     "keyword": "日从",
+     "n": 6,
+     "sample": [
+      "摩根士丹利在中际旭创H股的持股比例于11月2日从5.42%降至4.61%",
+      "摩根士丹利在壁仞科技H股的持股比例于11月2日从5.59%降至4.71%",
+      "贝莱德在建滔集团H股的持股比例于11月2日从5.04%降至4.35%"
+     ]
+    },
+    {
+     "keyword": "南向资金净卖",
      "n": 5,
      "sample": [
-      "南向资金净卖出额达100亿港元",
       "南向资金净卖出额达130亿港元",
-      "南向资金净卖出额达120亿港元"
+      "南向资金净卖出额达120亿港元",
+      "南向资金净卖出额达150亿港元"
      ]
     },
     {
@@ -550,6 +541,15 @@
       "商务部：中瑞签署自贸协定升级议定书是落实两国领导人重要共识的具体举措",
       "商务部：中国和瑞士将积极深化数字贸易等新兴领域的合作",
       "商务部：将在进博会期间举办“丝路电商”合作创新发展推介会"
+     ]
+    },
+    {
+     "keyword": "出额达",
+     "n": 4,
+     "sample": [
+      "南向资金净卖出额达130亿港元",
+      "南向资金净卖出额达120亿港元",
+      "南向资金净卖出额达150亿港元"
      ]
     },
     {
@@ -609,7 +609,7 @@
   "rule": "单条快讯永不触发推演；假设卡只是待验证项，不改 action；缺口优先于结论"
  },
  "freshness": {
-  "builtAt": "2026-11-05 20:29:46",
+  "builtAt": "2026-11-05 20:41:32",
   "inSession": false,
   "items": [
    {
@@ -618,7 +618,7 @@
     "tier": "quote",
     "source": "新浪实时（本机）/ VPS",
     "asof": "2026-11-05 20:13",
-    "ageHours": 0.3,
+    "ageHours": 0.5,
     "valid": true,
     "limitHours": 26,
     "invalidIf": "交易时段超过 30 分钟未更新；收盘后超过 26 小时（跨过一个交易日）",
@@ -631,7 +631,7 @@
     "tier": "daily",
     "source": "东财 datacenter（收盘口径，唯一记录源）",
     "asof": "2026-11-05 16:00",
-    "ageHours": 4.5,
+    "ageHours": 4.7,
     "valid": true,
     "limitHours": 96,
     "invalidIf": "中国10Y 超过 40 小时未更新（含一个交易日）；美债 T+1，放宽到 96 小时",
@@ -643,7 +643,7 @@
     "name": "商品盘中观测",
     "tier": "quote",
     "source": "新浪 hf_（非判定口径）",
-    "asof": "2026-11-05 20:28",
+    "asof": "2026-11-05 20:40",
     "ageHours": 0.0,
     "valid": true,
     "limitHours": 96,
@@ -656,7 +656,7 @@
     "name": "投资引擎裁决",
     "tier": "daily",
     "source": "invest-engine core_engine_v1_1（收盘序列）",
-    "asof": "2026-11-05 20:28",
+    "asof": "2026-11-05 20:40",
     "ageHours": 0.0,
     "valid": true,
     "limitHours": 96,
@@ -670,7 +670,7 @@
     "tier": "quote",
     "source": "VPS 海外层 / 新浪",
     "asof": "2026-11-05 20:13",
-    "ageHours": 0.3,
+    "ageHours": 0.5,
     "valid": true,
     "limitHours": 96,
     "invalidIf": "超过 96 小时未更新",
@@ -683,7 +683,7 @@
     "tier": "quote",
     "source": "Yahoo + FRED（VPS 直连）",
     "asof": "2026-11-05 20:13",
-    "ageHours": 0.3,
+    "ageHours": 0.5,
     "valid": true,
     "limitHours": 96,
     "invalidIf": "超过 96 小时未更新",
@@ -696,7 +696,7 @@
     "tier": "daily",
     "source": "macro_causal.build（东财+腾讯日线）",
     "asof": "2026-11-05 20:13",
-    "ageHours": 0.3,
+    "ageHours": 0.5,
     "valid": true,
     "limitHours": 96,
     "invalidIf": "超过 40 小时未重建",
@@ -709,7 +709,7 @@
     "tier": "daily",
     "source": "~/projects/daily-news/digest_*.md",
     "asof": "2026-11-05 16:00",
-    "ageHours": 4.5,
+    "ageHours": 4.7,
     "valid": true,
     "limitHours": 40,
     "invalidIf": "digest 不是当天的（超过 40 小时）或条目为空",
@@ -722,7 +722,7 @@
     "tier": "daily",
     "source": "DeepSeek 打分（按 digest 日期缓存）",
     "asof": "2026-11-05 16:00",
-    "ageHours": 4.5,
+    "ageHours": 4.7,
     "valid": true,
     "limitHours": 40,
     "invalidIf": "与 digest 不同日 / 打分报错",
@@ -735,7 +735,7 @@
     "tier": "manual",
     "source": "手工登记（券商/建行/支付宝）+ ~/.dsh/finwatch",
     "asof": "2026-11-03 16:00",
-    "ageHours": 52.5,
+    "ageHours": 52.7,
     "valid": true,
     "limitHours": 168,
     "invalidIf": "超过 7 天未更新（手工快照，不自动采）",
@@ -747,7 +747,7 @@
     "name": "告警",
     "tier": "quote",
     "source": "finwatch alerts.json",
-    "asof": "2026-11-05 20:28",
+    "asof": "2026-11-05 20:40",
     "ageHours": 0.0,
     "valid": true,
     "limitHours": 168,
@@ -761,7 +761,7 @@
     "tier": "daily",
     "source": "E:/q4-2026/reports/chain-model.md + daily-log",
     "asof": "2026-11-05 16:00",
-    "ageHours": 4.5,
+    "ageHours": 4.7,
     "valid": true,
     "limitHours": 96,
     "invalidIf": "超过 96 小时未更新",
@@ -1241,6 +1241,20 @@
   },
   "rule": "因果因子（有机制+历史可复现）可改 action；相关因子只进评分，永不投票",
   "asof": "2026-11-04",
-  "builtAt": "2026-11-05 20:13:57"
+  "builtAt": "2026-11-05 20:13:57",
+  "yields": {
+   "record": {
+    "value": 4.9,
+    "date": "2026-11-04",
+    "src": "东财 datacenter"
+   },
+   "check": {
+    "value": 4.95,
+    "date": "2026-11-03",
+    "src": "FRED"
+   },
+   "deltaBp": -5.0,
+   "verdict": "日期不同（记录源 2026-11-04 / 校验源 2026-11-03），差值 -5bp 属 T+1 差异，不视为矛盾"
+  }
  }
 }
