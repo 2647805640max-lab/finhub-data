@@ -949,10 +949,24 @@
   },
   "rule": "因果因子（有机制+历史可复现）可改 action；相关因子只进评分，永不投票",
   "asof": "2026-11-04",
-  "builtAt": "2026-11-05 13:33:37"
+  "builtAt": "2026-11-05 13:33:37",
+  "yields": {
+   "record": {
+    "value": 4.9,
+    "date": "2026-11-04",
+    "src": "东财 datacenter"
+   },
+   "check": {
+    "value": 4.95,
+    "date": "2026-11-03",
+    "src": "FRED"
+   },
+   "deltaBp": -5.0,
+   "verdict": "日期不同（记录源 2026-11-04 / 校验源 2026-11-03），差值 -5bp 属 T+1 差异，不视为矛盾"
+  }
  },
  "freshness": {
-  "builtAt": "2026-11-05 13:22:10",
+  "builtAt": "2026-11-05 13:34:06",
   "inSession": true,
   "items": [
    {
@@ -960,7 +974,7 @@
     "name": "A股四大指数",
     "tier": "quote",
     "source": "新浪实时（本机）/ VPS",
-    "asof": "2026-11-05 13:20",
+    "asof": "2026-11-05 13:33",
     "ageHours": 0.0,
     "valid": true,
     "limitHours": 0.5,
@@ -974,7 +988,7 @@
     "tier": "daily",
     "source": "东财 datacenter（收盘口径，唯一记录源）",
     "asof": "2026-11-04 16:00",
-    "ageHours": 21.4,
+    "ageHours": 21.6,
     "valid": true,
     "limitHours": 40,
     "invalidIf": "中国10Y 超过 40 小时未更新（含一个交易日）；美债 T+1，放宽到 96 小时",
@@ -986,7 +1000,7 @@
     "name": "商品盘中观测",
     "tier": "quote",
     "source": "新浪 hf_（非判定口径）",
-    "asof": "2026-11-05 13:20",
+    "asof": "2026-11-05 13:33",
     "ageHours": 0.0,
     "valid": true,
     "limitHours": 40,
@@ -999,7 +1013,7 @@
     "name": "投资引擎裁决",
     "tier": "daily",
     "source": "invest-engine core_engine_v1_1（收盘序列）",
-    "asof": "2026-11-05 13:20",
+    "asof": "2026-11-05 13:33",
     "ageHours": 0.0,
     "valid": true,
     "limitHours": 40,
@@ -1012,7 +1026,7 @@
     "name": "扩展指数/商品主力",
     "tier": "quote",
     "source": "VPS 海外层 / 新浪",
-    "asof": "2026-11-05 13:20",
+    "asof": "2026-11-05 13:33",
     "ageHours": 0.0,
     "valid": true,
     "limitHours": 40,
@@ -1025,7 +1039,7 @@
     "name": "海外宏观（VIX/美元/金/美债）",
     "tier": "quote",
     "source": "Yahoo + FRED（VPS 直连）",
-    "asof": "2026-11-05 13:20",
+    "asof": "2026-11-05 13:33",
     "ageHours": 0.0,
     "valid": true,
     "limitHours": 40,
@@ -1038,7 +1052,7 @@
     "name": "因子推演（因果层 C1-C4）",
     "tier": "daily",
     "source": "macro_causal.build（东财+腾讯日线）",
-    "asof": "2026-11-05 13:20",
+    "asof": "2026-11-05 13:33",
     "ageHours": 0.0,
     "valid": true,
     "limitHours": 40,
@@ -1052,7 +1066,7 @@
     "tier": "daily",
     "source": "~/projects/daily-news/digest_*.md",
     "asof": "2026-11-05 16:00",
-    "ageHours": -2.6,
+    "ageHours": -2.4,
     "valid": true,
     "limitHours": 40,
     "invalidIf": "digest 不是当天的（超过 40 小时）或条目为空",
@@ -1065,7 +1079,7 @@
     "tier": "daily",
     "source": "DeepSeek 打分（按 digest 日期缓存）",
     "asof": "2026-11-05 16:00",
-    "ageHours": -2.6,
+    "ageHours": -2.4,
     "valid": true,
     "limitHours": 40,
     "invalidIf": "与 digest 不同日 / 打分报错",
@@ -1078,7 +1092,7 @@
     "tier": "manual",
     "source": "手工登记（券商/建行/支付宝）+ ~/.dsh/finwatch",
     "asof": "2026-11-03 16:00",
-    "ageHours": 45.4,
+    "ageHours": 45.6,
     "valid": true,
     "limitHours": 168,
     "invalidIf": "超过 7 天未更新（手工快照，不自动采）",
@@ -1090,7 +1104,7 @@
     "name": "告警",
     "tier": "quote",
     "source": "finwatch alerts.json",
-    "asof": "2026-11-05 13:20",
+    "asof": "2026-11-05 13:33",
     "ageHours": 0.0,
     "valid": true,
     "limitHours": 168,
@@ -1104,7 +1118,7 @@
     "tier": "daily",
     "source": "E:/q4-2026/reports/chain-model.md + daily-log",
     "asof": "2026-11-05 16:00",
-    "ageHours": -2.6,
+    "ageHours": -2.4,
     "valid": true,
     "limitHours": 96,
     "invalidIf": "超过 96 小时未更新",
@@ -1123,24 +1137,33 @@
   "confidenceAdjust": "正常"
  },
  "burst": {
-  "builtAt": "2026-11-05 13:22:10",
+  "builtAt": "2026-11-05 13:34:06",
   "poll": {
    "ok": true,
    "cached": false,
-   "newItems": 10,
+   "newItems": 9,
    "error": null
   },
   "cluster": {
    "windowHours": 6,
-   "recent": 324,
+   "recent": 318,
    "clusters": [
     {
-     "keyword": "亿美元",
-     "n": 8,
+     "keyword": "涨停",
+     "n": 7,
      "sample": [
-      "Snap第三季度营收增长14%至17.2亿美元",
+      "罕见，ETF尾盘“20CM”涨停",
+      "端侧AI概念延续强势 润欣科技20cm涨停",
+      "电网设备板块异动拉升 顺钠股份直线涨停"
+     ]
+    },
+    {
+     "keyword": "亿美元",
+     "n": 7,
+     "sample": [
       "Alphabet旗下Isomorphic Labs洽谈融资约50亿美元，估值或达500亿美元",
-      "AppLovin第三季度营收增长55%至21.85亿美元"
+      "8390亿美元！美政府“拆东墙补西墙”：单周美债拍卖总额刷新纪录",
+      "特朗普家族关联比特币矿企American Bitcoin Q3扭亏为盈，净利润1.26亿美元"
      ]
     },
     {
@@ -1150,15 +1173,6 @@
       "苹果下调员工AI使用预算，部分工程团队日额度或降至100美元",
       "现货黄金盘中突破4100美元",
       "中期选举后油价大跌、金价站上4000美元！金价放大器黄金股ETF永赢表现亮眼，开盘涨超3.8%"
-     ]
-    },
-    {
-     "keyword": "涨停",
-     "n": 6,
-     "sample": [
-      "罕见，ETF尾盘“20CM”涨停",
-      "端侧AI概念延续强势 润欣科技20cm涨停",
-      "电网设备板块异动拉升 顺钠股份直线涨停"
      ]
     },
     {
@@ -1209,21 +1223,7 @@
    ]
   },
   "cards": [],
-  "watchlist": [
-   {
-    "event": "信用事件",
-    "confidence": "high",
-    "keywords": [
-     "调查"
-    ],
-    "clusterDocs": 0,
-    "buckets": [
-     "权益"
-    ],
-    "type": "watch",
-    "note": "单关键词或密度不足，只进观察清单"
-   }
-  ],
+  "watchlist": [],
   "gaps": [],
   "incomplete": false,
   "rule": "单条快讯永不触发推演；假设卡只是待验证项，不改 action；缺口优先于结论"
