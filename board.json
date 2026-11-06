@@ -1,6 +1,6 @@
 {
     "schema":  "board/v1",
-    "generatedAt":  "2026-11-06 22:44:16",
+    "generatedAt":  "2026-11-06 23:00:40",
     "generatedBy":  "[已移除]",
     "ips":  {
                 "asOf":  "2026-11-06 19:11:22",
@@ -1706,7 +1706,7 @@
                                     },
                                     {
                                         "item":  "决策账本",
-                                        "asOf":  "2026-11-06 22:44",
+                                        "asOf":  "2026-11-06 23:00",
                                         "ageDays":  0,
                                         "stale":  false
                                     }
@@ -1739,6 +1739,57 @@
     "_missing":  {
 
                  },
+    "verdict":  {
+                    "schema":  "verdict/v1",
+                    "asOf":  "2026-11-06 23:05",
+                    "title":  "现在什么情况",
+                    "summary":  "一件坏消息、一件好消息、一件要注意的事。看完这四张卡就够了，细节都在下面各页。",
+                    "items":  [
+                                  {
+                                      "level":  "bad",
+                                      "headline":  "回测在偷看答案，所以「择时有用」这个结论是假的",
+                                      "body":  "老回测用当天收盘价算信号，又按当天收盘价成交，等于提前一天知道答案。按它自己写的规矩（次日收盘才成交）重算一遍，结果直接翻面。",
+                                      "numbers":  "990 个交易日：+3.37% 变成 -3.44%",
+                                      "action":  "先修这个。不修，后面所有收益数字都不能用。"
+                                  },
+                                  {
+                                      "level":  "good",
+                                      "headline":  "不靠云端模型、用脚本自己算因子，已经能做到",
+                                      "body":  "三个最关键的宏观数用脚本直接抓下来，跟以前 AI 读新闻记下来的数逐位一致。抓数和判阈值这两步可以完全交给脚本，AI 只留「这些数说明什么」。",
+                                      "numbers":  "布伦特 98.290 ｜ 中国10年期国债 1.5868% ｜ 美国30年期国债 5.25%",
+                                      "action":  "可以开始把每日取数交给脚本，不再依赖读新闻。"
+                                  },
+                                  {
+                                      "level":  "watch",
+                                      "headline":  "新的因子模块，分钱的时候不看因子分数",
+                                      "body":  "风险仓只有几只标的时，它的分配规则会先把每只都打满单只上限，分数高低对结果没有影响。等于因子算了也白算。",
+                                      "numbers":  "给两只标的一只打极高分、一只打极低分，分到的权重完全一样",
+                                      "action":  "先改分配规则，再谈接进决策。"
+                                  },
+                                  {
+                                      "level":  "good",
+                                      "headline":  "测试已经全部跑通，这条可以从待办里划掉",
+                                      "body":  "本地和云端都实跑过，都有成功记录。",
+                                      "numbers":  "本地 7/7 通过 ｜ 云端连续三次全绿",
+                                      "action":  "不用再等「待执行」，直接进下一步。"
+                                  }
+                              ],
+                    "todo":  [
+                                 {
+                                     "what":  "修回测的成交时点，然后重跑一遍",
+                                     "why":  "现在的收益数字方向是错的，不能用"
+                                 },
+                                 {
+                                     "what":  "确认「单只上限 5%」的分母是总资产还是风险仓",
+                                     "why":  "两种读法结论相反：按总资产算，2 只标的凑不到仓位目标"
+                                 },
+                                 {
+                                     "what":  "把新因子模块的分配规则改成真正看分数",
+                                     "why":  "不改就等于白算"
+                                 }
+                             ],
+                    "disclaimer":  "以上为研究/审计结论，不构成买卖建议；数字全部可复现，来源为本机实跑与仓库内契约。"
+                },
     "_publicPolicy":  {
                           "sanitizer":  "tools/export-board-public.ps1",
                           "dropsAmounts":  true,
@@ -1747,7 +1798,7 @@
                           "fullVersion":  "仅本地 contracts/board.json（不得直接推公开仓）"
                       },
     "_freshness":  {
-                       "checkedAt":  "2026-11-06 22:44:17",
+                       "checkedAt":  "2026-11-06 23:00:40",
                        "worst":  "ok",
                        "staleCount":  0,
                        "items":  [
@@ -1755,7 +1806,7 @@
                                          "id":  "holdings",
                                          "label":  "持仓快照",
                                          "asOf":  "2026-11-05 22:55",
-                                         "ageDays":  0.99,
+                                         "ageDays":  1,
                                          "maxAgeDays":  3,
                                          "stale":  false
                                      },
@@ -1763,7 +1814,7 @@
                                          "id":  "engine-policy",
                                          "label":  "引擎政策契约",
                                          "asOf":  "2026-11-06 19:11",
-                                         "ageDays":  0.15,
+                                         "ageDays":  0.16,
                                          "maxAgeDays":  14,
                                          "stale":  false
                                      },
@@ -1771,7 +1822,7 @@
                                          "id":  "factor-registry",
                                          "label":  "因子登记表",
                                          "asOf":  "2026-11-02 23:27",
-                                         "ageDays":  3.97,
+                                         "ageDays":  3.98,
                                          "maxAgeDays":  30,
                                          "stale":  false
                                      },
@@ -1779,7 +1830,7 @@
                                          "id":  "news-mapping",
                                          "label":  "新闻映射",
                                          "asOf":  "2026-11-02 23:26",
-                                         "ageDays":  3.97,
+                                         "ageDays":  3.98,
                                          "maxAgeDays":  30,
                                          "stale":  false
                                      },
@@ -1787,7 +1838,7 @@
                                          "id":  "chain-rules",
                                          "label":  "推演规则",
                                          "asOf":  "2026-11-02 23:23",
-                                         "ageDays":  3.97,
+                                         "ageDays":  3.98,
                                          "maxAgeDays":  30,
                                          "stale":  false
                                      },
@@ -1795,7 +1846,7 @@
                                          "id":  "decisions",
                                          "label":  "决策账本",
                                          "asOf":  "2026-11-02 23:43",
-                                         "ageDays":  3.96,
+                                         "ageDays":  3.97,
                                          "maxAgeDays":  7,
                                          "stale":  false
                                      },
@@ -1803,7 +1854,7 @@
                                          "id":  "rules",
                                          "label":  "风控规则",
                                          "asOf":  "2026-11-05 23:21",
-                                         "ageDays":  0.97,
+                                         "ageDays":  0.99,
                                          "maxAgeDays":  14,
                                          "stale":  false
                                      },
@@ -1811,7 +1862,7 @@
                                          "id":  "market-live",
                                          "label":  "行情快照",
                                          "asOf":  "2026-11-06 22:44",
-                                         "ageDays":  0,
+                                         "ageDays":  0.01,
                                          "maxAgeDays":  0.25,
                                          "stale":  false
                                      }
@@ -1820,8 +1871,8 @@
                    },
     "nationalTeam":  {
                          "ok":  true,
-                         "lastSuccess":  "2026-11-06 22:35:31",
-                         "asOf":  "2026-11-06 22:35:31",
+                         "lastSuccess":  "2026-11-06 22:50:33",
+                         "asOf":  "2026-11-06 22:50:33",
                          "note":  "",
                          "items":  [
                                        {
@@ -2013,7 +2064,7 @@
                                      }
                      },
     "notifications":  {
-                          "generatedAt":  "2026-11-06 22:44:21",
+                          "generatedAt":  "2026-11-06 23:00:41",
                           "count":  1,
                           "byLevel":  {
                                           "urgent":  0,
@@ -2151,7 +2202,7 @@
                                }
                },
     "automation":  {
-                       "generatedAt":  "2026-11-06 22:44:21",
+                       "generatedAt":  "2026-11-06 23:00:42",
                        "source":  "harness schedule store + _audit/refresh-log.jsonl",
                        "note":  "单向耦合：Harness 定时任务 → 本文件 → board.json → 页面。页面无法反向触发任务。",
                        "schedules":  [
@@ -2165,12 +2216,6 @@
                                          }
                                      ],
                        "lastRuns":  [
-                                        {
-                                            "at":  "2026-11-06T02:44:53+08:00",
-                                            "overall":  "OK",
-                                            "durationMs":  53347,
-                                            "dataAgeMin":  0.8
-                                        },
                                         {
                                             "at":  "2026-11-06T03:14:15+08:00",
                                             "overall":  "OK",
@@ -2284,6 +2329,12 @@
                                             "overall":  "OK",
                                             "durationMs":  249223,
                                             "dataAgeMin":  4.1
+                                        },
+                                        {
+                                            "at":  "2026-11-06T22:44:55+08:00",
+                                            "overall":  "OK",
+                                            "durationMs":  41812,
+                                            "dataAgeMin":  0.7
                                         }
                                     ],
                        "stats":  {
@@ -2292,7 +2343,7 @@
                                      "warn":  0,
                                      "fail":  1,
                                      "consecutiveBad":  0,
-                                     "lastRunAt":  "2026-11-06T22:18:41+08:00",
+                                     "lastRunAt":  "2026-11-06T22:44:55+08:00",
                                      "lastOverall":  "OK"
                                  },
                        "health":  {
