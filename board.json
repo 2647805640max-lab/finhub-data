@@ -1,6 +1,6 @@
 {
     "schema":  "board/v1",
-    "generatedAt":  "2026-11-06 19:16:12",
+    "generatedAt":  "2026-11-06 19:19:29",
     "generatedBy":  "[已移除]",
     "ips":  {
                 "asOf":  "2026-11-06 19:11:22",
@@ -1706,7 +1706,7 @@
                                     },
                                     {
                                         "item":  "决策账本",
-                                        "asOf":  "2026-11-06 19:16",
+                                        "asOf":  "2026-11-06 19:19",
                                         "ageDays":  0,
                                         "stale":  false
                                     }
@@ -1747,7 +1747,7 @@
                           "fullVersion":  "仅本地 contracts/board.json（不得直接推公开仓）"
                       },
     "_freshness":  {
-                       "checkedAt":  "2026-11-06 19:16:14",
+                       "checkedAt":  "2026-11-06 19:19:32",
                        "worst":  "ok",
                        "staleCount":  0,
                        "items":  [
@@ -1763,7 +1763,7 @@
                                          "id":  "engine-policy",
                                          "label":  "引擎政策契约",
                                          "asOf":  "2026-11-06 19:11",
-                                         "ageDays":  0,
+                                         "ageDays":  0.01,
                                          "maxAgeDays":  14,
                                          "stale":  false
                                      },
@@ -1795,7 +1795,7 @@
                                          "id":  "decisions",
                                          "label":  "决策账本",
                                          "asOf":  "2026-11-02 23:43",
-                                         "ageDays":  3.81,
+                                         "ageDays":  3.82,
                                          "maxAgeDays":  7,
                                          "stale":  false
                                      },
@@ -2013,7 +2013,7 @@
                                      }
                      },
     "notifications":  {
-                          "generatedAt":  "2026-11-06 19:16:16",
+                          "generatedAt":  "2026-11-06 19:19:35",
                           "count":  1,
                           "byLevel":  {
                                           "urgent":  0,
@@ -2151,7 +2151,7 @@
                                }
                },
     "automation":  {
-                       "generatedAt":  "2026-11-06 19:16:17",
+                       "generatedAt":  "2026-11-06 19:19:36",
                        "source":  "harness schedule store + _audit/refresh-log.jsonl",
                        "note":  "单向耦合：Harness 定时任务 → 本文件 → board.json → 页面。页面无法反向触发任务。",
                        "schedules":  [
