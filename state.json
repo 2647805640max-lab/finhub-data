@@ -1,8 +1,106 @@
 {
- "generatedAt": "2026-11-06 13:15:37",
- "ts": 1793942137583,
+ "generatedAt": "2026-11-06 13:18:08",
+ "ts": 1793942288867,
+ "source": "vps",
+ "tunnelUrl": "https://daughter-rates-integral-ownership.trycloudflare.com",
+ "market": {
+  "indices": [
+   {
+    "code": "sh000001",
+    "name": "上证指数",
+    "price": 3646.0024,
+    "chg": -43.9085,
+    "chgPct": -1.19
+   },
+   {
+    "code": "sh000300",
+    "name": "沪深300",
+    "price": 4051.9065,
+    "chg": -61.5047,
+    "chgPct": -1.5
+   },
+   {
+    "code": "sz399001",
+    "name": "深证成指",
+    "price": 11212.38,
+    "chg": -258.709,
+    "chgPct": -2.26
+   },
+   {
+    "code": "sz399006",
+    "name": "创业板指",
+    "price": 2473.97,
+    "chg": -92.837,
+    "chgPct": -3.62
+   }
+  ],
+  "watch": [
+   {
+    "code": "sh518880",
+    "name": "黄金ETF华安",
+    "price": 8.251,
+    "prev": 8.42,
+    "chgPct": -2.01,
+    "amount": 2458203904.0
+   },
+   {
+    "code": "sh512400",
+    "name": "有色ETF南方",
+    "price": 1.453,
+    "prev": 1.496,
+    "chgPct": -2.87,
+    "amount": 367478386.0
+   },
+   {
+    "code": "sh512480",
+    "name": "半导体ETF国联安",
+    "price": 0.779,
+    "prev": 0.799,
+    "chgPct": -2.5,
+    "amount": 929310846.0
+   },
+   {
+    "code": "sh515790",
+    "name": "光伏ETF",
+    "price": 0.748,
+    "prev": 0.757,
+    "chgPct": -1.19,
+    "amount": 594069475.0
+   },
+   {
+    "code": "sh516010",
+    "name": "游戏动漫ETF",
+    "price": 1.063,
+    "prev": 1.082,
+    "chgPct": -1.76,
+    "amount": 75367437.0
+   }
+  ],
+  "fetchedAt": 1793942289807
+ },
+ "bonds": {
+  "asof": "2026-11-05",
+  "F2": {
+   "value": 1.6038,
+   "prev": 1.6077,
+   "spread": 0.3824,
+   "date": "2026-11-05"
+  },
+  "F3": {
+   "value": 5.25,
+   "prev": 5.28,
+   "us10y": 4.84,
+   "date": "2026-11-05"
+  },
+  "dates": {
+   "F2": "2026-11-05",
+   "F3": "2026-11-05",
+   "us10y": "2026-11-05",
+   "spread": "2026-11-05"
+  }
+ },
  "overseas": {
-  "fetchedAt": 1793942014953,
+  "fetchedAt": 1793942290768,
   "quotes": {
    "items": [
     {
@@ -10,9 +108,9 @@
      "name": "韩国KOSPI",
      "kind": "idx",
      "unit": "",
-     "price": 5104.13,
-     "chgPct": -5.2,
-     "asof": "2026-11-06 04:53"
+     "price": 5117.83,
+     "chgPct": -4.94,
+     "asof": "2026-11-06 04:58"
     },
     {
      "code": "^SOX",
@@ -28,18 +126,18 @@
      "name": "日经225",
      "kind": "idx",
      "unit": "",
-     "price": 57421.99,
-     "chgPct": -5.99,
-     "asof": "2026-11-06 04:58"
+     "price": 57511.97,
+     "chgPct": -5.84,
+     "asof": "2026-11-06 05:03"
     },
     {
      "code": "^HSI",
      "name": "恒生指数",
      "kind": "idx",
      "unit": "",
-     "price": 24533.33,
-     "chgPct": -1.06,
-     "asof": "2026-11-06 04:05"
+     "price": 24483.36,
+     "chgPct": -1.26,
+     "asof": "2026-11-06 05:03"
     },
     {
      "code": "^DJI",
@@ -84,25 +182,25 @@
      "unit": "",
      "price": 101.76,
      "chgPct": 0.21,
-     "asof": "2026-11-06 05:03"
+     "asof": "2026-11-06 05:08"
     },
     {
      "code": "GC=F",
      "name": "COMEX黄金",
      "kind": "fut",
      "unit": "usd",
-     "price": 4055.2,
-     "chgPct": -1.42,
-     "asof": "2026-11-06 05:03"
+     "price": 4058.7,
+     "chgPct": -1.33,
+     "asof": "2026-11-06 05:08"
     },
     {
      "code": "CL=F",
      "name": "WTI原油",
      "kind": "fut",
      "unit": "usd",
-     "price": 91.38,
-     "chgPct": 0.95,
-     "asof": "2026-11-06 05:03"
+     "price": 91.46,
+     "chgPct": 1.04,
+     "asof": "2026-11-06 05:07"
     },
     {
      "code": "HG=F",
@@ -110,8 +208,8 @@
      "kind": "fut",
      "unit": "usd",
      "price": 6.23,
-     "chgPct": -0.69,
-     "asof": "2026-11-06 05:03"
+     "chgPct": -0.68,
+     "asof": "2026-11-06 05:08"
     },
     {
      "code": "^TNX",
@@ -133,7 +231,7 @@
     }
    ],
    "errors": null,
-   "fetchedAt": 1793942017921
+   "fetchedAt": 1793942291983
   },
   "fred": {
    "items": [
@@ -486,43 +584,371 @@
   },
   "errors": null
  },
- "burst": {
-  "builtAt": "2026-11-06 13:13:23",
-  "poll": {
-   "ok": true,
-   "cached": false,
-   "newItems": 10,
-   "error": null
+ "expanded": {
+  "items": [
+   {
+    "code": "^SOX",
+    "name": "费城半导体",
+    "kind": "idx",
+    "price": 9011.14,
+    "chgPct": -12.25,
+    "asof": "2026-11-05 22:15",
+    "src": "yahoo"
+   },
+   {
+    "code": "^N225",
+    "name": "日经225",
+    "kind": "idx",
+    "price": 57511.97,
+    "chgPct": -5.84,
+    "asof": "2026-11-06 05:03",
+    "src": "yahoo"
+   },
+   {
+    "code": "^HSI",
+    "name": "恒生指数",
+    "kind": "idx",
+    "price": 24483.36,
+    "chgPct": -1.26,
+    "asof": "2026-11-06 05:03",
+    "src": "yahoo"
+   },
+   {
+    "code": "^DJI",
+    "name": "道琼斯",
+    "kind": "idx",
+    "price": 51523.06,
+    "chgPct": -3.44,
+    "asof": "2026-11-05 21:35",
+    "src": "yahoo"
+   },
+   {
+    "code": "^KS11",
+    "name": "韩国KOSPI",
+    "kind": "idx",
+    "price": 5117.83,
+    "chgPct": -4.94,
+    "asof": "2026-11-06 04:58",
+    "src": "yahoo"
+   },
+   {
+    "code": "^IXIC",
+    "name": "纳斯达克",
+    "kind": "idx",
+    "price": 24315.0,
+    "chgPct": -5.52,
+    "asof": "2026-11-05 22:15",
+    "src": "yahoo"
+   },
+   {
+    "code": "^GSPC",
+    "name": "标普500",
+    "kind": "idx",
+    "price": 7353.73,
+    "chgPct": -4.36,
+    "asof": "2026-11-05 21:00",
+    "src": "yahoo"
+   },
+   {
+    "code": "nf_LC0",
+    "name": "碳酸锂主连",
+    "kind": "fut",
+    "price": 91720.0,
+    "prev": 90800.0,
+    "chgPct": 1.01,
+    "asof": "2026-11-06",
+    "src": "sina"
+   },
+   {
+    "code": "nf_FG0",
+    "name": "玻璃主连",
+    "kind": "fut",
+    "price": 895.0,
+    "prev": 886.0,
+    "chgPct": 1.02,
+    "asof": "2026-11-06",
+    "src": "sina"
+   },
+   {
+    "code": "nf_M0",
+    "name": "豆粕主连",
+    "kind": "fut",
+    "price": 3088.0,
+    "prev": 3116.0,
+    "chgPct": -0.9,
+    "asof": "2026-11-06",
+    "src": "sina"
+   }
+  ],
+  "errors": null,
+  "fetchedAt": 1793942293154
+ },
+ "commodity": {
+  "OIL": {
+   "price": 99.416,
+   "prev": 98.29,
+   "chgPct": 1.15,
+   "time": "13:18:10"
   },
-  "cluster": {
-   "windowHours": 6,
-   "recent": 90,
-   "clusters": [
+  "CL": {
+   "price": 91.25,
+   "prev": 90.52,
+   "chgPct": 0.81,
+   "time": "13:18:01"
+  },
+  "XAU": {
+   "price": 4045.16,
+   "prev": 4088.8,
+   "chgPct": -1.07,
+   "time": "13:18:00"
+  }
+ },
+ "engine": {
+  "action": "TRIM",
+  "confidence": "中",
+  "scores": {
+   "opportunity": 13.8,
+   "risk": 63.8,
+   "diff": -50.0
+  },
+  "votes": {
+   "add": 0,
+   "run": 2,
+   "n": 4
+  },
+  "mainStage": "单边下跌",
+  "stageAgreement": 0.75,
+  "advice": "市场层出现降低风险敞口的信号；结合实际持仓、成本与流动性评估。",
+  "evidence": [
+   "[上证指数][机会10] 关口位置偏低：posInRange=7.3%（近B带）",
+   "[沪深300][机会15] 关口位置偏低：posInRange=6.2%（近B带）",
+   "[沪深300][机会15] 250日回撤 -19.92%，深度区机会溢价",
+   "[深证成指][机会15] 关口位置偏低：posInRange=6.8%（近B带）",
+   "[深证成指][机会15] 250日回撤 -31.53%，深度区机会溢价",
+   "[创业板指][机会15] 关口位置偏低：posInRange=4.1%（近B带）",
+   "[创业板指][机会15] 250日回撤 -43.43%，深度区机会溢价",
+   "[上证指数][风险40] X3 趋势破位：跌下ma20且空头排列+周能量low",
+   "[沪深300][风险40] X3 趋势破位：跌下ma20且空头排列+周能量low",
+   "[深证成指][风险75] X3 趋势破位：跌下ma20且空头排列+周能量low",
+   "[深证成指][风险75] X4 深度风险：250d回撤-31.53%仍单边下跌",
+   "[创业板指][风险100] X3 趋势破位：跌下ma20且空头排列+周能量low",
+   "[创业板指][风险100] X4 深度风险：250d回撤-43.43%仍单边下跌",
+   "[创业板指][风险100] M1 单日暴跌 -3.64%"
+  ],
+  "perIndex": [
+   {
+    "name": "上证指数",
+    "stage": "过渡/震荡",
+    "beat": "中性",
+    "energy": {
+     "D": "high",
+     "W": "low",
+     "M": "low"
+    },
+    "opp": 10.0,
+    "risk": 40.0,
+    "dd60": -8.63,
+    "posInRangePct": 7.3
+   },
+   {
+    "name": "沪深300",
+    "stage": "单边下跌",
+    "beat": "中性",
+    "energy": {
+     "D": "high",
+     "W": "low",
+     "M": "low"
+    },
+    "opp": 15.0,
+    "risk": 40.0,
+    "dd60": -14.54,
+    "posInRangePct": 6.2
+   },
+   {
+    "name": "深证成指",
+    "stage": "单边下跌",
+    "beat": "中性",
+    "energy": {
+     "D": "low",
+     "W": "low",
+     "M": "low"
+    },
+    "opp": 15.0,
+    "risk": 75.0,
+    "dd60": -23.76,
+    "posInRangePct": 6.8
+   },
+   {
+    "name": "创业板指",
+    "stage": "单边下跌",
+    "beat": "中性",
+    "energy": {
+     "D": "low",
+     "W": "low",
+     "M": "low"
+    },
+    "opp": 15.0,
+    "risk": 100.0,
+    "dd60": -33.87,
+    "posInRangePct": 4.1
+   }
+  ],
+  "policy": {
+   "version": "personal_policy_v1",
+   "stable_target_total": 0.8,
+   "risk_target_total": 0.15,
+   "risk_max_total": 0.15,
+   "living_reserve_target_total": 0.05,
+   "drawdown_target": 0.05,
+   "drawdown_caution": 0.03,
+   "drawdown_high": 0.04,
+   "leverage_allowed": false,
+   "auto_live_trading": false,
+   "stocks_mode": "research_only"
+  },
+  "personalRiskCheck": {
+   "evaluated": false,
+   "status": "not_evaluated",
+   "note": "未提供 portfolio.json；当前仅为市场层信号。"
+  },
+  "marketAction": "TRIM",
+  "finalSuggestedAction": "TRIM"
+ },
+ "causal": {
+  "tier": "causal",
+  "baseAction": "TRIM",
+  "finalAction": "TRIM",
+  "confidence": "中",
+  "changed": false,
+  "growthVotes": 0,
+  "goldVote": 0,
+  "triggered": [
+   "C2"
+  ],
+  "notes": [
+   "因果层与引擎相反：利率方向其实在放松，减仓属于价格面风控，不是流动性收紧"
+  ],
+  "factors": [
+   {
+    "id": "C1",
+    "name": "国内流动性闸门（中国10Y）",
+    "read": "-8bp / 20交易日",
+    "asof": "2026-11-05",
+    "mechanism": "国债利率上行 = 银行间资金变贵、信用扩张受限 → 成长股贴现率抬升与新增资金同时收缩",
+    "target": "创业板 / 半导体 / 高估值成长",
+    "evidence": "历史上中国10Y 20日上行>15bp 共 198 次，其后20交易日创业板平均 -2.91%、胜率 37.9%",
+    "evidenceKey": "中10Y↑>15bp → 创业板",
+    "vote": 0,
+    "tier": "causal"
+   },
+   {
+    "id": "C2",
+    "name": "全球贴现率（美债10Y）",
+    "read": "-44bp / 20交易日",
+    "asof": "2026-11-05",
+    "mechanism": "美债长端是全球风险资产的定价锚：上行直接抬高长久期资产（半导体/成长）的折现率",
+    "target": "半导体 / 成长（对A股大盘无稳定方向，故不作用于指数）",
+    "evidence": "历史上美10Y 20日上行>15bp 共 519 次，其后20交易日半导体平均 -1.76%、胜率 51.6%",
+    "evidenceKey": "美10Y↑>15bp → 半导体",
+    "vote": 1,
+    "tier": "causal"
+   },
+   {
+    "id": "C3",
+    "name": "黄金持有成本（实际利率）",
+    "read": "美10Y -44bp，金价20日 -4.3%",
+    "asof": "2026-11-05",
+    "mechanism": "黄金不生息，持有它的代价就是实际利率；利率下行 = 持有成本下降（不是「降息就一定涨」，看的是利率方向与幅度）",
+    "target": "黄金ETF",
+    "evidence": "美10Y 20日下行>15bp 共 551 次，其后20交易日黄金平均 1.66%、胜率 67.3%；月频相关 -0.242（利率降月黄金均涨 2.04%）",
+    "evidenceKey": "美10Y↓>15bp → 黄金",
+    "vote": 0,
+    "tier": "causal",
+    "divergence": "利率方向利多黄金（-44bp），但金价20日 -4.3% 走反 —— 说明当下有更强的力量在压金价（美元/风险偏好/获利了结），因果未兑现，票按弱信号记"
+   },
+   {
+    "id": "C4",
+    "name": "美联储议息事件",
+    "read": "最近决议 2026-09-16 +25bp，距今 51 天（已出窗口）",
+    "asof": "2026-09-16",
+    "mechanism": "决议改变的是政策利率路径预期 → 美元与美债曲线 → 全球风险偏好与无息资产持有成本",
+    "target": "创业板（加息压制）/ 黄金（降息利多）",
+    "evidence": "2015-2025 加息 20 次后20交易日创业板平均 -2.44%、胜率 30.0%；降息 10 次后黄金平均 4.68%、胜率 80.0%",
+    "evidenceKey": "FOMC 加息 → 创业板 / 降息 → 黄金",
+    "vote": 0,
+    "tier": "causal",
+    "inWindow": false,
+    "src": "内置+Fed官网(29条新)",
+    "stale": true,
+    "staleNote": "决议表停在 2026-09-16，之后的决议未收录 → 本因子当前不计票，只作背景"
+   }
+  ],
+  "correlation": {
+   "score": -34.2,
+   "items": [
     {
-     "keyword": "胜宏科技",
-     "n": 3,
-     "sample": [
-      "胜宏科技：公司目前生产经营一切正常 供应链稳定",
-      "胜宏科技：公司目前生产经营一切正常，供应链稳定，产能利用率处于良好水平",
-      "胜宏科技：下游需求保持高景气 在手订单能见度处于历史高位"
-     ]
+     "name": "费城半导体",
+     "chgPct": -12.25,
+     "note": "情绪/联动，无稳定传导机制"
     },
     {
-     "keyword": "亿美元",
-     "n": 3,
-     "sample": [
-      "机构：第三季度DRAM “超级周期” 市场营收逼近2000亿美元",
-      "印尼10月底外汇储备规模1468亿美元",
-      "英伟达市值两日蒸发超6000亿美元 数据中心建设放缓前景引美股恐慌"
-     ]
+     "name": "日经225",
+     "chgPct": -5.84,
+     "note": "情绪/联动，无稳定传导机制"
+    },
+    {
+     "name": "恒生指数",
+     "chgPct": -1.26,
+     "note": "情绪/联动，无稳定传导机制"
+    },
+    {
+     "name": "道琼斯",
+     "chgPct": -3.44,
+     "note": "情绪/联动，无稳定传导机制"
+    },
+    {
+     "name": "韩国KOSPI",
+     "chgPct": -4.94,
+     "note": "情绪/联动，无稳定传导机制"
+    },
+    {
+     "name": "纳斯达克",
+     "chgPct": -5.52,
+     "note": "情绪/联动，无稳定传导机制"
+    },
+    {
+     "name": "标普500",
+     "chgPct": -4.36,
+     "note": "情绪/联动，无稳定传导机制"
+    },
+    {
+     "name": "碳酸锂主连",
+     "chgPct": 1.01,
+     "note": "情绪/联动，无稳定传导机制"
+    },
+    {
+     "name": "玻璃主连",
+     "chgPct": 1.02,
+     "note": "情绪/联动，无稳定传导机制"
+    },
+    {
+     "name": "豆粕主连",
+     "chgPct": -0.9,
+     "note": "情绪/联动，无稳定传导机制"
     }
-   ]
+   ],
+   "tier": "correlation",
+   "note": "等权平均涨跌幅×10，压到±100；只用于描述风险偏好，不参与 ADD/TRIM/EXIT 判定"
   },
-  "cards": [],
-  "watchlist": [],
-  "gaps": [],
-  "incomplete": false,
-  "rule": "单条快讯永不触发推演；假设卡只是待验证项，不改 action；缺口优先于结论"
+  "context": {
+   "us10Chg": -44.0,
+   "cn10Chg": -8.3,
+   "goldMom20": -4.26,
+   "growthMom20": -18.73
+  },
+  "rule": "因果因子（有机制+历史可复现）可改 action；相关因子只进评分，永不投票",
+  "asof": "2026-11-05",
+  "builtAt": "2026-11-06 13:18:20"
  },
  "freshness": {
   "builtAt": "2026-11-06 13:13:23",
@@ -695,473 +1121,43 @@
   "incomplete": false,
   "confidenceAdjust": "正常"
  },
- "tunnelUrl": "https://daughter-rates-integral-ownership.trycloudflare.com",
- "market": {
-  "indices": [
-   {
-    "code": "sh000001",
-    "name": "上证指数",
-    "price": 3649.364,
-    "chg": -40.5469,
-    "chgPct": -1.1
-   },
-   {
-    "code": "sh000300",
-    "name": "沪深300",
-    "price": 4057.8729,
-    "chg": -55.5383,
-    "chgPct": -1.35
-   },
-   {
-    "code": "sz399001",
-    "name": "深证成指",
-    "price": 11244.42,
-    "chg": -226.675,
-    "chgPct": -1.98
-   },
-   {
-    "code": "sz399006",
-    "name": "创业板指",
-    "price": 2484.02,
-    "chg": -82.785,
-    "chgPct": -3.23
-   }
-  ],
-  "watch": [
-   {
-    "code": "sh518880",
-    "name": "黄金ETF华安",
-    "price": 8.253,
-    "prev": 8.42,
-    "chgPct": -1.98,
-    "amount": 2418564985.0
-   },
-   {
-    "code": "sh512400",
-    "name": "有色ETF南方",
-    "price": 1.457,
-    "prev": 1.496,
-    "chgPct": -2.61,
-    "amount": 365328166.0
-   },
-   {
-    "code": "sh512480",
-    "name": "半导体ETF国联安",
-    "price": 0.782,
-    "prev": 0.799,
-    "chgPct": -2.13,
-    "amount": 923841726.0
-   },
-   {
-    "code": "sh515790",
-    "name": "光伏ETF",
-    "price": 0.75,
-    "prev": 0.757,
-    "chgPct": -0.92,
-    "amount": 582700403.0
-   },
-   {
-    "code": "sh516010",
-    "name": "游戏动漫ETF",
-    "price": 1.066,
-    "prev": 1.082,
-    "chgPct": -1.48,
-    "amount": 74553788.0
-   }
-  ],
-  "fetchedAt": 1793942014061
- },
- "bonds": {
-  "asof": "2026-11-05",
-  "F2": {
-   "value": 1.6038,
-   "prev": 1.6077,
-   "spread": 0.3824,
-   "date": "2026-11-05"
+ "burst": {
+  "builtAt": "2026-11-06 13:13:23",
+  "poll": {
+   "ok": true,
+   "cached": false,
+   "newItems": 10,
+   "error": null
   },
-  "F3": {
-   "value": 5.25,
-   "prev": 5.28,
-   "us10y": 4.84,
-   "date": "2026-11-05"
-  },
-  "dates": {
-   "F2": "2026-11-05",
-   "F3": "2026-11-05",
-   "us10y": "2026-11-05",
-   "spread": "2026-11-05"
-  }
- },
- "commodity": {
-  "OIL": {
-   "price": 99.398,
-   "prev": 98.29,
-   "chgPct": 1.13,
-   "time": "13:13:35"
-  },
-  "CL": {
-   "price": 91.199,
-   "prev": 90.52,
-   "chgPct": 0.75,
-   "time": "13:13:34"
-  },
-  "XAU": {
-   "price": 4048.18,
-   "prev": 4088.8,
-   "chgPct": -0.99,
-   "time": "13:13:00"
-  }
- },
- "engine": {
-  "action": "TRIM",
-  "confidence": "中",
-  "scores": {
-   "opportunity": 13.8,
-   "risk": 63.8,
-   "diff": -50.0
-  },
-  "votes": {
-   "add": 0,
-   "run": 2,
-   "n": 4
-  },
-  "mainStage": "单边下跌",
-  "stageAgreement": 0.75,
-  "advice": "市场层出现降低风险敞口的信号；结合实际持仓、成本与流动性评估。",
-  "evidence": [
-   "[上证指数][机会10] 关口位置偏低：posInRange=7.7%（近B带）",
-   "[沪深300][机会15] 关口位置偏低：posInRange=6.6%（近B带）",
-   "[沪深300][机会15] 250日回撤 -19.82%，深度区机会溢价",
-   "[深证成指][机会15] 关口位置偏低：posInRange=7.4%（近B带）",
-   "[深证成指][机会15] 250日回撤 -31.34%，深度区机会溢价",
-   "[创业板指][机会15] 关口位置偏低：posInRange=4.6%（近B带）",
-   "[创业板指][机会15] 250日回撤 -43.21%，深度区机会溢价",
-   "[上证指数][风险40] X3 趋势破位：跌下ma20且空头排列+周能量low",
-   "[沪深300][风险40] X3 趋势破位：跌下ma20且空头排列+周能量low",
-   "[深证成指][风险75] X3 趋势破位：跌下ma20且空头排列+周能量low",
-   "[深证成指][风险75] X4 深度风险：250d回撤-31.34%仍单边下跌",
-   "[创业板指][风险100] X3 趋势破位：跌下ma20且空头排列+周能量low",
-   "[创业板指][风险100] X4 深度风险：250d回撤-43.21%仍单边下跌",
-   "[创业板指][风险100] M1 单日暴跌 -3.26%"
-  ],
-  "perIndex": [
-   {
-    "name": "上证指数",
-    "stage": "过渡/震荡",
-    "beat": "中性",
-    "energy": {
-     "D": "high",
-     "W": "low",
-     "M": "low"
-    },
-    "opp": 10.0,
-    "risk": 40.0,
-    "dd60": -8.56,
-    "posInRangePct": 7.7
-   },
-   {
-    "name": "沪深300",
-    "stage": "单边下跌",
-    "beat": "中性",
-    "energy": {
-     "D": "high",
-     "W": "low",
-     "M": "low"
-    },
-    "opp": 15.0,
-    "risk": 40.0,
-    "dd60": -14.43,
-    "posInRangePct": 6.6
-   },
-   {
-    "name": "深证成指",
-    "stage": "单边下跌",
-    "beat": "中性",
-    "energy": {
-     "D": "low",
-     "W": "low",
-     "M": "low"
-    },
-    "opp": 15.0,
-    "risk": 75.0,
-    "dd60": -23.55,
-    "posInRangePct": 7.4
-   },
-   {
-    "name": "创业板指",
-    "stage": "单边下跌",
-    "beat": "中性",
-    "energy": {
-     "D": "low",
-     "W": "low",
-     "M": "low"
-    },
-    "opp": 15.0,
-    "risk": 100.0,
-    "dd60": -33.61,
-    "posInRangePct": 4.6
-   }
-  ],
-  "policy": {
-   "version": "personal_policy_v1",
-   "stable_target_total": 0.8,
-   "risk_target_total": 0.15,
-   "risk_max_total": 0.15,
-   "living_reserve_target_total": 0.05,
-   "drawdown_target": 0.05,
-   "drawdown_caution": 0.03,
-   "drawdown_high": 0.04,
-   "leverage_allowed": false,
-   "auto_live_trading": false,
-   "stocks_mode": "research_only"
-  },
-  "personalRiskCheck": {
-   "evaluated": false,
-   "status": "not_evaluated",
-   "note": "未提供 portfolio.json；当前仅为市场层信号。"
-  },
-  "marketAction": "TRIM",
-  "finalSuggestedAction": "TRIM"
- },
- "expanded": {
-  "items": [
-   {
-    "code": "^SOX",
-    "name": "费城半导体",
-    "kind": "idx",
-    "price": 9011.14,
-    "chgPct": -12.25,
-    "asof": "2026-11-05 22:15",
-    "src": "yahoo"
-   },
-   {
-    "code": "^N225",
-    "name": "日经225",
-    "kind": "idx",
-    "price": 57421.99,
-    "chgPct": -5.99,
-    "asof": "2026-11-06 04:58",
-    "src": "yahoo"
-   },
-   {
-    "code": "^HSI",
-    "name": "恒生指数",
-    "kind": "idx",
-    "price": 24533.33,
-    "chgPct": -1.06,
-    "asof": "2026-11-06 04:05",
-    "src": "yahoo"
-   },
-   {
-    "code": "^DJI",
-    "name": "道琼斯",
-    "kind": "idx",
-    "price": 51523.06,
-    "chgPct": -3.44,
-    "asof": "2026-11-05 21:35",
-    "src": "yahoo"
-   },
-   {
-    "code": "^KS11",
-    "name": "韩国KOSPI",
-    "kind": "idx",
-    "price": 5104.13,
-    "chgPct": -5.2,
-    "asof": "2026-11-06 04:53",
-    "src": "yahoo"
-   },
-   {
-    "code": "^IXIC",
-    "name": "纳斯达克",
-    "kind": "idx",
-    "price": 24315.0,
-    "chgPct": -5.52,
-    "asof": "2026-11-05 22:15",
-    "src": "yahoo"
-   },
-   {
-    "code": "^GSPC",
-    "name": "标普500",
-    "kind": "idx",
-    "price": 7353.73,
-    "chgPct": -4.36,
-    "asof": "2026-11-05 21:00",
-    "src": "yahoo"
-   },
-   {
-    "code": "nf_LC0",
-    "name": "碳酸锂主连",
-    "kind": "fut",
-    "price": 91720.0,
-    "prev": 90800.0,
-    "chgPct": 1.01,
-    "asof": "2026-11-06",
-    "src": "sina"
-   },
-   {
-    "code": "nf_FG0",
-    "name": "玻璃主连",
-    "kind": "fut",
-    "price": 895.0,
-    "prev": 886.0,
-    "chgPct": 1.02,
-    "asof": "2026-11-06",
-    "src": "sina"
-   },
-   {
-    "code": "nf_M0",
-    "name": "豆粕主连",
-    "kind": "fut",
-    "price": 3088.0,
-    "prev": 3116.0,
-    "chgPct": -0.9,
-    "asof": "2026-11-06",
-    "src": "sina"
-   }
-  ],
-  "errors": null,
-  "fetchedAt": 1793942018899
- },
- "causal": {
-  "tier": "causal",
-  "baseAction": "TRIM",
-  "finalAction": "TRIM",
-  "confidence": "中",
-  "changed": false,
-  "growthVotes": 0,
-  "goldVote": 0,
-  "triggered": [
-   "C2"
-  ],
-  "notes": [
-   "因果层与引擎相反：利率方向其实在放松，减仓属于价格面风控，不是流动性收紧"
-  ],
-  "factors": [
-   {
-    "id": "C1",
-    "name": "国内流动性闸门（中国10Y）",
-    "read": "-8bp / 20交易日",
-    "asof": "2026-11-05",
-    "mechanism": "国债利率上行 = 银行间资金变贵、信用扩张受限 → 成长股贴现率抬升与新增资金同时收缩",
-    "target": "创业板 / 半导体 / 高估值成长",
-    "evidence": "历史上中国10Y 20日上行>15bp 共 198 次，其后20交易日创业板平均 -2.91%、胜率 37.9%",
-    "evidenceKey": "中10Y↑>15bp → 创业板",
-    "vote": 0,
-    "tier": "causal"
-   },
-   {
-    "id": "C2",
-    "name": "全球贴现率（美债10Y）",
-    "read": "-44bp / 20交易日",
-    "asof": "2026-11-05",
-    "mechanism": "美债长端是全球风险资产的定价锚：上行直接抬高长久期资产（半导体/成长）的折现率",
-    "target": "半导体 / 成长（对A股大盘无稳定方向，故不作用于指数）",
-    "evidence": "历史上美10Y 20日上行>15bp 共 519 次，其后20交易日半导体平均 -1.76%、胜率 51.6%",
-    "evidenceKey": "美10Y↑>15bp → 半导体",
-    "vote": 1,
-    "tier": "causal"
-   },
-   {
-    "id": "C3",
-    "name": "黄金持有成本（实际利率）",
-    "read": "美10Y -44bp，金价20日 -4.3%",
-    "asof": "2026-11-05",
-    "mechanism": "黄金不生息，持有它的代价就是实际利率；利率下行 = 持有成本下降（不是「降息就一定涨」，看的是利率方向与幅度）",
-    "target": "黄金ETF",
-    "evidence": "美10Y 20日下行>15bp 共 551 次，其后20交易日黄金平均 1.66%、胜率 67.3%；月频相关 -0.242（利率降月黄金均涨 2.04%）",
-    "evidenceKey": "美10Y↓>15bp → 黄金",
-    "vote": 0,
-    "tier": "causal",
-    "divergence": "利率方向利多黄金（-44bp），但金价20日 -4.3% 走反 —— 说明当下有更强的力量在压金价（美元/风险偏好/获利了结），因果未兑现，票按弱信号记"
-   },
-   {
-    "id": "C4",
-    "name": "美联储议息事件",
-    "read": "最近决议 2026-09-16 +25bp，距今 51 天（已出窗口）",
-    "asof": "2026-09-16",
-    "mechanism": "决议改变的是政策利率路径预期 → 美元与美债曲线 → 全球风险偏好与无息资产持有成本",
-    "target": "创业板（加息压制）/ 黄金（降息利多）",
-    "evidence": "2015-2025 加息 20 次后20交易日创业板平均 -2.44%、胜率 30.0%；降息 10 次后黄金平均 4.68%、胜率 80.0%",
-    "evidenceKey": "FOMC 加息 → 创业板 / 降息 → 黄金",
-    "vote": 0,
-    "tier": "causal",
-    "inWindow": false,
-    "src": "内置+Fed官网(29条新)",
-    "stale": true,
-    "staleNote": "决议表停在 2026-09-16，之后的决议未收录 → 本因子当前不计票，只作背景"
-   }
-  ],
-  "correlation": {
-   "score": -34.4,
-   "items": [
+  "cluster": {
+   "windowHours": 6,
+   "recent": 90,
+   "clusters": [
     {
-     "name": "费城半导体",
-     "chgPct": -12.25,
-     "note": "情绪/联动，无稳定传导机制"
+     "keyword": "胜宏科技",
+     "n": 3,
+     "sample": [
+      "胜宏科技：公司目前生产经营一切正常 供应链稳定",
+      "胜宏科技：公司目前生产经营一切正常，供应链稳定，产能利用率处于良好水平",
+      "胜宏科技：下游需求保持高景气 在手订单能见度处于历史高位"
+     ]
     },
     {
-     "name": "日经225",
-     "chgPct": -5.99,
-     "note": "情绪/联动，无稳定传导机制"
-    },
-    {
-     "name": "恒生指数",
-     "chgPct": -1.06,
-     "note": "情绪/联动，无稳定传导机制"
-    },
-    {
-     "name": "道琼斯",
-     "chgPct": -3.44,
-     "note": "情绪/联动，无稳定传导机制"
-    },
-    {
-     "name": "韩国KOSPI",
-     "chgPct": -5.2,
-     "note": "情绪/联动，无稳定传导机制"
-    },
-    {
-     "name": "纳斯达克",
-     "chgPct": -5.52,
-     "note": "情绪/联动，无稳定传导机制"
-    },
-    {
-     "name": "标普500",
-     "chgPct": -4.36,
-     "note": "情绪/联动，无稳定传导机制"
-    },
-    {
-     "name": "碳酸锂主连",
-     "chgPct": 1.01,
-     "note": "情绪/联动，无稳定传导机制"
-    },
-    {
-     "name": "玻璃主连",
-     "chgPct": 1.02,
-     "note": "情绪/联动，无稳定传导机制"
-    },
-    {
-     "name": "豆粕主连",
-     "chgPct": -0.9,
-     "note": "情绪/联动，无稳定传导机制"
+     "keyword": "亿美元",
+     "n": 3,
+     "sample": [
+      "机构：第三季度DRAM “超级周期” 市场营收逼近2000亿美元",
+      "印尼10月底外汇储备规模1468亿美元",
+      "英伟达市值两日蒸发超6000亿美元 数据中心建设放缓前景引美股恐慌"
+     ]
     }
-   ],
-   "tier": "correlation",
-   "note": "等权平均涨跌幅×10，压到±100；只用于描述风险偏好，不参与 ADD/TRIM/EXIT 判定"
+   ]
   },
-  "context": {
-   "us10Chg": -44.0,
-   "cn10Chg": -8.3,
-   "goldMom20": -4.26,
-   "growthMom20": -18.42
-  },
-  "rule": "因果因子（有机制+历史可复现）可改 action；相关因子只进评分，永不投票",
-  "asof": "2026-11-05",
-  "builtAt": "2026-11-06 13:13:47"
+  "cards": [],
+  "watchlist": [],
+  "gaps": [],
+  "incomplete": false,
+  "rule": "单条快讯永不触发推演；假设卡只是待验证项，不改 action；缺口优先于结论"
  },
- "runtime": {
-  "source": "local",
-  "degraded": false,
-  "reason": null,
-  "observedAt": "2026-11-06 13:16:02"
- }
+ "extrasAsOf": "2026-11-06 13:13:23"
 }
