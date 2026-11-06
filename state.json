@@ -487,16 +487,16 @@
   "errors": null
  },
  "burst": {
-  "builtAt": "2026-11-06 15:42:33",
+  "builtAt": "2026-11-06 16:13:28",
   "poll": {
    "ok": true,
    "cached": false,
-   "newItems": 24,
+   "newItems": 26,
    "error": null
   },
   "cluster": {
    "windowHours": 6,
-   "recent": 197,
+   "recent": 223,
    "clusters": [
     {
      "keyword": "亿美元",
@@ -505,6 +505,15 @@
       "机构：第三季度DRAM “超级周期” 市场营收逼近2000亿美元",
       "印尼10月底外汇储备规模1468亿美元",
       "英伟达市值两日蒸发超6000亿美元 数据中心建设放缓前景引美股恐慌"
+     ]
+    },
+    {
+     "keyword": "七部门",
+     "n": 4,
+     "sample": [
+      "七部门：鼓励船舶制造、航运、外经贸企业和保险公司在航运保险领域更多使用人民币",
+      "七部门：鼓励能源、矿石、粮食等大宗散货在运输全流程做到应保尽保、足额投保",
+      "七部门：健全船舶全生命周期风险管理体系 引导沿海、内河船舶提高保险保障水平"
      ]
     },
     {
@@ -533,11 +542,34 @@
       "六部门：加快推进具身智能、大语言模型、脑机接口、外骨骼等前沿技术在养老领域应用",
       "机器人要进油田了？中国石油与宇树科技拟合资布局工业具身智能"
      ]
+    },
+    {
+     "keyword": "业务",
+     "n": 3,
+     "sample": [
+      "海南矿业：优先发展已布局的锂和萤石业务",
+      "东易日盛新设科技子公司 含多项AI业务",
+      "翔宇医疗等成立科技公司 含AI及智能机器人业务"
+     ]
     }
    ]
   },
   "cards": [],
   "watchlist": [
+   {
+    "event": "美联储政策",
+    "confidence": "high",
+    "keywords": [
+     "加息"
+    ],
+    "clusterDocs": 0,
+    "buckets": [
+     "黄金",
+     "权益"
+    ],
+    "type": "watch",
+    "note": "单关键词或密度不足，只进观察清单"
+   },
    {
     "event": "国内流动性",
     "confidence": "high",
@@ -561,6 +593,20 @@
     "buckets": [
      "权益",
      "半导体"
+    ],
+    "type": "watch",
+    "note": "单关键词或密度不足，只进观察清单"
+   },
+   {
+    "event": "地缘冲突",
+    "confidence": "mid",
+    "keywords": [
+     "中东"
+    ],
+    "clusterDocs": 0,
+    "buckets": [
+     "黄金",
+     "原油"
     ],
     "type": "watch",
     "note": "单关键词或密度不足，只进观察清单"
@@ -598,7 +644,7 @@
   "rule": "单条快讯永不触发推演；假设卡只是待验证项，不改 action；缺口优先于结论"
  },
  "freshness": {
-  "builtAt": "2026-11-06 15:42:33",
+  "builtAt": "2026-11-06 16:13:28",
   "inSession": false,
   "items": [
    {
@@ -606,7 +652,7 @@
     "name": "A股四大指数",
     "tier": "quote",
     "source": "新浪实时（本机）/ VPS",
-    "asof": "2026-11-06 15:41",
+    "asof": "2026-11-06 16:11",
     "ageHours": 0.0,
     "valid": true,
     "limitHours": 26,
@@ -620,7 +666,7 @@
     "tier": "daily",
     "source": "东财 datacenter（收盘口径，唯一记录源）",
     "asof": "2026-11-05 16:00",
-    "ageHours": 23.7,
+    "ageHours": 24.2,
     "valid": true,
     "limitHours": 96,
     "invalidIf": "中国10Y 超过 40 小时未更新（含一个交易日）；美债 T+1，放宽到 96 小时",
@@ -632,7 +678,7 @@
     "name": "商品盘中观测",
     "tier": "quote",
     "source": "新浪 hf_（非判定口径）",
-    "asof": "2026-11-06 15:41",
+    "asof": "2026-11-06 16:12",
     "ageHours": 0.0,
     "valid": true,
     "limitHours": 96,
@@ -645,7 +691,7 @@
     "name": "投资引擎裁决",
     "tier": "daily",
     "source": "invest-engine core_engine_v1_1（收盘序列）",
-    "asof": "2026-11-06 15:41",
+    "asof": "2026-11-06 16:12",
     "ageHours": 0.0,
     "valid": true,
     "limitHours": 96,
@@ -658,7 +704,7 @@
     "name": "扩展指数/商品主力",
     "tier": "quote",
     "source": "VPS 海外层 / 新浪",
-    "asof": "2026-11-06 15:41",
+    "asof": "2026-11-06 16:11",
     "ageHours": 0.0,
     "valid": true,
     "limitHours": 96,
@@ -671,7 +717,7 @@
     "name": "海外宏观（VIX/美元/金/美债）",
     "tier": "quote",
     "source": "Yahoo + FRED（VPS 直连）",
-    "asof": "2026-11-06 15:41",
+    "asof": "2026-11-06 16:11",
     "ageHours": 0.0,
     "valid": true,
     "limitHours": 96,
@@ -684,7 +730,7 @@
     "name": "因子推演（因果层 C1-C4）",
     "tier": "daily",
     "source": "macro_causal.build（东财+腾讯日线）",
-    "asof": "2026-11-06 15:41",
+    "asof": "2026-11-06 16:11",
     "ageHours": 0.0,
     "valid": true,
     "limitHours": 96,
@@ -698,7 +744,7 @@
     "tier": "daily",
     "source": "~/projects/daily-news/digest_*.md",
     "asof": "2026-11-05 16:00",
-    "ageHours": 23.7,
+    "ageHours": 24.2,
     "valid": true,
     "limitHours": 40,
     "invalidIf": "digest 不是当天的（超过 40 小时）或条目为空",
@@ -711,7 +757,7 @@
     "tier": "daily",
     "source": "DeepSeek 打分（按 digest 日期缓存）",
     "asof": "2026-11-05 16:00",
-    "ageHours": 23.7,
+    "ageHours": 24.2,
     "valid": true,
     "limitHours": 40,
     "invalidIf": "与 digest 不同日 / 打分报错",
@@ -724,7 +770,7 @@
     "tier": "manual",
     "source": "手工登记（券商/建行/支付宝）+ ~/.dsh/finwatch",
     "asof": "2026-11-05 16:00",
-    "ageHours": 23.7,
+    "ageHours": 24.2,
     "valid": true,
     "limitHours": 168,
     "invalidIf": "超过 7 天未更新（手工快照，不自动采）",
@@ -736,7 +782,7 @@
     "name": "告警",
     "tier": "quote",
     "source": "finwatch alerts.json",
-    "asof": "2026-11-06 15:41",
+    "asof": "2026-11-06 16:12",
     "ageHours": 0.0,
     "valid": true,
     "limitHours": 168,
@@ -750,7 +796,7 @@
     "tier": "daily",
     "source": "E:/q4-2026/reports/chain-model.md + daily-log",
     "asof": "2026-11-06 16:00",
-    "ageHours": -0.3,
+    "ageHours": 0.2,
     "valid": true,
     "limitHours": 96,
     "invalidIf": "超过 96 小时未更新",
@@ -1229,12 +1275,46 @@
   },
   "rule": "因果因子（有机制+历史可复现）可改 action；相关因子只进评分，永不投票",
   "asof": "2026-11-05",
-  "builtAt": "2026-11-06 16:11:29"
+  "builtAt": "2026-11-06 16:11:29",
+  "yields": {
+   "record": {
+    "value": 4.84,
+    "date": "2026-11-05",
+    "src": "东财 datacenter"
+   },
+   "check": {
+    "value": 4.9,
+    "date": "2026-11-04",
+    "src": "FRED"
+   },
+   "deltaBp": -6.0,
+   "verdict": "日期不同（记录源 2026-11-05 / 校验源 2026-11-04），差值 -6bp 属 T+1 差异，不视为矛盾"
+  }
  },
  "runtime": {
   "source": "local",
   "degraded": false,
   "reason": null,
   "observedAt": "2026-11-06 16:13:13"
- }
+ },
+ "discipline": {
+  "status": "COMPLIANT",
+  "strictRiskPct": 10.71,
+  "strictRiskCapPct": 15,
+  "targetStrictRiskPct": 15,
+  "goldPct": 27.81,
+  "goldAlertPct": 30,
+  "goldMaxPct": 35,
+  "thesisGate": "invalid",
+  "breaches": []
+ },
+ "externalSignal": {
+  "marketAction": "WAIT",
+  "addRiskAllowed": false,
+  "marketRegime": "external-caution",
+  "confidence": "observed"
+ },
+ "combined": "HOLD_NO_NEW_RISK",
+ "disciplineAsOf": "2026-11-05",
+ "disciplineGeneratedAt": "2026-11-06T08:13:33.813Z"
 }
