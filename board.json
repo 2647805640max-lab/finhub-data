@@ -1,6 +1,6 @@
 {
     "schema":  "board/v1",
-    "generatedAt":  "2026-11-06 23:00:40",
+    "generatedAt":  "2026-11-07 03:44:17",
     "generatedBy":  "[已移除]",
     "ips":  {
                 "asOf":  "2026-11-06 19:11:22",
@@ -50,7 +50,7 @@
                           ],
                 "alerts":  [
                                "回撤熔断当前 computable=True（截至 2026-11-05）：组合回撤 3.08%（峰值→当前），熔断阈值 −25%（engine_v2.py:120）",
-                               "持仓快照停在 2026-11-05（1 天前）：其后的组合回撤从未被观测（不是\"没风险\"，是\"看不见\"）",
+                               "持仓快照停在 2026-11-05（1.2 天前）：其后的组合回撤从未被观测（不是\"没风险\"，是\"看不见\"）",
                                "10-25 减仓执行单由推演直接产出，违反 PROJECT.md §7.5 第 2 条（推演不直接触发交易）"
                            ],
                 "footer":  "口径根 = investment-engine 源码；契约 = contracts/engine-policy.json（带源码 sha256）"
@@ -1646,13 +1646,13 @@
                       "count":  3
                   },
     "today":  {
-                  "date":  "2026-11-06",
+                  "date":  "2026-11-07",
                   "position":  {
                                    "currentPct":  10.71,
                                    "authorityPct":  35.92,
                                    "hardMaxPct":  15,
                                    "dataAsOf":  "2026-11-05",
-                                   "dataAgeDays":  1,
+                                   "dataAgeDays":  1.2,
                                    "stale":  false,
                                    "note":  "L1 真值：直接由 holdings.json 快照按名称归类算四桶；无快照时才回落 metrics 派生值",
                                    "source":  "holdings.json（用户上传快照，非推算）"
@@ -1695,7 +1695,7 @@
                                     {
                                         "item":  "持仓快照 holdings.json",
                                         "asOf":  "2026-11-05",
-                                        "ageDays":  1,
+                                        "ageDays":  1.2,
                                         "stale":  false
                                     },
                                     {
@@ -1706,7 +1706,7 @@
                                     },
                                     {
                                         "item":  "决策账本",
-                                        "asOf":  "2026-11-06 23:00",
+                                        "asOf":  "2026-11-07 03:44",
                                         "ageDays":  0,
                                         "stale":  false
                                     }
@@ -1728,6 +1728,14 @@
                                           },
                                           {
                                               "date":  "2026-11-06",
+                                              "currentPct":  10.71,
+                                              "authorityPct":  35.92,
+                                              "hardMaxPct":  15,
+                                              "dataAsOf":  "2026-11-05",
+                                              "source":  "holdings.json（用户上传快照，非推算）"
+                                          },
+                                          {
+                                              "date":  "2026-11-07",
                                               "currentPct":  10.71,
                                               "authorityPct":  35.92,
                                               "hardMaxPct":  15,
@@ -1798,7 +1806,7 @@
                           "fullVersion":  "仅本地 contracts/board.json（不得直接推公开仓）"
                       },
     "_freshness":  {
-                       "checkedAt":  "2026-11-06 23:00:40",
+                       "checkedAt":  "2026-11-07 03:44:18",
                        "worst":  "ok",
                        "staleCount":  0,
                        "items":  [
@@ -1806,7 +1814,7 @@
                                          "id":  "holdings",
                                          "label":  "持仓快照",
                                          "asOf":  "2026-11-05 22:55",
-                                         "ageDays":  1,
+                                         "ageDays":  1.2,
                                          "maxAgeDays":  3,
                                          "stale":  false
                                      },
@@ -1814,7 +1822,7 @@
                                          "id":  "engine-policy",
                                          "label":  "引擎政策契约",
                                          "asOf":  "2026-11-06 19:11",
-                                         "ageDays":  0.16,
+                                         "ageDays":  0.36,
                                          "maxAgeDays":  14,
                                          "stale":  false
                                      },
@@ -1822,7 +1830,7 @@
                                          "id":  "factor-registry",
                                          "label":  "因子登记表",
                                          "asOf":  "2026-11-02 23:27",
-                                         "ageDays":  3.98,
+                                         "ageDays":  4.18,
                                          "maxAgeDays":  30,
                                          "stale":  false
                                      },
@@ -1830,7 +1838,7 @@
                                          "id":  "news-mapping",
                                          "label":  "新闻映射",
                                          "asOf":  "2026-11-02 23:26",
-                                         "ageDays":  3.98,
+                                         "ageDays":  4.18,
                                          "maxAgeDays":  30,
                                          "stale":  false
                                      },
@@ -1838,7 +1846,7 @@
                                          "id":  "chain-rules",
                                          "label":  "推演规则",
                                          "asOf":  "2026-11-02 23:23",
-                                         "ageDays":  3.98,
+                                         "ageDays":  4.18,
                                          "maxAgeDays":  30,
                                          "stale":  false
                                      },
@@ -1846,7 +1854,7 @@
                                          "id":  "decisions",
                                          "label":  "决策账本",
                                          "asOf":  "2026-11-02 23:43",
-                                         "ageDays":  3.97,
+                                         "ageDays":  4.17,
                                          "maxAgeDays":  7,
                                          "stale":  false
                                      },
@@ -1854,15 +1862,15 @@
                                          "id":  "rules",
                                          "label":  "风控规则",
                                          "asOf":  "2026-11-05 23:21",
-                                         "ageDays":  0.99,
+                                         "ageDays":  1.18,
                                          "maxAgeDays":  14,
                                          "stale":  false
                                      },
                                      {
                                          "id":  "market-live",
                                          "label":  "行情快照",
-                                         "asOf":  "2026-11-06 22:44",
-                                         "ageDays":  0.01,
+                                         "asOf":  "2026-11-07 03:44",
+                                         "ageDays":  0,
                                          "maxAgeDays":  0.25,
                                          "stale":  false
                                      }
@@ -1871,174 +1879,134 @@
                    },
     "nationalTeam":  {
                          "ok":  true,
-                         "lastSuccess":  "2026-11-06 22:50:33",
-                         "asOf":  "2026-11-06 22:50:33",
+                         "lastSuccess":  "2026-11-07 03:35:50",
+                         "asOf":  "2026-11-07 03:35:50",
                          "note":  "",
                          "items":  [
                                        {
-                                           "code":  "159845",
-                                           "name":  "159845",
-                                           "shares":  3948425606,
-                                           "deltaShares":  -321000000,
-                                           "deltaPct":  -7.52,
-                                           "deltaWan":  -32100
-                                       },
-                                       {
-                                           "code":  "510270",
-                                           "name":  "510270",
-                                           "shares":  18832100,
-                                           "deltaShares":  1000000,
-                                           "deltaPct":  5.61,
-                                           "deltaWan":  100
-                                       },
-                                       {
-                                           "code":  "588080",
-                                           "name":  "科创50ETF(易方达)",
-                                           "shares":  33232628100,
-                                           "deltaShares":  1131000000,
-                                           "deltaPct":  3.52,
-                                           "deltaWan":  113100
-                                       },
-                                       {
-                                           "code":  "510880",
-                                           "name":  "红利ETF",
-                                           "shares":  5995175700,
-                                           "deltaShares":  -187000000,
-                                           "deltaPct":  -3.02,
-                                           "deltaWan":  -18700
-                                       },
-                                       {
-                                           "code":  "159949",
-                                           "name":  "创业板50ETF",
-                                           "shares":  23559785113,
-                                           "deltaShares":  595000000,
-                                           "deltaPct":  2.59,
-                                           "deltaWan":  59500
+                                           "code":  "510330",
+                                           "name":  "510330",
+                                           "shares":  15579249800,
+                                           "deltaShares":  0,
+                                           "deltaPct":  0,
+                                           "deltaWan":  0
                                        },
                                        {
                                            "code":  "510350",
                                            "name":  "510350",
                                            "shares":  872214700,
-                                           "deltaShares":  17100000,
-                                           "deltaPct":  2,
-                                           "deltaWan":  1710
-                                       },
-                                       {
-                                           "code":  "512100",
-                                           "name":  "中证1000ETF",
-                                           "shares":  19431217600,
-                                           "deltaShares":  -328000000,
-                                           "deltaPct":  -1.66,
-                                           "deltaWan":  -32800
+                                           "deltaShares":  0,
+                                           "deltaPct":  0,
+                                           "deltaWan":  0
                                        },
                                        {
                                            "code":  "510320",
                                            "name":  "510320",
                                            "shares":  922068500,
-                                           "deltaShares":  15000000,
-                                           "deltaPct":  1.65,
-                                           "deltaWan":  1500
-                                       },
-                                       {
-                                           "code":  "588000",
-                                           "name":  "科创50ETF(华夏)",
-                                           "shares":  108473668200,
-                                           "deltaShares":  1299000000,
-                                           "deltaPct":  1.21,
-                                           "deltaWan":  129900
-                                       },
-                                       {
-                                           "code":  "510050",
-                                           "name":  "上证50ETF",
-                                           "shares":  16190766800,
-                                           "deltaShares":  -143100000,
-                                           "deltaPct":  -0.88,
-                                           "deltaWan":  -14310
-                                       },
-                                       {
-                                           "code":  "510210",
-                                           "name":  "上证综指ETF",
-                                           "shares":  19976192600,
-                                           "deltaShares":  -153000000,
-                                           "deltaPct":  -0.76,
-                                           "deltaWan":  -15300
-                                       },
-                                       {
-                                           "code":  "510100",
-                                           "name":  "510100",
-                                           "shares":  1056206800,
-                                           "deltaShares":  7200000,
-                                           "deltaPct":  0.69,
-                                           "deltaWan":  720
-                                       },
-                                       {
-                                           "code":  "510500",
-                                           "name":  "中证500ETF",
-                                           "shares":  9895368600,
-                                           "deltaShares":  -68000000,
-                                           "deltaPct":  -0.68,
-                                           "deltaWan":  -6800
-                                       },
-                                       {
-                                           "code":  "510330",
-                                           "name":  "510330",
-                                           "shares":  15579249800,
-                                           "deltaShares":  68400000,
-                                           "deltaPct":  0.44,
-                                           "deltaWan":  6840
-                                       },
-                                       {
-                                           "code":  "510310",
-                                           "name":  "510310",
-                                           "shares":  25945844000,
-                                           "deltaShares":  73800000,
-                                           "deltaPct":  0.29,
-                                           "deltaWan":  7380
+                                           "deltaShares":  0,
+                                           "deltaPct":  0,
+                                           "deltaWan":  0
                                        },
                                        {
                                            "code":  "510300",
                                            "name":  "沪深300ETF",
                                            "shares":  46491787700,
-                                           "deltaShares":  128700000,
-                                           "deltaPct":  0.28,
-                                           "deltaWan":  12870
+                                           "deltaShares":  0,
+                                           "deltaPct":  0,
+                                           "deltaWan":  0
+                                       },
+                                       {
+                                           "code":  "510310",
+                                           "name":  "510310",
+                                           "shares":  25945844000,
+                                           "deltaShares":  0,
+                                           "deltaPct":  0,
+                                           "deltaWan":  0
+                                       },
+                                       {
+                                           "code":  "510500",
+                                           "name":  "中证500ETF",
+                                           "shares":  9895368600,
+                                           "deltaShares":  0,
+                                           "deltaPct":  0,
+                                           "deltaWan":  0
+                                       },
+                                       {
+                                           "code":  "588000",
+                                           "name":  "科创50ETF(华夏)",
+                                           "shares":  108473668200,
+                                           "deltaShares":  0,
+                                           "deltaPct":  0,
+                                           "deltaWan":  0
+                                       },
+                                       {
+                                           "code":  "588080",
+                                           "name":  "科创50ETF(易方达)",
+                                           "shares":  33232628100,
+                                           "deltaShares":  0,
+                                           "deltaPct":  0,
+                                           "deltaWan":  0
                                        },
                                        {
                                            "code":  "512880",
                                            "name":  "证券ETF",
                                            "shares":  54261291500,
-                                           "deltaShares":  106000000,
-                                           "deltaPct":  0.2,
-                                           "deltaWan":  10600
+                                           "deltaShares":  0,
+                                           "deltaPct":  0,
+                                           "deltaWan":  0
+                                       },
+                                       {
+                                           "code":  "510880",
+                                           "name":  "红利ETF",
+                                           "shares":  5995175700,
+                                           "deltaShares":  0,
+                                           "deltaPct":  0,
+                                           "deltaWan":  0
+                                       },
+                                       {
+                                           "code":  "512100",
+                                           "name":  "中证1000ETF",
+                                           "shares":  19431217600,
+                                           "deltaShares":  0,
+                                           "deltaPct":  0,
+                                           "deltaWan":  0
+                                       },
+                                       {
+                                           "code":  "159949",
+                                           "name":  "创业板50ETF",
+                                           "shares":  23559785113,
+                                           "deltaShares":  0,
+                                           "deltaPct":  0,
+                                           "deltaWan":  0
+                                       },
+                                       {
+                                           "code":  "510050",
+                                           "name":  "上证50ETF",
+                                           "shares":  16190766800,
+                                           "deltaShares":  0,
+                                           "deltaPct":  0,
+                                           "deltaWan":  0
                                        },
                                        {
                                            "code":  "159922",
                                            "name":  "159922",
                                            "shares":  3560676765,
-                                           "deltaShares":  1000000,
-                                           "deltaPct":  0.03,
-                                           "deltaWan":  100
+                                           "deltaShares":  0,
+                                           "deltaPct":  0,
+                                           "deltaWan":  0
                                        },
                                        {
-                                           "code":  "510180",
-                                           "name":  "上证180ETF",
-                                           "shares":  4447557700,
-                                           "deltaShares":  500000,
-                                           "deltaPct":  0.01,
-                                           "deltaWan":  50
+                                           "code":  "159845",
+                                           "name":  "159845",
+                                           "shares":  3948425606,
+                                           "deltaShares":  0,
+                                           "deltaPct":  0,
+                                           "deltaWan":  0
                                        },
                                        {
                                            "code":  "159915",
                                            "name":  "创业板ETF",
                                            "shares":  44914454936,
-                                           "deltaShares":  5000000,
-                                           "deltaPct":  0.01,
-                                           "deltaWan":  500
-                                       },
-                                       {
-                                           "code":  "510190",
-                                           "name":  "510190",
-                                           "shares":  25150800,
                                            "deltaShares":  0,
                                            "deltaPct":  0,
                                            "deltaWan":  0
@@ -2050,21 +2018,61 @@
                                            "deltaShares":  0,
                                            "deltaPct":  0,
                                            "deltaWan":  0
+                                       },
+                                       {
+                                           "code":  "510210",
+                                           "name":  "上证综指ETF",
+                                           "shares":  19976192600,
+                                           "deltaShares":  0,
+                                           "deltaPct":  0,
+                                           "deltaWan":  0
+                                       },
+                                       {
+                                           "code":  "510270",
+                                           "name":  "510270",
+                                           "shares":  18832100,
+                                           "deltaShares":  0,
+                                           "deltaPct":  0,
+                                           "deltaWan":  0
+                                       },
+                                       {
+                                           "code":  "510190",
+                                           "name":  "510190",
+                                           "shares":  25150800,
+                                           "deltaShares":  0,
+                                           "deltaPct":  0,
+                                           "deltaWan":  0
+                                       },
+                                       {
+                                           "code":  "510100",
+                                           "name":  "510100",
+                                           "shares":  1056206800,
+                                           "deltaShares":  0,
+                                           "deltaPct":  0,
+                                           "deltaWan":  0
+                                       },
+                                       {
+                                           "code":  "510180",
+                                           "name":  "上证180ETF",
+                                           "shares":  4447557700,
+                                           "deltaShares":  0,
+                                           "deltaPct":  0,
+                                           "deltaWan":  0
                                        }
                                    ],
                          "error":  null,
                          "discipline":  "ETF 份额变化来自全市场申赎，机构/套利/个人共同参与。「净申购=国家队买入」属推断，不得写成确证。",
-                         "dateCurrent":  "2026-11-06",
-                         "datePrev":  "2026-11-05",
+                         "dateCurrent":  "2026-11-07",
+                         "datePrev":  "2026-11-06",
                          "summary":  {
                                          "total":  22,
-                                         "up":  14,
-                                         "down":  6,
-                                         "flat":  2
+                                         "up":  0,
+                                         "down":  0,
+                                         "flat":  22
                                      }
                      },
     "notifications":  {
-                          "generatedAt":  "2026-11-06 23:00:41",
+                          "generatedAt":  "2026-11-07 03:44:19",
                           "count":  1,
                           "byLevel":  {
                                           "urgent":  0,
@@ -2084,7 +2092,7 @@
                           "policy":  "通知内容脱敏：不含金额、不含持仓名称；明细需解锁查看"
                       },
     "market":  {
-                   "generatedAt":  "2026-11-06 22:44:15",
+                   "generatedAt":  "2026-11-07 03:44:15",
                    "source":  "qt.gtimg.cn（指数）+ hq.sinajs.cn（外盘/汇率）",
                    "note":  "cn10y / us30y 无可用公开接口，已如实标 missing；下游不得把缺失当 0 或沿用旧值。",
                    "okCount":  5,
@@ -2137,12 +2145,12 @@
                                                  "ok":  true,
                                                  "kind":  "quote",
                                                  "error":  null,
-                                                 "asOf":  "2026-11-06 22:44:09",
+                                                 "asOf":  "2026-11-07 03:44:10",
                                                  "value":  {
                                                                "code":  "hf_OIL",
                                                                "name":  "布伦特原油",
-                                                               "price":  97.783,
-                                                               "asOf":  "2026-11-06 22:44:09",
+                                                               "price":  98.317,
+                                                               "asOf":  "2026-11-07 03:44:10",
                                                                "label":  "布伦特原油"
                                                            }
                                              },
@@ -2150,12 +2158,12 @@
                                                "ok":  true,
                                                "kind":  "quote",
                                                "error":  null,
-                                               "asOf":  "2026-11-06 22:44:15",
+                                               "asOf":  "2026-11-07 03:44:11",
                                                "value":  {
                                                              "code":  "hf_CL",
                                                              "name":  "纽约原油",
-                                                             "price":  90.432,
-                                                             "asOf":  "2026-11-06 22:44:15",
+                                                             "price":  91.225,
+                                                             "asOf":  "2026-11-07 03:44:11",
                                                              "label":  "纽约原油"
                                                          }
                                            },
@@ -2163,12 +2171,12 @@
                                                 "ok":  true,
                                                 "kind":  "quote",
                                                 "error":  null,
-                                                "asOf":  "2026-11-06 22:44:14",
+                                                "asOf":  "2026-11-07 03:44:15",
                                                 "value":  {
                                                               "code":  "hf_GC",
                                                               "name":  "纽约黄金",
-                                                              "price":  4043.733,
-                                                              "asOf":  "2026-11-06 22:44:14",
+                                                              "price":  4069.57,
+                                                              "asOf":  "2026-11-07 03:44:15",
                                                               "label":  "纽约黄金"
                                                           }
                                             },
@@ -2176,12 +2184,12 @@
                                                   "ok":  true,
                                                   "kind":  "quote",
                                                   "error":  null,
-                                                  "asOf":  "2026-11-06 22:43:01",
+                                                  "asOf":  "2026-11-07 03:00:01",
                                                   "value":  {
                                                                 "code":  "USDCNY",
                                                                 "name":  "美元人民币",
-                                                                "price":  6.673,
-                                                                "asOf":  "2026-11-06 22:43:01",
+                                                                "price":  6.6726,
+                                                                "asOf":  "2026-11-07 03:00:01",
                                                                 "label":  "美元人民币"
                                                             }
                                               },
@@ -2202,7 +2210,7 @@
                                }
                },
     "automation":  {
-                       "generatedAt":  "2026-11-06 23:00:42",
+                       "generatedAt":  "2026-11-07 03:44:20",
                        "source":  "harness schedule store + _audit/refresh-log.jsonl",
                        "note":  "单向耦合：Harness 定时任务 → 本文件 → board.json → 页面。页面无法反向触发任务。",
                        "schedules":  [
@@ -2211,8 +2219,8 @@
                                              "title":  "数据实时性流水线",
                                              "kind":  "every",
                                              "everySeconds":  1800,
-                                             "scheduledAt":  "2026-11-06T15:13:56.989Z",
-                                             "nextRunAt":  "2026-11-06 23:13:56"
+                                             "scheduledAt":  "2026-11-06T20:13:56.989Z",
+                                             "nextRunAt":  "2026-11-07 04:13:56"
                                          }
                                      ],
                        "lastRuns":  [
