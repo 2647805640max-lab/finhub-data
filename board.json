@@ -1,6 +1,6 @@
 {
     "schema":  "board/v1",
-    "generatedAt":  "2026-11-06 19:14:15",
+    "generatedAt":  "2026-11-06 19:16:12",
     "generatedBy":  "[已移除]",
     "ips":  {
                 "asOf":  "2026-11-06 19:11:22",
@@ -1706,7 +1706,7 @@
                                     },
                                     {
                                         "item":  "决策账本",
-                                        "asOf":  "2026-11-06 19:14",
+                                        "asOf":  "2026-11-06 19:16",
                                         "ageDays":  0,
                                         "stale":  false
                                     }
@@ -1747,7 +1747,7 @@
                           "fullVersion":  "仅本地 contracts/board.json（不得直接推公开仓）"
                       },
     "_freshness":  {
-                       "checkedAt":  "2026-11-06 19:14:18",
+                       "checkedAt":  "2026-11-06 19:16:14",
                        "worst":  "ok",
                        "staleCount":  0,
                        "items":  [
@@ -1771,7 +1771,7 @@
                                          "id":  "factor-registry",
                                          "label":  "因子登记表",
                                          "asOf":  "2026-11-02 23:27",
-                                         "ageDays":  3.82,
+                                         "ageDays":  3.83,
                                          "maxAgeDays":  30,
                                          "stale":  false
                                      },
@@ -1779,7 +1779,7 @@
                                          "id":  "news-mapping",
                                          "label":  "新闻映射",
                                          "asOf":  "2026-11-02 23:26",
-                                         "ageDays":  3.82,
+                                         "ageDays":  3.83,
                                          "maxAgeDays":  30,
                                          "stale":  false
                                      },
@@ -2013,7 +2013,7 @@
                                      }
                      },
     "notifications":  {
-                          "generatedAt":  "2026-11-06 19:14:20",
+                          "generatedAt":  "2026-11-06 19:16:16",
                           "count":  1,
                           "byLevel":  {
                                           "urgent":  0,
@@ -2151,7 +2151,7 @@
                                }
                },
     "automation":  {
-                       "generatedAt":  "2026-11-06 19:14:22",
+                       "generatedAt":  "2026-11-06 19:16:17",
                        "source":  "harness schedule store + _audit/refresh-log.jsonl",
                        "note":  "单向耦合：Harness 定时任务 → 本文件 → board.json → 页面。页面无法反向触发任务。",
                        "schedules":  [
@@ -2165,12 +2165,6 @@
                                          }
                                      ],
                        "lastRuns":  [
-                                        {
-                                            "at":  "2026-11-06T01:18:30+08:00",
-                                            "overall":  "OK",
-                                            "durationMs":  234021,
-                                            "dataAgeMin":  3.9
-                                        },
                                         {
                                             "at":  "2026-11-06T01:47:32+08:00",
                                             "overall":  "OK",
@@ -2284,20 +2278,26 @@
                                             "overall":  "OK",
                                             "durationMs":  38073,
                                             "dataAgeMin":  0.5
+                                        },
+                                        {
+                                            "at":  "2026-11-06T19:14:32+08:00",
+                                            "overall":  "FAIL",
+                                            "durationMs":  25844,
+                                            "dataAgeMin":  0.1
                                         }
                                     ],
                        "stats":  {
                                      "total":  20,
-                                     "ok":  20,
+                                     "ok":  19,
                                      "warn":  0,
-                                     "fail":  0,
-                                     "consecutiveBad":  0,
-                                     "lastRunAt":  "2026-11-06T18:44:57+08:00",
-                                     "lastOverall":  "OK"
+                                     "fail":  1,
+                                     "consecutiveBad":  1,
+                                     "lastRunAt":  "2026-11-06T19:14:32+08:00",
+                                     "lastOverall":  "FAIL"
                                  },
                        "health":  {
-                                      "status":  "healthy",
-                                      "reason":  "最近一次 OK"
+                                      "status":  "failing",
+                                      "reason":  "最近一次 FAIL（数据没上去）"
                                   },
                        "degraded":  [
 
