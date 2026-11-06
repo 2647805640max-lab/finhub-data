@@ -948,10 +948,24 @@
   },
   "rule": "因果因子（有机制+历史可复现）可改 action；相关因子只进评分，永不投票",
   "asof": "2026-11-05",
-  "builtAt": "2026-11-06 13:53:55"
+  "builtAt": "2026-11-06 13:53:55",
+  "yields": {
+   "record": {
+    "value": 4.84,
+    "date": "2026-11-05",
+    "src": "东财 datacenter"
+   },
+   "check": {
+    "value": 4.9,
+    "date": "2026-11-04",
+    "src": "FRED"
+   },
+   "deltaBp": -6.0,
+   "verdict": "日期不同（记录源 2026-11-05 / 校验源 2026-11-04），差值 -6bp 属 T+1 差异，不视为矛盾"
+  }
  },
  "freshness": {
-  "builtAt": "2026-11-06 13:48:45",
+  "builtAt": "2026-11-06 13:54:08",
   "inSession": true,
   "items": [
    {
@@ -959,7 +973,7 @@
     "name": "A股四大指数",
     "tier": "quote",
     "source": "新浪实时（本机）/ VPS",
-    "asof": "2026-11-06 13:46",
+    "asof": "2026-11-06 13:53",
     "ageHours": 0.0,
     "valid": true,
     "limitHours": 0.5,
@@ -973,7 +987,7 @@
     "tier": "daily",
     "source": "东财 datacenter（收盘口径，唯一记录源）",
     "asof": "2026-11-05 16:00",
-    "ageHours": 21.8,
+    "ageHours": 21.9,
     "valid": true,
     "limitHours": 40,
     "invalidIf": "中国10Y 超过 40 小时未更新（含一个交易日）；美债 T+1，放宽到 96 小时",
@@ -985,7 +999,7 @@
     "name": "商品盘中观测",
     "tier": "quote",
     "source": "新浪 hf_（非判定口径）",
-    "asof": "2026-11-06 13:46",
+    "asof": "2026-11-06 13:53",
     "ageHours": 0.0,
     "valid": true,
     "limitHours": 40,
@@ -998,7 +1012,7 @@
     "name": "投资引擎裁决",
     "tier": "daily",
     "source": "invest-engine core_engine_v1_1（收盘序列）",
-    "asof": "2026-11-06 13:46",
+    "asof": "2026-11-06 13:53",
     "ageHours": 0.0,
     "valid": true,
     "limitHours": 40,
@@ -1011,7 +1025,7 @@
     "name": "扩展指数/商品主力",
     "tier": "quote",
     "source": "VPS 海外层 / 新浪",
-    "asof": "2026-11-06 13:46",
+    "asof": "2026-11-06 13:53",
     "ageHours": 0.0,
     "valid": true,
     "limitHours": 40,
@@ -1024,7 +1038,7 @@
     "name": "海外宏观（VIX/美元/金/美债）",
     "tier": "quote",
     "source": "Yahoo + FRED（VPS 直连）",
-    "asof": "2026-11-06 13:46",
+    "asof": "2026-11-06 13:53",
     "ageHours": 0.0,
     "valid": true,
     "limitHours": 40,
@@ -1037,7 +1051,7 @@
     "name": "因子推演（因果层 C1-C4）",
     "tier": "daily",
     "source": "macro_causal.build（东财+腾讯日线）",
-    "asof": "2026-11-06 13:46",
+    "asof": "2026-11-06 13:53",
     "ageHours": 0.0,
     "valid": true,
     "limitHours": 40,
@@ -1051,7 +1065,7 @@
     "tier": "daily",
     "source": "~/projects/daily-news/digest_*.md",
     "asof": "2026-11-05 16:00",
-    "ageHours": 21.8,
+    "ageHours": 21.9,
     "valid": true,
     "limitHours": 40,
     "invalidIf": "digest 不是当天的（超过 40 小时）或条目为空",
@@ -1064,7 +1078,7 @@
     "tier": "daily",
     "source": "DeepSeek 打分（按 digest 日期缓存）",
     "asof": "2026-11-05 16:00",
-    "ageHours": 21.8,
+    "ageHours": 21.9,
     "valid": true,
     "limitHours": 40,
     "invalidIf": "与 digest 不同日 / 打分报错",
@@ -1077,7 +1091,7 @@
     "tier": "manual",
     "source": "手工登记（券商/建行/支付宝）+ ~/.dsh/finwatch",
     "asof": "2026-11-05 16:00",
-    "ageHours": 21.8,
+    "ageHours": 21.9,
     "valid": true,
     "limitHours": 168,
     "invalidIf": "超过 7 天未更新（手工快照，不自动采）",
@@ -1089,7 +1103,7 @@
     "name": "告警",
     "tier": "quote",
     "source": "finwatch alerts.json",
-    "asof": "2026-11-06 13:46",
+    "asof": "2026-11-06 13:53",
     "ageHours": 0.0,
     "valid": true,
     "limitHours": 168,
@@ -1103,7 +1117,7 @@
     "tier": "daily",
     "source": "E:/q4-2026/reports/chain-model.md + daily-log",
     "asof": "2026-11-06 16:00",
-    "ageHours": -2.2,
+    "ageHours": -2.1,
     "valid": true,
     "limitHours": 96,
     "invalidIf": "超过 96 小时未更新",
@@ -1122,16 +1136,16 @@
   "confidenceAdjust": "正常"
  },
  "burst": {
-  "builtAt": "2026-11-06 13:43:53",
+  "builtAt": "2026-11-06 13:54:08",
   "poll": {
    "ok": true,
    "cached": false,
-   "newItems": 12,
+   "newItems": 10,
    "error": null
   },
   "cluster": {
    "windowHours": 6,
-   "recent": 112,
+   "recent": 122,
    "clusters": [
     {
      "keyword": "胜宏科技",
@@ -1149,6 +1163,15 @@
       "机构：第三季度DRAM “超级周期” 市场营收逼近2000亿美元",
       "印尼10月底外汇储备规模1468亿美元",
       "英伟达市值两日蒸发超6000亿美元 数据中心建设放缓前景引美股恐慌"
+     ]
+    },
+    {
+     "keyword": "六部门",
+     "n": 3,
+     "sample": [
+      "六部门：支持各类经营主体按市场化原则参与适老用品产品消费场景投资、建设和运营",
+      "六部门：开展适老用品产品试用、展示、租售 推动适老用品产品规模化使用",
+      "六部门：加快推进具身智能、大语言模型、脑机接口、外骨骼等前沿技术在养老领域应用"
      ]
     }
    ]
@@ -1202,5 +1225,25 @@
   "incomplete": false,
   "rule": "单条快讯永不触发推演；假设卡只是待验证项，不改 action；缺口优先于结论"
  },
- "extrasAsOf": "2026-11-06 13:48:45"
+ "extrasAsOf": "2026-11-06 13:48:45",
+ "discipline": {
+  "status": "COMPLIANT",
+  "strictRiskPct": 10.71,
+  "strictRiskCapPct": 15,
+  "targetStrictRiskPct": 15,
+  "goldPct": 27.81,
+  "goldAlertPct": 30,
+  "goldMaxPct": 35,
+  "thesisGate": "invalid",
+  "breaches": []
+ },
+ "externalSignal": {
+  "marketAction": "WAIT",
+  "addRiskAllowed": false,
+  "marketRegime": "external-caution",
+  "confidence": "observed"
+ },
+ "combined": "HOLD_NO_NEW_RISK",
+ "disciplineAsOf": "2026-11-05",
+ "disciplineGeneratedAt": "2026-11-06T05:54:12.658Z"
 }
