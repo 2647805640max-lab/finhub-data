@@ -1,6 +1,6 @@
 {
     "schema":  "board/v1",
-    "generatedAt":  "2026-11-07 19:14:06",
+    "generatedAt":  "2026-11-07 19:25:18",
     "generatedBy":  "[已移除]",
     "ips":  {
                 "asOf":  "2026-11-06 19:11:22",
@@ -50,7 +50,7 @@
                           ],
                 "alerts":  [
                                "回撤熔断当前 computable=True（截至 2026-11-05）：组合回撤 3.08%（峰值→当前），熔断阈值 −25%（engine_v2.py:120）",
-                               "持仓快照停在 2026-11-05（1.8 天前）：其后的组合回撤从未被观测（不是\"没风险\"，是\"看不见\"）",
+                               "持仓快照停在 2026-11-05（1.9 天前）：其后的组合回撤从未被观测（不是\"没风险\"，是\"看不见\"）",
                                "10-25 减仓执行单由推演直接产出，违反 PROJECT.md §7.5 第 2 条（推演不直接触发交易）"
                            ],
                 "footer":  "口径根 = investment-engine 源码；契约 = contracts/engine-policy.json（带源码 sha256）"
@@ -1652,7 +1652,7 @@
                                    "authorityPct":  35.92,
                                    "hardMaxPct":  15,
                                    "dataAsOf":  "2026-11-05",
-                                   "dataAgeDays":  1.8,
+                                   "dataAgeDays":  1.9,
                                    "stale":  false,
                                    "note":  "L1 真值：直接由 holdings.json 快照按名称归类算四桶；无快照时才回落 metrics 派生值",
                                    "source":  "holdings.json（用户上传快照，非推算）"
@@ -1695,7 +1695,7 @@
                                     {
                                         "item":  "持仓快照 holdings.json",
                                         "asOf":  "2026-11-05",
-                                        "ageDays":  1.8,
+                                        "ageDays":  1.9,
                                         "stale":  false
                                     },
                                     {
@@ -1706,7 +1706,7 @@
                                     },
                                     {
                                         "item":  "决策账本",
-                                        "asOf":  "2026-11-07 19:14",
+                                        "asOf":  "2026-11-07 19:25",
                                         "ageDays":  0,
                                         "stale":  false
                                     }
@@ -1798,6 +1798,163 @@
                              ],
                     "disclaimer":  "以上为研究/审计结论，不构成买卖建议；数字全部可复现，来源为本机实跑与仓库内契约。"
                 },
+    "qis":  {
+                "schema":  "factors-qis/v1",
+                "generatedAt":  "2026-11-07 19:25:17",
+                "producer":  "tools/qis-factors.py（因子演算唯一生产者）",
+                "consumer":  "08:45 推演任务只读本文件，不得自行演算或自行判阈",
+                "caliber_status":  "unregistered_research",
+                "caliber_note":  "qis 的因子口径、5% 单只上限、分数权重均**未登记进 conventions.json** ⇒ 本文件是研究级读数，**不得作为调仓依据**；仓位只由引擎出",
+                "errors":  [
+
+                           ],
+                "warnings":  [
+                                 "口径未登记：qis 的因子/5%上限/分数权重均不在 conventions.json ⇒ 研究级读数"
+                             ],
+                "sourceVerified":  true,
+                "source":  {
+                               "repo":  "[已移除]",
+                               "branch":  "feat/local-qis-incremental-factor-engine",
+                               "commit":  "b[金额已移除]bbfc7c2e5852e09d9a[金额已移除]e75cc24cc5b"
+                           },
+                "universe":  {
+                                 "total":  11,
+                                 "riskAssets":  4,
+                                 "excluded":  [
+                                                  {
+                                                      "symbol":  "sh[金额已移除]",
+                                                      "name":  "上证指数",
+                                                      "reason":  "指数=基准，非标的"
+                                                  },
+                                                  {
+                                                      "symbol":  "sh[金额已移除]",
+                                                      "name":  "上证50指数",
+                                                      "reason":  "指数=基准，非标的"
+                                                  },
+                                                  {
+                                                      "symbol":  "sh[金额已移除]",
+                                                      "name":  "沪深300",
+                                                      "reason":  "指数=基准，非标的"
+                                                  },
+                                                  {
+                                                      "symbol":  "sh[金额已移除]",
+                                                      "name":  "中证500指数",
+                                                      "reason":  "指数=基准，非标的"
+                                                  },
+                                                  {
+                                                      "symbol":  "sh[金额已移除]",
+                                                      "name":  "国债ETF",
+                                                      "reason":  "债券/固收类=稳健资产"
+                                                  },
+                                                  {
+                                                      "symbol":  "sz[金额已移除]",
+                                                      "name":  "深证成指",
+                                                      "reason":  "指数=基准，非标的"
+                                                  },
+                                                  {
+                                                      "symbol":  "sz[金额已移除]",
+                                                      "name":  "创业板指",
+                                                      "reason":  "指数=基准，非标的"
+                                                  }
+                                              ]
+                             },
+                "cacheAgeSeconds":  45.0,
+                "cacheAgeSecondsBySymbol":  {
+                                                "sh510050":  45.0,
+                                                "sh510300":  44.4,
+                                                "sh510500":  43.7,
+                                                "sz159949":  43.0
+                                            },
+                "refresh":  {
+                                "ok":  true,
+                                "detail":  "最旧的缓存才 0.0 小时 ≤ 24.0 小时，未重抓",
+                                "reason":  "按需刷新"
+                            },
+                "lastBarLagDays":  {
+                                       "sh510050":  1,
+                                       "sh510300":  1,
+                                       "sh510500":  1,
+                                       "sz159949":  1
+                                   },
+                "maxLagDays":  1,
+                "lagThresholdDays":  4,
+                "factors":  {
+                                "sh510050":  {
+                                                 "name":  "上证50ETF",
+                                                 "lastBar":  "2026-11-06",
+                                                 "lagDays":  1,
+                                                 "bars":  1250,
+                                                 "momentum":  -0.046317894035321494,
+                                                 "vol":  0.10443898783125419,
+                                                 "smaDev":  -0.020421940928269988,
+                                                 "score":  0.875,
+                                                 "weight":  0.05
+                                             },
+                                "sh510300":  {
+                                                 "name":  "沪深300ETF",
+                                                 "lastBar":  "2026-11-06",
+                                                 "lagDays":  1,
+                                                 "bars":  1250,
+                                                 "momentum":  -0.15330139554259525,
+                                                 "vol":  0.16638300310815707,
+                                                 "smaDev":  -0.07812674639543982,
+                                                 "score":  0.625,
+                                                 "weight":  0.05
+                                             },
+                                "sh510500":  {
+                                                 "name":  "中证500ETF",
+                                                 "lastBar":  "2026-11-06",
+                                                 "lagDays":  1,
+                                                 "bars":  1250,
+                                                 "momentum":  -0.24716417910447763,
+                                                 "vol":  0.35213002904322277,
+                                                 "smaDev":  -0.10829824726597714,
+                                                 "score":  0.375,
+                                                 "weight":  0.0375
+                                             },
+                                "sz159949":  {
+                                                 "name":  "创业板50ETF",
+                                                 "lastBar":  "2026-11-06",
+                                                 "lagDays":  1,
+                                                 "bars":  1250,
+                                                 "momentum":  -0.3862876254180603,
+                                                 "vol":  0.4887729767440121,
+                                                 "smaDev":  -0.2466220827077933,
+                                                 "score":  0.125,
+                                                 "weight":  0.0125
+                                             }
+                            },
+                "allocation":  {
+                                   "weights":  {
+                                                   "sh510050":  0.05,
+                                                   "sh510300":  0.05,
+                                                   "sh510500":  0.0375,
+                                                   "sz159949":  0.0125
+                                               },
+                                   "deployed":  0.15,
+                                   "undeployed":  0.0,
+                                   "riskBudget":  0.15,
+                                   "maxAssetWeight":  0.05,
+                                   "nAssets":  4,
+                                   "minAssetsForFullBudget":  3,
+                                   "capBinding":  false,
+                                   "scoreDiscriminating":  true,
+                                   "shortfallReason":  "",
+                                   "basis":  "占总资产（不是占风险仓）",
+                                   "note":  "研究级分配，不产出仓位建议；仓位只由引擎出"
+                               },
+                "scoreFormula":  "score = 0.5*rank(momentum) + 0.2*rank(-vol) + 0.3*rank(smaDev)",
+                "nAssets":  4,
+                "asOf":  "2026-11-06",
+                "peerNewestBar":  "2026-11-06",
+                "symbolsBehindPeer":  [
+
+                                      ],
+                "touched":  [
+
+                            ],
+                "status":  "ok"
+            },
     "_publicPolicy":  {
                           "sanitizer":  "tools/export-board-public.ps1",
                           "dropsAmounts":  true,
@@ -1806,7 +1963,7 @@
                           "fullVersion":  "仅本地 contracts/board.json（不得直接推公开仓）"
                       },
     "_freshness":  {
-                       "checkedAt":  "2026-11-07 19:14:07",
+                       "checkedAt":  "2026-11-07 19:25:19",
                        "worst":  "ok",
                        "staleCount":  0,
                        "items":  [
@@ -1822,7 +1979,7 @@
                                          "id":  "engine-policy",
                                          "label":  "引擎政策契约",
                                          "asOf":  "2026-11-06 19:11",
-                                         "ageDays":  1,
+                                         "ageDays":  1.01,
                                          "maxAgeDays":  14,
                                          "stale":  false
                                      },
@@ -1830,7 +1987,7 @@
                                          "id":  "factor-registry",
                                          "label":  "因子登记表",
                                          "asOf":  "2026-11-02 23:27",
-                                         "ageDays":  4.82,
+                                         "ageDays":  4.83,
                                          "maxAgeDays":  30,
                                          "stale":  false
                                      },
@@ -1838,7 +1995,7 @@
                                          "id":  "news-mapping",
                                          "label":  "新闻映射",
                                          "asOf":  "2026-11-02 23:26",
-                                         "ageDays":  4.82,
+                                         "ageDays":  4.83,
                                          "maxAgeDays":  30,
                                          "stale":  false
                                      },
@@ -1854,7 +2011,7 @@
                                          "id":  "decisions",
                                          "label":  "决策账本",
                                          "asOf":  "2026-11-02 23:43",
-                                         "ageDays":  4.81,
+                                         "ageDays":  4.82,
                                          "maxAgeDays":  7,
                                          "stale":  false
                                      },
@@ -1862,14 +2019,14 @@
                                          "id":  "rules",
                                          "label":  "风控规则",
                                          "asOf":  "2026-11-05 23:21",
-                                         "ageDays":  1.83,
+                                         "ageDays":  1.84,
                                          "maxAgeDays":  14,
                                          "stale":  false
                                      },
                                      {
                                          "id":  "market-live",
                                          "label":  "行情快照",
-                                         "asOf":  "2026-11-07 19:14",
+                                         "asOf":  "2026-11-07 19:25",
                                          "ageDays":  0,
                                          "maxAgeDays":  0.25,
                                          "stale":  false
@@ -1879,8 +2036,8 @@
                    },
     "nationalTeam":  {
                          "ok":  true,
-                         "lastSuccess":  "2026-11-07 19:06:51",
-                         "asOf":  "2026-11-07 19:06:51",
+                         "lastSuccess":  "2026-11-07 19:21:51",
+                         "asOf":  "2026-11-07 19:21:51",
                          "note":  "",
                          "items":  [
                                        {
@@ -2072,7 +2229,7 @@
                                      }
                      },
     "notifications":  {
-                          "generatedAt":  "2026-11-07 19:14:09",
+                          "generatedAt":  "2026-11-07 19:25:19",
                           "count":  1,
                           "byLevel":  {
                                           "urgent":  0,
@@ -2092,7 +2249,7 @@
                           "policy":  "通知内容脱敏：不含金额、不含持仓名称；明细需解锁查看"
                       },
     "market":  {
-                   "generatedAt":  "2026-11-07 19:14:05",
+                   "generatedAt":  "2026-11-07 19:25:17",
                    "source":  "qt.gtimg.cn（指数）+ hq.sinajs.cn（外盘/汇率）",
                    "note":  "cn10y / us30y 无可用公开接口，已如实标 missing；下游不得把缺失当 0 或沿用旧值。",
                    "okCount":  5,
@@ -2210,7 +2367,7 @@
                                }
                },
     "automation":  {
-                       "generatedAt":  "2026-11-07 19:14:10",
+                       "generatedAt":  "2026-11-07 19:25:20",
                        "source":  "harness schedule store + _audit/refresh-log.jsonl",
                        "note":  "单向耦合：Harness 定时任务 → 本文件 → board.json → 页面。页面无法反向触发任务。",
                        "schedules":  [
@@ -2224,18 +2381,6 @@
                                          }
                                      ],
                        "lastRuns":  [
-                                        {
-                                            "at":  "2026-11-07T09:14:39+08:00",
-                                            "overall":  "OK",
-                                            "durationMs":  25549,
-                                            "dataAgeMin":  0.4
-                                        },
-                                        {
-                                            "at":  "2026-11-07T09:55:07+08:00",
-                                            "overall":  "OK",
-                                            "durationMs":  653614,
-                                            "dataAgeMin":  10.9
-                                        },
                                         {
                                             "at":  "2026-11-07T10:18:11+08:00",
                                             "overall":  "OK",
@@ -2343,6 +2488,18 @@
                                             "overall":  "OK",
                                             "durationMs":  54785,
                                             "dataAgeMin":  0.9
+                                        },
+                                        {
+                                            "at":  "2026-11-07T19:14:36+08:00",
+                                            "overall":  "OK",
+                                            "durationMs":  32486,
+                                            "dataAgeMin":  0.5
+                                        },
+                                        {
+                                            "at":  "2026-11-07T19:23:26+08:00",
+                                            "overall":  "OK",
+                                            "durationMs":  5989,
+                                            "dataAgeMin":  0.1
                                         }
                                     ],
                        "stats":  {
@@ -2351,7 +2508,7 @@
                                      "warn":  0,
                                      "fail":  0,
                                      "consecutiveBad":  0,
-                                     "lastRunAt":  "2026-11-07T18:44:58+08:00",
+                                     "lastRunAt":  "2026-11-07T19:23:26+08:00",
                                      "lastOverall":  "OK"
                                  },
                        "health":  {
