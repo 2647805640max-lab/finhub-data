@@ -1,6 +1,6 @@
 {
     "schema":  "board/v1",
-    "generatedAt":  "2026-11-07 19:25:18",
+    "generatedAt":  "2026-11-07 19:33:21",
     "generatedBy":  "[已移除]",
     "ips":  {
                 "asOf":  "2026-11-06 19:11:22",
@@ -1706,7 +1706,7 @@
                                     },
                                     {
                                         "item":  "决策账本",
-                                        "asOf":  "2026-11-07 19:25",
+                                        "asOf":  "2026-11-07 19:33",
                                         "ageDays":  0,
                                         "stale":  false
                                     }
@@ -1749,9 +1749,9 @@
                  },
     "verdict":  {
                     "schema":  "verdict/v1",
-                    "asOf":  "2026-11-06 23:05",
+                    "asOf":  "2026-11-07 19:35",
                     "title":  "现在什么情况",
-                    "summary":  "一件坏消息、一件好消息、一件要注意的事。看完这四张卡就够了，细节都在下面各页。",
+                    "summary":  "六条：两条坏消息/要注意，两条好消息，外加一条对上一条的更正。看完这张卡就够了，细节都在下面各页。",
                     "items":  [
                                   {
                                       "level":  "bad",
@@ -1780,6 +1780,20 @@
                                       "body":  "本地和云端都实跑过，都有成功记录。",
                                       "numbers":  "本地 7/7 通过 ｜ 云端连续三次全绿",
                                       "action":  "不用再等「待执行」，直接进下一步。"
+                                  },
+                                  {
+                                      "level":  "watch",
+                                      "headline":  "更正：上一条「分配规则不看因子分数」说错了 —— 那不是 bug，是上限的数学必然",
+                                      "body":  "我之前判断错在：以为分配器把分数「抹平」了。实测才发现，每只都顶到单只上限时，任何合规权重都只能是那个上限值 —— 分数根本没被忽略，是数学上无解。真正成立的是：标的数少于 3 只时，预算装不满（只投了 2/3），而这个缺口之前是静默的，调用方看不出来。",
+                                      "numbers":  "4 只标的实跑：权重 5.00% / 5.00% / 3.75% / 1.25%（分数真的区分开了）｜ 2 只时部署 10.0% / 预算 15.0%",
+                                      "action":  "缺口现在会显式报出来（部署多少、没部署多少、差几只才够）。仍需你裁定：单只上限 5% 的分母是总资产还是风险仓。"
+                                  },
+                                  {
+                                      "level":  "good",
+                                      "headline":  "因子演算已经接上线，每天自动算并显示在这张卡上",
+                                      "body":  "取数 → 算动量/波动/偏离 → 算分数 → 分配，全部由脚本一次做完，结果直接进这张卡。缓存按需刷新、源码哈希对不上就拒跑、数据旧了直接报错不糊过去。",
+                                      "numbers":  "风险池 4 只（上证50ETF / 沪深300ETF / 中证500ETF / 创业板50ETF）｜ 部署 15.0% / 预算 15.0% ｜ 分数可区分",
+                                      "action":  "先看数，别当仓位用 —— 这套口径还没进登记簿。"
                                   }
                               ],
                     "todo":  [
@@ -1789,18 +1803,18 @@
                                  },
                                  {
                                      "what":  "确认「单只上限 5%」的分母是总资产还是风险仓",
-                                     "why":  "两种读法结论相反：按总资产算，2 只标的凑不到仓位目标"
+                                     "why":  "两种读法结论相反：按总资产算，2 只标的凑不到仓位目标；按风险仓算，满仓要 20 只"
                                  },
                                  {
-                                     "what":  "把新因子模块的分配规则改成真正看分数",
-                                     "why":  "不改就等于白算"
+                                     "what":  "决定 qis 的因子口径要不要进登记簿",
+                                     "why":  "不进登记簿，它就只能显示、不能作依据（现在卡片上已标「研究口径·非仓位」）"
                                  }
                              ],
                     "disclaimer":  "以上为研究/审计结论，不构成买卖建议；数字全部可复现，来源为本机实跑与仓库内契约。"
                 },
     "qis":  {
                 "schema":  "factors-qis/v1",
-                "generatedAt":  "2026-11-07 19:25:17",
+                "generatedAt":  "2026-11-07 19:33:20",
                 "producer":  "tools/qis-factors.py（因子演算唯一生产者）",
                 "consumer":  "08:45 推演任务只读本文件，不得自行演算或自行判阈",
                 "caliber_status":  "unregistered_research",
@@ -1858,16 +1872,16 @@
                                                   }
                                               ]
                              },
-                "cacheAgeSeconds":  45.0,
+                "cacheAgeSeconds":  527.7,
                 "cacheAgeSecondsBySymbol":  {
-                                                "sh510050":  45.0,
-                                                "sh510300":  44.4,
-                                                "sh510500":  43.7,
-                                                "sz159949":  43.0
+                                                "sh510050":  527.7,
+                                                "sh510300":  527.0,
+                                                "sh510500":  526.4,
+                                                "sz159949":  525.7
                                             },
                 "refresh":  {
                                 "ok":  true,
-                                "detail":  "最旧的缓存才 0.0 小时 ≤ 24.0 小时，未重抓",
+                                "detail":  "最旧的缓存才 0.1 小时 ≤ 24.0 小时，未重抓",
                                 "reason":  "按需刷新"
                             },
                 "lastBarLagDays":  {
@@ -1963,7 +1977,7 @@
                           "fullVersion":  "仅本地 contracts/board.json（不得直接推公开仓）"
                       },
     "_freshness":  {
-                       "checkedAt":  "2026-11-07 19:25:19",
+                       "checkedAt":  "2026-11-07 19:33:22",
                        "worst":  "ok",
                        "staleCount":  0,
                        "items":  [
@@ -1971,7 +1985,7 @@
                                          "id":  "holdings",
                                          "label":  "持仓快照",
                                          "asOf":  "2026-11-05 22:55",
-                                         "ageDays":  1.85,
+                                         "ageDays":  1.86,
                                          "maxAgeDays":  3,
                                          "stale":  false
                                      },
@@ -1979,7 +1993,7 @@
                                          "id":  "engine-policy",
                                          "label":  "引擎政策契约",
                                          "asOf":  "2026-11-06 19:11",
-                                         "ageDays":  1.01,
+                                         "ageDays":  1.02,
                                          "maxAgeDays":  14,
                                          "stale":  false
                                      },
@@ -1987,7 +2001,7 @@
                                          "id":  "factor-registry",
                                          "label":  "因子登记表",
                                          "asOf":  "2026-11-02 23:27",
-                                         "ageDays":  4.83,
+                                         "ageDays":  4.84,
                                          "maxAgeDays":  30,
                                          "stale":  false
                                      },
@@ -1995,7 +2009,7 @@
                                          "id":  "news-mapping",
                                          "label":  "新闻映射",
                                          "asOf":  "2026-11-02 23:26",
-                                         "ageDays":  4.83,
+                                         "ageDays":  4.84,
                                          "maxAgeDays":  30,
                                          "stale":  false
                                      },
@@ -2003,7 +2017,7 @@
                                          "id":  "chain-rules",
                                          "label":  "推演规则",
                                          "asOf":  "2026-11-02 23:23",
-                                         "ageDays":  4.83,
+                                         "ageDays":  4.84,
                                          "maxAgeDays":  30,
                                          "stale":  false
                                      },
@@ -2011,7 +2025,7 @@
                                          "id":  "decisions",
                                          "label":  "决策账本",
                                          "asOf":  "2026-11-02 23:43",
-                                         "ageDays":  4.82,
+                                         "ageDays":  4.83,
                                          "maxAgeDays":  7,
                                          "stale":  false
                                      },
@@ -2026,7 +2040,7 @@
                                      {
                                          "id":  "market-live",
                                          "label":  "行情快照",
-                                         "asOf":  "2026-11-07 19:25",
+                                         "asOf":  "2026-11-07 19:33",
                                          "ageDays":  0,
                                          "maxAgeDays":  0.25,
                                          "stale":  false
@@ -2229,7 +2243,7 @@
                                      }
                      },
     "notifications":  {
-                          "generatedAt":  "2026-11-07 19:25:19",
+                          "generatedAt":  "2026-11-07 19:33:24",
                           "count":  1,
                           "byLevel":  {
                                           "urgent":  0,
@@ -2249,7 +2263,7 @@
                           "policy":  "通知内容脱敏：不含金额、不含持仓名称；明细需解锁查看"
                       },
     "market":  {
-                   "generatedAt":  "2026-11-07 19:25:17",
+                   "generatedAt":  "2026-11-07 19:33:19",
                    "source":  "qt.gtimg.cn（指数）+ hq.sinajs.cn（外盘/汇率）",
                    "note":  "cn10y / us30y 无可用公开接口，已如实标 missing；下游不得把缺失当 0 或沿用旧值。",
                    "okCount":  5,
@@ -2367,7 +2381,7 @@
                                }
                },
     "automation":  {
-                       "generatedAt":  "2026-11-07 19:25:20",
+                       "generatedAt":  "2026-11-07 19:33:25",
                        "source":  "harness schedule store + _audit/refresh-log.jsonl",
                        "note":  "单向耦合：Harness 定时任务 → 本文件 → board.json → 页面。页面无法反向触发任务。",
                        "schedules":  [
@@ -2381,12 +2395,6 @@
                                          }
                                      ],
                        "lastRuns":  [
-                                        {
-                                            "at":  "2026-11-07T10:18:11+08:00",
-                                            "overall":  "OK",
-                                            "durationMs":  250064,
-                                            "dataAgeMin":  4.1
-                                        },
                                         {
                                             "at":  "2026-11-07T10:44:40+08:00",
                                             "overall":  "OK",
@@ -2500,6 +2508,12 @@
                                             "overall":  "OK",
                                             "durationMs":  5989,
                                             "dataAgeMin":  0.1
+                                        },
+                                        {
+                                            "at":  "2026-11-07T19:27:47+08:00",
+                                            "overall":  "OK",
+                                            "durationMs":  152098,
+                                            "dataAgeMin":  2.5
                                         }
                                     ],
                        "stats":  {
@@ -2508,7 +2522,7 @@
                                      "warn":  0,
                                      "fail":  0,
                                      "consecutiveBad":  0,
-                                     "lastRunAt":  "2026-11-07T19:23:26+08:00",
+                                     "lastRunAt":  "2026-11-07T19:27:47+08:00",
                                      "lastOverall":  "OK"
                                  },
                        "health":  {
