@@ -1,8 +1,8 @@
 {
- "generatedAt": "2026-11-07 15:56:46",
- "ts": 1794038206545,
+ "generatedAt": "2026-11-07 16:27:42",
+ "ts": 1794040062422,
  "overseas": {
-  "fetchedAt": 1794037887652,
+  "fetchedAt": 1794039700055,
   "quotes": {
    "items": [
     {
@@ -46,9 +46,9 @@
      "name": "道琼斯",
      "kind": "idx",
      "unit": "",
-     "price": 51285.73,
+     "price": 51285.7,
      "chgPct": -0.46,
-     "asof": "2026-11-06 21:37"
+     "asof": "2026-11-06 21:00"
     },
     {
      "code": "^IXIC",
@@ -66,7 +66,7 @@
      "unit": "",
      "price": 7376.86,
      "chgPct": 0.32,
-     "asof": "2026-11-06 21:37"
+     "asof": "2026-11-06 21:00"
     },
     {
      "code": "^VIX",
@@ -133,7 +133,7 @@
     }
    ],
    "errors": null,
-   "fetchedAt": 1794037888918
+   "fetchedAt": 1794039701415
   },
   "fred": {
    "items": [
@@ -825,7 +825,7 @@
     "amount": 143292210.0
    }
   ],
-  "fetchedAt": 1794037886830
+  "fetchedAt": 1794039699395
  },
  "bonds": {
   "asof": "2026-11-06",
@@ -1012,9 +1012,9 @@
     "code": "^DJI",
     "name": "道琼斯",
     "kind": "idx",
-    "price": 51285.73,
+    "price": 51285.7,
     "chgPct": -0.46,
-    "asof": "2026-11-06 21:37",
+    "asof": "2026-11-06 21:00",
     "src": "yahoo"
    },
    {
@@ -1041,7 +1041,7 @@
     "kind": "idx",
     "price": 7376.86,
     "chgPct": 0.32,
-    "asof": "2026-11-06 21:37",
+    "asof": "2026-11-06 21:00",
     "src": "yahoo"
    },
    {
@@ -1076,7 +1076,7 @@
    }
   ],
   "errors": null,
-  "fetchedAt": 1794037890958
+  "fetchedAt": 1794039703340
  },
  "causal": {
   "tier": "causal",
@@ -1212,46 +1212,12 @@
   },
   "rule": "因果因子（有机制+历史可复现）可改 action；相关因子只进评分，永不投票",
   "asof": "2026-11-06",
-  "builtAt": "2026-11-07 15:51:38",
-  "yields": {
-   "record": {
-    "value": 4.86,
-    "date": "2026-11-06",
-    "src": "东财 datacenter"
-   },
-   "check": {
-    "value": 4.84,
-    "date": "2026-11-05",
-    "src": "FRED"
-   },
-   "deltaBp": 2.0,
-   "verdict": "日期不同（记录源 2026-11-06 / 校验源 2026-11-05），差值 +2bp 属 T+1 差异，不视为矛盾"
-  }
+  "builtAt": "2026-11-07 16:21:50"
  },
  "runtime": {
   "source": "local",
   "degraded": false,
   "reason": null,
-  "observedAt": "2026-11-07 15:57:14"
- },
- "discipline": {
-  "status": "COMPLIANT",
-  "strictRiskPct": 10.71,
-  "strictRiskCapPct": 15,
-  "targetStrictRiskPct": 15,
-  "goldPct": 27.81,
-  "goldAlertPct": 30,
-  "goldMaxPct": 35,
-  "thesisGate": "invalid",
-  "breaches": []
- },
- "externalSignal": {
-  "marketAction": "WAIT",
-  "addRiskAllowed": false,
-  "marketRegime": "external-caution",
-  "confidence": "observed"
- },
- "combined": "HOLD_NO_NEW_RISK",
- "disciplineAsOf": "2026-11-05",
- "disciplineGeneratedAt": "2026-11-07T07:57:32.997Z"
+  "observedAt": "2026-11-07 16:28:07"
+ }
 }
