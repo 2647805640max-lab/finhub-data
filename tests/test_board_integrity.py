@@ -3,7 +3,7 @@ import unittest
 from datetime import datetime
 from zoneinfo import ZoneInfo
 
-from tools.board_integrity import evaluate_board
+from tools.board_integrity import evaluate_board, inject_verdict
 
 TZ = ZoneInfo("Asia/Shanghai")
 NOW = datetime.fromisoformat("2026-11-07T21:32:00+08:00")
@@ -36,6 +36,19 @@ def make_board():
 
 
 class BoardIntegrityTests(unittest.TestCase):
+    def test_verdict_injection_preserves_existing_board_fields(self):
+        raw = '{\\n    "schema": "board/v1",\\n    "today": {"position": {"dataAgeDays": 0.5}}\\n}\\n'
+        verdict = {"schema": "decision-integrity/v1", "status": "BLOCK", "canRecommend": False, "issues": []}
+        updated = inject_verdict(raw, verdict)
+        parsed = __import__("json").loads(updated)
+        self.assertEqual(parsed["schema"], "board/v1")
+        self.assertEqual(parsed["today"]["position"]["dataAgeDays"], 0.5)
+        self.assertEqual(parsed["decisionIntegrity"], verdict)
+        updated_again = inject_verdict(updated, {**verdict, "status": "PASS", "canRecommend": True})
+        parsed_again = __import__("json").loads(updated_again)
+        self.assertEqual(parsed_again["decisionIntegrity"]["status"], "PASS")
+        self.assertEqual(parsed_again["today"], parsed["today"])
+
     def test_fresh_complete_board_passes(self):
         result = evaluate_board(make_board(), now=NOW)
         self.assertEqual(result["status"], "PASS")
