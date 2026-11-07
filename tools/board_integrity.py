@@ -115,6 +115,9 @@ def evaluate_board(board, now=None):
     if len(dates) != 1:
         issues.append({"code": "MARKET_DATE_MISMATCH", "message": "四个指数行情日期不一致或缺失", "actual": sorted(dates)})
     market_asof = parse_dt(indices.get("asOf") or value.get("asOf"))
+    if market_asof is not None and len(dates) == 1 and market_asof.date().isoformat() not in dates:
+        issues.append({"code": "MARKET_ASOF_MISMATCH", "message": "指数行情汇总时点与逐项日期不一致",
+                       "actual": market_asof.date().isoformat(), "expected": sorted(dates)})
     if market_asof is None:
         issues.append({"code": "MARKET_TIMESTAMP", "message": "指数行情汇总 asOf 缺失"})
     else:
@@ -151,6 +154,7 @@ def evaluate_board(board, now=None):
 
     return {
         "schema": "decision-integrity/v1",
+        "source": "finhub-data/tools/board_integrity.py",
         "status": "BLOCK" if issues else "PASS",
         "canRecommend": not issues,
         "checkedAt": now.isoformat(),
