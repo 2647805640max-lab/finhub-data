@@ -1,6 +1,6 @@
 {
     "schema":  "board/v1",
-    "generatedAt":  "2026-11-07 19:33:21",
+    "generatedAt":  "2026-11-07 19:44:07",
     "generatedBy":  "[已移除]",
     "ips":  {
                 "asOf":  "2026-11-06 19:11:22",
@@ -1706,7 +1706,7 @@
                                     },
                                     {
                                         "item":  "决策账本",
-                                        "asOf":  "2026-11-07 19:33",
+                                        "asOf":  "2026-11-07 19:44",
                                         "ageDays":  0,
                                         "stale":  false
                                     }
@@ -1814,7 +1814,7 @@
                 },
     "qis":  {
                 "schema":  "factors-qis/v1",
-                "generatedAt":  "2026-11-07 19:33:20",
+                "generatedAt":  "2026-11-07 19:44:06",
                 "producer":  "tools/qis-factors.py（因子演算唯一生产者）",
                 "consumer":  "08:45 推演任务只读本文件，不得自行演算或自行判阈",
                 "caliber_status":  "unregistered_research",
@@ -1829,7 +1829,7 @@
                 "source":  {
                                "repo":  "[已移除]",
                                "branch":  "feat/local-qis-incremental-factor-engine",
-                               "commit":  "b[金额已移除]bbfc7c2e5852e09d9a[金额已移除]e75cc24cc5b"
+                               "commit":  "fb[金额已移除]"
                            },
                 "universe":  {
                                  "total":  11,
@@ -1872,16 +1872,16 @@
                                                   }
                                               ]
                              },
-                "cacheAgeSeconds":  527.7,
+                "cacheAgeSeconds":  1173.9,
                 "cacheAgeSecondsBySymbol":  {
-                                                "sh510050":  527.7,
-                                                "sh510300":  527.0,
-                                                "sh510500":  526.4,
-                                                "sz159949":  525.7
+                                                "sh510050":  1173.9,
+                                                "sh510300":  1173.3,
+                                                "sh510500":  1172.6,
+                                                "sz159949":  1171.9
                                             },
                 "refresh":  {
                                 "ok":  true,
-                                "detail":  "最旧的缓存才 0.1 小时 ≤ 24.0 小时，未重抓",
+                                "detail":  "最旧的缓存才 0.3 小时 ≤ 24.0 小时，未重抓",
                                 "reason":  "按需刷新"
                             },
                 "lastBarLagDays":  {
@@ -1977,7 +1977,7 @@
                           "fullVersion":  "仅本地 contracts/board.json（不得直接推公开仓）"
                       },
     "_freshness":  {
-                       "checkedAt":  "2026-11-07 19:33:22",
+                       "checkedAt":  "2026-11-07 19:44:08",
                        "worst":  "ok",
                        "staleCount":  0,
                        "items":  [
@@ -1985,7 +1985,7 @@
                                          "id":  "holdings",
                                          "label":  "持仓快照",
                                          "asOf":  "2026-11-05 22:55",
-                                         "ageDays":  1.86,
+                                         "ageDays":  1.87,
                                          "maxAgeDays":  3,
                                          "stale":  false
                                      },
@@ -2009,7 +2009,7 @@
                                          "id":  "news-mapping",
                                          "label":  "新闻映射",
                                          "asOf":  "2026-11-02 23:26",
-                                         "ageDays":  4.84,
+                                         "ageDays":  4.85,
                                          "maxAgeDays":  30,
                                          "stale":  false
                                      },
@@ -2017,7 +2017,7 @@
                                          "id":  "chain-rules",
                                          "label":  "推演规则",
                                          "asOf":  "2026-11-02 23:23",
-                                         "ageDays":  4.84,
+                                         "ageDays":  4.85,
                                          "maxAgeDays":  30,
                                          "stale":  false
                                      },
@@ -2033,14 +2033,14 @@
                                          "id":  "rules",
                                          "label":  "风控规则",
                                          "asOf":  "2026-11-05 23:21",
-                                         "ageDays":  1.84,
+                                         "ageDays":  1.85,
                                          "maxAgeDays":  14,
                                          "stale":  false
                                      },
                                      {
                                          "id":  "market-live",
                                          "label":  "行情快照",
-                                         "asOf":  "2026-11-07 19:33",
+                                         "asOf":  "2026-11-07 19:44",
                                          "ageDays":  0,
                                          "maxAgeDays":  0.25,
                                          "stale":  false
@@ -2050,8 +2050,8 @@
                    },
     "nationalTeam":  {
                          "ok":  true,
-                         "lastSuccess":  "2026-11-07 19:21:51",
-                         "asOf":  "2026-11-07 19:21:51",
+                         "lastSuccess":  "2026-11-07 19:36:52",
+                         "asOf":  "2026-11-07 19:36:52",
                          "note":  "",
                          "items":  [
                                        {
@@ -2243,7 +2243,7 @@
                                      }
                      },
     "notifications":  {
-                          "generatedAt":  "2026-11-07 19:33:24",
+                          "generatedAt":  "2026-11-07 19:44:09",
                           "count":  1,
                           "byLevel":  {
                                           "urgent":  0,
@@ -2263,7 +2263,7 @@
                           "policy":  "通知内容脱敏：不含金额、不含持仓名称；明细需解锁查看"
                       },
     "market":  {
-                   "generatedAt":  "2026-11-07 19:33:19",
+                   "generatedAt":  "2026-11-07 19:44:06",
                    "source":  "qt.gtimg.cn（指数）+ hq.sinajs.cn（外盘/汇率）",
                    "note":  "cn10y / us30y 无可用公开接口，已如实标 missing；下游不得把缺失当 0 或沿用旧值。",
                    "okCount":  5,
@@ -2381,7 +2381,7 @@
                                }
                },
     "automation":  {
-                       "generatedAt":  "2026-11-07 19:33:25",
+                       "generatedAt":  "2026-11-07 19:44:10",
                        "source":  "harness schedule store + _audit/refresh-log.jsonl",
                        "note":  "单向耦合：Harness 定时任务 → 本文件 → board.json → 页面。页面无法反向触发任务。",
                        "schedules":  [
@@ -2390,17 +2390,11 @@
                                              "title":  "数据实时性流水线",
                                              "kind":  "every",
                                              "everySeconds":  1800,
-                                             "scheduledAt":  "2026-11-07T11:43:56.989Z",
-                                             "nextRunAt":  "2026-11-07 19:43:56"
+                                             "scheduledAt":  "2026-11-07T12:13:56.989Z",
+                                             "nextRunAt":  "2026-11-07 20:13:56"
                                          }
                                      ],
                        "lastRuns":  [
-                                        {
-                                            "at":  "2026-11-07T10:44:40+08:00",
-                                            "overall":  "OK",
-                                            "durationMs":  23489,
-                                            "dataAgeMin":  0.4
-                                        },
                                         {
                                             "at":  "2026-11-07T11:14:32+08:00",
                                             "overall":  "OK",
@@ -2514,6 +2508,12 @@
                                             "overall":  "OK",
                                             "durationMs":  152098,
                                             "dataAgeMin":  2.5
+                                        },
+                                        {
+                                            "at":  "2026-11-07T19:41:18+08:00",
+                                            "overall":  "OK",
+                                            "durationMs":  479622,
+                                            "dataAgeMin":  8
                                         }
                                     ],
                        "stats":  {
@@ -2522,7 +2522,7 @@
                                      "warn":  0,
                                      "fail":  0,
                                      "consecutiveBad":  0,
-                                     "lastRunAt":  "2026-11-07T19:27:47+08:00",
+                                     "lastRunAt":  "2026-11-07T19:41:18+08:00",
                                      "lastOverall":  "OK"
                                  },
                        "health":  {
