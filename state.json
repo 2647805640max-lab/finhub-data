@@ -1,8 +1,8 @@
 {
- "generatedAt": "2026-11-07 21:37:21",
- "ts": 1794058641218,
+ "generatedAt": "2026-11-07 22:08:19",
+ "ts": 1794060499901,
  "overseas": {
-  "fetchedAt": 1794057823774,
+  "fetchedAt": 1794059636057,
   "quotes": {
    "items": [
     {
@@ -133,7 +133,7 @@
     }
    ],
    "errors": null,
-   "fetchedAt": 1794057825144
+   "fetchedAt": 1794059637362
   },
   "fred": {
    "items": [
@@ -765,7 +765,7 @@
     "amount": 143292210.0
    }
   ],
-  "fetchedAt": 1794057822956
+  "fetchedAt": 1794059635357
  },
  "bonds": {
   "asof": "2026-11-06",
@@ -1016,7 +1016,7 @@
    }
   ],
   "errors": null,
-  "fetchedAt": 1794057827307
+  "fetchedAt": 1794059639141
  },
  "causal": {
   "tier": "causal",
@@ -1152,46 +1152,12 @@
   },
   "rule": "因果因子（有机制+历史可复现）可改 action；相关因子只进评分，永不投票",
   "asof": "2026-11-06",
-  "builtAt": "2026-11-07 21:23:54",
-  "yields": {
-   "record": {
-    "value": 4.86,
-    "date": "2026-11-06",
-    "src": "东财 datacenter"
-   },
-   "check": {
-    "value": 4.84,
-    "date": "2026-11-05",
-    "src": "FRED"
-   },
-   "deltaBp": 2.0,
-   "verdict": "日期不同（记录源 2026-11-06 / 校验源 2026-11-05），差值 +2bp 属 T+1 差异，不视为矛盾"
-  }
+  "builtAt": "2026-11-07 21:54:07"
  },
  "runtime": {
   "source": "local",
   "degraded": false,
   "reason": null,
-  "observedAt": "2026-11-07 21:37:49"
- },
- "discipline": {
-  "status": "COMPLIANT",
-  "strictRiskPct": 10.71,
-  "strictRiskCapPct": 15,
-  "targetStrictRiskPct": 15,
-  "goldPct": 27.81,
-  "goldAlertPct": 30,
-  "goldMaxPct": 35,
-  "thesisGate": "invalid",
-  "breaches": []
- },
- "externalSignal": {
-  "marketAction": "WAIT",
-  "addRiskAllowed": false,
-  "marketRegime": "external-caution",
-  "confidence": "observed"
- },
- "combined": "HOLD_NO_NEW_RISK",
- "disciplineAsOf": "2026-11-05",
- "disciplineGeneratedAt": "2026-11-07T13:38:11.550Z"
+  "observedAt": "2026-11-07 22:08:45"
+ }
 }
