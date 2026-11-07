@@ -19,6 +19,20 @@ MAX_FUTURE_SKEW_MINUTES = 5.0
 EXPECTED_CODES = {"sh000001", "sh000300", "sz399001", "sz399006"}
 ALLOWED_ACTIONS = {"ADD", "TRIM", "EXIT", "WAIT", "HOLD"}
 
+# ── P0-6：数据仓闸门（B）必须 fail-closed 消费引擎闸门（A）的逐条持仓裁定 ──────
+# 背景：board.json 只有 today.position 的 8 个摘要字段（真实文件里 "marketValue"/
+# "cash" 各出现 0 次），B 结构上无法审计逐条持仓。A（decision_integrity.py）能审，
+# 它的裁定脱敏后由生产链写进 board["holdingsIntegrity"]。B 必须消费这份裁定：
+# 看不到就 BLOCK，看到 BLOCK 就 BLOCK，裁定过期就 BLOCK。
+# 不新增任何阈值：裁定自身时效复用 MAX_BOARD_AGE_HOURS（24h）。
+MAX_VERDICT_AGE_HOURS = MAX_BOARD_AGE_HOURS
+
+# 公开件白名单：board.json 会被推到公开仓，A 的裁定里 issues[].actual /
+# checks[].details 是平台名、绝对金额、逐条持仓明细的聚集地，绝不许出境。
+HOLDINGS_VERDICT_TOP_KEYS = ("status", "canRecommend", "checkedAt", "schemaVersion")
+HOLDINGS_VERDICT_ISSUE_KEYS = ("code", "message")
+HOLDINGS_VERDICT_CHECK_KEYS = ("id", "status")
+
 
 def parse_dt(value):
     if value is None or value == "":
@@ -41,6 +55,45 @@ def parse_dt(value):
 
 def finite_number(value):
     return isinstance(value, (int, float)) and not isinstance(value, bool) and math.isfinite(value)
+
+
+def _json_scalar(value):
+    """只放行 JSON 标量；dict / list 一律丢弃（那正是 actual/details 的位置）。"""
+    return value is None or isinstance(value, (str, int, float, bool))
+
+
+def sanitize_holdings_verdict(verdict):
+    """把引擎裁定投影到公开白名单；非对象返回 None。
+
+    只保留 status / canRecommend / checkedAt / schemaVersion、
+    issues[].code|message、checks[].id|status、以及 policy 的标量项。
+    issues[].actual、checks[].平台/金额明细、任何未知顶层键一律丢弃——
+    board.json 是公开件，引擎裁定里的平台名与金额不得随之出去。
+    """
+    if not isinstance(verdict, dict):
+        return None
+    clean = {}
+    for key in HOLDINGS_VERDICT_TOP_KEYS:
+        if key in verdict and _json_scalar(verdict[key]):
+            clean[key] = verdict[key]
+    for source, target, allowed in (
+        ("issues", "issues", HOLDINGS_VERDICT_ISSUE_KEYS),
+        ("checks", "checks", HOLDINGS_VERDICT_CHECK_KEYS),
+    ):
+        rows = verdict.get(source)
+        if isinstance(rows, list):
+            clean[target] = [{k: row[k] for k in allowed if k in row and _json_scalar(row[k])}
+                             for row in rows if isinstance(row, dict)]
+    policy = verdict.get("policy")
+    if isinstance(policy, dict):
+        kept = {}
+        for key, value in policy.items():
+            if _json_scalar(value):
+                kept[key] = value
+            elif isinstance(value, list) and all(_json_scalar(v) for v in value):
+                kept[key] = list(value)
+        clean["policy"] = kept
+    return clean
 
 
 def evaluate_board(board, now=None):
@@ -87,6 +140,66 @@ def evaluate_board(board, now=None):
                                "actual": item.get("ageDays")})
     checks.append({"id": "holdings", "ageHours": round(position_age_h, 2) if position_age_h is not None else None,
                    "maxAgeHours": MAX_HOLDINGS_AGE_HOURS})
+
+    # ── P0-6：逐条持仓字段的裁定只能来自引擎闸门 A（B 看不到明细，必须 fail-closed）──
+    raw_verdict = board.get("holdingsIntegrity")
+    verdict_clean = sanitize_holdings_verdict(raw_verdict)
+    verdict_issues = []
+    engine_status = None
+    engine_can_recommend = None
+    engine_codes = []
+    if not isinstance(raw_verdict, dict):
+        verdict_issues.append({
+            "code": "HOLDINGS_VERDICT_MISSING",
+            "message": "board.holdingsIntegrity 缺失或不是对象：数据仓看不到逐条持仓字段，"
+                       "不得给出 PASS（fail-closed）",
+        })
+    else:
+        engine_status = raw_verdict.get("status")
+        engine_can_recommend = raw_verdict.get("canRecommend")
+        raw_issues = raw_verdict.get("issues")
+        if isinstance(raw_issues, list):
+            # 只带走 code（原样、保序），绝不带走 actual 里的平台名/金额/持仓名
+            engine_codes = [item["code"] for item in raw_issues
+                            if isinstance(item, dict) and isinstance(item.get("code"), str)]
+        checked = parse_dt(raw_verdict.get("checkedAt"))
+        if checked is None:
+            verdict_issues.append({
+                "code": "HOLDINGS_VERDICT_STALE",
+                "message": "holdingsIntegrity.checkedAt 缺失或不可解析，无法确认裁定时效",
+            })
+        else:
+            verdict_age_h = (now - checked).total_seconds() / 3600
+            if verdict_age_h < -MAX_FUTURE_SKEW_MINUTES / 60:
+                verdict_issues.append({
+                    "code": "HOLDINGS_VERDICT_STALE",
+                    "message": "holdingsIntegrity.checkedAt 位于未来，拒绝该裁定",
+                    "actual": round(verdict_age_h, 2),
+                })
+            elif verdict_age_h > MAX_VERDICT_AGE_HOURS:
+                verdict_issues.append({
+                    "code": "HOLDINGS_VERDICT_STALE",
+                    "message": "holdingsIntegrity 裁定超过24小时未复检",
+                    "actual": round(verdict_age_h, 2),
+                })
+        if engine_status != "PASS" or engine_can_recommend is not True:
+            verdict_issues.append({
+                "code": "HOLDINGS_VERDICT_BLOCK",
+                "message": "引擎闸门 A 判定持仓输入不可用于决策，数据仓必须一并阻断",
+                "actual": engine_codes,
+                "engineStatus": engine_status if _json_scalar(engine_status) else None,
+            })
+    issues.extend(verdict_issues)
+    checks.append({
+        "id": "holdingsVerdict",
+        "status": "BLOCK" if verdict_issues else "PASS",
+        "maxAgeHours": MAX_VERDICT_AGE_HOURS,
+        "engineStatus": engine_status if _json_scalar(engine_status) else None,
+        "engineIssues": engine_codes,
+        "canRecommend": engine_can_recommend if isinstance(engine_can_recommend, bool) else None,
+        "checkedAt": verdict_clean.get("checkedAt") if verdict_clean else None,
+        "schemaVersion": verdict_clean.get("schemaVersion") if verdict_clean else None,
+    })
 
     market = board.get("market") or {}
     indices = ((market.get("sources") or {}).get("indices") or {})
@@ -164,6 +277,9 @@ def evaluate_board(board, now=None):
             "maxBoardAgeHours": MAX_BOARD_AGE_HOURS,
             "requiredIndexCodes": sorted(EXPECTED_CODES),
             "unresolvedPolicyItemsBlock": True,
+            # P0-6：B 不再对「看不到的逐条持仓」背书，必须消费引擎闸门 A 的裁定
+            "requiresHoldingsVerdict": True,
+            "holdingsVerdictMaxAgeHours": MAX_VERDICT_AGE_HOURS,
         },
         "checks": checks,
         "issues": issues,
