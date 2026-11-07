@@ -37,7 +37,11 @@ def make_board():
 
 class BoardIntegrityTests(unittest.TestCase):
     def test_verdict_injection_preserves_existing_board_fields(self):
-        raw = '{\\n    "schema": "board/v1",\\n    "today": {"position": {"dataAgeDays": 0.5}}\\n}\\n'
+        raw = """{
+    "schema": "board/v1",
+    "today": {"position": {"dataAgeDays": 0.5}}
+}
+"""
         verdict = {"schema": "decision-integrity/v1", "status": "BLOCK", "canRecommend": False, "issues": []}
         updated = inject_verdict(raw, verdict)
         parsed = __import__("json").loads(updated)
