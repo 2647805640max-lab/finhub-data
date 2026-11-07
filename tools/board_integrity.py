@@ -7,6 +7,7 @@ import argparse
 from datetime import datetime, date, time, timedelta
 import json
 import math
+import re
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
@@ -167,6 +168,49 @@ def evaluate_board(board, now=None):
     }
 
 
+def inject_verdict(raw_text, verdict):
+    """Update only the top-level verdict field; preserve generated board formatting."""
+    json.loads(raw_text)
+    serialized = json.dumps(verdict, ensure_ascii=False, indent=4).replace("\n", "\n    ")
+    match = re.search(r'(?m)^ {4}"decisionIntegrity"\s*:', raw_text)
+    if match:
+        brace = raw_text.find("{", match.end())
+        if brace < 0:
+            raise ValueError("decisionIntegrity value must be an object")
+        depth, in_string, escaped, end = 0, False, False, None
+        for i in range(brace, len(raw_text)):
+            ch = raw_text[i]
+            if in_string:
+                if escaped:
+                    escaped = False
+                elif ch == "\\":
+                    escaped = True
+                elif ch == '"':
+                    in_string = False
+                continue
+            if ch == '"':
+                in_string = True
+            elif ch == "{":
+                depth += 1
+            elif ch == "}":
+                depth -= 1
+                if depth == 0:
+                    end = i
+                    break
+        if end is None:
+            raise ValueError("unterminated decisionIntegrity object")
+        updated = raw_text[:brace] + serialized + raw_text[end + 1:]
+    else:
+        end = raw_text.rfind("}")
+        if end < 0:
+            raise ValueError("board root object is not closed")
+        prefix = raw_text[:end].rstrip()
+        comma = "" if prefix.endswith("{") else ","
+        updated = prefix + comma + "\n    \"decisionIntegrity\": " + serialized + "\n" + raw_text[end:]
+    json.loads(updated)
+    return updated
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--board", default="board.json")
@@ -174,17 +218,16 @@ def main():
     parser.add_argument("--check", action="store_true")
     args = parser.parse_args()
     path = Path(args.board)
-    board = json.loads(path.read_text(encoding="utf-8"))
+    raw_text = path.read_text(encoding="utf-8")
+    board = json.loads(raw_text)
     verdict = evaluate_board(board)
     if args.write:
-        board["decisionIntegrity"] = verdict
-        path.write_text(json.dumps(board, ensure_ascii=False, indent=4) + "\n", encoding="utf-8")
+        path.write_text(inject_verdict(raw_text, verdict), encoding="utf-8")
     else:
         print(json.dumps(verdict, ensure_ascii=False, indent=2))
-    if args.check and "decisionIntegrity" not in board:
+    if args.check and "decisionIntegrity" not in board and not args.write:
         raise SystemExit("board.json has no decisionIntegrity verdict")
     return 0
-
 
 if __name__ == "__main__":
     raise SystemExit(main())
