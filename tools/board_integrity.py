@@ -225,8 +225,12 @@ def main():
         path.write_text(inject_verdict(raw_text, verdict), encoding="utf-8")
     else:
         print(json.dumps(verdict, ensure_ascii=False, indent=2))
-    if args.check and "decisionIntegrity" not in board and not args.write:
-        raise SystemExit("board.json has no decisionIntegrity verdict")
+    if args.check:
+        stored = board.get("decisionIntegrity") or {}
+        stored_codes = [x.get("code") for x in stored.get("issues", [])]
+        current_codes = [x.get("code") for x in verdict.get("issues", [])]
+        if stored.get("status") != verdict.get("status") or stored_codes != current_codes:
+            raise SystemExit("stored decisionIntegrity verdict does not match current board inputs")
     return 0
 
 if __name__ == "__main__":
