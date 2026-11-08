@@ -1,2 +1,6 @@
-﻿board.json
+board.json
 state.json.bak*
+
+# Python 字节码缓存：测试跑完就会生成，不应进版本库
+__pycache__/
+*.py[cod]
