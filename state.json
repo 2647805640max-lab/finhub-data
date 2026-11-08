@@ -1,8 +1,8 @@
 {
- "generatedAt": "2026-11-09 06:36:48",
- "ts": 1794177408022,
+ "generatedAt": "2026-11-09 07:07:39",
+ "ts": 1794179259873,
  "overseas": {
-  "fetchedAt": 1794176494965,
+  "fetchedAt": 1794178306744,
   "quotes": {
    "items": [
     {
@@ -133,7 +133,7 @@
     }
    ],
    "errors": null,
-   "fetchedAt": 1794176496312
+   "fetchedAt": 1794178308086
   },
   "fred": {
    "items": [
@@ -808,7 +808,7 @@
     "amount": 143292210.0
    }
   ],
-  "fetchedAt": 1794176494375
+  "fetchedAt": 1794178305905
  },
  "bonds": {
   "asof": "2026-11-06",
@@ -965,7 +965,7 @@
    "schemaVersion": "1.0",
    "status": "PASS",
    "canRecommend": true,
-   "checkedAt": "2026-11-09T06:21:43.154534+08:00",
+   "checkedAt": "2026-11-09T06:51:55.090723+08:00",
    "policy": {
     "maxMarketAgeDays": 4.0,
     "requiredIndices": [
@@ -1086,7 +1086,7 @@
    }
   ],
   "errors": null,
-  "fetchedAt": 1794176498162
+  "fetchedAt": 1794178309996
  },
  "causal": {
   "tier": "causal",
@@ -1222,46 +1222,12 @@
   },
   "rule": "因果因子（有机制+历史可复现）可改 action；相关因子只进评分，永不投票",
   "asof": "2026-11-06",
-  "builtAt": "2026-11-09 06:21:45",
-  "yields": {
-   "record": {
-    "value": 4.86,
-    "date": "2026-11-06",
-    "src": "东财 datacenter"
-   },
-   "check": {
-    "value": 4.84,
-    "date": "2026-11-05",
-    "src": "FRED"
-   },
-   "deltaBp": 2.0,
-   "verdict": "日期不同（记录源 2026-11-06 / 校验源 2026-11-05），差值 +2bp 属 T+1 差异，不视为矛盾"
-  }
+  "builtAt": "2026-11-09 06:51:57"
  },
  "runtime": {
   "source": "local",
   "degraded": false,
   "reason": null,
-  "observedAt": "2026-11-09 06:37:16"
- },
- "discipline": {
-  "status": "COMPLIANT",
-  "strictRiskPct": 10.71,
-  "strictRiskCapPct": 15,
-  "targetStrictRiskPct": 15,
-  "goldPct": 27.81,
-  "goldAlertPct": 30,
-  "goldMaxPct": 35,
-  "thesisGate": "invalid",
-  "breaches": []
- },
- "externalSignal": {
-  "marketAction": "WAIT",
-  "addRiskAllowed": false,
-  "marketRegime": "external-caution",
-  "confidence": "observed"
- },
- "combined": "HOLD_NO_NEW_RISK",
- "disciplineAsOf": "2026-11-05",
- "disciplineGeneratedAt": "2026-11-08T22:37:32.024Z"
+  "observedAt": "2026-11-09 07:08:06"
+ }
 }
