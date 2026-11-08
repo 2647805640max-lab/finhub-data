@@ -7,16 +7,36 @@ import argparse
 from datetime import datetime, date, time, timedelta
 import json
 import math
+import os
 import re
+import sys
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
+# ── 契约包（contracts/ 在本仓根下） ──────────────────────────────────────────
+# 把仓根放进 sys.path，才能 import contracts.thresholds / contracts.signing。
+_HERE = os.path.dirname(os.path.abspath(__file__))
+_REPO_ROOT = os.path.dirname(_HERE)
+if _REPO_ROOT not in sys.path:
+    sys.path.insert(0, _REPO_ROOT)
+
+from contracts.thresholds import get_thresholds, THRESHOLD_DIGEST  # noqa: E402
+from contracts import signing  # noqa: E402
+
 TZ = ZoneInfo("Asia/Shanghai")
-MAX_HOLDINGS_AGE_HOURS = 36.0
-MAX_MARKET_AGE_DAYS = 4.0
-MAX_BOARD_AGE_HOURS = 24.0
-MAX_FUTURE_SKEW_MINUTES = 5.0
-EXPECTED_CODES = {"sh000001", "sh000300", "sz399001", "sz399006"}
+
+# ── D7：阈值单一真相源 ────────────────────────────────────────────────────────
+# 同一组时效阈值此前在本文件硬编码 30 处（另有 4 个文件共 29 处）。
+# 现在一律从 contracts/thresholds.json 读 —— 改阈值只有一个地方要改。
+# 数值本身与之前**完全一致**（36h / 4d / 24h / 5min），没有放宽任何标准。
+_THRESHOLDS = get_thresholds()
+MAX_HOLDINGS_AGE_HOURS = float(_THRESHOLDS["holdingsMaxAgeHours"])
+MAX_MARKET_AGE_DAYS = float(_THRESHOLDS["marketMaxAgeDays"])
+MAX_BOARD_AGE_HOURS = float(_THRESHOLDS["boardMaxAgeHours"])
+MAX_FUTURE_SKEW_MINUTES = float(_THRESHOLDS["futureClockSkewMinutes"])
+POSITION_MAX_AGE_DAYS = float(_THRESHOLDS["positionMaxAgeDays"])
+HARD_MAX_RISKY_PCT = float(_THRESHOLDS["hardMaxRiskyPct"])
+EXPECTED_CODES = set(_THRESHOLDS["requiredIndices"])
 ALLOWED_ACTIONS = {"ADD", "TRIM", "EXIT", "WAIT", "HOLD"}
 
 # ── P0-6：数据仓闸门（B）必须 fail-closed 消费引擎闸门（A）的逐条持仓裁定 ──────
@@ -31,7 +51,20 @@ MAX_VERDICT_AGE_HOURS = MAX_BOARD_AGE_HOURS
 # checks[].details 是平台名、绝对金额、逐条持仓明细的聚集地，绝不许出境。
 HOLDINGS_VERDICT_TOP_KEYS = ("status", "canRecommend", "checkedAt", "schemaVersion")
 HOLDINGS_VERDICT_ISSUE_KEYS = ("code", "message")
-HOLDINGS_VERDICT_CHECK_KEYS = ("id", "status")
+# checks 里额外放行 ageHours / maxAgeHours / thresholdHours —— 都是标量、不含
+# 任何平台名或金额，但 B 需要它们做「裁定与 board 自述互相印证」的交叉校验
+# （否则伪造者可以把裁定与 position 的年龄改成互不相干的两个值）。
+HOLDINGS_VERDICT_CHECK_KEYS = ("id", "status", "ageHours", "maxAgeHours", "thresholdHours")
+# 签名相关字段必须原样保留在公开件里 —— B 要用它们验签。
+HOLDINGS_VERDICT_SIGNATURE_KEYS = (signing.SIGNATURE_FIELD,
+                                   signing.SIGNED_DIGEST_FIELD,
+                                   signing.KEY_ID_FIELD)
+
+# ── D8：交叉校验容差 ──────────────────────────────────────────────────────────
+# decisionIntegrity.checks[holdings].ageHours 与 today.position.dataAgeDays*24
+# 是同一份快照的两次独立计算（引擎侧 / 导出脚本侧），必然有舍入与分钟级差。
+# 容差 2 小时足够覆盖 dataAgeDays 的舍入误差，又远小于 36h 的判定尺度。
+CROSS_FIELD_TOLERANCE_HOURS = 2.0
 
 
 def parse_dt(value):
@@ -74,6 +107,10 @@ def sanitize_holdings_verdict(verdict):
         return None
     clean = {}
     for key in HOLDINGS_VERDICT_TOP_KEYS:
+        if key in verdict and _json_scalar(verdict[key]):
+            clean[key] = verdict[key]
+    # 签名三件套必须原样保留：B 要用它们验签，剥掉就等于没法验了。
+    for key in HOLDINGS_VERDICT_SIGNATURE_KEYS:
         if key in verdict and _json_scalar(verdict[key]):
             clean[key] = verdict[key]
     for source, target, allowed in (
@@ -162,6 +199,48 @@ def evaluate_board(board, now=None):
             # 只带走 code（原样、保序），绝不带走 actual 里的平台名/金额/持仓名
             engine_codes = [item["code"] for item in raw_issues
                             if isinstance(item, dict) and isinstance(item.get("code"), str)]
+
+        # ── D10 / D6：签名校验（Ed25519，私钥在本机仓库外，公钥在本仓）────────
+        # 背景：board.json 在公开仓里，任何人都能编辑它。纯文本字段（status=BLOCK
+        # 改成 PASS、policy 里的阈值改宽）没有签名时无法分辨真假。
+        # 私钥只在 E:\investment-os\contracts\ 下，公开仓里只有公钥 —— 改 board.json
+        # 的人没有私钥，签不出能过验签的 PASS。
+        sig_ok, sig_reason = signing.verify_verdict(raw_verdict)
+        if not sig_ok:
+            code = ("HOLDINGS_VERDICT_UNSIGNED"
+                    if not raw_verdict.get(signing.SIGNATURE_FIELD)
+                    else "HOLDINGS_VERDICT_SIGNATURE_INVALID")
+            verdict_issues.append({
+                "code": code,
+                "message": "逐条持仓裁定未通过签名校验：%s。board.json 是公开件，"
+                           "任何人都能编辑；没有有效签名的裁定一律不采信（fail-closed）" % sig_reason,
+            })
+
+        # ── D8：裁定里的 policy 必须与本仓阈值逐项相等 ──────────────────────
+        # 这一条挡住「把阈值改宽」类篡改：即便签名有效，policy 与本仓不一致也 BLOCK。
+        verdict_policy = raw_verdict.get("policy")
+        if not isinstance(verdict_policy, dict):
+            verdict_issues.append({
+                "code": "HOLDINGS_VERDICT_POLICY_MISMATCH",
+                "message": "逐条持仓裁定缺 policy 段，无法确认它用的是哪套时效标准",
+            })
+        else:
+            policy_mismatch = []
+            for key, expected in (("maxHoldingsAgeHours", MAX_HOLDINGS_AGE_HOURS),
+                                  ("maxMarketAgeDays", MAX_MARKET_AGE_DAYS),
+                                  ("futureClockSkewMinutes", MAX_FUTURE_SKEW_MINUTES)):
+                actual = verdict_policy.get(key)
+                if actual is None:
+                    policy_mismatch.append({"key": key, "expected": expected, "actual": None})
+                elif not finite_number(actual) or abs(float(actual) - expected) > 1e-9:
+                    policy_mismatch.append({"key": key, "expected": expected, "actual": actual})
+            if policy_mismatch:
+                verdict_issues.append({
+                    "code": "HOLDINGS_VERDICT_POLICY_MISMATCH",
+                    "message": "逐条持仓裁定的时效标准与本仓不一致，裁定不可采信",
+                    "actual": policy_mismatch,
+                })
+
         checked = parse_dt(raw_verdict.get("checkedAt"))
         if checked is None:
             verdict_issues.append({
@@ -199,7 +278,97 @@ def evaluate_board(board, now=None):
         "canRecommend": engine_can_recommend if isinstance(engine_can_recommend, bool) else None,
         "checkedAt": verdict_clean.get("checkedAt") if verdict_clean else None,
         "schemaVersion": verdict_clean.get("schemaVersion") if verdict_clean else None,
+        "signatureVerified": bool(verdict_clean and signing.SIGNATURE_FIELD in verdict_clean
+                                  and not any(x["code"] in ("HOLDINGS_VERDICT_UNSIGNED",
+                                                           "HOLDINGS_VERDICT_SIGNATURE_INVALID")
+                                              for x in verdict_issues)),
     })
+
+    # ── D6：交叉字段校验 —— 裁定、decisionIntegrity、position 三者必须互相印证 ──
+    # 为什么需要：签名只能保证「这份裁定没被改过」，不能保证「这份裁定说的就是
+    # 这份 board 的持仓」。篡改者若只改 position.dataAgeDays（把 2.8 天改成 0.1），
+    # 签名依然有效（因为裁定本身没动），但 board 自述与裁定就自相矛盾了。
+    # 这里把三处独立来源互相比对，任何一处对不上就 BLOCK。
+    cross_field_issues = []
+    decision_integrity = board.get("decisionIntegrity")
+    # ── (c1) 裁定自述的持仓年龄 vs position 自述的年龄 ──────────────────────
+    # 这一条**不依赖** decisionIntegrity 是否存在：裁定里 checks[holdings].maxAgeHours
+    # 总是有的（引擎按 ts 算出），position.dataAgeDays 也是同一份快照的年龄。
+    # 两者对不上，说明有人只改了其中一边 —— 正是 D6 攻击 C 的手法。
+    verdict_holdings_check = None
+    if isinstance(raw_verdict, dict):
+        for item in raw_verdict.get("checks") or []:
+            if isinstance(item, dict) and item.get("id") == "holdings":
+                verdict_holdings_check = item
+                break
+    if (verdict_holdings_check is not None and position_age_h is not None
+            and finite_number(verdict_holdings_check.get("maxAgeHours"))):
+        verdict_age = float(verdict_holdings_check["maxAgeHours"])
+        if abs(verdict_age - position_age_h) > CROSS_FIELD_TOLERANCE_HOURS:
+            cross_field_issues.append({
+                "code": "HOLDINGS_VERDICT_FIELD_MISMATCH",
+                "message": "裁定的持仓年龄与 position 自述的年龄对不上"
+                           "（容差 %.1f 小时）—— 两处必有一处被单独改过" % CROSS_FIELD_TOLERANCE_HOURS,
+                "actual": {"verdictAgeHours": round(verdict_age, 2),
+                           "positionAgeHours": round(position_age_h, 2)},
+            })
+
+    if isinstance(decision_integrity, dict):
+        # (a) 已有 decisionIntegrity 的 policy 必须与本仓阈值一致
+        di_policy = decision_integrity.get("policy")
+        if isinstance(di_policy, dict):
+            di_mismatch = []
+            for key, expected in (("maxHoldingsAgeHours", MAX_HOLDINGS_AGE_HOURS),
+                                  ("maxMarketAgeDays", MAX_MARKET_AGE_DAYS),
+                                  ("maxBoardAgeHours", MAX_BOARD_AGE_HOURS),
+                                  ("holdingsVerdictMaxAgeHours", MAX_VERDICT_AGE_HOURS)):
+                actual = di_policy.get(key)
+                if actual is None:
+                    continue
+                if not finite_number(actual) or abs(float(actual) - expected) > 1e-9:
+                    di_mismatch.append({"key": key, "expected": expected, "actual": actual})
+            if di_mismatch:
+                cross_field_issues.append({
+                    "code": "DECISION_POLICY_MISMATCH",
+                    "message": "board.decisionIntegrity 的时效标准与本仓不一致",
+                    "actual": di_mismatch,
+                })
+        # (b) decisionIntegrity 里记录的 holdingsVerdict.checkedAt 必须与裁定一致
+        di_checks = decision_integrity.get("checks")
+        di_verdict_check = None
+        di_holdings_check = None
+        if isinstance(di_checks, list):
+            for item in di_checks:
+                if not isinstance(item, dict):
+                    continue
+                if item.get("id") == "holdingsVerdict":
+                    di_verdict_check = item
+                elif item.get("id") == "holdings":
+                    di_holdings_check = item
+        raw_verdict_checked = raw_verdict.get("checkedAt") if isinstance(raw_verdict, dict) else None
+        if (isinstance(di_verdict_check, dict) and raw_verdict_checked
+                and di_verdict_check.get("checkedAt")):
+            left = parse_dt(di_verdict_check.get("checkedAt"))
+            right = parse_dt(raw_verdict_checked)
+            if left is not None and right is not None and abs((left - right).total_seconds()) > 60:
+                cross_field_issues.append({
+                    "code": "HOLDINGS_VERDICT_FIELD_MISMATCH",
+                    "message": "decisionIntegrity 记录的裁定时刻与 holdingsIntegrity 不一致",
+                    "actual": {"decisionIntegrity": di_verdict_check.get("checkedAt"),
+                               "holdingsIntegrity": raw_verdict_checked},
+                })
+        # (c) decisionIntegrity 里记录的持仓年龄必须与 position 的年龄一致
+        if isinstance(di_holdings_check, dict) and position_age_h is not None:
+            di_age = di_holdings_check.get("ageHours")
+            if finite_number(di_age) and abs(float(di_age) - position_age_h) > CROSS_FIELD_TOLERANCE_HOURS:
+                cross_field_issues.append({
+                    "code": "HOLDINGS_VERDICT_FIELD_MISMATCH",
+                    "message": "decisionIntegrity 记录的持仓年龄与 position 的年龄对不上"
+                               "（容差 %.1f 小时）" % CROSS_FIELD_TOLERANCE_HOURS,
+                    "actual": {"decisionIntegrityAgeHours": round(float(di_age), 2),
+                               "positionAgeHours": round(position_age_h, 2)},
+                })
+    issues.extend(cross_field_issues)
 
     market = board.get("market") or {}
     indices = ((market.get("sources") or {}).get("indices") or {})
@@ -280,6 +449,11 @@ def evaluate_board(board, now=None):
             # P0-6：B 不再对「看不到的逐条持仓」背书，必须消费引擎闸门 A 的裁定
             "requiresHoldingsVerdict": True,
             "holdingsVerdictMaxAgeHours": MAX_VERDICT_AGE_HOURS,
+            # D6/D10：裁定必须带可验签的签名
+            "requiresHoldingsVerdictSignature": True,
+            # D7：阈值来自哪一份文件（跨仓交叉校验用）
+            "thresholdSource": "contracts/thresholds.json",
+            "thresholdDigest": THRESHOLD_DIGEST,
         },
         "checks": checks,
         "issues": issues,

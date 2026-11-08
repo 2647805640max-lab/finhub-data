@@ -25,9 +25,30 @@ LEAK_HOLDING = "易方达黄金ETF联接C"
 LEAK_AMOUNT = "12785.02"
 
 
+def _test_keypair():
+    """本次运行专用的一次性密钥对。
+
+    为什么不复用生产私钥：生产私钥只在本机（E:\\investment-os\\contracts\\），
+    CI 里根本没有。本测试要验的是「**验签逻辑**对不对」，不是「生产那把钥匙
+    能不能验」——后者由仓库外的 verify-board-signature.py 与线上验收负责。
+    """
+    from contracts.ed25519_pure import generate_private_key, private_key_to_public_key
+    sk = generate_private_key()
+    return sk, private_key_to_public_key(sk)
+
+
+_TEST_SK, _TEST_PK = _test_keypair()
+
+
+def _sign(verdict):
+    """给假裁定签名（用一次性测试密钥）。"""
+    from contracts import signing
+    return signing.sign_verdict(verdict, _TEST_SK, key_id="test-v1")
+
+
 def fresh_verdict():
     """A 判定 PASS 时的脱敏投影（字段集合 = board_integrity 的白名单）。"""
-    return {
+    verdict = {
         "status": "PASS",
         "canRecommend": True,
         "checkedAt": VERDICT_CHECKED_AT,
@@ -42,6 +63,9 @@ def fresh_verdict():
             "requiredIndices": ["sh000001", "sh000300", "sz399001", "sz399006"],
         },
     }
+    # D10（2026-11-08）：裁定必须带有效签名，否则 B 一律 BLOCK。
+    # 签名覆盖脱敏后的全部内容 —— 任何改动都会让签名失效。
+    return _sign(verdict)
 
 
 def make_board():
@@ -85,6 +109,19 @@ def issue_by_code(result, code):
 
 
 class BoardIntegrityTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        # 让 B 用本次运行的一次性测试公钥验签（生产公钥在 CI 里无从验证，
+        # 也不该由 CI 依赖生产私钥）。
+        from contracts import signing
+        cls._orig_load_public_key = signing.load_public_key
+        signing.load_public_key = lambda *a, **k: _TEST_PK
+
+    @classmethod
+    def tearDownClass(cls):
+        from contracts import signing
+        signing.load_public_key = cls._orig_load_public_key
+
     def test_verdict_injection_preserves_existing_board_fields(self):
         raw = """{
     "schema": "board/v1",
@@ -261,12 +298,34 @@ class BoardIntegrityTests(unittest.TestCase):
         self.assertEqual(clean["status"], "BLOCK")
         self.assertEqual(clean["canRecommend"], False)
         self.assertEqual(clean["issues"], [{"code": "HOLDINGS_STALE", "message": "持仓快照超过允许时效"}])
-        self.assertEqual(clean["checks"], [{"id": "holdings", "status": "BLOCK"}])
+        # D7/D10：白名单在 2026-11-08 扩了两处 ——
+        #   · checks 里的标量年龄字段（ageHours/maxAgeHours/thresholdHours）：
+        #     B 需要它们做「裁定与 position 互相印证」的交叉校验，都是标量、
+        #     不含平台名与金额；
+        #   · 签名三件套（signature/signedDigest/keyId）：B 要用它们验签，
+        #     剥掉就等于没法验。
+        # 仍然**不允许** platforms / details 这类带平台名的字段。
+        self.assertEqual(clean["checks"],
+                         [{"id": "holdings", "status": "BLOCK", "maxAgeHours": 60.5}])
+        self.assertNotIn("platforms", clean["checks"][0])
+        self.assertNotIn("details", clean["checks"][0])
         self.assertNotIn("platformTotals", clean)
         self.assertNotIn("engineDebug", clean)
         clean_text = json.dumps(clean, ensure_ascii=False)
         for token in (LEAK_PLATFORM, LEAK_HOLDING, LEAK_AMOUNT):
             self.assertNotIn(token, clean_text)
+
+
+# ── CI 收集入口（2026-11-08）────────────────────────────────────────────────
+# 背景：CI 的 path filter 与 discover 模式只覆盖 `test_board_integrity.py`
+# （.github/workflows/*.yml 无法修改 —— OAuth token 没有 workflow scope）。
+# 因此**新测试必须从这里进入**，否则写了也永远不跑（这正是「假成功」的温床）。
+# 下面的 import 把签名/交叉校验回归的用例并入本文件的命名空间，
+# `python -m unittest discover -s tests -p "test_board_integrity.py"` 会一并收集。
+try:
+    from tests.test_board_verdict_signature import *          # noqa: F401,F403
+except ImportError:
+    from test_board_verdict_signature import *                 # noqa: F401,F403
 
 
 if __name__ == "__main__":

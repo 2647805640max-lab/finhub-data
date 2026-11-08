@@ -1,0 +1,11 @@
+{
+  "schemaVersion": "1.0",
+  "holdingsMaxAgeHours": 36.0,
+  "marketMaxAgeDays": 4.0,
+  "futureClockSkewMinutes": 5.0,
+  "boardMaxAgeHours": 24.0,
+  "verdictMaxAgeHours": 24.0,
+  "positionMaxAgeDays": 1.5,
+  "hardMaxRiskyPct": 15.0,
+  "requiredIndices": ["sh000001", "sh000300", "sz399001", "sz399006"]
+}

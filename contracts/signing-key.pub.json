@@ -1,0 +1,6 @@
+{
+  "algorithm": "ed25519",
+  "keyId": "board-v1",
+  "publicKeyHex": "a72cf60e9ef0c9b95c5e017425d9d80845b94cc7a73c5a582f5d2e737ea58d8b",
+  "note": "公钥可公开；私钥只在本机 E:\\investment-os\\contracts\\ 下，不得入库"
+}
