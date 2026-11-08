@@ -1,8 +1,8 @@
 {
- "generatedAt": "2026-11-08 15:08:44",
- "ts": 1794121724442,
+ "generatedAt": "2026-11-08 15:39:37",
+ "ts": 1794123577699,
  "overseas": {
-  "fetchedAt": 1794121259608,
+  "fetchedAt": 1794123073228,
   "quotes": {
    "items": [
     {
@@ -119,7 +119,7 @@
      "kind": "yld",
      "unit": "%",
      "price": 4.86,
-     "chgPct": -49.89,
+     "chgPct": 0.46,
      "asof": "2026-11-06 19:59"
     },
     {
@@ -128,12 +128,12 @@
      "kind": "yld",
      "unit": "%",
      "price": 5.26,
-     "chgPct": -49.96,
+     "chgPct": 0.17,
      "asof": "2026-11-06 19:59"
     }
    ],
    "errors": null,
-   "fetchedAt": 1794121260872
+   "fetchedAt": 1794123074452
   },
   "fred": {
    "items": [
@@ -805,7 +805,7 @@
     "amount": 143292210.0
    }
   ],
-  "fetchedAt": 1794121258875
+  "fetchedAt": 1794123072191
  },
  "bonds": {
   "asof": "2026-11-06",
@@ -1056,7 +1056,7 @@
    }
   ],
   "errors": null,
-  "fetchedAt": 1794121263063
+  "fetchedAt": 1794123076581
  },
  "causal": {
   "tier": "causal",
@@ -1192,46 +1192,12 @@
   },
   "rule": "因果因子（有机制+历史可复现）可改 action；相关因子只进评分，永不投票",
   "asof": "2026-11-06",
-  "builtAt": "2026-11-08 15:01:11",
-  "yields": {
-   "record": {
-    "value": 4.86,
-    "date": "2026-11-06",
-    "src": "东财 datacenter"
-   },
-   "check": {
-    "value": 4.84,
-    "date": "2026-11-05",
-    "src": "FRED"
-   },
-   "deltaBp": 2.0,
-   "verdict": "日期不同（记录源 2026-11-06 / 校验源 2026-11-05），差值 +2bp 属 T+1 差异，不视为矛盾"
-  }
+  "builtAt": "2026-11-08 15:31:25"
  },
  "runtime": {
   "source": "local",
   "degraded": false,
   "reason": null,
-  "observedAt": "2026-11-08 15:09:10"
- },
- "discipline": {
-  "status": "COMPLIANT",
-  "strictRiskPct": 10.71,
-  "strictRiskCapPct": 15,
-  "targetStrictRiskPct": 15,
-  "goldPct": 27.81,
-  "goldAlertPct": 30,
-  "goldMaxPct": 35,
-  "thesisGate": "invalid",
-  "breaches": []
- },
- "externalSignal": {
-  "marketAction": "WAIT",
-  "addRiskAllowed": false,
-  "marketRegime": "external-caution",
-  "confidence": "observed"
- },
- "combined": "HOLD_NO_NEW_RISK",
- "disciplineAsOf": "2026-11-05",
- "disciplineGeneratedAt": "2026-11-08T07:09:29.599Z"
+  "observedAt": "2026-11-08 15:40:03"
+ }
 }
