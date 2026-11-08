@@ -2594,7 +2594,7 @@
         "source": "finhub-data/tools/board_integrity.py",
         "status": "BLOCK",
         "canRecommend": false,
-        "checkedAt": "2026-11-08T22:14:30.989653+08:00",
+        "checkedAt": "2026-11-08T22:21:34.421816+08:00",
         "policy": {
             "maxHoldingsAgeHours": 36.0,
             "maxMarketAgeDays": 4.0,
@@ -2607,7 +2607,10 @@
             ],
             "unresolvedPolicyItemsBlock": true,
             "requiresHoldingsVerdict": true,
-            "holdingsVerdictMaxAgeHours": 24.0
+            "holdingsVerdictMaxAgeHours": 24.0,
+            "requiresHoldingsVerdictSignature": true,
+            "thresholdSource": "contracts/thresholds.json",
+            "thresholdDigest": "2388dbea35bff856eca566bd579a9f304c8ed4304dc7c3bbeb53bea6aa3063d1"
         },
         "checks": [
             {
@@ -2630,7 +2633,8 @@
                 ],
                 "canRecommend": false,
                 "checkedAt": "2026-11-08T22:14:17.262221+08:00",
-                "schemaVersion": "1.0"
+                "schemaVersion": "1.0",
+                "signatureVerified": true
             },
             {
                 "id": "market",
