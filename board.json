@@ -2592,5 +2592,111 @@
                               "keyId":  "board-v1",
                               "signedDigest":  "939407ce6995445cbdbb12a37a263149b43399c630458a410295a0f4bc3c7b5c",
                               "signature":  "63e32963d2338b3abf10a37ffe5d503cbc0a3b62acd4770f3dd27ef933f24924298b33e6b161ce3a070d7109f7ba23dacf23d48163289604d560597183a0380d"
-                          }
+                          },
+    "decisionIntegrity": {
+        "schema": "decision-integrity/v1",
+        "source": "finhub-data/tools/board_integrity.py",
+        "status": "BLOCK",
+        "canRecommend": false,
+        "checkedAt": "2026-11-09T23:31:14.880202+08:00",
+        "policy": {
+            "maxHoldingsAgeHours": 36.0,
+            "maxMarketAgeDays": 4.0,
+            "maxBoardAgeHours": 24.0,
+            "requiredIndexCodes": [
+                "sh000001",
+                "sh000300",
+                "sz399001",
+                "sz399006"
+            ],
+            "unresolvedPolicyItemsBlock": true,
+            "requiresHoldingsVerdict": true,
+            "holdingsVerdictMaxAgeHours": 24.0,
+            "requiresHoldingsVerdictSignature": true,
+            "thresholdSource": "contracts/thresholds.json",
+            "thresholdDigest": "2388dbea35bff856eca566bd579a9f304c8ed4304dc7c3bbeb53bea6aa3063d1"
+        },
+        "checks": [
+            {
+                "id": "board",
+                "maxAgeHours": 24.0
+            },
+            {
+                "id": "holdings",
+                "ageHours": 96.0,
+                "maxAgeHours": 36.0
+            },
+            {
+                "id": "holdingsVerdict",
+                "status": "BLOCK",
+                "maxAgeHours": 24.0,
+                "engineStatus": "BLOCK",
+                "engineIssues": [
+                    "HOLDINGS_STALE"
+                ],
+                "canRecommend": false,
+                "checkedAt": "2026-11-09T23:30:49.079920+08:00",
+                "schemaVersion": "1.0",
+                "signatureVerified": true
+            },
+            {
+                "id": "market",
+                "indices": 4,
+                "expectedIndices": 4,
+                "maxAgeDays": 4.0
+            },
+            {
+                "id": "policy",
+                "unresolvedItems": 4,
+                "status": "BLOCK"
+            }
+        ],
+        "issues": [
+            {
+                "code": "HOLDINGS_STALE",
+                "message": "持仓快照超过36小时",
+                "actual": 96.0
+            },
+            {
+                "code": "HOLDINGS_MARKED_STALE",
+                "message": "上游已标记持仓快照过期"
+            },
+            {
+                "code": "HOLDINGS_FRESHNESS_STALE",
+                "message": "全局 freshness 中的持仓快照超过36小时",
+                "actual": 4.02
+            },
+            {
+                "code": "HOLDINGS_VERDICT_BLOCK",
+                "message": "引擎闸门 A 判定持仓输入不可用于决策，数据仓必须一并阻断",
+                "actual": [
+                    "HOLDINGS_STALE"
+                ],
+                "engineStatus": "BLOCK"
+            },
+            {
+                "code": "POLICY_UNRESOLVED",
+                "message": "政策契约仍存在未裁定 warn/gap 项，暂不允许给出动作",
+                "actual": [
+                    {
+                        "name": "再平衡方式",
+                        "status": "warn"
+                    },
+                    {
+                        "name": "风险预算",
+                        "status": "warn"
+                    },
+                    {
+                        "name": "回撤熔断",
+                        "status": "warn"
+                    },
+                    {
+                        "name": "交易频率上限",
+                        "status": "gap"
+                    }
+                ]
+            }
+        ],
+        "message": "决策已阻断：输入时效、行情完整性或政策口径尚未通过审计"
+    }
 }
