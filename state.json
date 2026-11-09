@@ -487,16 +487,16 @@
   "errors": null
  },
  "burst": {
-  "builtAt": "2026-11-09 17:16:46",
+  "builtAt": "2026-11-09 17:47:39",
   "poll": {
    "ok": true,
    "cached": false,
-   "newItems": 40,
+   "newItems": 24,
    "error": null
   },
   "cluster": {
    "windowHours": 6,
-   "recent": 276,
+   "recent": 281,
    "clusters": [
     {
      "keyword": "股的持股比例",
@@ -523,6 +523,15 @@
       "摩根士丹利在康龙化成H股的持股比例于11月4日从5.13%升至6.05%",
       "贝莱德在建滔集团H股的持股比例于11月4日从4.38%升至5.34%",
       "贝莱德在中兴通讯H股的持股比例于11月4日从6.62%升至7.12%"
+     ]
+    },
+    {
+     "keyword": "月销售额",
+     "n": 6,
+     "sample": [
+      "友达10月销售额207.8亿元台币 同比下降0.7%",
+      "光宝科10月销售额200.7亿元台币 同比增长32％",
+      "华硕10月销售额1076.2亿元新台币 同比增长62.3%"
      ]
     },
     {
@@ -553,40 +562,18 @@
      ]
     },
     {
-     "keyword": "月销售额",
-     "n": 4,
-     "sample": [
-      "友达10月销售额207.8亿元台币 同比下降0.7%",
-      "光宝科10月销售额200.7亿元台币 同比增长32％",
-      "华硕10月销售额1076.2亿元新台币 同比增长62.3%"
-     ]
-    },
-    {
-     "keyword": "协议",
+     "keyword": "恒生科技指数",
      "n": 3,
      "sample": [
-      "海湾六国签署2100公里铁路项目协议",
-      "三菱电机与NTT等公司签署“巨型星座”协议",
-      "全日空与越南航空签署合资协议"
+      "港股午评：恒生指数涨0.20% 恒生科技指数涨0.07%",
+      "11月9日港股收盘：恒指跌0.13% 恒生科技指数跌0.92%",
+      "恒生科技指数跌幅扩大至1%"
      ]
     }
    ]
   },
   "cards": [],
   "watchlist": [
-   {
-    "event": "国内流动性",
-    "confidence": "high",
-    "keywords": [
-     "互换便利"
-    ],
-    "clusterDocs": 0,
-    "buckets": [
-     "权益"
-    ],
-    "type": "watch",
-    "note": "单关键词或密度不足，只进观察清单"
-   },
    {
     "event": "信用事件",
     "confidence": "high",
@@ -606,7 +593,7 @@
   "rule": "单条快讯永不触发推演；假设卡只是待验证项，不改 action；缺口优先于结论"
  },
  "freshness": {
-  "builtAt": "2026-11-09 17:16:46",
+  "builtAt": "2026-11-09 17:47:39",
   "inSession": false,
   "items": [
    {
@@ -614,7 +601,7 @@
     "name": "A股四大指数",
     "tier": "quote",
     "source": "新浪实时（本机）/ VPS",
-    "asof": "2026-11-09 17:12",
+    "asof": "2026-11-09 17:42",
     "ageHours": 0.1,
     "valid": true,
     "limitHours": 26,
@@ -628,7 +615,7 @@
     "tier": "daily",
     "source": "东财 datacenter（收盘口径，唯一记录源）",
     "asof": "2026-11-06 16:00",
-    "ageHours": 73.3,
+    "ageHours": 73.8,
     "valid": true,
     "limitHours": 96,
     "invalidIf": "中国10Y 超过 40 小时未更新（含一个交易日）；美债 T+1，放宽到 96 小时",
@@ -640,7 +627,7 @@
     "name": "商品盘中观测",
     "tier": "quote",
     "source": "新浪 hf_（非判定口径）",
-    "asof": "2026-11-09 17:15",
+    "asof": "2026-11-09 17:46",
     "ageHours": 0.0,
     "valid": true,
     "limitHours": 96,
@@ -653,7 +640,7 @@
     "name": "投资引擎裁决",
     "tier": "daily",
     "source": "invest-engine core_engine_v1_1（收盘序列）",
-    "asof": "2026-11-09 17:15",
+    "asof": "2026-11-09 17:46",
     "ageHours": 0.0,
     "valid": true,
     "limitHours": 96,
@@ -666,7 +653,7 @@
     "name": "扩展指数/商品主力",
     "tier": "quote",
     "source": "VPS 海外层 / 新浪",
-    "asof": "2026-11-09 17:12",
+    "asof": "2026-11-09 17:42",
     "ageHours": 0.1,
     "valid": true,
     "limitHours": 96,
@@ -679,7 +666,7 @@
     "name": "海外宏观（VIX/美元/金/美债）",
     "tier": "quote",
     "source": "Yahoo + FRED（VPS 直连）",
-    "asof": "2026-11-09 17:12",
+    "asof": "2026-11-09 17:42",
     "ageHours": 0.1,
     "valid": true,
     "limitHours": 96,
@@ -692,7 +679,7 @@
     "name": "因子推演（因果层 C1-C4）",
     "tier": "daily",
     "source": "macro_causal.build（东财+腾讯日线）",
-    "asof": "2026-11-09 17:12",
+    "asof": "2026-11-09 17:42",
     "ageHours": 0.1,
     "valid": true,
     "limitHours": 96,
@@ -706,7 +693,7 @@
     "tier": "daily",
     "source": "~/projects/daily-news/digest_*.md",
     "asof": "2026-11-09 16:00",
-    "ageHours": 1.3,
+    "ageHours": 1.8,
     "valid": true,
     "limitHours": 40,
     "invalidIf": "digest 不是当天的（超过 40 小时）或条目为空",
@@ -719,7 +706,7 @@
     "tier": "daily",
     "source": "DeepSeek 打分（按 digest 日期缓存）",
     "asof": "2026-11-09 16:00",
-    "ageHours": 1.3,
+    "ageHours": 1.8,
     "valid": true,
     "limitHours": 40,
     "invalidIf": "与 digest 不同日 / 打分报错",
@@ -732,7 +719,7 @@
     "tier": "manual",
     "source": "手工登记（券商/建行/支付宝）+ ~/.dsh/finwatch",
     "asof": "2026-11-05 16:00",
-    "ageHours": 97.3,
+    "ageHours": 97.8,
     "valid": true,
     "limitHours": 168,
     "invalidIf": "超过 7 天未更新（手工快照，不自动采）",
@@ -744,7 +731,7 @@
     "name": "告警",
     "tier": "quote",
     "source": "finwatch alerts.json",
-    "asof": "2026-11-09 17:15",
+    "asof": "2026-11-09 17:46",
     "ageHours": 0.0,
     "valid": true,
     "limitHours": 168,
@@ -758,7 +745,7 @@
     "tier": "daily",
     "source": "E:/q4-2026/reports/chain-model.md + daily-log",
     "asof": "2026-11-09 16:00",
-    "ageHours": 1.3,
+    "ageHours": 1.8,
     "valid": true,
     "limitHours": 96,
     "invalidIf": "超过 96 小时未更新",
@@ -1265,12 +1252,46 @@
   },
   "rule": "因果因子（有机制+历史可复现）可改 action；相关因子只进评分，永不投票",
   "asof": "2026-11-06",
-  "builtAt": "2026-11-09 17:42:41"
+  "builtAt": "2026-11-09 17:42:41",
+  "yields": {
+   "record": {
+    "value": 4.86,
+    "date": "2026-11-06",
+    "src": "东财 datacenter"
+   },
+   "check": {
+    "value": 4.84,
+    "date": "2026-11-05",
+    "src": "FRED"
+   },
+   "deltaBp": 2.0,
+   "verdict": "日期不同（记录源 2026-11-06 / 校验源 2026-11-05），差值 +2bp 属 T+1 差异，不视为矛盾"
+  }
  },
  "runtime": {
   "source": "local",
   "degraded": false,
   "reason": null,
   "observedAt": "2026-11-09 17:47:23"
- }
+ },
+ "discipline": {
+  "status": "COMPLIANT",
+  "strictRiskPct": 10.71,
+  "strictRiskCapPct": 15,
+  "targetStrictRiskPct": 15,
+  "goldPct": 27.81,
+  "goldAlertPct": 30,
+  "goldMaxPct": 35,
+  "thesisGate": "valid",
+  "breaches": []
+ },
+ "externalSignal": {
+  "marketAction": "WAIT",
+  "addRiskAllowed": false,
+  "marketRegime": "external-caution",
+  "confidence": "observed"
+ },
+ "combined": "HOLD_NO_NEW_RISK",
+ "disciplineAsOf": "2026-11-05",
+ "disciplineGeneratedAt": "2026-11-09T09:47:43.224Z"
 }
