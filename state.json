@@ -487,24 +487,24 @@
   "errors": null
  },
  "burst": {
-  "builtAt": "2026-11-09 15:08:16",
+  "builtAt": "2026-11-09 15:43:54",
   "poll": {
    "ok": true,
    "cached": false,
-   "newItems": 16,
+   "newItems": 37,
    "error": null
   },
   "cluster": {
    "windowHours": 6,
-   "recent": 269,
+   "recent": 275,
    "clusters": [
     {
-     "keyword": "涨停",
-     "n": 7,
+     "keyword": "涨超",
+     "n": 6,
      "sample": [
-      "猪肉概念大面积反弹 天邦食品触及涨停",
-      "冰雪经济概念反复走强 冰山冷热、龙江交通双双涨停",
-      "算力租赁概念延续强势 城地香江一字涨停"
+      "继续领涨！台积电拟规划生产3D DRAM先进存储芯片，科创芯片设计ETF国联安(588780)跟踪指数强势涨超2%",
+      "AI应用端的定价逻辑本周出现全球同步的转向 科创创业人工智能ETF国联安（158040）涨超3%",
+      "苹果研究团队披露机器人“大脑”HALO进展！机器人ETF万家标的指数涨超3%！"
      ]
     },
     {
@@ -514,15 +514,6 @@
       "人形机器人密集亮相进博会，机器人ETF鹏华涨超2%",
       "多家CXO公司在手订单充裕，港股通创新药ETF鹏华涨超2%",
       "苹果研究团队披露机器人“大脑”进展，科创AIETF鹏华涨超2%"
-     ]
-    },
-    {
-     "keyword": "涨超",
-     "n": 5,
-     "sample": [
-      "继续领涨！台积电拟规划生产3D DRAM先进存储芯片，科创芯片设计ETF国联安(588780)跟踪指数强势涨超2%",
-      "AI应用端的定价逻辑本周出现全球同步的转向 科创创业人工智能ETF国联安（158040）涨超3%",
-      "苹果研究团队披露机器人“大脑”HALO进展！机器人ETF万家标的指数涨超3%！"
      ]
     },
     {
@@ -544,30 +535,39 @@
      ]
     },
     {
-     "keyword": "台交所加权股",
-     "n": 4,
+     "keyword": "上海",
+     "n": 5,
      "sample": [
-      "台交所加权股价指数上涨4.1%",
-      "台交所加权股价指数上涨5%至41,690.21点",
-      "台交所加权股价指数上涨6%"
+      "上海：新增5款已完成登记的生成式人工智能服务",
+      "上海：鼓励已在境内上市的境外生产医疗器械转移至境内生产",
+      "上海：全面加强药物研究机构监管 建立健全研究机构分级分类监管机制"
      ]
     },
     {
-     "keyword": "注册资本",
-     "n": 4,
+     "keyword": "外交部",
+     "n": 5,
      "sample": [
-      "容百科技在襄阳成立钠电正极材料公司 注册资本7亿元",
-      "中广核风电等在云南成立能碳科技公司，注册资本2亿元",
-      "MiniMax在珠海横琴成立新科技公司，注册资本500万"
+      "外交部：中国率先批准《关于成立世界人工智能合作组织的协定》体现真诚意愿和坚定承诺",
+      "外交部：中方在美国输华芯片问题上的立场是一贯的",
+      "外交部：所谓“中国间谍”论调纯属污蔑抹黑"
      ]
     },
     {
-     "keyword": "机构",
+     "keyword": "涨停",
      "n": 4,
      "sample": [
-      "机构：10月50城住宅平均租金环比下跌0.28%",
-      "机构：前10月全国法拍房市场成交总金额同比增长19%",
-      "机构：苏伊士运河复航趋势正在增强 运价面临温和下行压力"
+      "人形机器人概念持续拉升 上纬新材20cm涨停",
+      "农业板块震荡拉升 新赛股份触及涨停",
+      "PCB概念持续走高 奥士康等多股涨停"
+     ]
+    },
+    {
+     "keyword": "科创芯片设计",
+     "n": 4,
+     "sample": [
+      "继续领涨！台积电拟规划生产3D DRAM先进存储芯片，科创芯片设计ETF国联安(588780)跟踪指数强势涨超2%",
+      "国产算力出海迎来重要催化！科创芯片设计ETF永赢盘中涨超3%",
+      "中国移动与智谱正式签署合作协议，科创芯片设计ETF鹏华涨超2%"
      ]
     }
    ]
@@ -575,15 +575,14 @@
   "cards": [],
   "watchlist": [
    {
-    "event": "贸易管制",
+    "event": "国内流动性",
     "confidence": "high",
     "keywords": [
-     "关税"
+     "互换便利"
     ],
     "clusterDocs": 0,
     "buckets": [
-     "权益",
-     "半导体"
+     "权益"
     ],
     "type": "watch",
     "note": "单关键词或密度不足，只进观察清单"
@@ -592,7 +591,7 @@
     "event": "地缘冲突",
     "confidence": "mid",
     "keywords": [
-     "中东"
+     "冲突"
     ],
     "clusterDocs": 0,
     "buckets": [
@@ -603,21 +602,12 @@
     "note": "单关键词或密度不足，只进观察清单"
    }
   ],
-  "gaps": [
-   {
-    "key": "bonds",
-    "name": "中美国债收益率",
-    "reason": "已 71 小时未更新（阈值 40h）",
-    "hard": true,
-    "asof": "2026-11-06 16:00",
-    "ageHours": 71.1
-   }
-  ],
-  "incomplete": true,
+  "gaps": [],
+  "incomplete": false,
   "rule": "单条快讯永不触发推演；假设卡只是待验证项，不改 action；缺口优先于结论"
  },
  "freshness": {
-  "builtAt": "2026-11-09 15:12:54",
+  "builtAt": "2026-11-09 15:43:54",
   "inSession": false,
   "items": [
    {
@@ -625,7 +615,7 @@
     "name": "A股四大指数",
     "tier": "quote",
     "source": "新浪实时（本机）/ VPS",
-    "asof": "2026-11-09 15:11",
+    "asof": "2026-11-09 15:41",
     "ageHours": 0.0,
     "valid": true,
     "limitHours": 26,
@@ -639,7 +629,7 @@
     "tier": "daily",
     "source": "东财 datacenter（收盘口径，唯一记录源）",
     "asof": "2026-11-06 16:00",
-    "ageHours": 71.2,
+    "ageHours": 71.7,
     "valid": true,
     "limitHours": 96,
     "invalidIf": "中国10Y 超过 40 小时未更新（含一个交易日）；美债 T+1，放宽到 96 小时",
@@ -651,7 +641,7 @@
     "name": "商品盘中观测",
     "tier": "quote",
     "source": "新浪 hf_（非判定口径）",
-    "asof": "2026-11-09 15:11",
+    "asof": "2026-11-09 15:43",
     "ageHours": 0.0,
     "valid": true,
     "limitHours": 96,
@@ -664,7 +654,7 @@
     "name": "投资引擎裁决",
     "tier": "daily",
     "source": "invest-engine core_engine_v1_1（收盘序列）",
-    "asof": "2026-11-09 15:11",
+    "asof": "2026-11-09 15:43",
     "ageHours": 0.0,
     "valid": true,
     "limitHours": 96,
@@ -677,7 +667,7 @@
     "name": "扩展指数/商品主力",
     "tier": "quote",
     "source": "VPS 海外层 / 新浪",
-    "asof": "2026-11-09 15:11",
+    "asof": "2026-11-09 15:41",
     "ageHours": 0.0,
     "valid": true,
     "limitHours": 96,
@@ -690,7 +680,7 @@
     "name": "海外宏观（VIX/美元/金/美债）",
     "tier": "quote",
     "source": "Yahoo + FRED（VPS 直连）",
-    "asof": "2026-11-09 15:11",
+    "asof": "2026-11-09 15:41",
     "ageHours": 0.0,
     "valid": true,
     "limitHours": 96,
@@ -703,7 +693,7 @@
     "name": "因子推演（因果层 C1-C4）",
     "tier": "daily",
     "source": "macro_causal.build（东财+腾讯日线）",
-    "asof": "2026-11-09 15:11",
+    "asof": "2026-11-09 15:41",
     "ageHours": 0.0,
     "valid": true,
     "limitHours": 96,
@@ -717,7 +707,7 @@
     "tier": "daily",
     "source": "~/projects/daily-news/digest_*.md",
     "asof": "2026-11-09 16:00",
-    "ageHours": -0.8,
+    "ageHours": -0.3,
     "valid": true,
     "limitHours": 40,
     "invalidIf": "digest 不是当天的（超过 40 小时）或条目为空",
@@ -730,7 +720,7 @@
     "tier": "daily",
     "source": "DeepSeek 打分（按 digest 日期缓存）",
     "asof": "2026-11-09 16:00",
-    "ageHours": -0.8,
+    "ageHours": -0.3,
     "valid": true,
     "limitHours": 40,
     "invalidIf": "与 digest 不同日 / 打分报错",
@@ -743,7 +733,7 @@
     "tier": "manual",
     "source": "手工登记（券商/建行/支付宝）+ ~/.dsh/finwatch",
     "asof": "2026-11-05 16:00",
-    "ageHours": 95.2,
+    "ageHours": 95.7,
     "valid": true,
     "limitHours": 168,
     "invalidIf": "超过 7 天未更新（手工快照，不自动采）",
@@ -755,7 +745,7 @@
     "name": "告警",
     "tier": "quote",
     "source": "finwatch alerts.json",
-    "asof": "2026-11-09 15:11",
+    "asof": "2026-11-09 15:43",
     "ageHours": 0.0,
     "valid": true,
     "limitHours": 168,
@@ -769,7 +759,7 @@
     "tier": "daily",
     "source": "E:/q4-2026/reports/chain-model.md + daily-log",
     "asof": "2026-11-09 16:00",
-    "ageHours": -0.8,
+    "ageHours": -0.3,
     "valid": true,
     "limitHours": 96,
     "invalidIf": "超过 96 小时未更新",
@@ -1276,12 +1266,46 @@
   },
   "rule": "因果因子（有机制+历史可复现）可改 action；相关因子只进评分，永不投票",
   "asof": "2026-11-06",
-  "builtAt": "2026-11-09 15:41:50"
+  "builtAt": "2026-11-09 15:41:50",
+  "yields": {
+   "record": {
+    "value": 4.86,
+    "date": "2026-11-06",
+    "src": "东财 datacenter"
+   },
+   "check": {
+    "value": 4.84,
+    "date": "2026-11-05",
+    "src": "FRED"
+   },
+   "deltaBp": 2.0,
+   "verdict": "日期不同（记录源 2026-11-06 / 校验源 2026-11-05），差值 +2bp 属 T+1 差异，不视为矛盾"
+  }
  },
  "runtime": {
   "source": "local",
   "degraded": false,
   "reason": null,
   "observedAt": "2026-11-09 15:43:39"
- }
+ },
+ "discipline": {
+  "status": "COMPLIANT",
+  "strictRiskPct": 10.71,
+  "strictRiskCapPct": 15,
+  "targetStrictRiskPct": 15,
+  "goldPct": 27.81,
+  "goldAlertPct": 30,
+  "goldMaxPct": 35,
+  "thesisGate": "valid",
+  "breaches": []
+ },
+ "externalSignal": {
+  "marketAction": "WAIT",
+  "addRiskAllowed": false,
+  "marketRegime": "external-caution",
+  "confidence": "observed"
+ },
+ "combined": "HOLD_NO_NEW_RISK",
+ "disciplineAsOf": "2026-11-05",
+ "disciplineGeneratedAt": "2026-11-09T07:43:57.847Z"
 }
