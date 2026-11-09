@@ -487,16 +487,16 @@
   "errors": null
  },
  "burst": {
-  "builtAt": "2026-11-09 09:11:50",
+  "builtAt": "2026-11-09 09:42:43",
   "poll": {
    "ok": true,
    "cached": false,
-   "newItems": 24,
+   "newItems": 25,
    "error": null
   },
   "cluster": {
    "windowHours": 6,
-   "recent": 125,
+   "recent": 147,
    "clusters": [
     {
      "keyword": "日经",
@@ -505,6 +505,33 @@
       "日经225指数涨幅扩大至1%",
       "日经225指数期货早盘上涨1.1%",
       "日经225指数涨幅扩大至2%"
+     ]
+    },
+    {
+     "keyword": "价指数上涨",
+     "n": 3,
+     "sample": [
+      "台交所加权股价指数上涨3%",
+      "台交所加权股价指数上涨2.2%",
+      "台交所加权股价指数上涨4.1%"
+     ]
+    },
+    {
+     "keyword": "台交所加权股",
+     "n": 3,
+     "sample": [
+      "台交所加权股价指数上涨3%",
+      "台交所加权股价指数上涨2.2%",
+      "台交所加权股价指数上涨4.1%"
+     ]
+    },
+    {
+     "keyword": "涨停",
+     "n": 3,
+     "sample": [
+      "猪肉概念大面积反弹 天邦食品触及涨停",
+      "冰雪经济概念反复走强 冰山冷热、龙江交通双双涨停",
+      "算力租赁概念延续强势 城地香江一字涨停"
      ]
     }
    ]
@@ -529,6 +556,7 @@
     "event": "国内流动性",
     "confidence": "high",
     "keywords": [
+     "逆回购",
      "互换便利"
     ],
     "clusterDocs": 0,
@@ -551,25 +579,48 @@
     ],
     "type": "watch",
     "note": "单关键词或密度不足，只进观察清单"
+   },
+   {
+    "event": "经济数据",
+    "confidence": "mid",
+    "keywords": [
+     "cpi"
+    ],
+    "clusterDocs": 0,
+    "buckets": [
+     "权益",
+     "债券"
+    ],
+    "type": "watch",
+    "note": "单关键词或密度不足，只进观察清单"
    }
   ],
-  "gaps": [],
-  "incomplete": false,
+  "gaps": [
+   {
+    "key": "bonds",
+    "name": "中美国债收益率",
+    "reason": "已 66 小时未更新（阈值 40h）",
+    "hard": true,
+    "asof": "2026-11-06 16:00",
+    "ageHours": 65.7
+   }
+  ],
+  "incomplete": true,
   "rule": "单条快讯永不触发推演；假设卡只是待验证项，不改 action；缺口优先于结论"
  },
  "freshness": {
-  "builtAt": "2026-11-09 09:11:50",
-  "inSession": false,
+  "builtAt": "2026-11-09 09:42:43",
+  "inSession": true,
   "items": [
    {
     "key": "market",
     "name": "A股四大指数",
     "tier": "quote",
     "source": "新浪实时（本机）/ VPS",
-    "asof": "2026-11-09 08:52",
-    "ageHours": 0.3,
+    "asof": "2026-11-09 09:40",
+    "ageHours": 0.0,
     "valid": true,
-    "limitHours": 26,
+    "limitHours": 0.5,
     "invalidIf": "交易时段超过 30 分钟未更新；收盘后超过 26 小时（跨过一个交易日）",
     "reason": null,
     "hard": true
@@ -580,11 +631,11 @@
     "tier": "daily",
     "source": "东财 datacenter（收盘口径，唯一记录源）",
     "asof": "2026-11-06 16:00",
-    "ageHours": 65.2,
-    "valid": true,
-    "limitHours": 96,
+    "ageHours": 65.7,
+    "valid": false,
+    "limitHours": 40,
     "invalidIf": "中国10Y 超过 40 小时未更新（含一个交易日）；美债 T+1，放宽到 96 小时",
-    "reason": null,
+    "reason": "已 66 小时未更新（阈值 40h）",
     "hard": true
    },
    {
@@ -592,10 +643,10 @@
     "name": "商品盘中观测",
     "tier": "quote",
     "source": "新浪 hf_（非判定口径）",
-    "asof": "2026-11-09 09:11",
+    "asof": "2026-11-09 09:42",
     "ageHours": 0.0,
     "valid": true,
-    "limitHours": 96,
+    "limitHours": 40,
     "invalidIf": "超过 96 小时未更新",
     "reason": null,
     "hard": false
@@ -605,10 +656,10 @@
     "name": "投资引擎裁决",
     "tier": "daily",
     "source": "invest-engine core_engine_v1_1（收盘序列）",
-    "asof": "2026-11-09 09:11",
+    "asof": "2026-11-09 09:42",
     "ageHours": 0.0,
     "valid": true,
-    "limitHours": 96,
+    "limitHours": 40,
     "invalidIf": "超过 40 小时未重跑（引擎按日线，盘中不重跑属正常）",
     "reason": null,
     "hard": true
@@ -618,10 +669,10 @@
     "name": "扩展指数/商品主力",
     "tier": "quote",
     "source": "VPS 海外层 / 新浪",
-    "asof": "2026-11-09 08:52",
-    "ageHours": 0.3,
+    "asof": "2026-11-09 09:40",
+    "ageHours": 0.0,
     "valid": true,
-    "limitHours": 96,
+    "limitHours": 40,
     "invalidIf": "超过 96 小时未更新",
     "reason": null,
     "hard": false
@@ -631,10 +682,10 @@
     "name": "海外宏观（VIX/美元/金/美债）",
     "tier": "quote",
     "source": "Yahoo + FRED（VPS 直连）",
-    "asof": "2026-11-09 08:52",
-    "ageHours": 0.3,
+    "asof": "2026-11-09 09:40",
+    "ageHours": 0.0,
     "valid": true,
-    "limitHours": 96,
+    "limitHours": 40,
     "invalidIf": "超过 96 小时未更新",
     "reason": null,
     "hard": true
@@ -644,10 +695,10 @@
     "name": "因子推演（因果层 C1-C4）",
     "tier": "daily",
     "source": "macro_causal.build（东财+腾讯日线）",
-    "asof": "2026-11-09 08:52",
-    "ageHours": 0.3,
+    "asof": "2026-11-09 09:40",
+    "ageHours": 0.0,
     "valid": true,
-    "limitHours": 96,
+    "limitHours": 40,
     "invalidIf": "超过 40 小时未重建",
     "reason": null,
     "hard": true
@@ -657,8 +708,8 @@
     "name": "每日新闻详读",
     "tier": "daily",
     "source": "~/projects/daily-news/digest_*.md",
-    "asof": "2026-11-08 16:00",
-    "ageHours": 17.2,
+    "asof": "2026-11-09 16:00",
+    "ageHours": -6.3,
     "valid": true,
     "limitHours": 40,
     "invalidIf": "digest 不是当天的（超过 40 小时）或条目为空",
@@ -670,8 +721,8 @@
     "name": "AI 新闻情绪分",
     "tier": "daily",
     "source": "DeepSeek 打分（按 digest 日期缓存）",
-    "asof": "2026-11-08 16:00",
-    "ageHours": 17.2,
+    "asof": "2026-11-09 16:00",
+    "ageHours": -6.3,
     "valid": true,
     "limitHours": 40,
     "invalidIf": "与 digest 不同日 / 打分报错",
@@ -684,7 +735,7 @@
     "tier": "manual",
     "source": "手工登记（券商/建行/支付宝）+ ~/.dsh/finwatch",
     "asof": "2026-11-05 16:00",
-    "ageHours": 89.2,
+    "ageHours": 89.7,
     "valid": true,
     "limitHours": 168,
     "invalidIf": "超过 7 天未更新（手工快照，不自动采）",
@@ -696,7 +747,7 @@
     "name": "告警",
     "tier": "quote",
     "source": "finwatch alerts.json",
-    "asof": "2026-11-09 09:11",
+    "asof": "2026-11-09 09:42",
     "ageHours": 0.0,
     "valid": true,
     "limitHours": 168,
@@ -710,7 +761,7 @@
     "tier": "daily",
     "source": "E:/q4-2026/reports/chain-model.md + daily-log",
     "asof": "2026-11-08 16:00",
-    "ageHours": 17.2,
+    "ageHours": 17.7,
     "valid": true,
     "limitHours": 96,
     "invalidIf": "超过 96 小时未更新",
@@ -718,15 +769,24 @@
     "hard": false
    }
   ],
-  "gaps": [],
+  "gaps": [
+   {
+    "key": "bonds",
+    "name": "中美国债收益率",
+    "reason": "已 66 小时未更新（阈值 40h）",
+    "hard": true,
+    "asof": "2026-11-06 16:00",
+    "ageHours": 65.7
+   }
+  ],
   "counts": {
    "total": 12,
-   "valid": 12,
-   "invalid": 0,
-   "hardInvalid": 0
+   "valid": 11,
+   "invalid": 1,
+   "hardInvalid": 1
   },
-  "incomplete": false,
-  "confidenceAdjust": "正常"
+  "incomplete": true,
+  "confidenceAdjust": "下调一档"
  },
  "tunnelUrl": "https://daughter-rates-integral-ownership.trycloudflare.com",
  "market": {
@@ -1217,12 +1277,46 @@
   },
   "rule": "因果因子（有机制+历史可复现）可改 action；相关因子只进评分，永不投票",
   "asof": "2026-11-06",
-  "builtAt": "2026-11-09 09:40:23"
+  "builtAt": "2026-11-09 09:40:23",
+  "yields": {
+   "record": {
+    "value": 4.86,
+    "date": "2026-11-06",
+    "src": "东财 datacenter"
+   },
+   "check": {
+    "value": 4.84,
+    "date": "2026-11-05",
+    "src": "FRED"
+   },
+   "deltaBp": 2.0,
+   "verdict": "日期不同（记录源 2026-11-06 / 校验源 2026-11-05），差值 +2bp 属 T+1 差异，不视为矛盾"
+  }
  },
  "runtime": {
   "source": "local",
   "degraded": false,
   "reason": null,
   "observedAt": "2026-11-09 09:42:29"
- }
+ },
+ "discipline": {
+  "status": "COMPLIANT",
+  "strictRiskPct": 10.71,
+  "strictRiskCapPct": 15,
+  "targetStrictRiskPct": 15,
+  "goldPct": 27.81,
+  "goldAlertPct": 30,
+  "goldMaxPct": 35,
+  "thesisGate": "invalid",
+  "breaches": []
+ },
+ "externalSignal": {
+  "marketAction": "WAIT",
+  "addRiskAllowed": false,
+  "marketRegime": "external-caution",
+  "confidence": "observed"
+ },
+ "combined": "HOLD_NO_NEW_RISK",
+ "disciplineAsOf": "2026-11-05",
+ "disciplineGeneratedAt": "2026-11-09T01:42:47.301Z"
 }
