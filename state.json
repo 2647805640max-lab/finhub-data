@@ -1,6 +1,6 @@
 {
- "generatedAt": "2026-11-10 11:40:06",
- "ts": 1794282006600,
+ "generatedAt": "2026-11-10 11:44:39",
+ "ts": 1794282279709,
  "source": "vps",
  "tunnelUrl": "https://daughter-rates-integral-ownership.trycloudflare.com",
  "market": {
@@ -76,7 +76,7 @@
     "amount": 55628098.0
    }
   ],
-  "fetchedAt": 1794282007432
+  "fetchedAt": 1794282280590
  },
  "bonds": {
   "asof": "2026-11-09",
@@ -100,7 +100,7 @@
   }
  },
  "overseas": {
-  "fetchedAt": 1794282018308,
+  "fetchedAt": 1794282281711,
   "quotes": {
    "items": [
     {
@@ -108,9 +108,9 @@
      "name": "韩国KOSPI",
      "kind": "idx",
      "unit": "",
-     "price": 5234.01,
-     "chgPct": 4.29,
-     "asof": "2026-11-10 03:20"
+     "price": 5235.13,
+     "chgPct": 4.31,
+     "asof": "2026-11-10 03:24"
     },
     {
      "code": "^SOX",
@@ -135,9 +135,9 @@
      "name": "恒生指数",
      "kind": "idx",
      "unit": "",
-     "price": 24554.13,
-     "chgPct": 0.43,
-     "asof": "2026-11-10 03:25"
+     "price": 24539.45,
+     "chgPct": 0.37,
+     "asof": "2026-11-10 03:29"
     },
     {
      "code": "^DJI",
@@ -182,25 +182,25 @@
      "unit": "",
      "price": 101.68,
      "chgPct": 0.03,
-     "asof": "2026-11-10 03:30"
+     "asof": "2026-11-10 03:34"
     },
     {
      "code": "GC=F",
      "name": "COMEX黄金",
      "kind": "fut",
      "unit": "usd",
-     "price": 4126.0,
-     "chgPct": 0.28,
-     "asof": "2026-11-10 03:30"
+     "price": 4122.0,
+     "chgPct": 0.18,
+     "asof": "2026-11-10 03:34"
     },
     {
      "code": "CL=F",
      "name": "WTI原油",
      "kind": "fut",
      "unit": "usd",
-     "price": 85.91,
-     "chgPct": -1.08,
-     "asof": "2026-11-10 03:30"
+     "price": 85.83,
+     "chgPct": -1.17,
+     "asof": "2026-11-10 03:34"
     },
     {
      "code": "HG=F",
@@ -208,8 +208,8 @@
      "kind": "fut",
      "unit": "usd",
      "price": 6.35,
-     "chgPct": 0.16,
-     "asof": "2026-11-10 03:30"
+     "chgPct": 0.02,
+     "asof": "2026-11-10 03:34"
     },
     {
      "code": "^TNX",
@@ -231,7 +231,7 @@
     }
    ],
    "errors": null,
-   "fetchedAt": 1794282019586
+   "fetchedAt": 1794282282972
   },
   "fred": {
    "items": [
@@ -608,9 +608,9 @@
     "code": "^HSI",
     "name": "恒生指数",
     "kind": "idx",
-    "price": 24554.13,
-    "chgPct": 0.43,
-    "asof": "2026-11-10 03:25",
+    "price": 24539.45,
+    "chgPct": 0.37,
+    "asof": "2026-11-10 03:29",
     "src": "yahoo"
    },
    {
@@ -626,9 +626,9 @@
     "code": "^KS11",
     "name": "韩国KOSPI",
     "kind": "idx",
-    "price": 5234.01,
-    "chgPct": 4.29,
-    "asof": "2026-11-10 03:20",
+    "price": 5235.13,
+    "chgPct": 4.31,
+    "asof": "2026-11-10 03:24",
     "src": "yahoo"
    },
    {
@@ -681,26 +681,26 @@
    }
   ],
   "errors": null,
-  "fetchedAt": 1794282020948
+  "fetchedAt": 1794282284406
  },
  "commodity": {
   "OIL": {
-   "price": 91.559,
+   "price": 91.438,
    "prev": 92.57,
-   "chgPct": -1.09,
-   "time": "11:40:19"
+   "chgPct": -1.22,
+   "time": "11:44:31"
   },
   "CL": {
-   "price": 85.715,
+   "price": 85.628,
    "prev": 86.85,
-   "chgPct": -1.31,
-   "time": "11:40:19"
+   "chgPct": -1.41,
+   "time": "11:44:43"
   },
   "XAU": {
-   "price": 4113.85,
+   "price": 4108.69,
    "prev": 4140.94,
-   "chgPct": -0.65,
-   "time": "11:40:00"
+   "chgPct": -0.78,
+   "time": "11:44:00"
   }
  },
  "engine": {
@@ -816,7 +816,7 @@
    "schemaVersion": "1.0",
    "status": "PASS",
    "canRecommend": true,
-   "checkedAt": "2026-11-10T11:40:25.578702+08:00",
+   "checkedAt": "2026-11-10T11:44:49.135158+08:00",
    "policy": {
     "maxMarketAgeDays": 4.0,
     "requiredIndices": [
@@ -926,7 +926,7 @@
     },
     {
      "name": "恒生指数",
-     "chgPct": 0.43,
+     "chgPct": 0.37,
      "note": "情绪/联动，无稳定传导机制"
     },
     {
@@ -936,7 +936,7 @@
     },
     {
      "name": "韩国KOSPI",
-     "chgPct": 4.29,
+     "chgPct": 4.31,
      "note": "情绪/联动，无稳定传导机制"
     },
     {
@@ -976,7 +976,7 @@
   },
   "rule": "因果因子（有机制+历史可复现）可改 action；相关因子只进评分，永不投票",
   "asof": "2026-11-09",
-  "builtAt": "2026-11-10 11:40:27"
+  "builtAt": "2026-11-10 11:44:51"
  },
  "freshness": {
   "builtAt": "2026-11-10 11:38:00",
