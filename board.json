@@ -1,6 +1,6 @@
 {
     "schema":  "board/v1",
-    "generatedAt":  "2026-11-12 02:30:46",
+    "generatedAt":  "2026-11-12 03:00:45",
     "generatedBy":  "[已移除]",
     "ips":  {
                 "asOf":  "2026-11-07 22:55:52",
@@ -50,7 +50,7 @@
                           ],
                 "alerts":  [
                                "回撤熔断当前 computable=True（截至 2026-11-05）：组合回撤 3.08%（峰值→当前），熔断阈值 −25%（engine_v2.py:120）",
-                               "持仓快照停在 2026-11-05（6.1 天前）：其后的组合回撤从未被观测（不是\"没风险\"，是\"看不见\"）",
+                               "持仓快照停在 2026-11-05（6.2 天前）：其后的组合回撤从未被观测（不是\"没风险\"，是\"看不见\"）",
                                "10-25 减仓执行单由推演直接产出，违反 PROJECT.md §7.5 第 2 条（推演不直接触发交易）"
                            ],
                 "footer":  "口径根 = investment-engine 源码；契约 = contracts/engine-policy.json（带源码 sha256）"
@@ -1652,7 +1652,7 @@
                                    "authorityPct":  35.92,
                                    "hardMaxPct":  15,
                                    "dataAsOf":  "2026-11-05",
-                                   "dataAgeDays":  6.1,
+                                   "dataAgeDays":  6.2,
                                    "stale":  true,
                                    "note":  "L1 真值：直接由 holdings.json 快照按名称归类算四桶；无快照时才回落 metrics 派生值",
                                    "source":  "holdings.json（用户上传快照，非推算）"
@@ -1695,7 +1695,7 @@
                                     {
                                         "item":  "持仓快照 holdings.json",
                                         "asOf":  "2026-11-05",
-                                        "ageDays":  6.1,
+                                        "ageDays":  6.2,
                                         "stale":  true
                                     },
                                     {
@@ -1706,7 +1706,7 @@
                                     },
                                     {
                                         "item":  "决策账本",
-                                        "asOf":  "2026-11-12 02:30",
+                                        "asOf":  "2026-11-12 03:00",
                                         "ageDays":  0,
                                         "stale":  false
                                     }
@@ -1854,7 +1854,7 @@
                 },
     "qis":  {
                 "schema":  "factors-qis/v1",
-                "generatedAt":  "2026-11-12 02:30:45",
+                "generatedAt":  "2026-11-12 03:00:44",
                 "producer":  "tools/qis-factors.py（因子演算唯一生产者）",
                 "consumer":  "08:45 推演任务只读本文件，不得自行演算或自行判阈",
                 "caliber_status":  "unregistered_research",
@@ -1923,16 +1923,16 @@
                                                   }
                                               ]
                              },
-                "cacheAgeSeconds":  10150.6,
+                "cacheAgeSeconds":  11950.0,
                 "cacheAgeSecondsBySymbol":  {
-                                                "sh510050":  10150.6,
-                                                "sh510300":  10149.9,
-                                                "sh510500":  10149.3,
-                                                "sz159949":  10148.6
+                                                "sh510050":  11950.0,
+                                                "sh510300":  11949.3,
+                                                "sh510500":  11948.6,
+                                                "sz159949":  11947.9
                                             },
                 "refresh":  {
                                 "ok":  true,
-                                "detail":  "最旧的缓存才 2.8 小时 ≤ 24.0 小时，未重抓",
+                                "detail":  "最旧的缓存才 3.3 小时 ≤ 24.0 小时，未重抓",
                                 "reason":  "按需刷新"
                             },
                 "lastBarLagDays":  {
@@ -2273,7 +2273,7 @@
                           "fullVersion":  "仅本地 contracts/board.json（不得直接推公开仓）"
                       },
     "_freshness":  {
-                       "checkedAt":  "2026-11-12 02:30:47",
+                       "checkedAt":  "2026-11-12 03:00:46",
                        "worst":  "critical",
                        "staleCount":  2,
                        "items":  [
@@ -2281,7 +2281,7 @@
                                          "id":  "holdings",
                                          "label":  "持仓快照",
                                          "asOf":  "2026-11-05 22:55",
-                                         "ageDays":  6.15,
+                                         "ageDays":  6.17,
                                          "maxAgeDays":  1.5,
                                          "stale":  true
                                      },
@@ -2289,7 +2289,7 @@
                                          "id":  "engine-policy",
                                          "label":  "引擎政策契约",
                                          "asOf":  "2026-11-07 22:55",
-                                         "ageDays":  4.15,
+                                         "ageDays":  4.17,
                                          "maxAgeDays":  14,
                                          "stale":  false
                                      },
@@ -2297,7 +2297,7 @@
                                          "id":  "factor-registry",
                                          "label":  "因子登记表",
                                          "asOf":  "2026-11-02 23:27",
-                                         "ageDays":  9.13,
+                                         "ageDays":  9.15,
                                          "maxAgeDays":  30,
                                          "stale":  false
                                      },
@@ -2305,7 +2305,7 @@
                                          "id":  "news-mapping",
                                          "label":  "新闻映射",
                                          "asOf":  "2026-11-02 23:26",
-                                         "ageDays":  9.13,
+                                         "ageDays":  9.15,
                                          "maxAgeDays":  30,
                                          "stale":  false
                                      },
@@ -2313,7 +2313,7 @@
                                          "id":  "chain-rules",
                                          "label":  "推演规则",
                                          "asOf":  "2026-11-02 23:23",
-                                         "ageDays":  9.13,
+                                         "ageDays":  9.15,
                                          "maxAgeDays":  30,
                                          "stale":  false
                                      },
@@ -2321,7 +2321,7 @@
                                          "id":  "decisions",
                                          "label":  "决策账本",
                                          "asOf":  "2026-11-02 23:43",
-                                         "ageDays":  9.12,
+                                         "ageDays":  9.14,
                                          "maxAgeDays":  7,
                                          "stale":  true
                                      },
@@ -2329,14 +2329,14 @@
                                          "id":  "rules",
                                          "label":  "风控规则",
                                          "asOf":  "2026-11-09 10:24",
-                                         "ageDays":  2.67,
+                                         "ageDays":  2.69,
                                          "maxAgeDays":  14,
                                          "stale":  false
                                      },
                                      {
                                          "id":  "market-live",
                                          "label":  "行情快照",
-                                         "asOf":  "2026-11-12 02:30",
+                                         "asOf":  "2026-11-12 03:00",
                                          "ageDays":  0,
                                          "maxAgeDays":  0.25,
                                          "stale":  false
@@ -2346,8 +2346,8 @@
                    },
     "nationalTeam":  {
                          "ok":  true,
-                         "lastSuccess":  "2026-11-12 02:28:54",
-                         "asOf":  "2026-11-12 02:28:54",
+                         "lastSuccess":  "2026-11-12 02:58:55",
+                         "asOf":  "2026-11-12 02:58:55",
                          "note":  "",
                          "items":  [
                                        {
@@ -2539,7 +2539,7 @@
                                      }
                      },
     "notifications":  {
-                          "generatedAt":  "2026-11-12 02:30:48",
+                          "generatedAt":  "2026-11-12 03:00:47",
                           "count":  1,
                           "byLevel":  {
                                           "urgent":  0,
@@ -2559,7 +2559,7 @@
                           "policy":  "通知内容脱敏：不含金额、不含持仓名称；明细需解锁查看"
                       },
     "market":  {
-                   "generatedAt":  "2026-11-12 02:30:44",
+                   "generatedAt":  "2026-11-12 03:00:44",
                    "source":  "qt.gtimg.cn（指数）+ hq.sinajs.cn（外盘/汇率）",
                    "note":  "cn10y / us30y 无可用公开接口，已如实标 missing；下游不得把缺失当 0 或沿用旧值。",
                    "okCount":  5,
@@ -2612,12 +2612,12 @@
                                                  "ok":  true,
                                                  "kind":  "quote",
                                                  "error":  null,
-                                                 "asOf":  "2026-11-12 02:30:43",
+                                                 "asOf":  "2026-11-12 03:00:43",
                                                  "value":  {
                                                                "code":  "hf_OIL",
                                                                "name":  "布伦特原油",
-                                                               "price":  93.306,
-                                                               "asOf":  "2026-11-12 02:30:43",
+                                                               "price":  93.551,
+                                                               "asOf":  "2026-11-12 03:00:43",
                                                                "label":  "布伦特原油"
                                                            }
                                              },
@@ -2625,12 +2625,12 @@
                                                "ok":  true,
                                                "kind":  "quote",
                                                "error":  null,
-                                               "asOf":  "2026-11-12 02:30:44",
+                                               "asOf":  "2026-11-12 03:00:42",
                                                "value":  {
                                                              "code":  "hf_CL",
                                                              "name":  "纽约原油",
-                                                             "price":  86.875,
-                                                             "asOf":  "2026-11-12 02:30:44",
+                                                             "price":  87.089,
+                                                             "asOf":  "2026-11-12 03:00:42",
                                                              "label":  "纽约原油"
                                                          }
                                            },
@@ -2638,12 +2638,12 @@
                                                 "ok":  true,
                                                 "kind":  "quote",
                                                 "error":  null,
-                                                "asOf":  "2026-11-12 02:30:44",
+                                                "asOf":  "2026-11-12 03:00:43",
                                                 "value":  {
                                                               "code":  "hf_GC",
                                                               "name":  "纽约黄金",
-                                                              "price":  4000.415,
-                                                              "asOf":  "2026-11-12 02:30:44",
+                                                              "price":  3994.23,
+                                                              "asOf":  "2026-11-12 03:00:43",
                                                               "label":  "纽约黄金"
                                                           }
                                             },
@@ -2651,12 +2651,12 @@
                                                   "ok":  true,
                                                   "kind":  "quote",
                                                   "error":  null,
-                                                  "asOf":  "2026-11-12 02:30:01",
+                                                  "asOf":  "2026-11-12 03:00:01",
                                                   "value":  {
                                                                 "code":  "USDCNY",
                                                                 "name":  "美元人民币",
                                                                 "price":  6.6729,
-                                                                "asOf":  "2026-11-12 02:30:01",
+                                                                "asOf":  "2026-11-12 03:00:01",
                                                                 "label":  "美元人民币"
                                                             }
                                               },
@@ -2677,7 +2677,7 @@
                                }
                },
     "automation":  {
-                       "generatedAt":  "2026-11-12 02:30:51",
+                       "generatedAt":  "2026-11-12 03:00:50",
                        "jobsSha256":  "c6d339af4d374b049e4cdf4fe6790343aabf0a683f2b3f68f2c6ee724e44a521",
                        "source":  "jobs.json + \\DSH\\ 计划任务 + _audit/jobs/status.json（触发层）；harness schedule store + _audit/refresh-log.jsonl（数据层）",
                        "note":  "单向耦合：触发层(计划任务/jobs.py) → 本文件 → board.json → 页面。页面无法反向触发任务。schedules 为 Harness 历史侧，superseded=true 表示已迁出、不再是驱动者。",
@@ -2688,7 +2688,7 @@
                                              "kind":  "every",
                                              "everySeconds":  1800,
                                              "scheduledAt":  "2026-11-09T14:43:56.989Z",
-                                             "nextRunAt":  "2026-11-12 02:43:56",
+                                             "nextRunAt":  "2026-11-12 03:13:56",
                                              "status":  "paused",
                                              "superseded":  true
                                          }
@@ -2735,9 +2735,9 @@
                                             "title":  "数据实时性流水线",
                                             "schedule":  "every 30min",
                                             "state":  "Running",
-                                            "lastRunAt":  "2026-11-12 02:30:41",
+                                            "lastRunAt":  "2026-11-12 03:00:41",
                                             "lastResult":  267009,
-                                            "nextRunAt":  "2026-11-12 03:00:40",
+                                            "nextRunAt":  "2026-11-12 03:30:40",
                                             "level":  "ok",
                                             "exitCode":  0,
                                             "failStreak":  0
@@ -2784,12 +2784,6 @@
                                              }
                                          ],
                        "lastRuns":  [
-                                        {
-                                            "at":  "2026-11-11T16:32:07+08:00",
-                                            "overall":  "OK",
-                                            "durationMs":  85866,
-                                            "dataAgeMin":  1.4
-                                        },
                                         {
                                             "at":  "2026-11-11T17:03:48+08:00",
                                             "overall":  "WARN",
@@ -2903,6 +2897,12 @@
                                             "overall":  "OK",
                                             "durationMs":  21128,
                                             "dataAgeMin":  0.3
+                                        },
+                                        {
+                                            "at":  "2026-11-12T02:31:04+08:00",
+                                            "overall":  "OK",
+                                            "durationMs":  22017,
+                                            "dataAgeMin":  0.3
                                         }
                                     ],
                        "stats":  {
@@ -2911,7 +2911,7 @@
                                      "warn":  10,
                                      "fail":  0,
                                      "consecutiveBad":  0,
-                                     "lastRunAt":  "2026-11-12T02:01:03+08:00",
+                                     "lastRunAt":  "2026-11-12T02:31:04+08:00",
                                      "lastOverall":  "OK"
                                  },
                        "health":  {
@@ -2925,7 +2925,7 @@
     "holdingsIntegrity":  {
                               "status":  "BLOCK",
                               "canRecommend":  false,
-                              "checkedAt":  "2026-11-12T02:30:51.942521+08:00",
+                              "checkedAt":  "2026-11-12T03:00:50.582076+08:00",
                               "schemaVersion":  "1.0",
                               "issues":  [
                                              {
@@ -2937,7 +2937,7 @@
                                              {
                                                  "id":  "holdings",
                                                  "status":  "BLOCK",
-                                                 "maxAgeHours":  147.71624458916668,
+                                                 "maxAgeHours":  148.21586668777778,
                                                  "thresholdHours":  36.0
                                              },
                                              {
@@ -2963,113 +2963,7 @@
                                          },
                               "source":  "investment-os/tools/export-holdings-integrity.py",
                               "keyId":  "board-v1",
-                              "signedDigest":  "227504ef58f2c49307eefb97b698e6a457f79f8a7b44125af9796984ac396965",
-                              "signature":  "d6d81cf239b86cec13983acd04d64814983482694291531aa2118f83a663d8c9f2260ad138d8544981e3d2753302eae4200eabc5adee26ffeefc73046b150704"
-                          },
-    "decisionIntegrity": {
-        "schema": "decision-integrity/v1",
-        "source": "finhub-data/tools/board_integrity.py",
-        "status": "BLOCK",
-        "canRecommend": false,
-        "checkedAt": "2026-11-12T02:31:06.577414+08:00",
-        "policy": {
-            "maxHoldingsAgeHours": 36.0,
-            "maxMarketAgeDays": 4.0,
-            "maxBoardAgeHours": 24.0,
-            "requiredIndexCodes": [
-                "sh000001",
-                "sh000300",
-                "sz399001",
-                "sz399006"
-            ],
-            "unresolvedPolicyItemsBlock": true,
-            "requiresHoldingsVerdict": true,
-            "holdingsVerdictMaxAgeHours": 24.0,
-            "requiresHoldingsVerdictSignature": true,
-            "thresholdSource": "contracts/thresholds.json",
-            "thresholdDigest": "2388dbea35bff856eca566bd579a9f304c8ed4304dc7c3bbeb53bea6aa3063d1"
-        },
-        "checks": [
-            {
-                "id": "board",
-                "maxAgeHours": 24.0
-            },
-            {
-                "id": "holdings",
-                "ageHours": 146.4,
-                "maxAgeHours": 36.0
-            },
-            {
-                "id": "holdingsVerdict",
-                "status": "BLOCK",
-                "maxAgeHours": 24.0,
-                "engineStatus": "BLOCK",
-                "engineIssues": [
-                    "HOLDINGS_STALE"
-                ],
-                "canRecommend": false,
-                "checkedAt": "2026-11-12T02:30:51.942521+08:00",
-                "schemaVersion": "1.0",
-                "signatureVerified": true
-            },
-            {
-                "id": "market",
-                "indices": 4,
-                "expectedIndices": 4,
-                "maxAgeDays": 4.0
-            },
-            {
-                "id": "policy",
-                "unresolvedItems": 4,
-                "status": "BLOCK"
-            }
-        ],
-        "issues": [
-            {
-                "code": "HOLDINGS_STALE",
-                "message": "持仓快照超过36小时",
-                "actual": 146.4
-            },
-            {
-                "code": "HOLDINGS_MARKED_STALE",
-                "message": "上游已标记持仓快照过期"
-            },
-            {
-                "code": "HOLDINGS_FRESHNESS_STALE",
-                "message": "全局 freshness 中的持仓快照超过36小时",
-                "actual": 6.15
-            },
-            {
-                "code": "HOLDINGS_VERDICT_BLOCK",
-                "message": "引擎闸门 A 判定持仓输入不可用于决策，数据仓必须一并阻断",
-                "actual": [
-                    "HOLDINGS_STALE"
-                ],
-                "engineStatus": "BLOCK"
-            },
-            {
-                "code": "POLICY_UNRESOLVED",
-                "message": "政策契约仍存在未裁定 warn/gap 项，暂不允许给出动作",
-                "actual": [
-                    {
-                        "name": "再平衡方式",
-                        "status": "warn"
-                    },
-                    {
-                        "name": "风险预算",
-                        "status": "warn"
-                    },
-                    {
-                        "name": "回撤熔断",
-                        "status": "warn"
-                    },
-                    {
-                        "name": "交易频率上限",
-                        "status": "gap"
-                    }
-                ]
-            }
-        ],
-        "message": "决策已阻断：输入时效、行情完整性或政策口径尚未通过审计"
-    }
+                              "signedDigest":  "ab9d487065aa4906e47a66f0caaa207c7cd2b620bc66d77585b8d480a3394153",
+                              "signature":  "98841550fd0e780f91a4033ba3b1e368b1f51ef74d476c775c9e775e230f83d409f7e58df5f751bf5240afbeceb0517cafc1e0fd02feca49767fd3dc64dd560b"
+                          }
 }
