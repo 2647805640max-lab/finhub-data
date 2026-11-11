@@ -1,6 +1,6 @@
 {
     "schema":  "board/v1",
-    "generatedAt":  "2026-11-11 23:30:48",
+    "generatedAt":  "2026-11-12 00:00:45",
     "generatedBy":  "[已移除]",
     "ips":  {
                 "asOf":  "2026-11-07 22:55:52",
@@ -1646,7 +1646,7 @@
                       "count":  3
                   },
     "today":  {
-                  "date":  "2026-11-11",
+                  "date":  "2026-11-12",
                   "position":  {
                                    "currentPct":  10.71,
                                    "authorityPct":  35.92,
@@ -1706,7 +1706,7 @@
                                     },
                                     {
                                         "item":  "决策账本",
-                                        "asOf":  "2026-11-11 23:30",
+                                        "asOf":  "2026-11-12 00:00",
                                         "ageDays":  0,
                                         "stale":  false
                                     }
@@ -1768,6 +1768,14 @@
                                           },
                                           {
                                               "date":  "2026-11-11",
+                                              "currentPct":  10.71,
+                                              "authorityPct":  35.92,
+                                              "hardMaxPct":  15,
+                                              "dataAsOf":  "2026-11-05",
+                                              "source":  "holdings.json（用户上传快照，非推算）"
+                                          },
+                                          {
+                                              "date":  "2026-11-12",
                                               "currentPct":  10.71,
                                               "authorityPct":  35.92,
                                               "hardMaxPct":  15,
@@ -1846,7 +1854,7 @@
                 },
     "qis":  {
                 "schema":  "factors-qis/v1",
-                "generatedAt":  "2026-11-11 23:30:46",
+                "generatedAt":  "2026-11-12 00:00:44",
                 "producer":  "tools/qis-factors.py（因子演算唯一生产者）",
                 "consumer":  "08:45 推演任务只读本文件，不得自行演算或自行判阈",
                 "caliber_status":  "unregistered_research",
@@ -1855,14 +1863,25 @@
 
                            ],
                 "warnings":  [
+                                 "因子退化：本次截面 4 只上三个因子的秩完全相同 ⇒ 加权分 ≡ 单因子，登记权重对排序零影响（有效独立因子数 1）",
+                                 "有效独立因子数 1 / 3（存在相同或互为相反数的秩向量）",
                                  "口径未登记：qis 的因子/5%上限/分数权重均不在 conventions.json ⇒ 研究级读数"
                              ],
                 "sourceVerified":  true,
                 "source":  {
                                "repo":  "[已移除]",
                                "branch":  "qis-review",
-                               "commit":  "c7b74df"
+                               "commit":  "4a121e6"
                            },
+                "universeRule":  {
+                                     "id":  "qis-risk-universe/v1",
+                                     "roles":  [
+                                                   "engine-input",
+                                                   "tdc-benchmark"
+                                               ],
+                                     "isProductionDefault":  true,
+                                     "note":  "v2 是研究口径（qis-risk-universe/v2），未登记进 conventions.json；**v2 会改变分配语义**（5% 单只上限 + 15% 风险预算 ⇒ 恰好 3 只；宽池时上限永不绑定，权重摊薄到每只 ~0.2%）⇒ 要不要切生产是用户裁定"
+                                 },
                 "universe":  {
                                  "total":  11,
                                  "riskAssets":  4,
@@ -1904,31 +1923,276 @@
                                                   }
                                               ]
                              },
-                "cacheAgeSeconds":  1799.1,
+                "cacheAgeSeconds":  1150.1,
                 "cacheAgeSecondsBySymbol":  {
-                                                "sh510050":  1799.1,
-                                                "sh510300":  1798.4,
-                                                "sh510500":  1797.8,
-                                                "sz159949":  1797.2
+                                                "sh510050":  1150.1,
+                                                "sh510300":  1149.4,
+                                                "sh510500":  1148.7,
+                                                "sz159949":  1148.0
                                             },
                 "refresh":  {
                                 "ok":  true,
-                                "detail":  "最旧的缓存才 0.5 小时 ≤ 24.0 小时，未重抓",
+                                "detail":  "最旧的缓存才 0.3 小时 ≤ 24.0 小时，未重抓",
                                 "reason":  "按需刷新"
                             },
                 "lastBarLagDays":  {
-                                       "sh510050":  0,
-                                       "sh510300":  0,
-                                       "sh510500":  0,
-                                       "sz159949":  0
+                                       "sh510050":  1,
+                                       "sh510300":  1,
+                                       "sh510500":  1,
+                                       "sz159949":  1
                                    },
-                "maxLagDays":  0,
+                "maxLagDays":  1,
                 "lagThresholdDays":  4,
+                "diagnostics":  {
+                                    "rankCorrelation":  {
+                                                            "momentum":  {
+                                                                             "momentum":  1.0,
+                                                                             "negVol":  1.0,
+                                                                             "smaDev":  1.0
+                                                                         },
+                                                            "negVol":  {
+                                                                           "momentum":  1.0,
+                                                                           "negVol":  1.0,
+                                                                           "smaDev":  1.0
+                                                                       },
+                                                            "smaDev":  {
+                                                                           "momentum":  1.0,
+                                                                           "negVol":  1.0,
+                                                                           "smaDev":  1.0
+                                                                       }
+                                                        },
+                                    "effectiveFactorCount":  {
+                                                                 "effective_factor_count":  1,
+                                                                 "unique_rank_vectors":  1,
+                                                                 "participation_ratio":  1.0,
+                                                                 "participation_ratio_note":  "PR = (Σλ)²/Σλ²，λ 取自 Spearman 相关矩阵的特征值 [3.[金额已移除], 0.0, 0.0]",
+                                                                 "n_factors":  3,
+                                                                 "n_assets":  4,
+                                                                 "assets":  [
+                                                                                "sh[金额已移除]",
+                                                                                "sh[金额已移除]",
+                                                                                "sh[金额已移除]",
+                                                                                "sz[金额已移除]"
+                                                                            ],
+                                                                 "rank_vectors":  {
+                                                                                      "momentum":  {
+                                                                                                       "sz159949":  0.125,
+                                                                                                       "sh510500":  0.375,
+                                                                                                       "sh510300":  0.625,
+                                                                                                       "sh510050":  0.875
+                                                                                                   },
+                                                                                      "negVol":  {
+                                                                                                     "sz159949":  0.125,
+                                                                                                     "sh510500":  0.375,
+                                                                                                     "sh510300":  0.625,
+                                                                                                     "sh510050":  0.875
+                                                                                                 },
+                                                                                      "smaDev":  {
+                                                                                                     "sz159949":  0.125,
+                                                                                                     "sh510500":  0.375,
+                                                                                                     "sh510300":  0.625,
+                                                                                                     "sh510050":  0.875
+                                                                                                 }
+                                                                                  },
+                                                                 "duplicate_groups":  [
+                                                                                          [
+                                                                                              "momentum",
+                                                                                              "negVol",
+                                                                                              "smaDev"
+                                                                                          ]
+                                                                                      ],
+                                                                 "constant_factors":  [
+
+                                                                                      ],
+                                                                 "excluded_assets":  {
+                                                                                         "momentum":  [
+
+                                                                                                      ],
+                                                                                         "negVol":  [
+
+                                                                                                    ],
+                                                                                         "smaDev":  [
+
+                                                                                                    ]
+                                                                                     },
+                                                                 "notes":  [
+
+                                                                           ]
+                                                             },
+                                    "blend":  {
+                                                  "weights_have_effect":  false,
+                                                  "rank_identical_to":  [
+                                                                            "momentum",
+                                                                            "negVol",
+                                                                            "smaDev"
+                                                                        ],
+                                                  "distinct_orderings":  1,
+                                                  "distinct_rank_vectors":  1,
+                                                  "blend_equals_single_factor_only":  false,
+                                                  "weights":  {
+                                                                  "momentum":  0.5,
+                                                                  "negVol":  0.2,
+                                                                  "smaDev":  0.3
+                                                              },
+                                                  "weights_sum":  1.0,
+                                                  "blend_scores":  {
+                                                                       "sh510050":  0.875,
+                                                                       "sh510300":  0.625,
+                                                                       "sh510500":  0.375,
+                                                                       "sz159949":  0.125
+                                                                   },
+                                                  "blend_ranks":  {
+                                                                      "sh510050":  0.875,
+                                                                      "sh510300":  0.625,
+                                                                      "sh510500":  0.375,
+                                                                      "sz159949":  0.125
+                                                                  },
+                                                  "blend_order":  [
+                                                                      "sh[金额已移除]",
+                                                                      "sh[金额已移除]",
+                                                                      "sh[金额已移除]",
+                                                                      "sz[金额已移除]"
+                                                                  ],
+                                                  "factor_ranks":  {
+                                                                       "momentum":  {
+                                                                                        "sz159949":  0.125,
+                                                                                        "sh510500":  0.375,
+                                                                                        "sh510300":  0.625,
+                                                                                        "sh510050":  0.875
+                                                                                    },
+                                                                       "negVol":  {
+                                                                                      "sz159949":  0.125,
+                                                                                      "sh510500":  0.375,
+                                                                                      "sh510300":  0.625,
+                                                                                      "sh510050":  0.875
+                                                                                  },
+                                                                       "smaDev":  {
+                                                                                      "sz159949":  0.125,
+                                                                                      "sh510500":  0.375,
+                                                                                      "sh510300":  0.625,
+                                                                                      "sh510050":  0.875
+                                                                                  }
+                                                                   },
+                                                  "factor_orders":  {
+                                                                        "momentum":  [
+                                                                                         "sh[金额已移除]",
+                                                                                         "sh[金额已移除]",
+                                                                                         "sh[金额已移除]",
+                                                                                         "sz[金额已移除]"
+                                                                                     ],
+                                                                        "negVol":  [
+                                                                                       "sh[金额已移除]",
+                                                                                       "sh[金额已移除]",
+                                                                                       "sh[金额已移除]",
+                                                                                       "sz[金额已移除]"
+                                                                                   ],
+                                                                        "smaDev":  [
+                                                                                       "sh[金额已移除]",
+                                                                                       "sh[金额已移除]",
+                                                                                       "sh[金额已移除]",
+                                                                                       "sz[金额已移除]"
+                                                                                   ]
+                                                                    },
+                                                  "n_factors":  3,
+                                                  "n_assets":  4,
+                                                  "assets":  [
+                                                                 "sh[金额已移除]",
+                                                                 "sh[金额已移除]",
+                                                                 "sh[金额已移除]",
+                                                                 "sz[金额已移除]"
+                                                             ],
+                                                  "excluded_assets":  {
+                                                                          "momentum":  [
+
+                                                                                       ],
+                                                                          "negVol":  [
+
+                                                                                     ],
+                                                                          "smaDev":  [
+
+                                                                                     ]
+                                                                      },
+                                                  "weight_trials":  {
+                                                                        "given":  {
+                                                                                      "weights":  {
+                                                                                                      "momentum":  0.5,
+                                                                                                      "negVol":  0.2,
+                                                                                                      "smaDev":  0.3
+                                                                                                  },
+                                                                                      "scores":  {
+                                                                                                     "sh510050":  0.875,
+                                                                                                     "sh510300":  0.625,
+                                                                                                     "sh510500":  0.375,
+                                                                                                     "sz159949":  0.125
+                                                                                                 },
+                                                                                      "order":  [
+                                                                                                    "sh[金额已移除]",
+                                                                                                    "sh[金额已移除]",
+                                                                                                    "sh[金额已移除]",
+                                                                                                    "sz[金额已移除]"
+                                                                                                ]
+                                                                                  },
+                                                                        "only:momentum":  {
+                                                                                              "weights":  {
+                                                                                                              "momentum":  1.0
+                                                                                                          },
+                                                                                              "scores":  {
+                                                                                                             "sh510050":  0.875,
+                                                                                                             "sh510300":  0.625,
+                                                                                                             "sh510500":  0.375,
+                                                                                                             "sz159949":  0.125
+                                                                                                         },
+                                                                                              "order":  [
+                                                                                                            "sh[金额已移除]",
+                                                                                                            "sh[金额已移除]",
+                                                                                                            "sh[金额已移除]",
+                                                                                                            "sz[金额已移除]"
+                                                                                                        ]
+                                                                                          },
+                                                                        "only:negVol":  {
+                                                                                            "weights":  {
+                                                                                                            "negVol":  1.0
+                                                                                                        },
+                                                                                            "scores":  {
+                                                                                                           "sh510050":  0.875,
+                                                                                                           "sh510300":  0.625,
+                                                                                                           "sh510500":  0.375,
+                                                                                                           "sz159949":  0.125
+                                                                                                       },
+                                                                                            "order":  [
+                                                                                                          "sh[金额已移除]",
+                                                                                                          "sh[金额已移除]",
+                                                                                                          "sh[金额已移除]",
+                                                                                                          "sz[金额已移除]"
+                                                                                                      ]
+                                                                                        },
+                                                                        "only:smaDev":  {
+                                                                                            "weights":  {
+                                                                                                            "smaDev":  1.0
+                                                                                                        },
+                                                                                            "scores":  {
+                                                                                                           "sh510050":  0.875,
+                                                                                                           "sh510300":  0.625,
+                                                                                                           "sh510500":  0.375,
+                                                                                                           "sz159949":  0.125
+                                                                                                       },
+                                                                                            "order":  [
+                                                                                                          "sh[金额已移除]",
+                                                                                                          "sh[金额已移除]",
+                                                                                                          "sh[金额已移除]",
+                                                                                                          "sz[金额已移除]"
+                                                                                                      ]
+                                                                                        }
+                                                                    },
+                                                  "degeneracy_note":  "混合秩与全部 3 个单因子逐位相同 ⇒ 权重对输出的贡献恒等于 0（登记的「3 因子」实为 1 个有效因子）"
+                                              },
+                                    "note":  "同期截面诊断；权重是否真的影响排序。**退化不是结构属性**（4 只池滚动 99 快照里完全同序只占 4.0%），但会让当天的读数失真 ⇒ 每天都要报出来"
+                                },
                 "factors":  {
                                 "sh510050":  {
                                                  "name":  "上证50ETF",
                                                  "lastBar":  "2026-11-11",
-                                                 "lagDays":  0,
+                                                 "lagDays":  1,
                                                  "bars":  1250,
                                                  "momentum":  -0.03339947089947093,
                                                  "vol":  0.1002278335405047,
@@ -1939,7 +2203,7 @@
                                 "sh510300":  {
                                                  "name":  "沪深300ETF",
                                                  "lastBar":  "2026-11-11",
-                                                 "lagDays":  0,
+                                                 "lagDays":  1,
                                                  "bars":  1250,
                                                  "momentum":  -0.12473794549266248,
                                                  "vol":  0.16489480542377735,
@@ -1950,7 +2214,7 @@
                                 "sh510500":  {
                                                  "name":  "中证500ETF",
                                                  "lastBar":  "2026-11-11",
-                                                 "lagDays":  0,
+                                                 "lagDays":  1,
                                                  "bars":  1250,
                                                  "momentum":  -0.1948507192070591,
                                                  "vol":  0.35132060769082396,
@@ -1961,7 +2225,7 @@
                                 "sz159949":  {
                                                  "name":  "创业板50ETF",
                                                  "lastBar":  "2026-11-11",
-                                                 "lagDays":  0,
+                                                 "lagDays":  1,
                                                  "bars":  1250,
                                                  "momentum":  -0.32906231799650565,
                                                  "vol":  0.5158209239572192,
@@ -1997,9 +2261,9 @@
 
                                       ],
                 "touched":  [
-
+                                "因子退化·权重对排序无影响"
                             ],
-                "status":  "ok"
+                "status":  "constrained"
             },
     "_publicPolicy":  {
                           "sanitizer":  "tools/export-board-public.ps1",
@@ -2009,7 +2273,7 @@
                           "fullVersion":  "仅本地 contracts/board.json（不得直接推公开仓）"
                       },
     "_freshness":  {
-                       "checkedAt":  "2026-11-11 23:30:49",
+                       "checkedAt":  "2026-11-12 00:00:46",
                        "worst":  "critical",
                        "staleCount":  2,
                        "items":  [
@@ -2017,7 +2281,7 @@
                                          "id":  "holdings",
                                          "label":  "持仓快照",
                                          "asOf":  "2026-11-05 22:55",
-                                         "ageDays":  6.02,
+                                         "ageDays":  6.05,
                                          "maxAgeDays":  1.5,
                                          "stale":  true
                                      },
@@ -2025,7 +2289,7 @@
                                          "id":  "engine-policy",
                                          "label":  "引擎政策契约",
                                          "asOf":  "2026-11-07 22:55",
-                                         "ageDays":  4.02,
+                                         "ageDays":  4.05,
                                          "maxAgeDays":  14,
                                          "stale":  false
                                      },
@@ -2033,7 +2297,7 @@
                                          "id":  "factor-registry",
                                          "label":  "因子登记表",
                                          "asOf":  "2026-11-02 23:27",
-                                         "ageDays":  9,
+                                         "ageDays":  9.02,
                                          "maxAgeDays":  30,
                                          "stale":  false
                                      },
@@ -2041,7 +2305,7 @@
                                          "id":  "news-mapping",
                                          "label":  "新闻映射",
                                          "asOf":  "2026-11-02 23:26",
-                                         "ageDays":  9,
+                                         "ageDays":  9.02,
                                          "maxAgeDays":  30,
                                          "stale":  false
                                      },
@@ -2049,7 +2313,7 @@
                                          "id":  "chain-rules",
                                          "label":  "推演规则",
                                          "asOf":  "2026-11-02 23:23",
-                                         "ageDays":  9.01,
+                                         "ageDays":  9.03,
                                          "maxAgeDays":  30,
                                          "stale":  false
                                      },
@@ -2057,7 +2321,7 @@
                                          "id":  "decisions",
                                          "label":  "决策账本",
                                          "asOf":  "2026-11-02 23:43",
-                                         "ageDays":  8.99,
+                                         "ageDays":  9.01,
                                          "maxAgeDays":  7,
                                          "stale":  true
                                      },
@@ -2065,14 +2329,14 @@
                                          "id":  "rules",
                                          "label":  "风控规则",
                                          "asOf":  "2026-11-09 10:24",
-                                         "ageDays":  2.55,
+                                         "ageDays":  2.57,
                                          "maxAgeDays":  14,
                                          "stale":  false
                                      },
                                      {
                                          "id":  "market-live",
                                          "label":  "行情快照",
-                                         "asOf":  "2026-11-11 23:30",
+                                         "asOf":  "2026-11-12 00:00",
                                          "ageDays":  0,
                                          "maxAgeDays":  0.25,
                                          "stale":  false
@@ -2082,8 +2346,8 @@
                    },
     "nationalTeam":  {
                          "ok":  true,
-                         "lastSuccess":  "2026-11-11 23:28:26",
-                         "asOf":  "2026-11-11 23:28:26",
+                         "lastSuccess":  "2026-11-11 23:58:27",
+                         "asOf":  "2026-11-11 23:58:27",
                          "note":  "",
                          "items":  [
                                        {
@@ -2275,7 +2539,7 @@
                                      }
                      },
     "notifications":  {
-                          "generatedAt":  "2026-11-11 23:30:51",
+                          "generatedAt":  "2026-11-12 00:00:47",
                           "count":  1,
                           "byLevel":  {
                                           "urgent":  0,
@@ -2295,7 +2559,7 @@
                           "policy":  "通知内容脱敏：不含金额、不含持仓名称；明细需解锁查看"
                       },
     "market":  {
-                   "generatedAt":  "2026-11-11 23:30:46",
+                   "generatedAt":  "2026-11-12 00:00:44",
                    "source":  "qt.gtimg.cn（指数）+ hq.sinajs.cn（外盘/汇率）",
                    "note":  "cn10y / us30y 无可用公开接口，已如实标 missing；下游不得把缺失当 0 或沿用旧值。",
                    "okCount":  5,
@@ -2348,12 +2612,12 @@
                                                  "ok":  true,
                                                  "kind":  "quote",
                                                  "error":  null,
-                                                 "asOf":  "2026-11-11 23:30:38",
+                                                 "asOf":  "2026-11-12 00:00:42",
                                                  "value":  {
                                                                "code":  "hf_OIL",
                                                                "name":  "布伦特原油",
-                                                               "price":  94.316,
-                                                               "asOf":  "2026-11-11 23:30:38",
+                                                               "price":  94.118,
+                                                               "asOf":  "2026-11-12 00:00:42",
                                                                "label":  "布伦特原油"
                                                            }
                                              },
@@ -2361,12 +2625,12 @@
                                                "ok":  true,
                                                "kind":  "quote",
                                                "error":  null,
-                                               "asOf":  "2026-11-11 23:30:45",
+                                               "asOf":  "2026-11-12 00:00:43",
                                                "value":  {
                                                              "code":  "hf_CL",
                                                              "name":  "纽约原油",
-                                                             "price":  88.344,
-                                                             "asOf":  "2026-11-11 23:30:45",
+                                                             "price":  88.151,
+                                                             "asOf":  "2026-11-12 00:00:43",
                                                              "label":  "纽约原油"
                                                          }
                                            },
@@ -2374,12 +2638,12 @@
                                                 "ok":  true,
                                                 "kind":  "quote",
                                                 "error":  null,
-                                                "asOf":  "2026-11-11 23:30:44",
+                                                "asOf":  "2026-11-12 00:00:43",
                                                 "value":  {
                                                               "code":  "hf_GC",
                                                               "name":  "纽约黄金",
-                                                              "price":  4014.212,
-                                                              "asOf":  "2026-11-11 23:30:44",
+                                                              "price":  4011.228,
+                                                              "asOf":  "2026-11-12 00:00:43",
                                                               "label":  "纽约黄金"
                                                           }
                                             },
@@ -2387,12 +2651,12 @@
                                                   "ok":  true,
                                                   "kind":  "quote",
                                                   "error":  null,
-                                                  "asOf":  "2026-11-11 23:30:01",
+                                                  "asOf":  "2026-11-11 23:59:01",
                                                   "value":  {
                                                                 "code":  "USDCNY",
                                                                 "name":  "美元人民币",
                                                                 "price":  6.6728,
-                                                                "asOf":  "2026-11-11 23:30:01",
+                                                                "asOf":  "2026-11-11 23:59:01",
                                                                 "label":  "美元人民币"
                                                             }
                                               },
@@ -2413,7 +2677,7 @@
                                }
                },
     "automation":  {
-                       "generatedAt":  "2026-11-11 23:30:55",
+                       "generatedAt":  "2026-11-12 00:00:50",
                        "jobsSha256":  "c6d339af4d374b049e4cdf4fe6790343aabf0a683f2b3f68f2c6ee724e44a521",
                        "source":  "jobs.json + \\DSH\\ 计划任务 + _audit/jobs/status.json（触发层）；harness schedule store + _audit/refresh-log.jsonl（数据层）",
                        "note":  "单向耦合：触发层(计划任务/jobs.py) → 本文件 → board.json → 页面。页面无法反向触发任务。schedules 为 Harness 历史侧，superseded=true 表示已迁出、不再是驱动者。",
@@ -2424,7 +2688,7 @@
                                              "kind":  "every",
                                              "everySeconds":  1800,
                                              "scheduledAt":  "2026-11-09T14:43:56.989Z",
-                                             "nextRunAt":  "2026-11-11 23:43:56",
+                                             "nextRunAt":  "2026-11-12 00:13:56",
                                              "status":  "paused",
                                              "superseded":  true
                                          }
@@ -2471,9 +2735,9 @@
                                             "title":  "数据实时性流水线",
                                             "schedule":  "every 30min",
                                             "state":  "Running",
-                                            "lastRunAt":  "2026-11-11 23:30:41",
+                                            "lastRunAt":  "2026-11-12 00:00:41",
                                             "lastResult":  267009,
-                                            "nextRunAt":  "2026-11-12 00:00:40",
+                                            "nextRunAt":  "2026-11-12 00:30:40",
                                             "level":  "warn",
                                             "exitCode":  2,
                                             "failStreak":  0
@@ -2520,12 +2784,6 @@
                                              }
                                          ],
                        "lastRuns":  [
-                                        {
-                                            "at":  "2026-11-11T13:31:07+08:00",
-                                            "overall":  "OK",
-                                            "durationMs":  25213,
-                                            "dataAgeMin":  0.4
-                                        },
                                         {
                                             "at":  "2026-11-11T14:01:29+08:00",
                                             "overall":  "OK",
@@ -2639,15 +2897,21 @@
                                             "overall":  "WARN",
                                             "durationMs":  199300,
                                             "dataAgeMin":  3.1
+                                        },
+                                        {
+                                            "at":  "2026-11-11T23:34:21+08:00",
+                                            "overall":  "WARN",
+                                            "durationMs":  218997,
+                                            "dataAgeMin":  3.6
                                         }
                                     ],
                        "stats":  {
                                      "total":  20,
-                                     "ok":  10,
-                                     "warn":  10,
+                                     "ok":  9,
+                                     "warn":  11,
                                      "fail":  0,
-                                     "consecutiveBad":  1,
-                                     "lastRunAt":  "2026-11-11T23:04:01+08:00",
+                                     "consecutiveBad":  2,
+                                     "lastRunAt":  "2026-11-11T23:34:21+08:00",
                                      "lastOverall":  "WARN"
                                  },
                        "health":  {
@@ -2661,7 +2925,7 @@
     "holdingsIntegrity":  {
                               "status":  "BLOCK",
                               "canRecommend":  false,
-                              "checkedAt":  "2026-11-11T23:30:55.581343+08:00",
+                              "checkedAt":  "2026-11-12T00:00:50.595214+08:00",
                               "schemaVersion":  "1.0",
                               "issues":  [
                                              {
@@ -2673,7 +2937,7 @@
                                              {
                                                  "id":  "holdings",
                                                  "status":  "BLOCK",
-                                                 "maxAgeHours":  144.71725537305556,
+                                                 "maxAgeHours":  145.2158703372222,
                                                  "thresholdHours":  36.0
                                              },
                                              {
@@ -2699,113 +2963,7 @@
                                          },
                               "source":  "investment-os/tools/export-holdings-integrity.py",
                               "keyId":  "board-v1",
-                              "signedDigest":  "a60e8d89e252e2c01aaca27987da8761caab7a91be7bad2f09829062250b25d7",
-                              "signature":  "b850c3c397bb49d8cd07225a6571f9b04c0daee0af3c9fdad6df724494e702c2d221b9ad9e9a3ac639f8417f0dd394d866035017a05a4be7897c534735f48d00"
-                          },
-    "decisionIntegrity": {
-        "schema": "decision-integrity/v1",
-        "source": "finhub-data/tools/board_integrity.py",
-        "status": "BLOCK",
-        "canRecommend": false,
-        "checkedAt": "2026-11-11T23:31:35.114918+08:00",
-        "policy": {
-            "maxHoldingsAgeHours": 36.0,
-            "maxMarketAgeDays": 4.0,
-            "maxBoardAgeHours": 24.0,
-            "requiredIndexCodes": [
-                "sh000001",
-                "sh000300",
-                "sz399001",
-                "sz399006"
-            ],
-            "unresolvedPolicyItemsBlock": true,
-            "requiresHoldingsVerdict": true,
-            "holdingsVerdictMaxAgeHours": 24.0,
-            "requiresHoldingsVerdictSignature": true,
-            "thresholdSource": "contracts/thresholds.json",
-            "thresholdDigest": "2388dbea35bff856eca566bd579a9f304c8ed4304dc7c3bbeb53bea6aa3063d1"
-        },
-        "checks": [
-            {
-                "id": "board",
-                "maxAgeHours": 24.0
-            },
-            {
-                "id": "holdings",
-                "ageHours": 144.0,
-                "maxAgeHours": 36.0
-            },
-            {
-                "id": "holdingsVerdict",
-                "status": "BLOCK",
-                "maxAgeHours": 24.0,
-                "engineStatus": "BLOCK",
-                "engineIssues": [
-                    "HOLDINGS_STALE"
-                ],
-                "canRecommend": false,
-                "checkedAt": "2026-11-11T23:30:55.581343+08:00",
-                "schemaVersion": "1.0",
-                "signatureVerified": true
-            },
-            {
-                "id": "market",
-                "indices": 4,
-                "expectedIndices": 4,
-                "maxAgeDays": 4.0
-            },
-            {
-                "id": "policy",
-                "unresolvedItems": 4,
-                "status": "BLOCK"
-            }
-        ],
-        "issues": [
-            {
-                "code": "HOLDINGS_STALE",
-                "message": "持仓快照超过36小时",
-                "actual": 144.0
-            },
-            {
-                "code": "HOLDINGS_MARKED_STALE",
-                "message": "上游已标记持仓快照过期"
-            },
-            {
-                "code": "HOLDINGS_FRESHNESS_STALE",
-                "message": "全局 freshness 中的持仓快照超过36小时",
-                "actual": 6.02
-            },
-            {
-                "code": "HOLDINGS_VERDICT_BLOCK",
-                "message": "引擎闸门 A 判定持仓输入不可用于决策，数据仓必须一并阻断",
-                "actual": [
-                    "HOLDINGS_STALE"
-                ],
-                "engineStatus": "BLOCK"
-            },
-            {
-                "code": "POLICY_UNRESOLVED",
-                "message": "政策契约仍存在未裁定 warn/gap 项，暂不允许给出动作",
-                "actual": [
-                    {
-                        "name": "再平衡方式",
-                        "status": "warn"
-                    },
-                    {
-                        "name": "风险预算",
-                        "status": "warn"
-                    },
-                    {
-                        "name": "回撤熔断",
-                        "status": "warn"
-                    },
-                    {
-                        "name": "交易频率上限",
-                        "status": "gap"
-                    }
-                ]
-            }
-        ],
-        "message": "决策已阻断：输入时效、行情完整性或政策口径尚未通过审计"
-    }
+                              "signedDigest":  "8fb9d3e1b217e576d00b83bd60a5d80074c06628a55b0565fffa1ccd186fc53b",
+                              "signature":  "a83bc5b09b5bb59db3d024dcffb4fc02f708d65f1b356e6b566c0105f599a895bc493a005ef7af12defe9dc3368bfbc70eee28c96103862406840f46a0df3d02"
+                          }
 }
