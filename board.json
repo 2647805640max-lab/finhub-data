@@ -2788,7 +2788,7 @@
         "source": "finhub-data/tools/board_integrity.py",
         "status": "BLOCK",
         "canRecommend": false,
-        "checkedAt": "2026-11-12T21:02:53.212419+08:00",
+        "checkedAt": "2026-11-12T21:11:43.176859+08:00",
         "policy": {
             "maxHoldingsAgeHours": 36.0,
             "maxMarketAgeDays": 4.0,
