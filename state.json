@@ -1,6 +1,6 @@
 {
- "generatedAt": "2026-11-12 11:58:57",
- "ts": 1794455937160,
+ "generatedAt": "2026-11-12 12:01:09",
+ "ts": 1794456069902,
  "source": "vps",
  "tunnelUrl": "https://daughter-rates-integral-ownership.trycloudflare.com",
  "market": {
@@ -76,7 +76,7 @@
     "amount": 95367059.0
    }
   ],
-  "fetchedAt": 1794455938029
+  "fetchedAt": 1794456070778
  },
  "bonds": {
   "asof": "2026-11-11",
@@ -100,7 +100,7 @@
   }
  },
  "overseas": {
-  "fetchedAt": 1794455938662,
+  "fetchedAt": 1794456071650,
   "quotes": {
    "items": [
     {
@@ -108,9 +108,9 @@
      "name": "韩国KOSPI",
      "kind": "idx",
      "unit": "",
-     "price": 5366.96,
-     "chgPct": -0.16,
-     "asof": "2026-11-12 03:38"
+     "price": 5375.44,
+     "chgPct": 0.0,
+     "asof": "2026-11-12 03:41"
     },
     {
      "code": "^SOX",
@@ -126,18 +126,18 @@
      "name": "日经225",
      "kind": "idx",
      "unit": "",
-     "price": 61319.57,
-     "chgPct": 0.12,
-     "asof": "2026-11-12 03:43"
+     "price": 61233.55,
+     "chgPct": -0.03,
+     "asof": "2026-11-12 03:46"
     },
     {
      "code": "^HSI",
      "name": "恒生指数",
      "kind": "idx",
      "unit": "",
-     "price": 24112.94,
-     "chgPct": -0.83,
-     "asof": "2026-11-12 03:43"
+     "price": 24107.31,
+     "chgPct": -0.86,
+     "asof": "2026-11-12 03:46"
     },
     {
      "code": "^DJI",
@@ -180,36 +180,36 @@
      "name": "美元指数",
      "kind": "idx",
      "unit": "",
-     "price": 103.02,
-     "chgPct": 0.11,
-     "asof": "2026-11-12 03:48"
+     "price": 103.01,
+     "chgPct": 0.1,
+     "asof": "2026-11-12 03:51"
     },
     {
      "code": "GC=F",
      "name": "COMEX黄金",
      "kind": "fut",
      "unit": "usd",
-     "price": 3985.8,
-     "chgPct": -0.37,
-     "asof": "2026-11-12 03:48"
+     "price": 3988.6,
+     "chgPct": -0.3,
+     "asof": "2026-11-12 03:51"
     },
     {
      "code": "CL=F",
      "name": "WTI原油",
      "kind": "fut",
      "unit": "usd",
-     "price": 85.74,
-     "chgPct": -0.91,
-     "asof": "2026-11-12 03:48"
+     "price": 85.7,
+     "chgPct": -0.96,
+     "asof": "2026-11-12 03:51"
     },
     {
      "code": "HG=F",
      "name": "COMEX铜",
      "kind": "fut",
      "unit": "usd",
-     "price": 6.24,
-     "chgPct": -0.76,
-     "asof": "2026-11-12 03:47"
+     "price": 6.25,
+     "chgPct": -0.69,
+     "asof": "2026-11-12 03:50"
     },
     {
      "code": "^TNX",
@@ -231,7 +231,7 @@
     }
    ],
    "errors": null,
-   "fetchedAt": 1794455940007
+   "fetchedAt": 1794456072989
   },
   "fred": {
    "items": [
@@ -599,18 +599,18 @@
     "code": "^N225",
     "name": "日经225",
     "kind": "idx",
-    "price": 61319.57,
-    "chgPct": 0.12,
-    "asof": "2026-11-12 03:43",
+    "price": 61233.55,
+    "chgPct": -0.03,
+    "asof": "2026-11-12 03:46",
     "src": "yahoo"
    },
    {
     "code": "^HSI",
     "name": "恒生指数",
     "kind": "idx",
-    "price": 24112.94,
-    "chgPct": -0.83,
-    "asof": "2026-11-12 03:43",
+    "price": 24107.31,
+    "chgPct": -0.86,
+    "asof": "2026-11-12 03:46",
     "src": "yahoo"
    },
    {
@@ -626,9 +626,9 @@
     "code": "^KS11",
     "name": "韩国KOSPI",
     "kind": "idx",
-    "price": 5366.96,
-    "chgPct": -0.16,
-    "asof": "2026-11-12 03:38",
+    "price": 5375.44,
+    "chgPct": 0.0,
+    "asof": "2026-11-12 03:41",
     "src": "yahoo"
    },
    {
@@ -681,26 +681,26 @@
    }
   ],
   "errors": null,
-  "fetchedAt": 1794455941365
+  "fetchedAt": 1794456074491
  },
  "commodity": {
   "OIL": {
-   "price": 91.632,
+   "price": 91.63,
    "prev": 92.76,
    "chgPct": -1.22,
-   "time": "11:58:41"
+   "time": "12:01:03"
   },
   "CL": {
-   "price": 85.622,
+   "price": 85.601,
    "prev": 86.53,
-   "chgPct": -1.05,
-   "time": "11:58:39"
+   "chgPct": -1.07,
+   "time": "12:01:13"
   },
   "XAU": {
-   "price": 3982.05,
+   "price": 3982.39,
    "prev": 3987.69,
-   "chgPct": -0.14,
-   "time": "11:58:00"
+   "chgPct": -0.13,
+   "time": "12:01:00"
   }
  },
  "engine": {
@@ -814,7 +814,7 @@
    "schemaVersion": "1.0",
    "status": "PASS",
    "canRecommend": true,
-   "checkedAt": "2026-11-12T11:59:06.299527+08:00",
+   "checkedAt": "2026-11-12T12:01:19.418964+08:00",
    "policy": {
     "maxMarketAgeDays": 4.0,
     "requiredIndices": [
@@ -906,7 +906,7 @@
    }
   ],
   "correlation": {
-   "score": 9.4,
+   "score": 9.3,
    "items": [
     {
      "name": "费城半导体",
@@ -915,12 +915,12 @@
     },
     {
      "name": "日经225",
-     "chgPct": 0.12,
+     "chgPct": -0.03,
      "note": "情绪/联动，无稳定传导机制"
     },
     {
      "name": "恒生指数",
-     "chgPct": -0.83,
+     "chgPct": -0.86,
      "note": "情绪/联动，无稳定传导机制"
     },
     {
@@ -930,7 +930,7 @@
     },
     {
      "name": "韩国KOSPI",
-     "chgPct": -0.16,
+     "chgPct": 0.0,
      "note": "情绪/联动，无稳定传导机制"
     },
     {
@@ -970,7 +970,7 @@
   },
   "rule": "因果因子（有机制+历史可复现）可改 action；相关因子只进评分，永不投票",
   "asof": "2026-11-10",
-  "builtAt": "2026-11-12 11:59:09"
+  "builtAt": "2026-11-12 12:01:22"
  },
  "freshness": {
   "builtAt": "2026-11-12 11:50:16",
