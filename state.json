@@ -1,8 +1,8 @@
 {
- "generatedAt": "2026-11-12 23:57:17",
- "ts": 1794499037533,
+ "generatedAt": "2026-11-13 00:28:19",
+ "ts": 1794500899382,
  "overseas": {
-  "fetchedAt": 1794498269907,
+  "fetchedAt": 1794500081871,
   "quotes": {
    "items": [
     {
@@ -19,9 +19,9 @@
      "name": "费城半导体",
      "kind": "idx",
      "unit": "",
-     "price": 10459.42,
-     "chgPct": -0.99,
-     "asof": "2026-11-12 15:44"
+     "price": 10631.14,
+     "chgPct": 0.64,
+     "asof": "2026-11-12 16:14"
     },
     {
      "code": "^N225",
@@ -46,72 +46,72 @@
      "name": "道琼斯",
      "kind": "idx",
      "unit": "",
-     "price": 52543.74,
-     "chgPct": 0.11,
-     "asof": "2026-11-12 15:44"
+     "price": 52734.26,
+     "chgPct": 0.47,
+     "asof": "2026-11-12 16:14"
     },
     {
      "code": "^IXIC",
      "name": "纳斯达克",
      "kind": "idx",
      "unit": "",
-     "price": 25377.46,
-     "chgPct": -0.35,
-     "asof": "2026-11-12 15:44"
+     "price": 25552.77,
+     "chgPct": 0.34,
+     "asof": "2026-11-12 16:14"
     },
     {
      "code": "^GSPC",
      "name": "标普500",
      "kind": "idx",
      "unit": "",
-     "price": 7607.98,
-     "chgPct": -0.15,
-     "asof": "2026-11-12 15:44"
+     "price": 7644.7,
+     "chgPct": 0.33,
+     "asof": "2026-11-12 16:14"
     },
     {
      "code": "^VIX",
      "name": "VIX恐慌指数",
      "kind": "idx",
      "unit": "",
-     "price": 18.26,
-     "chgPct": 4.39,
-     "asof": "2026-11-12 15:29"
+     "price": 17.53,
+     "chgPct": 0.23,
+     "asof": "2026-11-12 15:59"
     },
     {
      "code": "DX-Y.NYB",
      "name": "美元指数",
      "kind": "idx",
      "unit": "",
-     "price": 103.15,
-     "chgPct": 0.23,
-     "asof": "2026-11-12 15:34"
+     "price": 103.12,
+     "chgPct": 0.21,
+     "asof": "2026-11-12 16:04"
     },
     {
      "code": "GC=F",
      "name": "COMEX黄金",
      "kind": "fut",
      "unit": "usd",
-     "price": 3869.4,
-     "chgPct": -3.28,
-     "asof": "2026-11-12 15:34"
+     "price": 3874.7,
+     "chgPct": -3.15,
+     "asof": "2026-11-12 16:04"
     },
     {
      "code": "CL=F",
      "name": "WTI原油",
      "kind": "fut",
      "unit": "usd",
-     "price": 86.46,
-     "chgPct": -0.08,
-     "asof": "2026-11-12 15:34"
+     "price": 86.73,
+     "chgPct": 0.23,
+     "asof": "2026-11-12 16:04"
     },
     {
      "code": "HG=F",
      "name": "COMEX铜",
      "kind": "fut",
      "unit": "usd",
-     "price": 6.17,
-     "chgPct": -1.97,
-     "asof": "2026-11-12 15:34"
+     "price": 6.19,
+     "chgPct": -1.6,
+     "asof": "2026-11-12 16:04"
     },
     {
      "code": "^TNX",
@@ -119,8 +119,8 @@
      "kind": "yld",
      "unit": "%",
      "price": 5.07,
-     "chgPct": 1.36,
-     "asof": "2026-11-12 15:29"
+     "chgPct": 1.4,
+     "asof": "2026-11-12 15:59"
     },
     {
      "code": "^TYX",
@@ -128,12 +128,12 @@
      "kind": "yld",
      "unit": "%",
      "price": 5.4,
-     "chgPct": 0.78,
-     "asof": "2026-11-12 15:29"
+     "chgPct": 0.84,
+     "asof": "2026-11-12 15:59"
     }
    ],
    "errors": null,
-   "fetchedAt": 1794498271218
+   "fetchedAt": 1794500083218
   },
   "fred": {
    "items": [
@@ -871,7 +871,7 @@
     "amount": 181440918.0
    }
   ],
-  "fetchedAt": 1794498269191
+  "fetchedAt": 1794500081266
  },
  "bonds": {
   "asof": "2026-11-12",
@@ -896,22 +896,22 @@
  },
  "commodity": {
   "OIL": {
-   "price": 93.332,
+   "price": 93.845,
    "prev": 92.76,
-   "chgPct": 0.62,
-   "time": "23:44:23"
+   "chgPct": 1.17,
+   "time": "00:14:41"
   },
   "CL": {
-   "price": 86.162,
+   "price": 86.931,
    "prev": 86.53,
-   "chgPct": -0.43,
-   "time": "23:44:33"
+   "chgPct": 0.46,
+   "time": "00:14:46"
   },
   "XAU": {
-   "price": 3867.4,
+   "price": 3876.5,
    "prev": 3987.69,
-   "chgPct": -3.02,
-   "time": "23:44:00"
+   "chgPct": -2.79,
+   "time": "00:14:00"
   }
  },
  "engine": {
@@ -1028,7 +1028,7 @@
    "schemaVersion": "1.0",
    "status": "PASS",
    "canRecommend": true,
-   "checkedAt": "2026-11-12T23:44:37.842576+08:00",
+   "checkedAt": "2026-11-13T00:14:50.707615+08:00",
    "policy": {
     "maxMarketAgeDays": 4.0,
     "requiredIndices": [
@@ -1058,9 +1058,9 @@
     "code": "^SOX",
     "name": "费城半导体",
     "kind": "idx",
-    "price": 10459.42,
-    "chgPct": -0.99,
-    "asof": "2026-11-12 15:44",
+    "price": 10631.14,
+    "chgPct": 0.64,
+    "asof": "2026-11-12 16:14",
     "src": "yahoo"
    },
    {
@@ -1085,9 +1085,9 @@
     "code": "^DJI",
     "name": "道琼斯",
     "kind": "idx",
-    "price": 52543.74,
-    "chgPct": 0.11,
-    "asof": "2026-11-12 15:44",
+    "price": 52734.26,
+    "chgPct": 0.47,
+    "asof": "2026-11-12 16:14",
     "src": "yahoo"
    },
    {
@@ -1103,18 +1103,18 @@
     "code": "^IXIC",
     "name": "纳斯达克",
     "kind": "idx",
-    "price": 25377.46,
-    "chgPct": -0.35,
-    "asof": "2026-11-12 15:44",
+    "price": 25552.77,
+    "chgPct": 0.34,
+    "asof": "2026-11-12 16:14",
     "src": "yahoo"
    },
    {
     "code": "^GSPC",
     "name": "标普500",
     "kind": "idx",
-    "price": 7607.98,
-    "chgPct": -0.15,
-    "asof": "2026-11-12 15:44",
+    "price": 7644.7,
+    "chgPct": 0.33,
+    "asof": "2026-11-12 16:14",
     "src": "yahoo"
    },
    {
@@ -1149,7 +1149,7 @@
    }
   ],
   "errors": null,
-  "fetchedAt": 1794498272746
+  "fetchedAt": 1794500086166
  },
  "causal": {
   "tier": "causal",
@@ -1193,7 +1193,7 @@
    {
     "id": "C3",
     "name": "黄金持有成本（实际利率）",
-    "read": "美10Y -23bp，金价20日 -4.5%",
+    "read": "美10Y -23bp，金价20日 -4.6%",
     "asof": "2026-11-10",
     "mechanism": "黄金不生息，持有它的代价就是实际利率；利率下行 = 持有成本下降（不是「降息就一定涨」，看的是利率方向与幅度）",
     "target": "黄金ETF",
@@ -1201,12 +1201,12 @@
     "evidenceKey": "美10Y↓>15bp → 黄金",
     "vote": 0,
     "tier": "causal",
-    "divergence": "利率方向利多黄金（-23bp），但金价20日 -4.5% 走反 —— 说明当下有更强的力量在压金价（美元/风险偏好/获利了结），因果未兑现，票按弱信号记"
+    "divergence": "利率方向利多黄金（-23bp），但金价20日 -4.6% 走反 —— 说明当下有更强的力量在压金价（美元/风险偏好/获利了结），因果未兑现，票按弱信号记"
    },
    {
     "id": "C4",
     "name": "美联储议息事件",
-    "read": "最近决议 2026-09-16 +25bp，距今 57 天（已出窗口）",
+    "read": "最近决议 2026-09-16 +25bp，距今 58 天（已出窗口）",
     "asof": "2026-09-16",
     "mechanism": "决议改变的是政策利率路径预期 → 美元与美债曲线 → 全球风险偏好与无息资产持有成本",
     "target": "创业板（加息压制）/ 黄金（降息利多）",
@@ -1221,11 +1221,11 @@
    }
   ],
   "correlation": {
-   "score": 1.0,
+   "score": 4.1,
    "items": [
     {
      "name": "费城半导体",
-     "chgPct": -0.99,
+     "chgPct": 0.64,
      "note": "情绪/联动，无稳定传导机制"
     },
     {
@@ -1240,7 +1240,7 @@
     },
     {
      "name": "道琼斯",
-     "chgPct": 0.11,
+     "chgPct": 0.47,
      "note": "情绪/联动，无稳定传导机制"
     },
     {
@@ -1250,12 +1250,12 @@
     },
     {
      "name": "纳斯达克",
-     "chgPct": -0.35,
+     "chgPct": 0.34,
      "note": "情绪/联动，无稳定传导机制"
     },
     {
      "name": "标普500",
-     "chgPct": -0.15,
+     "chgPct": 0.33,
      "note": "情绪/联动，无稳定传导机制"
     },
     {
@@ -1280,51 +1280,17 @@
   "context": {
    "us10Chg": -23.0,
    "cn10Chg": -5.7,
-   "goldMom20": -4.51,
+   "goldMom20": -4.57,
    "growthMom20": -9.84
   },
   "rule": "因果因子（有机制+历史可复现）可改 action；相关因子只进评分，永不投票",
   "asof": "2026-11-10",
-  "builtAt": "2026-11-12 23:44:40",
-  "yields": {
-   "record": {
-    "value": 4.98,
-    "date": "2026-11-10",
-    "src": "东财 datacenter"
-   },
-   "check": {
-    "value": 4.88,
-    "date": "2026-11-09",
-    "src": "FRED"
-   },
-   "deltaBp": 10.0,
-   "verdict": "日期不同（记录源 2026-11-10 / 校验源 2026-11-09），差值 +10bp 属 T+1 差异，不视为矛盾"
-  }
+  "builtAt": "2026-11-13 00:14:53"
  },
  "runtime": {
   "source": "local",
   "degraded": false,
   "reason": null,
-  "observedAt": "2026-11-12 23:57:43"
- },
- "discipline": {
-  "status": "COMPLIANT",
-  "strictRiskPct": 10.71,
-  "strictRiskCapPct": 15,
-  "targetStrictRiskPct": 15,
-  "goldPct": 27.81,
-  "goldAlertPct": 30,
-  "goldMaxPct": 35,
-  "thesisGate": "valid",
-  "breaches": []
- },
- "externalSignal": {
-  "marketAction": "WAIT",
-  "addRiskAllowed": false,
-  "marketRegime": "external-caution",
-  "confidence": "observed"
- },
- "combined": "HOLD_NO_NEW_RISK",
- "disciplineAsOf": "2026-11-05",
- "disciplineGeneratedAt": "2026-11-12T15:58:11.380Z"
+  "observedAt": "2026-11-13 00:28:47"
+ }
 }
