@@ -1,6 +1,6 @@
 {
- "generatedAt": "2026-11-12 14:57:32",
- "ts": 1794466652894,
+ "generatedAt": "2026-11-12 14:59:47",
+ "ts": 1794466787922,
  "source": "vps",
  "tunnelUrl": "https://daughter-rates-integral-ownership.trycloudflare.com",
  "market": {
@@ -76,7 +76,7 @@
     "amount": 181065184.0
    }
   ],
-  "fetchedAt": 1794466653744
+  "fetchedAt": 1794466788837
  },
  "bonds": {
   "asof": "2026-11-11",
@@ -100,7 +100,7 @@
   }
  },
  "overseas": {
-  "fetchedAt": 1794466654768,
+  "fetchedAt": 1794466789872,
   "quotes": {
    "items": [
     {
@@ -135,9 +135,9 @@
      "name": "恒生指数",
      "kind": "idx",
      "unit": "",
-     "price": 24036.51,
-     "chgPct": -1.15,
-     "asof": "2026-11-12 06:42"
+     "price": 24020.74,
+     "chgPct": -1.21,
+     "asof": "2026-11-12 06:44"
     },
     {
      "code": "^DJI",
@@ -182,25 +182,25 @@
      "unit": "",
      "price": 103.02,
      "chgPct": 0.11,
-     "asof": "2026-11-12 06:47"
+     "asof": "2026-11-12 06:49"
     },
     {
      "code": "GC=F",
      "name": "COMEX黄金",
      "kind": "fut",
      "unit": "usd",
-     "price": 3973.9,
-     "chgPct": -0.67,
-     "asof": "2026-11-12 06:47"
+     "price": 3976.1,
+     "chgPct": -0.61,
+     "asof": "2026-11-12 06:49"
     },
     {
      "code": "CL=F",
      "name": "WTI原油",
      "kind": "fut",
      "unit": "usd",
-     "price": 86.43,
-     "chgPct": -0.12,
-     "asof": "2026-11-12 06:47"
+     "price": 86.4,
+     "chgPct": -0.15,
+     "asof": "2026-11-12 06:49"
     },
     {
      "code": "HG=F",
@@ -208,8 +208,8 @@
      "kind": "fut",
      "unit": "usd",
      "price": 6.23,
-     "chgPct": -0.99,
-     "asof": "2026-11-12 06:47"
+     "chgPct": -0.96,
+     "asof": "2026-11-12 06:49"
     },
     {
      "code": "^TNX",
@@ -231,7 +231,7 @@
     }
    ],
    "errors": null,
-   "fetchedAt": 1794466656011
+   "fetchedAt": 1794466791266
   },
   "fred": {
    "items": [
@@ -608,9 +608,9 @@
     "code": "^HSI",
     "name": "恒生指数",
     "kind": "idx",
-    "price": 24036.51,
-    "chgPct": -1.15,
-    "asof": "2026-11-12 06:42",
+    "price": 24020.74,
+    "chgPct": -1.21,
+    "asof": "2026-11-12 06:44",
     "src": "yahoo"
    },
    {
@@ -653,9 +653,9 @@
     "code": "nf_LC0",
     "name": "碳酸锂主连",
     "kind": "fut",
-    "price": 90800.0,
+    "price": 90840.0,
     "prev": 88460.0,
-    "chgPct": 2.65,
+    "chgPct": 2.69,
     "asof": "2026-11-12",
     "src": "sina"
    },
@@ -663,9 +663,9 @@
     "code": "nf_FG0",
     "name": "玻璃主连",
     "kind": "fut",
-    "price": 898.0,
+    "price": 896.0,
     "prev": 886.0,
-    "chgPct": 1.35,
+    "chgPct": 1.13,
     "asof": "2026-11-12",
     "src": "sina"
    },
@@ -673,34 +673,34 @@
     "code": "nf_M0",
     "name": "豆粕主连",
     "kind": "fut",
-    "price": 3127.0,
+    "price": 3130.0,
     "prev": 3137.0,
-    "chgPct": -0.32,
+    "chgPct": -0.22,
     "asof": "2026-11-12",
     "src": "sina"
    }
   ],
   "errors": null,
-  "fetchedAt": 1794466657363
+  "fetchedAt": 1794466792864
  },
  "commodity": {
   "OIL": {
-   "price": 92.692,
+   "price": 92.736,
    "prev": 92.76,
-   "chgPct": -0.07,
-   "time": "14:57:37"
+   "chgPct": -0.03,
+   "time": "14:59:53"
   },
   "CL": {
-   "price": 86.43,
+   "price": 86.469,
    "prev": 86.53,
-   "chgPct": -0.12,
-   "time": "14:57:35"
+   "chgPct": -0.07,
+   "time": "14:59:51"
   },
   "XAU": {
-   "price": 3965.01,
+   "price": 3967.1,
    "prev": 3987.69,
-   "chgPct": -0.57,
-   "time": "14:57:00"
+   "chgPct": -0.52,
+   "time": "14:59:00"
   }
  },
  "engine": {
@@ -817,7 +817,7 @@
    "schemaVersion": "1.0",
    "status": "PASS",
    "canRecommend": true,
-   "checkedAt": "2026-11-12T14:57:41.656577+08:00",
+   "checkedAt": "2026-11-12T14:59:57.402295+08:00",
    "policy": {
     "maxMarketAgeDays": 4.0,
     "requiredIndices": [
@@ -911,7 +911,7 @@
    }
   ],
   "correlation": {
-   "score": 10.3,
+   "score": 10.1,
    "items": [
     {
      "name": "费城半导体",
@@ -925,7 +925,7 @@
     },
     {
      "name": "恒生指数",
-     "chgPct": -1.15,
+     "chgPct": -1.21,
      "note": "情绪/联动，无稳定传导机制"
     },
     {
@@ -950,17 +950,17 @@
     },
     {
      "name": "碳酸锂主连",
-     "chgPct": 2.65,
+     "chgPct": 2.69,
      "note": "情绪/联动，无稳定传导机制"
     },
     {
      "name": "玻璃主连",
-     "chgPct": 1.35,
+     "chgPct": 1.13,
      "note": "情绪/联动，无稳定传导机制"
     },
     {
      "name": "豆粕主连",
-     "chgPct": -0.32,
+     "chgPct": -0.22,
      "note": "情绪/联动，无稳定传导机制"
     }
    ],
@@ -975,7 +975,7 @@
   },
   "rule": "因果因子（有机制+历史可复现）可改 action；相关因子只进评分，永不投票",
   "asof": "2026-11-10",
-  "builtAt": "2026-11-12 14:57:47"
+  "builtAt": "2026-11-12 15:00:00"
  },
  "freshness": {
   "builtAt": "2026-11-12 14:50:04",
