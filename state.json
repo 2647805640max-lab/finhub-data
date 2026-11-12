@@ -487,11 +487,11 @@
   "errors": null
  },
  "burst": {
-  "builtAt": "2026-11-12 18:17:37",
+  "builtAt": "2026-11-12 18:48:35",
   "poll": {
    "ok": true,
    "cached": false,
-   "newItems": 12,
+   "newItems": 21,
    "error": null
   },
   "cluster": {
@@ -553,6 +553,15 @@
      ]
     },
     {
+     "keyword": "亿美元",
+     "n": 4,
+     "sample": [
+      "热度拉满！Anthropic上市首日散户净买入或达2.5亿美元 为SpaceX纪录两倍",
+      "机器人制造商Agile Robots融资5亿美元 投资方包括软银和英伟达",
+      "美银：预计台积电2027年资本开支或达900亿美元 先进制程扩产加速"
+     ]
+    },
+    {
      "keyword": "注册资本",
      "n": 4,
      "sample": [
@@ -560,35 +569,55 @@
       "中国建筑成立核电特构制造公司，注册资本1亿元",
       "阿里橙狮体育等在上海成立新公司，注册资本1500万"
      ]
-    },
-    {
-     "keyword": "上交所理事长",
-     "n": 3,
-     "sample": [
-      "上交所理事长邱勇：截至三季度末中长期资金持仓沪市ETF超1.7万亿 较2025年底增长13%",
-      "上交所理事长邱勇：科创债ETF规模突破2000亿元 较设立之初增长超过3倍",
-      "上交所理事长邱勇：境外资金配置中国资本市场的力度稳步提升"
-     ]
     }
    ]
   },
   "cards": [],
-  "watchlist": [],
+  "watchlist": [
+   {
+    "event": "美联储政策",
+    "confidence": "high",
+    "keywords": [
+     "加息"
+    ],
+    "clusterDocs": 0,
+    "buckets": [
+     "黄金",
+     "权益"
+    ],
+    "type": "watch",
+    "note": "单关键词或密度不足，只进观察清单"
+   },
+   {
+    "event": "经济数据",
+    "confidence": "mid",
+    "keywords": [
+     "cpi"
+    ],
+    "clusterDocs": 0,
+    "buckets": [
+     "权益",
+     "债券"
+    ],
+    "type": "watch",
+    "note": "单关键词或密度不足，只进观察清单"
+   }
+  ],
   "gaps": [
    {
     "key": "holdings",
     "name": "持仓快照",
-    "reason": "已 170 小时未更新（阈值 168h）",
+    "reason": "已 171 小时未更新（阈值 168h）",
     "hard": false,
     "asof": "2026-11-05 16:00",
-    "ageHours": 170.3
+    "ageHours": 170.8
    }
   ],
   "incomplete": false,
   "rule": "单条快讯永不触发推演；假设卡只是待验证项，不改 action；缺口优先于结论"
  },
  "freshness": {
-  "builtAt": "2026-11-12 18:17:37",
+  "builtAt": "2026-11-12 18:48:35",
   "inSession": false,
   "items": [
    {
@@ -596,7 +625,7 @@
     "name": "A股四大指数",
     "tier": "quote",
     "source": "新浪实时（本机）/ VPS",
-    "asof": "2026-11-12 18:12",
+    "asof": "2026-11-12 18:42",
     "ageHours": 0.1,
     "valid": true,
     "limitHours": 26,
@@ -610,7 +639,7 @@
     "tier": "daily",
     "source": "东财 datacenter（收盘口径，唯一记录源）",
     "asof": "2026-11-12 16:00",
-    "ageHours": 2.3,
+    "ageHours": 2.8,
     "valid": true,
     "limitHours": 96,
     "invalidIf": "中国10Y 超过 40 小时未更新（含一个交易日）；美债 T+1，放宽到 96 小时",
@@ -622,7 +651,7 @@
     "name": "商品盘中观测",
     "tier": "quote",
     "source": "新浪 hf_（非判定口径）",
-    "asof": "2026-11-12 18:16",
+    "asof": "2026-11-12 18:47",
     "ageHours": 0.0,
     "valid": true,
     "limitHours": 96,
@@ -635,7 +664,7 @@
     "name": "投资引擎裁决",
     "tier": "daily",
     "source": "invest-engine core_engine_v1_1（收盘序列）",
-    "asof": "2026-11-12 18:16",
+    "asof": "2026-11-12 18:47",
     "ageHours": 0.0,
     "valid": true,
     "limitHours": 96,
@@ -648,7 +677,7 @@
     "name": "扩展指数/商品主力",
     "tier": "quote",
     "source": "VPS 海外层 / 新浪",
-    "asof": "2026-11-12 18:12",
+    "asof": "2026-11-12 18:42",
     "ageHours": 0.1,
     "valid": true,
     "limitHours": 96,
@@ -661,7 +690,7 @@
     "name": "海外宏观（VIX/美元/金/美债）",
     "tier": "quote",
     "source": "Yahoo + FRED（VPS 直连）",
-    "asof": "2026-11-12 18:12",
+    "asof": "2026-11-12 18:42",
     "ageHours": 0.1,
     "valid": true,
     "limitHours": 96,
@@ -674,7 +703,7 @@
     "name": "因子推演（因果层 C1-C4）",
     "tier": "daily",
     "source": "macro_causal.build（东财+腾讯日线）",
-    "asof": "2026-11-12 18:12",
+    "asof": "2026-11-12 18:42",
     "ageHours": 0.1,
     "valid": true,
     "limitHours": 96,
@@ -688,7 +717,7 @@
     "tier": "daily",
     "source": "~/projects/daily-news/digest_*.md",
     "asof": "2026-11-12 16:00",
-    "ageHours": 2.3,
+    "ageHours": 2.8,
     "valid": true,
     "limitHours": 40,
     "invalidIf": "digest 不是当天的（超过 40 小时）或条目为空",
@@ -701,7 +730,7 @@
     "tier": "daily",
     "source": "DeepSeek 打分（按 digest 日期缓存）",
     "asof": "2026-11-12 16:00",
-    "ageHours": 2.3,
+    "ageHours": 2.8,
     "valid": true,
     "limitHours": 40,
     "invalidIf": "与 digest 不同日 / 打分报错",
@@ -714,11 +743,11 @@
     "tier": "manual",
     "source": "手工登记（券商/建行/支付宝）+ ~/.dsh/finwatch",
     "asof": "2026-11-05 16:00",
-    "ageHours": 170.3,
+    "ageHours": 170.8,
     "valid": false,
     "limitHours": 168,
     "invalidIf": "超过 7 天未更新（手工快照，不自动采）",
-    "reason": "已 170 小时未更新（阈值 168h）",
+    "reason": "已 171 小时未更新（阈值 168h）",
     "hard": false
    },
    {
@@ -726,7 +755,7 @@
     "name": "告警",
     "tier": "quote",
     "source": "finwatch alerts.json",
-    "asof": "2026-11-12 18:16",
+    "asof": "2026-11-12 18:47",
     "ageHours": 0.0,
     "valid": true,
     "limitHours": 168,
@@ -740,7 +769,7 @@
     "tier": "daily",
     "source": "E:/q4-2026/reports/chain-model.md + daily-log",
     "asof": "2026-11-11 16:00",
-    "ageHours": 26.3,
+    "ageHours": 26.8,
     "valid": true,
     "limitHours": 96,
     "invalidIf": "超过 96 小时未更新",
@@ -752,10 +781,10 @@
    {
     "key": "holdings",
     "name": "持仓快照",
-    "reason": "已 170 小时未更新（阈值 168h）",
+    "reason": "已 171 小时未更新（阈值 168h）",
     "hard": false,
     "asof": "2026-11-05 16:00",
-    "ageHours": 170.3
+    "ageHours": 170.8
    }
   ],
   "counts": {
@@ -1255,12 +1284,46 @@
   },
   "rule": "因果因子（有机制+历史可复现）可改 action；相关因子只进评分，永不投票",
   "asof": "2026-11-10",
-  "builtAt": "2026-11-12 18:42:29"
+  "builtAt": "2026-11-12 18:42:29",
+  "yields": {
+   "record": {
+    "value": 4.98,
+    "date": "2026-11-10",
+    "src": "东财 datacenter"
+   },
+   "check": {
+    "value": 4.88,
+    "date": "2026-11-09",
+    "src": "FRED"
+   },
+   "deltaBp": 10.0,
+   "verdict": "日期不同（记录源 2026-11-10 / 校验源 2026-11-09），差值 +10bp 属 T+1 差异，不视为矛盾"
+  }
  },
  "runtime": {
   "source": "local",
   "degraded": false,
   "reason": null,
   "observedAt": "2026-11-12 18:48:20"
- }
+ },
+ "discipline": {
+  "status": "COMPLIANT",
+  "strictRiskPct": 10.71,
+  "strictRiskCapPct": 15,
+  "targetStrictRiskPct": 15,
+  "goldPct": 27.81,
+  "goldAlertPct": 30,
+  "goldMaxPct": 35,
+  "thesisGate": "valid",
+  "breaches": []
+ },
+ "externalSignal": {
+  "marketAction": "WAIT",
+  "addRiskAllowed": false,
+  "marketRegime": "external-caution",
+  "confidence": "observed"
+ },
+ "combined": "HOLD_NO_NEW_RISK",
+ "disciplineAsOf": "2026-11-05",
+ "disciplineGeneratedAt": "2026-11-12T10:48:38.856Z"
 }
