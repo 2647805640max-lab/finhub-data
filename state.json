@@ -1,6 +1,6 @@
 {
- "generatedAt": "2026-11-12 11:32:31",
- "ts": 1794454351208,
+ "generatedAt": "2026-11-12 11:34:43",
+ "ts": 1794454483525,
  "source": "vps",
  "tunnelUrl": "https://daughter-rates-integral-ownership.trycloudflare.com",
  "market": {
@@ -76,7 +76,7 @@
     "amount": 95367059.0
    }
   ],
-  "fetchedAt": 1794454352129
+  "fetchedAt": 1794454484399
  },
  "bonds": {
   "asof": "2026-11-11",
@@ -100,7 +100,7 @@
   }
  },
  "overseas": {
-  "fetchedAt": 1794454352975,
+  "fetchedAt": 1794454485214,
   "quotes": {
    "items": [
     {
@@ -108,9 +108,9 @@
      "name": "韩国KOSPI",
      "kind": "idx",
      "unit": "",
-     "price": 5424.15,
-     "chgPct": 0.91,
-     "asof": "2026-11-12 03:12"
+     "price": 5420.32,
+     "chgPct": 0.84,
+     "asof": "2026-11-12 03:14"
     },
     {
      "code": "^SOX",
@@ -135,9 +135,9 @@
      "name": "恒生指数",
      "kind": "idx",
      "unit": "",
-     "price": 24064.61,
-     "chgPct": -1.03,
-     "asof": "2026-11-12 03:17"
+     "price": 24071.04,
+     "chgPct": -1.01,
+     "asof": "2026-11-12 03:19"
     },
     {
      "code": "^DJI",
@@ -180,27 +180,27 @@
      "name": "美元指数",
      "kind": "idx",
      "unit": "",
-     "price": 103.06,
-     "chgPct": 0.15,
-     "asof": "2026-11-12 03:22"
+     "price": 103.04,
+     "chgPct": 0.13,
+     "asof": "2026-11-12 03:24"
     },
     {
      "code": "GC=F",
      "name": "COMEX黄金",
      "kind": "fut",
      "unit": "usd",
-     "price": 3983.8,
+     "price": 3983.5,
      "chgPct": -0.42,
-     "asof": "2026-11-12 03:22"
+     "asof": "2026-11-12 03:24"
     },
     {
      "code": "CL=F",
      "name": "WTI原油",
      "kind": "fut",
      "unit": "usd",
-     "price": 85.55,
-     "chgPct": -1.13,
-     "asof": "2026-11-12 03:22"
+     "price": 85.52,
+     "chgPct": -1.17,
+     "asof": "2026-11-12 03:24"
     },
     {
      "code": "HG=F",
@@ -209,7 +209,7 @@
      "unit": "usd",
      "price": 6.25,
      "chgPct": -0.71,
-     "asof": "2026-11-12 03:22"
+     "asof": "2026-11-12 03:24"
     },
     {
      "code": "^TNX",
@@ -231,7 +231,7 @@
     }
    ],
    "errors": null,
-   "fetchedAt": 1794454354414
+   "fetchedAt": 1794454487613
   },
   "fred": {
    "items": [
@@ -608,9 +608,9 @@
     "code": "^HSI",
     "name": "恒生指数",
     "kind": "idx",
-    "price": 24064.61,
-    "chgPct": -1.03,
-    "asof": "2026-11-12 03:17",
+    "price": 24071.04,
+    "chgPct": -1.01,
+    "asof": "2026-11-12 03:19",
     "src": "yahoo"
    },
    {
@@ -626,9 +626,9 @@
     "code": "^KS11",
     "name": "韩国KOSPI",
     "kind": "idx",
-    "price": 5424.15,
-    "chgPct": 0.91,
-    "asof": "2026-11-12 03:12",
+    "price": 5420.32,
+    "chgPct": 0.84,
+    "asof": "2026-11-12 03:14",
     "src": "yahoo"
    },
    {
@@ -681,26 +681,26 @@
    }
   ],
   "errors": null,
-  "fetchedAt": 1794454356061
+  "fetchedAt": 1794454488710
  },
  "commodity": {
   "OIL": {
-   "price": 91.678,
+   "price": 91.747,
    "prev": 92.76,
-   "chgPct": -1.17,
-   "time": "11:32:27"
+   "chgPct": -1.09,
+   "time": "11:34:49"
   },
   "CL": {
-   "price": 85.601,
+   "price": 85.665,
    "prev": 86.53,
-   "chgPct": -1.07,
-   "time": "11:32:32"
+   "chgPct": -1.0,
+   "time": "11:34:47"
   },
   "XAU": {
-   "price": 3983.67,
+   "price": 3981.07,
    "prev": 3987.69,
-   "chgPct": -0.1,
-   "time": "11:32:00"
+   "chgPct": -0.17,
+   "time": "11:34:00"
   }
  },
  "engine": {
@@ -814,7 +814,7 @@
    "schemaVersion": "1.0",
    "status": "PASS",
    "canRecommend": true,
-   "checkedAt": "2026-11-12T11:32:40.844992+08:00",
+   "checkedAt": "2026-11-12T11:34:53.603904+08:00",
    "policy": {
     "maxMarketAgeDays": 4.0,
     "requiredIndices": [
@@ -906,7 +906,7 @@
    }
   ],
   "correlation": {
-   "score": 10.9,
+   "score": 10.8,
    "items": [
     {
      "name": "费城半导体",
@@ -920,7 +920,7 @@
     },
     {
      "name": "恒生指数",
-     "chgPct": -1.03,
+     "chgPct": -1.01,
      "note": "情绪/联动，无稳定传导机制"
     },
     {
@@ -930,7 +930,7 @@
     },
     {
      "name": "韩国KOSPI",
-     "chgPct": 0.91,
+     "chgPct": 0.84,
      "note": "情绪/联动，无稳定传导机制"
     },
     {
@@ -970,7 +970,7 @@
   },
   "rule": "因果因子（有机制+历史可复现）可改 action；相关因子只进评分，永不投票",
   "asof": "2026-11-10",
-  "builtAt": "2026-11-12 11:32:43"
+  "builtAt": "2026-11-12 11:34:56"
  },
  "freshness": {
   "builtAt": "2026-11-12 11:26:18",
