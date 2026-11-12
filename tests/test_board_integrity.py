@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import json
 import unittest
+from unittest import mock
 from datetime import datetime
 from zoneinfo import ZoneInfo
 
@@ -167,7 +168,7 @@ class BoardIntegrityTests(unittest.TestCase):
         self.assertIn("POLICY_UNRESOLVED", {x["code"] for x in result["issues"]})
 
     def test_contract_cap_is_not_a_hardcoded_15(self):
-        with unittest.mock.patch.object(board_integrity, 'HARD_MAX_RISKY_PCT', 14.0):
+        with mock.patch.object(board_integrity, 'HARD_MAX_RISKY_PCT', 14.0):
             board = make_board()
             board['today']['position']['hardMaxPct'] = 15.0
             result = evaluate_board(board, now=NOW)
