@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import json
 import unittest
+from unittest import mock
 from datetime import datetime
 from zoneinfo import ZoneInfo
 
@@ -165,6 +166,13 @@ class BoardIntegrityTests(unittest.TestCase):
         board["ips"]["items"].append({"name": "band mismatch", "status": "warn"})
         result = evaluate_board(board, now=NOW)
         self.assertIn("POLICY_UNRESOLVED", {x["code"] for x in result["issues"]})
+
+    def test_contract_cap_is_not_a_hardcoded_15(self):
+        with mock.patch.object(board_integrity, 'HARD_MAX_RISKY_PCT', 14.0):
+            board = make_board()
+            board['today']['position']['hardMaxPct'] = 15.0
+            result = evaluate_board(board, now=NOW)
+            self.assertIn('POLICY_HARD_CAP', codes_of(result))
 
     def test_band_cannot_exceed_hard_policy_cap(self):
         board = make_board()

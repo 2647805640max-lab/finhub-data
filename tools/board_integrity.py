@@ -422,8 +422,9 @@ def evaluate_board(board, now=None):
         issues.append({"code": "ACTION_MISSING", "message": "再平衡动作缺失或不在允许枚举中"})
     hard_max = position.get("hardMaxPct")
     band_high = rebalance.get("bandHighPct")
-    if not finite_number(hard_max) or float(hard_max) > 15.0:
-        issues.append({"code": "POLICY_HARD_CAP", "message": "风险仓硬上限缺失或超过用户15%政策"})
+    if not finite_number(hard_max) or float(hard_max) > HARD_MAX_RISKY_PCT:
+        issues.append({"code": "POLICY_HARD_CAP",
+                       "message": "风险仓硬上限缺失或超过策略契约 %.2f%%" % HARD_MAX_RISKY_PCT})
     if not finite_number(band_high) or (finite_number(hard_max) and float(band_high) > float(hard_max)):
         issues.append({"code": "POLICY_BAND_CAP", "message": "无交易带上沿缺失或超过风险仓硬上限"})
 
