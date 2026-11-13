@@ -970,10 +970,24 @@
   },
   "rule": "因果因子（有机制+历史可复现）可改 action；相关因子只进评分，永不投票",
   "asof": "2026-11-12",
-  "builtAt": "2026-11-13 13:30:45"
+  "builtAt": "2026-11-13 13:30:45",
+  "yields": {
+   "record": {
+    "value": 5.1,
+    "date": "2026-11-12",
+    "src": "东财 datacenter"
+   },
+   "check": {
+    "value": 4.98,
+    "date": "2026-11-10",
+    "src": "FRED"
+   },
+   "deltaBp": 12.0,
+   "verdict": "日期不同（记录源 2026-11-12 / 校验源 2026-11-10），差值 +12bp 属 T+1 差异，不视为矛盾"
+  }
  },
  "freshness": {
-  "builtAt": "2026-11-13 13:27:01",
+  "builtAt": "2026-11-13 13:32:05",
   "inSession": true,
   "items": [
    {
@@ -981,7 +995,7 @@
     "name": "A股四大指数",
     "tier": "quote",
     "source": "新浪实时（本机）/ VPS",
-    "asof": "2026-11-13 13:25",
+    "asof": "2026-11-13 13:30",
     "ageHours": 0.0,
     "valid": true,
     "limitHours": 0.5,
@@ -1007,7 +1021,7 @@
     "name": "商品盘中观测",
     "tier": "quote",
     "source": "新浪 hf_（非判定口径）",
-    "asof": "2026-11-13 13:25",
+    "asof": "2026-11-13 13:30",
     "ageHours": 0.0,
     "valid": true,
     "limitHours": 40,
@@ -1020,7 +1034,7 @@
     "name": "投资引擎裁决",
     "tier": "daily",
     "source": "invest-engine core_engine_v1_1（收盘序列）",
-    "asof": "2026-11-13 13:25",
+    "asof": "2026-11-13 13:30",
     "ageHours": 0.0,
     "valid": true,
     "limitHours": 40,
@@ -1033,7 +1047,7 @@
     "name": "扩展指数/商品主力",
     "tier": "quote",
     "source": "VPS 海外层 / 新浪",
-    "asof": "2026-11-13 13:25",
+    "asof": "2026-11-13 13:30",
     "ageHours": 0.0,
     "valid": true,
     "limitHours": 40,
@@ -1046,7 +1060,7 @@
     "name": "海外宏观（VIX/美元/金/美债）",
     "tier": "quote",
     "source": "Yahoo + FRED（VPS 直连）",
-    "asof": "2026-11-13 13:25",
+    "asof": "2026-11-13 13:30",
     "ageHours": 0.0,
     "valid": true,
     "limitHours": 40,
@@ -1059,7 +1073,7 @@
     "name": "因子推演（因果层 C1-C4）",
     "tier": "daily",
     "source": "macro_causal.build（东财+腾讯日线）",
-    "asof": "2026-11-13 13:26",
+    "asof": "2026-11-13 13:30",
     "ageHours": 0.0,
     "valid": true,
     "limitHours": 40,
@@ -1103,7 +1117,7 @@
     "valid": false,
     "limitHours": 168,
     "invalidIf": "超过 7 天未更新（手工快照，不自动采）",
-    "reason": "已 189 小时未更新（阈值 168h）",
+    "reason": "已 190 小时未更新（阈值 168h）",
     "hard": false
    },
    {
@@ -1111,7 +1125,7 @@
     "name": "告警",
     "tier": "quote",
     "source": "finwatch alerts.json",
-    "asof": "2026-11-13 13:25",
+    "asof": "2026-11-13 13:30",
     "ageHours": 0.0,
     "valid": true,
     "limitHours": 168,
@@ -1137,7 +1151,7 @@
    {
     "key": "holdings",
     "name": "持仓快照",
-    "reason": "已 189 小时未更新（阈值 168h）",
+    "reason": "已 190 小时未更新（阈值 168h）",
     "hard": false,
     "asof": "2026-11-05 16:00",
     "ageHours": 189.5
@@ -1153,7 +1167,7 @@
   "confidenceAdjust": "提示"
  },
  "burst": {
-  "builtAt": "2026-11-13 13:19:57",
+  "builtAt": "2026-11-13 13:32:05",
   "poll": {
    "ok": true,
    "cached": false,
@@ -1162,15 +1176,15 @@
   },
   "cluster": {
    "windowHours": 6,
-   "recent": 307,
+   "recent": 303,
    "clusters": [
     {
      "keyword": "亿美元",
      "n": 6,
      "sample": [
-      "Anthropic IPO认购需求约为发行规模的6倍，拟募资最高644亿美元",
       "美国联邦政府2027财年首月财政赤字达4041亿美元，同比扩大42%",
-      "中芯国际：预计2026年收入超过120亿美元 全球设备交付周期拉长"
+      "中芯国际：预计2026年收入超过120亿美元 全球设备交付周期拉长",
+      "黄仁勋最激进 AI 赌局的“刹车手”：英伟达临时 CEO 克雷斯曾力阻削减 2500 亿美元 OpenAI 豪赌"
      ]
     },
     {
@@ -1223,14 +1237,15 @@
   "cards": [],
   "watchlist": [
    {
-    "event": "异动行情",
+    "event": "地缘冲突",
     "confidence": "mid",
     "keywords": [
-     "跌停"
+     "袭击"
     ],
     "clusterDocs": 0,
     "buckets": [
-     "权益"
+     "黄金",
+     "原油"
     ],
     "type": "watch",
     "note": "单关键词或密度不足，只进观察清单"
@@ -1240,14 +1255,34 @@
    {
     "key": "holdings",
     "name": "持仓快照",
-    "reason": "已 189 小时未更新（阈值 168h）",
+    "reason": "已 190 小时未更新（阈值 168h）",
     "hard": false,
     "asof": "2026-11-05 16:00",
-    "ageHours": 189.3
+    "ageHours": 189.5
    }
   ],
   "incomplete": false,
   "rule": "单条快讯永不触发推演；假设卡只是待验证项，不改 action；缺口优先于结论"
  },
- "extrasAsOf": "2026-11-13 13:27:01"
+ "extrasAsOf": "2026-11-13 13:27:01",
+ "discipline": {
+  "status": "COMPLIANT",
+  "strictRiskPct": 10.71,
+  "strictRiskCapPct": 15,
+  "targetStrictRiskPct": 15,
+  "goldPct": 27.81,
+  "goldAlertPct": 30,
+  "goldMaxPct": 35,
+  "thesisGate": "valid",
+  "breaches": []
+ },
+ "externalSignal": {
+  "marketAction": "WAIT",
+  "addRiskAllowed": false,
+  "marketRegime": "external-caution",
+  "confidence": "observed"
+ },
+ "combined": "HOLD_NO_NEW_RISK",
+ "disciplineAsOf": "2026-11-05",
+ "disciplineGeneratedAt": "2026-11-13T05:32:10.129Z"
 }
