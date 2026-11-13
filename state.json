@@ -970,10 +970,24 @@
   },
   "rule": "因果因子（有机制+历史可复现）可改 action；相关因子只进评分，永不投票",
   "asof": "2026-11-12",
-  "builtAt": "2026-11-13 10:31:11"
+  "builtAt": "2026-11-13 10:31:11",
+  "yields": {
+   "record": {
+    "value": 5.1,
+    "date": "2026-11-12",
+    "src": "东财 datacenter"
+   },
+   "check": {
+    "value": 4.98,
+    "date": "2026-11-10",
+    "src": "FRED"
+   },
+   "deltaBp": 12.0,
+   "verdict": "日期不同（记录源 2026-11-12 / 校验源 2026-11-10），差值 +12bp 属 T+1 差异，不视为矛盾"
+  }
  },
  "freshness": {
-  "builtAt": "2026-11-13 10:21:10",
+  "builtAt": "2026-11-13 10:32:50",
   "inSession": true,
   "items": [
    {
@@ -981,7 +995,7 @@
     "name": "A股四大指数",
     "tier": "quote",
     "source": "新浪实时（本机）/ VPS",
-    "asof": "2026-11-13 10:20",
+    "asof": "2026-11-13 10:31",
     "ageHours": 0.0,
     "valid": true,
     "limitHours": 0.5,
@@ -995,7 +1009,7 @@
     "tier": "daily",
     "source": "东财 datacenter（收盘口径，唯一记录源）",
     "asof": "2026-11-12 16:00",
-    "ageHours": 18.4,
+    "ageHours": 18.5,
     "valid": true,
     "limitHours": 40,
     "invalidIf": "中国10Y 超过 40 小时未更新（含一个交易日）；美债 T+1，放宽到 96 小时",
@@ -1007,7 +1021,7 @@
     "name": "商品盘中观测",
     "tier": "quote",
     "source": "新浪 hf_（非判定口径）",
-    "asof": "2026-11-13 10:20",
+    "asof": "2026-11-13 10:31",
     "ageHours": 0.0,
     "valid": true,
     "limitHours": 40,
@@ -1020,7 +1034,7 @@
     "name": "投资引擎裁决",
     "tier": "daily",
     "source": "invest-engine core_engine_v1_1（收盘序列）",
-    "asof": "2026-11-13 10:20",
+    "asof": "2026-11-13 10:31",
     "ageHours": 0.0,
     "valid": true,
     "limitHours": 40,
@@ -1033,7 +1047,7 @@
     "name": "扩展指数/商品主力",
     "tier": "quote",
     "source": "VPS 海外层 / 新浪",
-    "asof": "2026-11-13 10:20",
+    "asof": "2026-11-13 10:31",
     "ageHours": 0.0,
     "valid": true,
     "limitHours": 40,
@@ -1046,7 +1060,7 @@
     "name": "海外宏观（VIX/美元/金/美债）",
     "tier": "quote",
     "source": "Yahoo + FRED（VPS 直连）",
-    "asof": "2026-11-13 10:20",
+    "asof": "2026-11-13 10:31",
     "ageHours": 0.0,
     "valid": true,
     "limitHours": 40,
@@ -1059,7 +1073,7 @@
     "name": "因子推演（因果层 C1-C4）",
     "tier": "daily",
     "source": "macro_causal.build（东财+腾讯日线）",
-    "asof": "2026-11-13 10:20",
+    "asof": "2026-11-13 10:31",
     "ageHours": 0.0,
     "valid": true,
     "limitHours": 40,
@@ -1073,7 +1087,7 @@
     "tier": "daily",
     "source": "~/projects/daily-news/digest_*.md",
     "asof": "2026-11-13 16:00",
-    "ageHours": -5.6,
+    "ageHours": -5.5,
     "valid": true,
     "limitHours": 40,
     "invalidIf": "digest 不是当天的（超过 40 小时）或条目为空",
@@ -1086,7 +1100,7 @@
     "tier": "daily",
     "source": "DeepSeek 打分（按 digest 日期缓存）",
     "asof": "2026-11-13 16:00",
-    "ageHours": -5.6,
+    "ageHours": -5.5,
     "valid": true,
     "limitHours": 40,
     "invalidIf": "与 digest 不同日 / 打分报错",
@@ -1099,11 +1113,11 @@
     "tier": "manual",
     "source": "手工登记（券商/建行/支付宝）+ ~/.dsh/finwatch",
     "asof": "2026-11-05 16:00",
-    "ageHours": 186.4,
+    "ageHours": 186.5,
     "valid": false,
     "limitHours": 168,
     "invalidIf": "超过 7 天未更新（手工快照，不自动采）",
-    "reason": "已 186 小时未更新（阈值 168h）",
+    "reason": "已 187 小时未更新（阈值 168h）",
     "hard": false
    },
    {
@@ -1111,7 +1125,7 @@
     "name": "告警",
     "tier": "quote",
     "source": "finwatch alerts.json",
-    "asof": "2026-11-13 10:20",
+    "asof": "2026-11-13 10:31",
     "ageHours": 0.0,
     "valid": true,
     "limitHours": 168,
@@ -1125,7 +1139,7 @@
     "tier": "daily",
     "source": "E:/q4-2026/reports/chain-model.md + daily-log",
     "asof": "2026-11-13 16:00",
-    "ageHours": -5.6,
+    "ageHours": -5.5,
     "valid": true,
     "limitHours": 96,
     "invalidIf": "超过 96 小时未更新",
@@ -1137,10 +1151,10 @@
    {
     "key": "holdings",
     "name": "持仓快照",
-    "reason": "已 186 小时未更新（阈值 168h）",
+    "reason": "已 187 小时未更新（阈值 168h）",
     "hard": false,
     "asof": "2026-11-05 16:00",
-    "ageHours": 186.4
+    "ageHours": 186.5
    }
   ],
   "counts": {
@@ -1153,20 +1167,20 @@
   "confidenceAdjust": "提示"
  },
  "burst": {
-  "builtAt": "2026-11-13 10:21:10",
+  "builtAt": "2026-11-13 10:32:50",
   "poll": {
    "ok": true,
    "cached": false,
-   "newItems": 11,
+   "newItems": 15,
    "error": null
   },
   "cluster": {
    "windowHours": 6,
-   "recent": 230,
+   "recent": 243,
    "clusters": [
     {
      "keyword": "亿美元",
-     "n": 10,
+     "n": 11,
      "sample": [
       "Cerebras Systems盘后上涨12% 公司第三财季核心营收为2.309亿美元 高于预估",
       "Cerebras Systems第三财季核心营收为2.309亿美元 高于预估",
@@ -1175,7 +1189,7 @@
     },
     {
      "keyword": "中芯国际赵海",
-     "n": 5,
+     "n": 6,
      "sample": [
       "中芯国际赵海军：四季度公司业绩淡季不淡 产能利用率预计会略有下降",
       "中芯国际赵海军：Q3客户对人工智能配套芯片需求超过公司预期",
@@ -1189,6 +1203,15 @@
       "应用材料第四财季调整后每股收益4.16美元 预估4.06美元",
       "金价再度跌破3900美元",
       "思科预计第二财季调整后每股收益为1.34至1.36美元 高于预估的1.23美元"
+     ]
+    },
+    {
+     "keyword": "央行",
+     "n": 4,
+     "sample": [
+      "央行：强化征信治理与货币、信贷政策等协同联动 支持金融机构优化资源配置",
+      "央行：严格落实征信机构持牌经营要求 严厉打击无证经营非法征信活动",
+      "央行：探索加强央行征信系统与社会化征信机构的多方位合作"
      ]
     },
     {
@@ -1210,21 +1233,21 @@
      ]
     },
     {
+     "keyword": "预期",
+     "n": 3,
+     "sample": [
+      "Cerebras第三季度营收2.11亿美元 同比增长55% 上调全年业绩预期",
+      "思科第一财季营收185亿美元 同比增长24% 上调全年业绩预期",
+      "大摩上调产量预期！人形机器人板块有望持续修复"
+     ]
+    },
+    {
      "keyword": "营收",
      "n": 3,
      "sample": [
       "思科第一财季营收185亿美元 同比增长24% 上调全年业绩预期",
       "AI需求持续爆发！美国半导体设备龙头：营收、盈利、业绩指引全面超预期",
       "华硕前三季度营收7424亿元新台币，归母净利润505亿元新台币"
-     ]
-    },
-    {
-     "keyword": "央行",
-     "n": 3,
-     "sample": [
-      "央行：强化征信治理与货币、信贷政策等协同联动 支持金融机构优化资源配置",
-      "央行：严格落实征信机构持牌经营要求 严厉打击无证经营非法征信活动",
-      "央行：探索加强央行征信系统与社会化征信机构的多方位合作"
      ]
     }
    ]
@@ -1305,14 +1328,34 @@
    {
     "key": "holdings",
     "name": "持仓快照",
-    "reason": "已 186 小时未更新（阈值 168h）",
+    "reason": "已 187 小时未更新（阈值 168h）",
     "hard": false,
     "asof": "2026-11-05 16:00",
-    "ageHours": 186.4
+    "ageHours": 186.5
    }
   ],
   "incomplete": false,
   "rule": "单条快讯永不触发推演；假设卡只是待验证项，不改 action；缺口优先于结论"
  },
- "extrasAsOf": "2026-11-13 10:21:10"
+ "extrasAsOf": "2026-11-13 10:21:10",
+ "discipline": {
+  "status": "COMPLIANT",
+  "strictRiskPct": 10.71,
+  "strictRiskCapPct": 15,
+  "targetStrictRiskPct": 15,
+  "goldPct": 27.81,
+  "goldAlertPct": 30,
+  "goldMaxPct": 35,
+  "thesisGate": "valid",
+  "breaches": []
+ },
+ "externalSignal": {
+  "marketAction": "WAIT",
+  "addRiskAllowed": false,
+  "marketRegime": "external-caution",
+  "confidence": "observed"
+ },
+ "combined": "HOLD_NO_NEW_RISK",
+ "disciplineAsOf": "2026-11-05",
+ "disciplineGeneratedAt": "2026-11-13T02:32:54.208Z"
 }
