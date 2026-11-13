@@ -1,8 +1,8 @@
 {
- "generatedAt": "2026-11-13 16:42:57",
- "ts": 1794559377213,
+ "generatedAt": "2026-11-13 17:14:07",
+ "ts": 1794561247435,
  "overseas": {
-  "fetchedAt": 1794559386405,
+  "fetchedAt": 1794561200715,
   "quotes": {
    "items": [
     {
@@ -46,9 +46,9 @@
      "name": "道琼斯",
      "kind": "idx",
      "unit": "",
-     "price": 52297.1,
+     "price": 52297.09,
      "chgPct": -0.36,
-     "asof": "2026-11-12 21:00"
+     "asof": "2026-11-12 21:58"
     },
     {
      "code": "^IXIC",
@@ -73,45 +73,45 @@
      "name": "VIX恐慌指数",
      "kind": "idx",
      "unit": "",
-     "price": 19.02,
-     "chgPct": 1.71,
-     "asof": "2026-11-13 08:28"
+     "price": 18.96,
+     "chgPct": 1.39,
+     "asof": "2026-11-13 08:58"
     },
     {
      "code": "DX-Y.NYB",
      "name": "美元指数",
      "kind": "idx",
      "unit": "",
-     "price": 103.12,
-     "chgPct": -0.05,
-     "asof": "2026-11-13 08:33"
+     "price": 103.14,
+     "chgPct": -0.03,
+     "asof": "2026-11-13 09:03"
     },
     {
      "code": "GC=F",
      "name": "COMEX黄金",
      "kind": "fut",
      "unit": "usd",
-     "price": 3895.8,
-     "chgPct": 0.27,
-     "asof": "2026-11-13 08:33"
+     "price": 3903.3,
+     "chgPct": 0.46,
+     "asof": "2026-11-13 09:03"
     },
     {
      "code": "CL=F",
      "name": "WTI原油",
      "kind": "fut",
      "unit": "usd",
-     "price": 88.93,
-     "chgPct": 0.21,
-     "asof": "2026-11-13 08:33"
+     "price": 88.64,
+     "chgPct": -0.11,
+     "asof": "2026-11-13 09:03"
     },
     {
      "code": "HG=F",
      "name": "COMEX铜",
      "kind": "fut",
      "unit": "usd",
-     "price": 6.12,
-     "chgPct": -1.24,
-     "asof": "2026-11-13 08:33"
+     "price": 6.13,
+     "chgPct": -1.08,
+     "asof": "2026-11-13 09:03"
     },
     {
      "code": "^TNX",
@@ -133,7 +133,7 @@
     }
    ],
    "errors": null,
-   "fetchedAt": 1794559387707
+   "fetchedAt": 1794561201955
   },
   "fred": {
    "items": [
@@ -830,7 +830,7 @@
     "amount": 190387653.0
    }
   ],
-  "fetchedAt": 1794559384530
+  "fetchedAt": 1794561199415
  },
  "bonds": {
   "asof": "2026-11-12",
@@ -855,22 +855,22 @@
  },
  "commodity": {
   "OIL": {
-   "price": 96.405,
+   "price": 96.099,
    "prev": 95.82,
-   "chgPct": 0.61,
-   "time": "16:42:59"
+   "chgPct": 0.29,
+   "time": "17:13:17"
   },
   "CL": {
-   "price": 89.08,
+   "price": 88.538,
    "prev": 88.74,
-   "chgPct": 0.38,
-   "time": "16:43:09"
+   "chgPct": -0.23,
+   "time": "17:13:19"
   },
   "XAU": {
-   "price": 3896.3,
+   "price": 3897.55,
    "prev": 3877.43,
-   "chgPct": 0.49,
-   "time": "16:42:00"
+   "chgPct": 0.52,
+   "time": "17:13:00"
   }
  },
  "engine": {
@@ -987,7 +987,7 @@
    "schemaVersion": "1.0",
    "status": "PASS",
    "canRecommend": true,
-   "checkedAt": "2026-11-13T16:43:14.536026+08:00",
+   "checkedAt": "2026-11-13T17:13:29.274482+08:00",
    "policy": {
     "maxMarketAgeDays": 4.0,
     "requiredIndices": [
@@ -1044,9 +1044,9 @@
     "code": "^DJI",
     "name": "道琼斯",
     "kind": "idx",
-    "price": 52297.1,
+    "price": 52297.09,
     "chgPct": -0.36,
-    "asof": "2026-11-12 21:00",
+    "asof": "2026-11-12 21:58",
     "src": "yahoo"
    },
    {
@@ -1108,7 +1108,7 @@
    }
   ],
   "errors": null,
-  "fetchedAt": 1794559389342
+  "fetchedAt": 1794561203581
  },
  "causal": {
   "tier": "causal",
@@ -1240,46 +1240,12 @@
   },
   "rule": "因果因子（有机制+历史可复现）可改 action；相关因子只进评分，永不投票",
   "asof": "2026-11-12",
-  "builtAt": "2026-11-13 16:43:18",
-  "yields": {
-   "record": {
-    "value": 5.1,
-    "date": "2026-11-12",
-    "src": "东财 datacenter"
-   },
-   "check": {
-    "value": 4.98,
-    "date": "2026-11-10",
-    "src": "FRED"
-   },
-   "deltaBp": 12.0,
-   "verdict": "日期不同（记录源 2026-11-12 / 校验源 2026-11-10），差值 +12bp 属 T+1 差异，不视为矛盾"
-  }
+  "builtAt": "2026-11-13 17:13:31"
  },
  "runtime": {
   "source": "local",
   "degraded": false,
   "reason": null,
-  "observedAt": "2026-11-13 16:43:21"
- },
- "discipline": {
-  "status": "COMPLIANT",
-  "strictRiskPct": 10.71,
-  "strictRiskCapPct": 15,
-  "targetStrictRiskPct": 15,
-  "goldPct": 27.81,
-  "goldAlertPct": 30,
-  "goldMaxPct": 35,
-  "thesisGate": "valid",
-  "breaches": []
- },
- "externalSignal": {
-  "marketAction": "WAIT",
-  "addRiskAllowed": false,
-  "marketRegime": "external-caution",
-  "confidence": "observed"
- },
- "combined": "HOLD_NO_NEW_RISK",
- "disciplineAsOf": "2026-11-05",
- "disciplineGeneratedAt": "2026-11-13T08:43:56.323Z"
+  "observedAt": "2026-11-13 17:14:35"
+ }
 }
