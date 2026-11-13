@@ -487,16 +487,16 @@
   "errors": null
  },
  "burst": {
-  "builtAt": "2026-11-13 19:50:34",
+  "builtAt": "2026-11-13 20:21:36",
   "poll": {
    "ok": true,
    "cached": false,
-   "newItems": 17,
+   "newItems": 12,
    "error": null
   },
   "cluster": {
    "windowHours": 6,
-   "recent": 289,
+   "recent": 277,
    "clusters": [
     {
      "keyword": "两部门",
@@ -553,21 +553,21 @@
      ]
     },
     {
-     "keyword": "金融监管总局",
-     "n": 3,
-     "sample": [
-      "金融监管总局法规司司长：讨论经济金融适配性 也应关注金融稳定",
-      "金融监管总局法规司司长：中小银行重组整合是大势所趋",
-      "金融监管总局：加强财产保险公司费用分摊管理工作"
-     ]
-    },
-    {
      "keyword": "十五五",
      "n": 3,
      "sample": [
       "国家发改委、国家能源局印发《“十五五”新型储能实施方案》",
       "“十五五”期间我国国有林场将重点推进四大体系建设",
       "《“十五五”新型储能实施方案》发布 23只概念股业绩有望持续高增长"
+     ]
+    },
+    {
+     "keyword": "降至",
+     "n": 3,
+     "sample": [
+      "贝莱德在中金公司H股的持股比例于11月10日从6.10%降至5.83%",
+      "瑞银集团在澜起科技H股的持股比例于11月9日从10.10%降至9.48%",
+      "摩根大通在立讯精密H股的持股比例于11月9日从6.24%降至6.00%"
      ]
     }
    ]
@@ -610,14 +610,14 @@
     "reason": "已 196 小时未更新（阈值 168h）",
     "hard": false,
     "asof": "2026-11-05 16:00",
-    "ageHours": 195.8
+    "ageHours": 196.4
    }
   ],
   "incomplete": false,
   "rule": "单条快讯永不触发推演；假设卡只是待验证项，不改 action；缺口优先于结论"
  },
  "freshness": {
-  "builtAt": "2026-11-13 19:50:34",
+  "builtAt": "2026-11-13 20:21:36",
   "inSession": false,
   "items": [
    {
@@ -625,7 +625,7 @@
     "name": "A股四大指数",
     "tier": "quote",
     "source": "新浪实时（本机）/ VPS",
-    "asof": "2026-11-13 19:44",
+    "asof": "2026-11-13 20:14",
     "ageHours": 0.1,
     "valid": true,
     "limitHours": 26,
@@ -639,7 +639,7 @@
     "tier": "daily",
     "source": "东财 datacenter（收盘口径，唯一记录源）",
     "asof": "2026-11-13 16:00",
-    "ageHours": 3.8,
+    "ageHours": 4.4,
     "valid": true,
     "limitHours": 96,
     "invalidIf": "中国10Y 超过 40 小时未更新（含一个交易日）；美债 T+1，放宽到 96 小时",
@@ -651,7 +651,7 @@
     "name": "商品盘中观测",
     "tier": "quote",
     "source": "新浪 hf_（非判定口径）",
-    "asof": "2026-11-13 19:49",
+    "asof": "2026-11-13 20:20",
     "ageHours": 0.0,
     "valid": true,
     "limitHours": 96,
@@ -664,7 +664,7 @@
     "name": "投资引擎裁决",
     "tier": "daily",
     "source": "invest-engine core_engine_v1_1（收盘序列）",
-    "asof": "2026-11-13 19:49",
+    "asof": "2026-11-13 20:20",
     "ageHours": 0.0,
     "valid": true,
     "limitHours": 96,
@@ -677,7 +677,7 @@
     "name": "扩展指数/商品主力",
     "tier": "quote",
     "source": "VPS 海外层 / 新浪",
-    "asof": "2026-11-13 19:44",
+    "asof": "2026-11-13 20:14",
     "ageHours": 0.1,
     "valid": true,
     "limitHours": 96,
@@ -690,7 +690,7 @@
     "name": "海外宏观（VIX/美元/金/美债）",
     "tier": "quote",
     "source": "Yahoo + FRED（VPS 直连）",
-    "asof": "2026-11-13 19:44",
+    "asof": "2026-11-13 20:14",
     "ageHours": 0.1,
     "valid": true,
     "limitHours": 96,
@@ -703,7 +703,7 @@
     "name": "因子推演（因果层 C1-C4）",
     "tier": "daily",
     "source": "macro_causal.build（东财+腾讯日线）",
-    "asof": "2026-11-13 19:44",
+    "asof": "2026-11-13 20:14",
     "ageHours": 0.1,
     "valid": true,
     "limitHours": 96,
@@ -717,7 +717,7 @@
     "tier": "daily",
     "source": "~/projects/daily-news/digest_*.md",
     "asof": "2026-11-13 16:00",
-    "ageHours": 3.8,
+    "ageHours": 4.4,
     "valid": true,
     "limitHours": 40,
     "invalidIf": "digest 不是当天的（超过 40 小时）或条目为空",
@@ -730,7 +730,7 @@
     "tier": "daily",
     "source": "DeepSeek 打分（按 digest 日期缓存）",
     "asof": "2026-11-13 16:00",
-    "ageHours": 3.8,
+    "ageHours": 4.4,
     "valid": true,
     "limitHours": 40,
     "invalidIf": "与 digest 不同日 / 打分报错",
@@ -743,7 +743,7 @@
     "tier": "manual",
     "source": "手工登记（券商/建行/支付宝）+ ~/.dsh/finwatch",
     "asof": "2026-11-05 16:00",
-    "ageHours": 195.8,
+    "ageHours": 196.4,
     "valid": false,
     "limitHours": 168,
     "invalidIf": "超过 7 天未更新（手工快照，不自动采）",
@@ -755,7 +755,7 @@
     "name": "告警",
     "tier": "quote",
     "source": "finwatch alerts.json",
-    "asof": "2026-11-13 19:49",
+    "asof": "2026-11-13 20:20",
     "ageHours": 0.0,
     "valid": true,
     "limitHours": 168,
@@ -769,7 +769,7 @@
     "tier": "daily",
     "source": "E:/q4-2026/reports/chain-model.md + daily-log",
     "asof": "2026-11-13 16:00",
-    "ageHours": 3.8,
+    "ageHours": 4.4,
     "valid": true,
     "limitHours": 96,
     "invalidIf": "超过 96 小时未更新",
@@ -784,7 +784,7 @@
     "reason": "已 196 小时未更新（阈值 168h）",
     "hard": false,
     "asof": "2026-11-05 16:00",
-    "ageHours": 195.8
+    "ageHours": 196.4
    }
   ],
   "counts": {
@@ -1280,12 +1280,46 @@
   },
   "rule": "因果因子（有机制+历史可复现）可改 action；相关因子只进评分，永不投票",
   "asof": "2026-11-12",
-  "builtAt": "2026-11-13 20:14:48"
+  "builtAt": "2026-11-13 20:14:48",
+  "yields": {
+   "record": {
+    "value": 5.1,
+    "date": "2026-11-12",
+    "src": "东财 datacenter"
+   },
+   "check": {
+    "value": 4.98,
+    "date": "2026-11-10",
+    "src": "FRED"
+   },
+   "deltaBp": 12.0,
+   "verdict": "日期不同（记录源 2026-11-12 / 校验源 2026-11-10），差值 +12bp 属 T+1 差异，不视为矛盾"
+  }
  },
  "runtime": {
   "source": "local",
   "degraded": false,
   "reason": null,
   "observedAt": "2026-11-13 20:21:18"
- }
+ },
+ "discipline": {
+  "status": "COMPLIANT",
+  "strictRiskPct": 10.71,
+  "strictRiskCapPct": 15,
+  "targetStrictRiskPct": 15,
+  "goldPct": 27.81,
+  "goldAlertPct": 30,
+  "goldMaxPct": 35,
+  "thesisGate": "valid",
+  "breaches": []
+ },
+ "externalSignal": {
+  "marketAction": "WAIT",
+  "addRiskAllowed": false,
+  "marketRegime": "external-caution",
+  "confidence": "observed"
+ },
+ "combined": "HOLD_NO_NEW_RISK",
+ "disciplineAsOf": "2026-11-05",
+ "disciplineGeneratedAt": "2026-11-13T12:21:41.035Z"
 }
