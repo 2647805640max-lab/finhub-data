@@ -1,8 +1,8 @@
 {
- "generatedAt": "2026-11-14 06:09:35",
- "ts": 1794607775264,
+ "generatedAt": "2026-11-14 06:40:31",
+ "ts": 1794609631736,
  "overseas": {
-  "fetchedAt": 1794606529720,
+  "fetchedAt": 1794608343475,
   "quotes": {
    "items": [
     {
@@ -21,7 +21,7 @@
      "unit": "",
      "price": 10146.32,
      "chgPct": -3.43,
-     "asof": "2026-11-13 21:48"
+     "asof": "2026-11-13 22:15"
     },
     {
      "code": "^N225",
@@ -57,7 +57,7 @@
      "unit": "",
      "price": 25136.27,
      "chgPct": -0.91,
-     "asof": "2026-11-13 21:48"
+     "asof": "2026-11-13 22:15"
     },
     {
      "code": "^GSPC",
@@ -82,36 +82,36 @@
      "name": "美元指数",
      "kind": "idx",
      "unit": "",
-     "price": 103.42,
-     "chgPct": 0.24,
-     "asof": "2026-11-13 21:38"
+     "price": 103.41,
+     "chgPct": 0.23,
+     "asof": "2026-11-13 21:59"
     },
     {
      "code": "GC=F",
      "name": "COMEX黄金",
      "kind": "fut",
      "unit": "usd",
-     "price": 3877.6,
-     "chgPct": -0.2,
-     "asof": "2026-11-13 21:38"
+     "price": 3887.6,
+     "chgPct": 0.06,
+     "asof": "2026-11-13 21:59"
     },
     {
      "code": "CL=F",
      "name": "WTI原油",
      "kind": "fut",
      "unit": "usd",
-     "price": 89.25,
-     "chgPct": 0.57,
-     "asof": "2026-11-13 21:38"
+     "price": 88.92,
+     "chgPct": 0.2,
+     "asof": "2026-11-13 22:00"
     },
     {
      "code": "HG=F",
      "name": "COMEX铜",
      "kind": "fut",
      "unit": "usd",
-     "price": 6.05,
-     "chgPct": -2.32,
-     "asof": "2026-11-13 21:38"
+     "price": 6.06,
+     "chgPct": -2.14,
+     "asof": "2026-11-13 21:59"
     },
     {
      "code": "^TNX",
@@ -133,7 +133,7 @@
     }
    ],
    "errors": null,
-   "fetchedAt": 1794606531108
+   "fetchedAt": 1794608344752
   },
   "fred": {
    "items": [
@@ -166,8 +166,8 @@
      "name": "美10Y通胀预期",
      "unit": "%",
      "value": 2.24,
-     "chg": 0.04,
-     "asof": "2026-11-12"
+     "chg": 0.0,
+     "asof": "2026-11-13"
     }
    ],
    "errors": null
@@ -800,7 +800,7 @@
     "amount": 190387653.0
    }
   ],
-  "fetchedAt": 1794606528966
+  "fetchedAt": 1794608342620
  },
  "bonds": {
   "asof": "2026-11-13",
@@ -825,22 +825,22 @@
  },
  "commodity": {
   "OIL": {
-   "price": 96.374,
+   "price": 96.484,
    "prev": 95.82,
-   "chgPct": 0.58,
-   "time": "05:48:51"
+   "chgPct": 0.69,
+   "time": "06:18:50"
   },
   "CL": {
-   "price": 89.134,
+   "price": 88.985,
    "prev": 88.74,
-   "chgPct": 0.44,
-   "time": "05:48:50"
+   "chgPct": 0.28,
+   "time": "05:59:59"
   },
   "XAU": {
-   "price": 3881.28,
+   "price": 3879.92,
    "prev": 3877.43,
-   "chgPct": 0.1,
-   "time": "05:48:00"
+   "chgPct": 0.06,
+   "time": "05:55:00"
   }
  },
  "engine": {
@@ -957,7 +957,7 @@
    "schemaVersion": "1.0",
    "status": "PASS",
    "canRecommend": true,
-   "checkedAt": "2026-11-14T05:48:59.218762+08:00",
+   "checkedAt": "2026-11-14T06:19:12.291318+08:00",
    "policy": {
     "maxMarketAgeDays": 4.0,
     "requiredIndices": [
@@ -989,7 +989,7 @@
     "kind": "idx",
     "price": 10146.32,
     "chgPct": -3.43,
-    "asof": "2026-11-13 21:48",
+    "asof": "2026-11-13 22:15",
     "src": "yahoo"
    },
    {
@@ -1034,7 +1034,7 @@
     "kind": "idx",
     "price": 25136.27,
     "chgPct": -0.91,
-    "asof": "2026-11-13 21:48",
+    "asof": "2026-11-13 22:15",
     "src": "yahoo"
    },
    {
@@ -1078,7 +1078,7 @@
    }
   ],
   "errors": null,
-  "fetchedAt": 1794606534026
+  "fetchedAt": 1794608347370
  },
  "causal": {
   "tier": "causal",
@@ -1210,46 +1210,12 @@
   },
   "rule": "因果因子（有机制+历史可复现）可改 action；相关因子只进评分，永不投票",
   "asof": "2026-11-12",
-  "builtAt": "2026-11-14 05:49:01",
-  "yields": {
-   "record": {
-    "value": 5.1,
-    "date": "2026-11-12",
-    "src": "东财 datacenter"
-   },
-   "check": {
-    "value": 5.1,
-    "date": "2026-11-12",
-    "src": "FRED"
-   },
-   "deltaBp": 0.0,
-   "verdict": "两源一致（差 +0bp）"
-  }
+  "builtAt": "2026-11-14 06:19:14"
  },
  "runtime": {
   "source": "local",
   "degraded": false,
   "reason": null,
-  "observedAt": "2026-11-14 06:10:00"
- },
- "discipline": {
-  "status": "COMPLIANT",
-  "strictRiskPct": 10.71,
-  "strictRiskCapPct": 15,
-  "targetStrictRiskPct": 15,
-  "goldPct": 27.81,
-  "goldAlertPct": 30,
-  "goldMaxPct": 35,
-  "thesisGate": "valid",
-  "breaches": []
- },
- "externalSignal": {
-  "marketAction": "WAIT",
-  "addRiskAllowed": false,
-  "marketRegime": "external-caution",
-  "confidence": "observed"
- },
- "combined": "HOLD_NO_NEW_RISK",
- "disciplineAsOf": "2026-11-05",
- "disciplineGeneratedAt": "2026-11-13T22:10:22.951Z"
+  "observedAt": "2026-11-14 06:41:04"
+ }
 }
