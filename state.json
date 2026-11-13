@@ -1,8 +1,8 @@
 {
- "generatedAt": "2026-11-13 18:47:23",
- "ts": 1794566843553,
+ "generatedAt": "2026-11-13 19:18:41",
+ "ts": 1794568721816,
  "overseas": {
-  "fetchedAt": 1794566638038,
+  "fetchedAt": 1794568450229,
   "quotes": {
    "items": [
     {
@@ -73,45 +73,45 @@
      "name": "VIX恐慌指数",
      "kind": "idx",
      "unit": "",
-     "price": 18.4,
-     "chgPct": -1.6,
-     "asof": "2026-11-13 10:28"
+     "price": 18.34,
+     "chgPct": -1.93,
+     "asof": "2026-11-13 10:59"
     },
     {
      "code": "DX-Y.NYB",
      "name": "美元指数",
      "kind": "idx",
      "unit": "",
-     "price": 103.21,
-     "chgPct": 0.04,
-     "asof": "2026-11-13 10:33"
+     "price": 103.26,
+     "chgPct": 0.08,
+     "asof": "2026-11-13 11:04"
     },
     {
      "code": "GC=F",
      "name": "COMEX黄金",
      "kind": "fut",
      "unit": "usd",
-     "price": 3900.3,
-     "chgPct": 0.39,
-     "asof": "2026-11-13 10:33"
+     "price": 3895.0,
+     "chgPct": 0.25,
+     "asof": "2026-11-13 11:03"
     },
     {
      "code": "CL=F",
      "name": "WTI原油",
      "kind": "fut",
      "unit": "usd",
-     "price": 87.94,
-     "chgPct": -0.9,
-     "asof": "2026-11-13 10:33"
+     "price": 88.26,
+     "chgPct": -0.54,
+     "asof": "2026-11-13 11:04"
     },
     {
      "code": "HG=F",
      "name": "COMEX铜",
      "kind": "fut",
      "unit": "usd",
-     "price": 6.16,
-     "chgPct": -0.67,
-     "asof": "2026-11-13 10:33"
+     "price": 6.15,
+     "chgPct": -0.75,
+     "asof": "2026-11-13 11:03"
     },
     {
      "code": "^TNX",
@@ -133,7 +133,7 @@
     }
    ],
    "errors": null,
-   "fetchedAt": 1794566639329
+   "fetchedAt": 1794568451437
   },
   "fred": {
    "items": [
@@ -871,7 +871,7 @@
     "amount": 190387653.0
    }
   ],
-  "fetchedAt": 1794566636961
+  "fetchedAt": 1794568448964
  },
  "bonds": {
   "asof": "2026-11-13",
@@ -896,22 +896,22 @@
  },
  "commodity": {
   "OIL": {
-   "price": 95.456,
+   "price": 95.724,
    "prev": 95.82,
-   "chgPct": -0.38,
-   "time": "18:43:57"
+   "chgPct": -0.1,
+   "time": "19:14:05"
   },
   "CL": {
-   "price": 88.048,
+   "price": 88.21,
    "prev": 88.74,
-   "chgPct": -0.78,
-   "time": "18:43:58"
+   "chgPct": -0.6,
+   "time": "19:14:14"
   },
   "XAU": {
-   "price": 3892.75,
+   "price": 3891.11,
    "prev": 3877.43,
-   "chgPct": 0.4,
-   "time": "18:43:00"
+   "chgPct": 0.35,
+   "time": "19:14:00"
   }
  },
  "engine": {
@@ -1028,7 +1028,7 @@
    "schemaVersion": "1.0",
    "status": "PASS",
    "canRecommend": true,
-   "checkedAt": "2026-11-13T18:44:05.864520+08:00",
+   "checkedAt": "2026-11-13T19:14:19.031044+08:00",
    "policy": {
     "maxMarketAgeDays": 4.0,
     "requiredIndices": [
@@ -1149,7 +1149,7 @@
    }
   ],
   "errors": null,
-  "fetchedAt": 1794566640822
+  "fetchedAt": 1794568454256
  },
  "causal": {
   "tier": "causal",
@@ -1281,46 +1281,12 @@
   },
   "rule": "因果因子（有机制+历史可复现）可改 action；相关因子只进评分，永不投票",
   "asof": "2026-11-12",
-  "builtAt": "2026-11-13 18:44:08",
-  "yields": {
-   "record": {
-    "value": 5.1,
-    "date": "2026-11-12",
-    "src": "东财 datacenter"
-   },
-   "check": {
-    "value": 4.98,
-    "date": "2026-11-10",
-    "src": "FRED"
-   },
-   "deltaBp": 12.0,
-   "verdict": "日期不同（记录源 2026-11-12 / 校验源 2026-11-10），差值 +12bp 属 T+1 差异，不视为矛盾"
-  }
+  "builtAt": "2026-11-13 19:14:21"
  },
  "runtime": {
   "source": "local",
   "degraded": false,
   "reason": null,
-  "observedAt": "2026-11-13 18:47:52"
- },
- "discipline": {
-  "status": "COMPLIANT",
-  "strictRiskPct": 10.71,
-  "strictRiskCapPct": 15,
-  "targetStrictRiskPct": 15,
-  "goldPct": 27.81,
-  "goldAlertPct": 30,
-  "goldMaxPct": 35,
-  "thesisGate": "valid",
-  "breaches": []
- },
- "externalSignal": {
-  "marketAction": "WAIT",
-  "addRiskAllowed": false,
-  "marketRegime": "external-caution",
-  "confidence": "observed"
- },
- "combined": "HOLD_NO_NEW_RISK",
- "disciplineAsOf": "2026-11-05",
- "disciplineGeneratedAt": "2026-11-13T10:48:25.254Z"
+  "observedAt": "2026-11-13 19:19:01"
+ }
 }
