@@ -487,60 +487,24 @@
   "errors": null
  },
  "burst": {
-  "builtAt": "2026-11-14 04:37:19",
+  "builtAt": "2026-11-14 05:08:26",
   "poll": {
    "ok": true,
    "cached": false,
-   "newItems": 5,
+   "newItems": 9,
    "error": null
   },
   "cluster": {
    "windowHours": 6,
-   "recent": 64,
+   "recent": 67,
    "clusters": [
     {
      "keyword": "美元",
-     "n": 5,
+     "n": 4,
      "sample": [
-      "英伟达股价跌幅扩大至2% 报162.935美元/股",
       "TD Cowen将伯克希尔哈撒韦的目标价从529美元上调至556美元",
-      "现货白银日内跌幅扩大至2% 报49.04美元/盎司"
-     ]
-    },
-    {
-     "keyword": "费城半导体指",
-     "n": 5,
-     "sample": [
-      "美股半导体板块集体走低 费城半导体指数跌4.3%",
-      "费城半导体指数跌逾3% 成分股AMD跌逾6%",
-      "费城半导体指数跌幅扩大至2%，AMD跌超5%"
-     ]
-    },
-    {
-     "keyword": "幅扩大至",
-     "n": 3,
-     "sample": [
-      "英伟达股价跌幅扩大至2% 报162.935美元/股",
-      "英伟达股价跌幅扩大至3.3%",
-      "英伟达股价跌幅扩大至2%"
-     ]
-    },
-    {
-     "keyword": "英伟达股价跌",
-     "n": 3,
-     "sample": [
-      "英伟达股价跌幅扩大至2% 报162.935美元/股",
-      "英伟达股价跌幅扩大至3.3%",
-      "英伟达股价跌幅扩大至2%"
-     ]
-    },
-    {
-     "keyword": "数跌",
-     "n": 3,
-     "sample": [
-      "美股半导体板块集体走低 费城半导体指数跌4.3%",
-      "美股半导体板块跌幅扩大：费城半导体指数跌6% AMD跌10%",
-      "纳斯达克100指数下跌2.4%至盘中低点 费城半导体指数跌6.4%"
+      "现货白银日内跌幅扩大至2% 报49.04美元/盎司",
+      "TD Cowen将伯克希尔哈撒韦B股的目标价从529美元上调至556美元"
      ]
     }
    ]
@@ -586,14 +550,14 @@
     "reason": "已 205 小时未更新（阈值 168h）",
     "hard": false,
     "asof": "2026-11-05 16:00",
-    "ageHours": 204.6
+    "ageHours": 205.1
    }
   ],
   "incomplete": false,
   "rule": "单条快讯永不触发推演；假设卡只是待验证项，不改 action；缺口优先于结论"
  },
  "freshness": {
-  "builtAt": "2026-11-14 04:37:19",
+  "builtAt": "2026-11-14 05:08:26",
   "inSession": false,
   "items": [
    {
@@ -601,7 +565,7 @@
     "name": "A股四大指数",
     "tier": "quote",
     "source": "新浪实时（本机）/ VPS",
-    "asof": "2026-11-14 04:18",
+    "asof": "2026-11-14 04:48",
     "ageHours": 0.3,
     "valid": true,
     "limitHours": 26,
@@ -615,7 +579,7 @@
     "tier": "daily",
     "source": "东财 datacenter（收盘口径，唯一记录源）",
     "asof": "2026-11-13 16:00",
-    "ageHours": 12.6,
+    "ageHours": 13.1,
     "valid": true,
     "limitHours": 96,
     "invalidIf": "中国10Y 超过 40 小时未更新（含一个交易日）；美债 T+1，放宽到 96 小时",
@@ -627,7 +591,7 @@
     "name": "商品盘中观测",
     "tier": "quote",
     "source": "新浪 hf_（非判定口径）",
-    "asof": "2026-11-14 04:36",
+    "asof": "2026-11-14 05:07",
     "ageHours": 0.0,
     "valid": true,
     "limitHours": 96,
@@ -640,7 +604,7 @@
     "name": "投资引擎裁决",
     "tier": "daily",
     "source": "invest-engine core_engine_v1_1（收盘序列）",
-    "asof": "2026-11-14 04:36",
+    "asof": "2026-11-14 05:07",
     "ageHours": 0.0,
     "valid": true,
     "limitHours": 96,
@@ -653,7 +617,7 @@
     "name": "扩展指数/商品主力",
     "tier": "quote",
     "source": "VPS 海外层 / 新浪",
-    "asof": "2026-11-14 04:18",
+    "asof": "2026-11-14 04:48",
     "ageHours": 0.3,
     "valid": true,
     "limitHours": 96,
@@ -666,7 +630,7 @@
     "name": "海外宏观（VIX/美元/金/美债）",
     "tier": "quote",
     "source": "Yahoo + FRED（VPS 直连）",
-    "asof": "2026-11-14 04:18",
+    "asof": "2026-11-14 04:48",
     "ageHours": 0.3,
     "valid": true,
     "limitHours": 96,
@@ -679,7 +643,7 @@
     "name": "因子推演（因果层 C1-C4）",
     "tier": "daily",
     "source": "macro_causal.build（东财+腾讯日线）",
-    "asof": "2026-11-14 04:18",
+    "asof": "2026-11-14 04:48",
     "ageHours": 0.3,
     "valid": true,
     "limitHours": 96,
@@ -693,7 +657,7 @@
     "tier": "daily",
     "source": "~/projects/daily-news/digest_*.md",
     "asof": "2026-11-13 16:00",
-    "ageHours": 12.6,
+    "ageHours": 13.1,
     "valid": true,
     "limitHours": 40,
     "invalidIf": "digest 不是当天的（超过 40 小时）或条目为空",
@@ -706,7 +670,7 @@
     "tier": "daily",
     "source": "DeepSeek 打分（按 digest 日期缓存）",
     "asof": "2026-11-13 16:00",
-    "ageHours": 12.6,
+    "ageHours": 13.1,
     "valid": true,
     "limitHours": 40,
     "invalidIf": "与 digest 不同日 / 打分报错",
@@ -719,7 +683,7 @@
     "tier": "manual",
     "source": "手工登记（券商/建行/支付宝）+ ~/.dsh/finwatch",
     "asof": "2026-11-05 16:00",
-    "ageHours": 204.6,
+    "ageHours": 205.1,
     "valid": false,
     "limitHours": 168,
     "invalidIf": "超过 7 天未更新（手工快照，不自动采）",
@@ -731,7 +695,7 @@
     "name": "告警",
     "tier": "quote",
     "source": "finwatch alerts.json",
-    "asof": "2026-11-14 04:36",
+    "asof": "2026-11-14 05:07",
     "ageHours": 0.0,
     "valid": true,
     "limitHours": 168,
@@ -745,7 +709,7 @@
     "tier": "daily",
     "source": "E:/q4-2026/reports/chain-model.md + daily-log",
     "asof": "2026-11-13 16:00",
-    "ageHours": 12.6,
+    "ageHours": 13.1,
     "valid": true,
     "limitHours": 96,
     "invalidIf": "超过 96 小时未更新",
@@ -760,7 +724,7 @@
     "reason": "已 205 小时未更新（阈值 168h）",
     "hard": false,
     "asof": "2026-11-05 16:00",
-    "ageHours": 204.6
+    "ageHours": 205.1
    }
   ],
   "counts": {
@@ -1256,12 +1220,46 @@
   },
   "rule": "因果因子（有机制+历史可复现）可改 action；相关因子只进评分，永不投票",
   "asof": "2026-11-12",
-  "builtAt": "2026-11-14 04:48:34"
+  "builtAt": "2026-11-14 04:48:34",
+  "yields": {
+   "record": {
+    "value": 5.1,
+    "date": "2026-11-12",
+    "src": "东财 datacenter"
+   },
+   "check": {
+    "value": 4.98,
+    "date": "2026-11-10",
+    "src": "FRED"
+   },
+   "deltaBp": 12.0,
+   "verdict": "日期不同（记录源 2026-11-12 / 校验源 2026-11-10），差值 +12bp 属 T+1 差异，不视为矛盾"
+  }
  },
  "runtime": {
   "source": "local",
   "degraded": false,
   "reason": null,
   "observedAt": "2026-11-14 05:07:58"
- }
+ },
+ "discipline": {
+  "status": "COMPLIANT",
+  "strictRiskPct": 10.71,
+  "strictRiskCapPct": 15,
+  "targetStrictRiskPct": 15,
+  "goldPct": 27.81,
+  "goldAlertPct": 30,
+  "goldMaxPct": 35,
+  "thesisGate": "valid",
+  "breaches": []
+ },
+ "externalSignal": {
+  "marketAction": "WAIT",
+  "addRiskAllowed": false,
+  "marketRegime": "external-caution",
+  "confidence": "observed"
+ },
+ "combined": "HOLD_NO_NEW_RISK",
+ "disciplineAsOf": "2026-11-05",
+ "disciplineGeneratedAt": "2026-11-13T21:08:31.472Z"
 }
