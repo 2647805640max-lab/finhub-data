@@ -1,8 +1,8 @@
 {
- "generatedAt": "2026-11-13 20:51:49",
- "ts": 1794574309327,
+ "generatedAt": "2026-11-13 21:22:44",
+ "ts": 1794576164688,
  "overseas": {
-  "fetchedAt": 1794573889828,
+  "fetchedAt": 1794575702719,
   "quotes": {
    "items": [
     {
@@ -73,45 +73,45 @@
      "name": "VIX恐慌指数",
      "kind": "idx",
      "unit": "",
-     "price": 18.25,
-     "chgPct": -2.41,
-     "asof": "2026-11-13 12:29"
+     "price": 18.32,
+     "chgPct": -2.03,
+     "asof": "2026-11-13 13:00"
     },
     {
      "code": "DX-Y.NYB",
      "name": "美元指数",
      "kind": "idx",
      "unit": "",
-     "price": 103.24,
-     "chgPct": 0.07,
-     "asof": "2026-11-13 12:34"
+     "price": 103.22,
+     "chgPct": 0.05,
+     "asof": "2026-11-13 13:05"
     },
     {
      "code": "GC=F",
      "name": "COMEX黄金",
      "kind": "fut",
      "unit": "usd",
-     "price": 3895.9,
-     "chgPct": 0.27,
-     "asof": "2026-11-13 12:34"
+     "price": 3896.5,
+     "chgPct": 0.29,
+     "asof": "2026-11-13 13:04"
     },
     {
      "code": "CL=F",
      "name": "WTI原油",
      "kind": "fut",
      "unit": "usd",
-     "price": 88.76,
-     "chgPct": 0.02,
-     "asof": "2026-11-13 12:34"
+     "price": 88.57,
+     "chgPct": -0.19,
+     "asof": "2026-11-13 13:04"
     },
     {
      "code": "HG=F",
      "name": "COMEX铜",
      "kind": "fut",
      "unit": "usd",
-     "price": 6.16,
-     "chgPct": -0.61,
-     "asof": "2026-11-13 12:34"
+     "price": 6.17,
+     "chgPct": -0.4,
+     "asof": "2026-11-13 13:05"
     },
     {
      "code": "^TNX",
@@ -133,7 +133,7 @@
     }
    ],
    "errors": null,
-   "fetchedAt": 1794573891068
+   "fetchedAt": 1794575703948
   },
   "fred": {
    "items": [
@@ -856,7 +856,7 @@
     "amount": 190387653.0
    }
   ],
-  "fetchedAt": 1794573888869
+  "fetchedAt": 1794575701680
  },
  "bonds": {
   "asof": "2026-11-13",
@@ -881,22 +881,22 @@
  },
  "commodity": {
   "OIL": {
-   "price": 96.166,
+   "price": 96.153,
    "prev": 95.82,
-   "chgPct": 0.36,
-   "time": "20:44:49"
+   "chgPct": 0.35,
+   "time": "21:15:04"
   },
   "CL": {
-   "price": 88.615,
+   "price": 88.412,
    "prev": 88.74,
-   "chgPct": -0.14,
-   "time": "20:44:53"
+   "chgPct": -0.37,
+   "time": "21:15:04"
   },
   "XAU": {
-   "price": 3889.87,
+   "price": 3886.55,
    "prev": 3877.43,
-   "chgPct": 0.32,
-   "time": "20:44:00"
+   "chgPct": 0.24,
+   "time": "21:14:00"
   }
  },
  "engine": {
@@ -1013,7 +1013,7 @@
    "schemaVersion": "1.0",
    "status": "PASS",
    "canRecommend": true,
-   "checkedAt": "2026-11-13T20:44:58.446571+08:00",
+   "checkedAt": "2026-11-13T21:15:10.346240+08:00",
    "policy": {
     "maxMarketAgeDays": 4.0,
     "requiredIndices": [
@@ -1116,9 +1116,9 @@
     "code": "nf_FG0",
     "name": "玻璃主连",
     "kind": "fut",
-    "price": 916.0,
-    "prev": 887.0,
-    "chgPct": 3.27,
+    "price": 912.0,
+    "prev": 914.0,
+    "chgPct": -0.22,
     "asof": "2026-11-13",
     "src": "sina"
    },
@@ -1126,15 +1126,15 @@
     "code": "nf_M0",
     "name": "豆粕主连",
     "kind": "fut",
-    "price": 3147.0,
-    "prev": 3139.0,
-    "chgPct": 0.25,
+    "price": 3155.0,
+    "prev": 3129.0,
+    "chgPct": 0.83,
     "asof": "2026-11-13",
     "src": "sina"
    }
   ],
   "errors": null,
-  "fetchedAt": 1794573893054
+  "fetchedAt": 1794575705537
  },
  "causal": {
   "tier": "causal",
@@ -1202,7 +1202,7 @@
    }
   ],
   "correlation": {
-   "score": 1.6,
+   "score": -1.3,
    "items": [
     {
      "name": "费城半导体",
@@ -1246,12 +1246,12 @@
     },
     {
      "name": "玻璃主连",
-     "chgPct": 3.27,
+     "chgPct": -0.22,
      "note": "情绪/联动，无稳定传导机制"
     },
     {
      "name": "豆粕主连",
-     "chgPct": 0.25,
+     "chgPct": 0.83,
      "note": "情绪/联动，无稳定传导机制"
     }
    ],
@@ -1266,46 +1266,12 @@
   },
   "rule": "因果因子（有机制+历史可复现）可改 action；相关因子只进评分，永不投票",
   "asof": "2026-11-12",
-  "builtAt": "2026-11-13 20:45:00",
-  "yields": {
-   "record": {
-    "value": 5.1,
-    "date": "2026-11-12",
-    "src": "东财 datacenter"
-   },
-   "check": {
-    "value": 4.98,
-    "date": "2026-11-10",
-    "src": "FRED"
-   },
-   "deltaBp": 12.0,
-   "verdict": "日期不同（记录源 2026-11-12 / 校验源 2026-11-10），差值 +12bp 属 T+1 差异，不视为矛盾"
-  }
+  "builtAt": "2026-11-13 21:15:12"
  },
  "runtime": {
   "source": "local",
   "degraded": false,
   "reason": null,
-  "observedAt": "2026-11-13 20:52:17"
- },
- "discipline": {
-  "status": "COMPLIANT",
-  "strictRiskPct": 10.71,
-  "strictRiskCapPct": 15,
-  "targetStrictRiskPct": 15,
-  "goldPct": 27.81,
-  "goldAlertPct": 30,
-  "goldMaxPct": 35,
-  "thesisGate": "valid",
-  "breaches": []
- },
- "externalSignal": {
-  "marketAction": "WAIT",
-  "addRiskAllowed": false,
-  "marketRegime": "external-caution",
-  "confidence": "observed"
- },
- "combined": "HOLD_NO_NEW_RISK",
- "disciplineAsOf": "2026-11-05",
- "disciplineGeneratedAt": "2026-11-13T12:52:36.486Z"
+  "observedAt": "2026-11-13 21:23:13"
+ }
 }
