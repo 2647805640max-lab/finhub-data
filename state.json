@@ -1,8 +1,8 @@
 {
- "generatedAt": "2026-11-14 07:42:28",
- "ts": 1794613348337,
+ "generatedAt": "2026-11-14 08:13:26",
+ "ts": 1794615206197,
  "overseas": {
-  "fetchedAt": 1794611968113,
+  "fetchedAt": 1794613782309,
   "quotes": {
    "items": [
     {
@@ -133,7 +133,7 @@
     }
    ],
    "errors": null,
-   "fetchedAt": 1794611971187
+   "fetchedAt": 1794613783682
   },
   "fred": {
    "items": [
@@ -800,7 +800,7 @@
     "amount": 190387653.0
    }
   ],
-  "fetchedAt": 1794611967474
+  "fetchedAt": 1794613781501
  },
  "bonds": {
   "asof": "2026-11-13",
@@ -957,7 +957,7 @@
    "schemaVersion": "1.0",
    "status": "PASS",
    "canRecommend": true,
-   "checkedAt": "2026-11-14T07:19:38.196817+08:00",
+   "checkedAt": "2026-11-14T07:49:50.693112+08:00",
    "policy": {
     "maxMarketAgeDays": 4.0,
     "requiredIndices": [
@@ -1078,7 +1078,7 @@
    }
   ],
   "errors": null,
-  "fetchedAt": 1794611973361
+  "fetchedAt": 1794613785869
  },
  "causal": {
   "tier": "causal",
@@ -1210,46 +1210,12 @@
   },
   "rule": "因果因子（有机制+历史可复现）可改 action；相关因子只进评分，永不投票",
   "asof": "2026-11-12",
-  "builtAt": "2026-11-14 07:19:40",
-  "yields": {
-   "record": {
-    "value": 5.1,
-    "date": "2026-11-12",
-    "src": "东财 datacenter"
-   },
-   "check": {
-    "value": 5.1,
-    "date": "2026-11-12",
-    "src": "FRED"
-   },
-   "deltaBp": 0.0,
-   "verdict": "两源一致（差 +0bp）"
-  }
+  "builtAt": "2026-11-14 07:49:53"
  },
  "runtime": {
   "source": "local",
   "degraded": false,
   "reason": null,
-  "observedAt": "2026-11-14 07:42:55"
- },
- "discipline": {
-  "status": "COMPLIANT",
-  "strictRiskPct": 10.71,
-  "strictRiskCapPct": 15,
-  "targetStrictRiskPct": 15,
-  "goldPct": 27.81,
-  "goldAlertPct": 30,
-  "goldMaxPct": 35,
-  "thesisGate": "valid",
-  "breaches": []
- },
- "externalSignal": {
-  "marketAction": "WAIT",
-  "addRiskAllowed": false,
-  "marketRegime": "external-caution",
-  "confidence": "observed"
- },
- "combined": "HOLD_NO_NEW_RISK",
- "disciplineAsOf": "2026-11-05",
- "disciplineGeneratedAt": "2026-11-13T23:43:17.980Z"
+  "observedAt": "2026-11-14 08:13:54"
+ }
 }
