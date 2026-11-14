@@ -1,8 +1,8 @@
 {
- "generatedAt": "2026-11-14 11:19:14",
- "ts": 1794626354167,
+ "generatedAt": "2026-11-14 11:50:20",
+ "ts": 1794628220440,
  "overseas": {
-  "fetchedAt": 1794624656995,
+  "fetchedAt": 1794626470776,
   "quotes": {
    "items": [
     {
@@ -83,7 +83,7 @@
      "kind": "idx",
      "unit": "",
      "price": 103.41,
-     "chgPct": 0.23,
+     "chgPct": -0.0,
      "asof": "2026-11-13 21:59"
     },
     {
@@ -133,7 +133,7 @@
     }
    ],
    "errors": null,
-   "fetchedAt": 1794624658245
+   "fetchedAt": 1794626472174
   },
   "fred": {
    "items": [
@@ -768,7 +768,7 @@
     "amount": 190387653.0
    }
   ],
-  "fetchedAt": 1794624656149
+  "fetchedAt": 1794626469676
  },
  "bonds": {
   "asof": "2026-11-13",
@@ -925,7 +925,7 @@
    "schemaVersion": "1.0",
    "status": "PASS",
    "canRecommend": true,
-   "checkedAt": "2026-11-14T10:51:06.736601+08:00",
+   "checkedAt": "2026-11-14T11:21:19.339785+08:00",
    "policy": {
     "maxMarketAgeDays": 4.0,
     "requiredIndices": [
@@ -1046,7 +1046,7 @@
    }
   ],
   "errors": null,
-  "fetchedAt": 1794624659672
+  "fetchedAt": 1794626474395
  },
  "causal": {
   "tier": "causal",
@@ -1178,46 +1178,12 @@
   },
   "rule": "因果因子（有机制+历史可复现）可改 action；相关因子只进评分，永不投票",
   "asof": "2026-11-13",
-  "builtAt": "2026-11-14 10:51:08",
-  "yields": {
-   "record": {
-    "value": 5.15,
-    "date": "2026-11-13",
-    "src": "东财 datacenter"
-   },
-   "check": {
-    "value": 5.1,
-    "date": "2026-11-12",
-    "src": "FRED"
-   },
-   "deltaBp": 5.0,
-   "verdict": "日期不同（记录源 2026-11-13 / 校验源 2026-11-12），差值 +5bp 属 T+1 差异，不视为矛盾"
-  }
+  "builtAt": "2026-11-14 11:21:21"
  },
  "runtime": {
   "source": "local",
   "degraded": false,
   "reason": null,
-  "observedAt": "2026-11-14 11:19:46"
- },
- "discipline": {
-  "status": "COMPLIANT",
-  "strictRiskPct": 10.71,
-  "strictRiskCapPct": 15,
-  "targetStrictRiskPct": 15,
-  "goldPct": 27.81,
-  "goldAlertPct": 30,
-  "goldMaxPct": 35,
-  "thesisGate": "valid",
-  "breaches": []
- },
- "externalSignal": {
-  "marketAction": "WAIT",
-  "addRiskAllowed": false,
-  "marketRegime": "external-caution",
-  "confidence": "observed"
- },
- "combined": "HOLD_NO_NEW_RISK",
- "disciplineAsOf": "2026-11-05",
- "disciplineGeneratedAt": "2026-11-14T03:20:10.281Z"
+  "observedAt": "2026-11-14 11:50:50"
+ }
 }
