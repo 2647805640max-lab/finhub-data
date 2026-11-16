@@ -1,6 +1,6 @@
 {
- "generatedAt": "2026-11-16 09:31:21",
- "ts": 1794792681160,
+ "generatedAt": "2026-11-16 09:34:14",
+ "ts": 1794792854119,
  "overseas": {
   "fetchedAt": 1794791306799,
   "quotes": {
@@ -561,7 +561,7 @@
   "rule": "单条快讯永不触发推演；假设卡只是待验证项，不改 action；缺口优先于结论"
  },
  "freshness": {
-  "builtAt": "2026-11-16 09:29:03",
+  "builtAt": "2026-11-16 09:32:04",
   "inSession": true,
   "items": [
    {
@@ -570,7 +570,7 @@
     "tier": "quote",
     "source": "新浪实时（本机）/ VPS",
     "asof": "2026-11-16 09:08",
-    "ageHours": 0.3,
+    "ageHours": 0.4,
     "valid": true,
     "limitHours": 0.5,
     "invalidIf": "交易时段超过 30 分钟未更新；收盘后超过 26 小时（跨过一个交易日）",
@@ -587,7 +587,7 @@
     "valid": false,
     "limitHours": 40,
     "invalidIf": "中国10Y 超过 40 小时未更新（含一个交易日）；美债 T+1，放宽到 96 小时",
-    "reason": "已 65 小时未更新（阈值 40h）",
+    "reason": "已 66 小时未更新（阈值 40h）",
     "hard": true
    },
    {
@@ -595,7 +595,7 @@
     "name": "商品盘中观测",
     "tier": "quote",
     "source": "新浪 hf_（非判定口径）",
-    "asof": "2026-11-16 09:28",
+    "asof": "2026-11-16 09:31",
     "ageHours": 0.0,
     "valid": true,
     "limitHours": 40,
@@ -608,7 +608,7 @@
     "name": "投资引擎裁决",
     "tier": "daily",
     "source": "invest-engine core_engine_v1_1（收盘序列）",
-    "asof": "2026-11-16 09:28",
+    "asof": "2026-11-16 09:31",
     "ageHours": 0.0,
     "valid": true,
     "limitHours": 40,
@@ -622,7 +622,7 @@
     "tier": "quote",
     "source": "VPS 海外层 / 新浪",
     "asof": "2026-11-16 09:08",
-    "ageHours": 0.3,
+    "ageHours": 0.4,
     "valid": true,
     "limitHours": 40,
     "invalidIf": "超过 96 小时未更新",
@@ -635,7 +635,7 @@
     "tier": "quote",
     "source": "Yahoo + FRED（VPS 直连）",
     "asof": "2026-11-16 09:08",
-    "ageHours": 0.3,
+    "ageHours": 0.4,
     "valid": true,
     "limitHours": 40,
     "invalidIf": "超过 96 小时未更新",
@@ -648,7 +648,7 @@
     "tier": "daily",
     "source": "macro_causal.build（东财+腾讯日线）",
     "asof": "2026-11-16 09:08",
-    "ageHours": 0.3,
+    "ageHours": 0.4,
     "valid": true,
     "limitHours": 40,
     "invalidIf": "超过 40 小时未重建",
@@ -691,7 +691,7 @@
     "valid": false,
     "limitHours": 168,
     "invalidIf": "超过 7 天未更新（手工快照，不自动采）",
-    "reason": "已 257 小时未更新（阈值 168h）",
+    "reason": "已 258 小时未更新（阈值 168h）",
     "hard": false
    },
    {
@@ -699,7 +699,7 @@
     "name": "告警",
     "tier": "quote",
     "source": "finwatch alerts.json",
-    "asof": "2026-11-16 09:28",
+    "asof": "2026-11-16 09:31",
     "ageHours": 0.0,
     "valid": true,
     "limitHours": 168,
@@ -725,7 +725,7 @@
    {
     "key": "bonds",
     "name": "中美国债收益率",
-    "reason": "已 65 小时未更新（阈值 40h）",
+    "reason": "已 66 小时未更新（阈值 40h）",
     "hard": true,
     "asof": "2026-11-13 16:00",
     "ageHours": 65.5
@@ -733,7 +733,7 @@
    {
     "key": "holdings",
     "name": "持仓快照",
-    "reason": "已 257 小时未更新（阈值 168h）",
+    "reason": "已 258 小时未更新（阈值 168h）",
     "hard": false,
     "asof": "2026-11-05 16:00",
     "ageHours": 257.5
@@ -1238,6 +1238,6 @@
   "source": "local-fallback",
   "degraded": true,
   "reason": "vps_unavailable",
-  "observedAt": "2026-11-16 09:31:46"
+  "observedAt": "2026-11-16 09:34:41"
  }
 }
