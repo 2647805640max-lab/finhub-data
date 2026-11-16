@@ -1,6 +1,6 @@
 {
- "generatedAt": "2026-11-16 11:35:37",
- "ts": 1794800137868,
+ "generatedAt": "2026-11-16 11:37:49",
+ "ts": 1794800269471,
  "source": "vps",
  "tunnelUrl": "https://trunk-lamb-spyware-instant.trycloudflare.com",
  "market": {
@@ -76,7 +76,7 @@
     "amount": 162417497.0
    }
   ],
-  "fetchedAt": 1794800138529
+  "fetchedAt": 1794800271131
  },
  "bonds": {
   "asof": "2026-11-13",
@@ -100,7 +100,7 @@
   }
  },
  "overseas": {
-  "fetchedAt": 1794800139210,
+  "fetchedAt": 1794800271780,
   "quotes": {
    "items": [
     {
@@ -108,9 +108,9 @@
      "name": "韩国KOSPI",
      "kind": "idx",
      "unit": "",
-     "price": 5148.02,
-     "chgPct": -2.69,
-     "asof": "2026-11-16 03:15"
+     "price": 5146.38,
+     "chgPct": -2.73,
+     "asof": "2026-11-16 03:17"
     },
     {
      "code": "^SOX",
@@ -135,9 +135,9 @@
      "name": "恒生指数",
      "kind": "idx",
      "unit": "",
-     "price": 23856.97,
-     "chgPct": 0.93,
-     "asof": "2026-11-16 03:20"
+     "price": 23848.93,
+     "chgPct": 0.89,
+     "asof": "2026-11-16 03:22"
     },
     {
      "code": "^DJI",
@@ -180,27 +180,27 @@
      "name": "美元指数",
      "kind": "idx",
      "unit": "",
-     "price": 103.45,
+     "price": 103.44,
      "chgPct": 0.03,
-     "asof": "2026-11-16 03:25"
+     "asof": "2026-11-16 03:27"
     },
     {
      "code": "GC=F",
      "name": "COMEX黄金",
      "kind": "fut",
      "unit": "usd",
-     "price": 3873.4,
-     "chgPct": -0.33,
-     "asof": "2026-11-16 03:25"
+     "price": 3874.5,
+     "chgPct": -0.3,
+     "asof": "2026-11-16 03:27"
     },
     {
      "code": "CL=F",
      "name": "WTI原油",
      "kind": "fut",
      "unit": "usd",
-     "price": 87.87,
-     "chgPct": -0.78,
-     "asof": "2026-11-16 03:25"
+     "price": 87.85,
+     "chgPct": -0.8,
+     "asof": "2026-11-16 03:27"
     },
     {
      "code": "HG=F",
@@ -208,8 +208,8 @@
      "kind": "fut",
      "unit": "usd",
      "price": 6.03,
-     "chgPct": -0.92,
-     "asof": "2026-11-16 03:25"
+     "chgPct": -0.96,
+     "asof": "2026-11-16 03:27"
     },
     {
      "code": "^TNX",
@@ -231,7 +231,7 @@
     }
    ],
    "errors": null,
-   "fetchedAt": 1794800140429
+   "fetchedAt": 1794800272976
   },
   "fred": {
    "items": [
@@ -608,9 +608,9 @@
     "code": "^HSI",
     "name": "恒生指数",
     "kind": "idx",
-    "price": 23856.97,
-    "chgPct": 0.93,
-    "asof": "2026-11-16 03:20",
+    "price": 23848.93,
+    "chgPct": 0.89,
+    "asof": "2026-11-16 03:22",
     "src": "yahoo"
    },
    {
@@ -626,9 +626,9 @@
     "code": "^KS11",
     "name": "韩国KOSPI",
     "kind": "idx",
-    "price": 5148.02,
-    "chgPct": -2.69,
-    "asof": "2026-11-16 03:15",
+    "price": 5146.38,
+    "chgPct": -2.73,
+    "asof": "2026-11-16 03:17",
     "src": "yahoo"
    },
    {
@@ -681,26 +681,26 @@
    }
   ],
   "errors": null,
-  "fetchedAt": 1794800141528
+  "fetchedAt": 1794800274267
  },
  "commodity": {
   "OIL": {
-   "price": 94.798,
+   "price": 94.815,
    "prev": 95.84,
-   "chgPct": -1.09,
-   "time": "11:35:00"
+   "chgPct": -1.07,
+   "time": "11:37:38"
   },
   "CL": {
-   "price": 87.863,
+   "price": 87.899,
    "prev": 88.56,
-   "chgPct": -0.79,
-   "time": "11:35:41"
+   "chgPct": -0.75,
+   "time": "11:37:51"
   },
   "XAU": {
-   "price": 3864.35,
+   "price": 3863.37,
    "prev": 3879.92,
-   "chgPct": -0.4,
-   "time": "11:35:00"
+   "chgPct": -0.43,
+   "time": "11:37:00"
   }
  },
  "engine": {
@@ -817,7 +817,7 @@
    "schemaVersion": "1.0",
    "status": "PASS",
    "canRecommend": true,
-   "checkedAt": "2026-11-16T11:35:46.788277+08:00",
+   "checkedAt": "2026-11-16T11:37:59.396003+08:00",
    "policy": {
     "maxMarketAgeDays": 4.0,
     "requiredIndices": [
@@ -907,7 +907,7 @@
    }
   ],
   "correlation": {
-   "score": -12.8,
+   "score": -12.9,
    "items": [
     {
      "name": "费城半导体",
@@ -921,7 +921,7 @@
     },
     {
      "name": "恒生指数",
-     "chgPct": 0.93,
+     "chgPct": 0.89,
      "note": "情绪/联动，无稳定传导机制"
     },
     {
@@ -931,7 +931,7 @@
     },
     {
      "name": "韩国KOSPI",
-     "chgPct": -2.69,
+     "chgPct": -2.73,
      "note": "情绪/联动，无稳定传导机制"
     },
     {
@@ -971,21 +971,7 @@
   },
   "rule": "因果因子（有机制+历史可复现）可改 action；相关因子只进评分，永不投票",
   "asof": "2026-11-13",
-  "builtAt": "2026-11-16 11:35:49",
-  "yields": {
-   "record": {
-    "value": 5.15,
-    "date": "2026-11-13",
-    "src": "东财 datacenter"
-   },
-   "check": {
-    "value": 5.1,
-    "date": "2026-11-12",
-    "src": "FRED"
-   },
-   "deltaBp": 5.0,
-   "verdict": "日期不同（记录源 2026-11-13 / 校验源 2026-11-12），差值 +5bp 属 T+1 差异，不视为矛盾"
-  }
+  "builtAt": "2026-11-16 11:38:01"
  },
  "freshness": {
   "builtAt": "2026-11-16 11:36:55",
@@ -1313,25 +1299,5 @@
   "incomplete": true,
   "rule": "单条快讯永不触发推演；假设卡只是待验证项，不改 action；缺口优先于结论"
  },
- "extrasAsOf": "2026-11-16 11:24:35",
- "discipline": {
-  "status": "COMPLIANT",
-  "strictRiskPct": 10.71,
-  "strictRiskCapPct": 15,
-  "targetStrictRiskPct": 15,
-  "goldPct": 27.81,
-  "goldAlertPct": 30,
-  "goldMaxPct": 35,
-  "thesisGate": "valid",
-  "breaches": []
- },
- "externalSignal": {
-  "marketAction": "WAIT",
-  "addRiskAllowed": false,
-  "marketRegime": "external-caution",
-  "confidence": "observed"
- },
- "combined": "HOLD_NO_NEW_RISK",
- "disciplineAsOf": "2026-11-05",
- "disciplineGeneratedAt": "2026-11-16T03:37:00.794Z"
+ "extrasAsOf": "2026-11-16 11:24:35"
 }
