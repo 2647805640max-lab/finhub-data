@@ -1,6 +1,6 @@
 {
- "generatedAt": "2026-11-16 09:25:17",
- "ts": 1794792317324,
+ "generatedAt": "2026-11-16 09:28:22",
+ "ts": 1794792502890,
  "overseas": {
   "fetchedAt": 1794791306799,
   "quotes": {
@@ -548,7 +548,7 @@
   "rule": "单条快讯永不触发推演；假设卡只是待验证项，不改 action；缺口优先于结论"
  },
  "freshness": {
-  "builtAt": "2026-11-16 09:23:06",
+  "builtAt": "2026-11-16 09:26:02",
   "inSession": true,
   "items": [
    {
@@ -557,7 +557,7 @@
     "tier": "quote",
     "source": "新浪实时（本机）/ VPS",
     "asof": "2026-11-16 09:08",
-    "ageHours": 0.2,
+    "ageHours": 0.3,
     "valid": true,
     "limitHours": 0.5,
     "invalidIf": "交易时段超过 30 分钟未更新；收盘后超过 26 小时（跨过一个交易日）",
@@ -582,7 +582,7 @@
     "name": "商品盘中观测",
     "tier": "quote",
     "source": "新浪 hf_（非判定口径）",
-    "asof": "2026-11-16 09:22",
+    "asof": "2026-11-16 09:25",
     "ageHours": 0.0,
     "valid": true,
     "limitHours": 40,
@@ -595,7 +595,7 @@
     "name": "投资引擎裁决",
     "tier": "daily",
     "source": "invest-engine core_engine_v1_1（收盘序列）",
-    "asof": "2026-11-16 09:22",
+    "asof": "2026-11-16 09:25",
     "ageHours": 0.0,
     "valid": true,
     "limitHours": 40,
@@ -609,7 +609,7 @@
     "tier": "quote",
     "source": "VPS 海外层 / 新浪",
     "asof": "2026-11-16 09:08",
-    "ageHours": 0.2,
+    "ageHours": 0.3,
     "valid": true,
     "limitHours": 40,
     "invalidIf": "超过 96 小时未更新",
@@ -622,7 +622,7 @@
     "tier": "quote",
     "source": "Yahoo + FRED（VPS 直连）",
     "asof": "2026-11-16 09:08",
-    "ageHours": 0.2,
+    "ageHours": 0.3,
     "valid": true,
     "limitHours": 40,
     "invalidIf": "超过 96 小时未更新",
@@ -635,7 +635,7 @@
     "tier": "daily",
     "source": "macro_causal.build（东财+腾讯日线）",
     "asof": "2026-11-16 09:08",
-    "ageHours": 0.2,
+    "ageHours": 0.3,
     "valid": true,
     "limitHours": 40,
     "invalidIf": "超过 40 小时未重建",
@@ -686,7 +686,7 @@
     "name": "告警",
     "tier": "quote",
     "source": "finwatch alerts.json",
-    "asof": "2026-11-16 09:22",
+    "asof": "2026-11-16 09:25",
     "ageHours": 0.0,
     "valid": true,
     "limitHours": 168,
@@ -1225,6 +1225,6 @@
   "source": "local-fallback",
   "degraded": true,
   "reason": "vps_unavailable",
-  "observedAt": "2026-11-16 09:25:45"
+  "observedAt": "2026-11-16 09:28:48"
  }
 }
