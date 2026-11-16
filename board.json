@@ -1,6 +1,6 @@
 {
     "schema":  "board/v1",
-    "generatedAt":  "2026-11-16 17:31:27",
+    "generatedAt":  "2026-11-16 18:01:27",
     "generatedBy":  "[已移除]",
     "ips":  {
                 "asOf":  "2026-11-07 22:55:52",
@@ -1706,7 +1706,7 @@
                                     },
                                     {
                                         "item":  "决策账本",
-                                        "asOf":  "2026-11-16 17:31",
+                                        "asOf":  "2026-11-16 18:01",
                                         "ageDays":  0,
                                         "stale":  false
                                     }
@@ -1886,7 +1886,7 @@
                 },
     "qis":  {
                 "schema":  "factors-qis/v1",
-                "generatedAt":  "2026-11-16 17:30:44",
+                "generatedAt":  "2026-11-16 18:00:44",
                 "producer":  "tools/qis-factors.py（因子演算唯一生产者）",
                 "consumer":  "08:45 推演任务只读本文件，不得自行演算或自行判阈",
                 "caliber_status":  "registered_production",
@@ -1967,69 +1967,69 @@
                                                 "sh510210":  1796.5,
                                                 "sh510300":  1795.9,
                                                 "sh510500":  1795.4,
-                                                "sh512010":  1793.7,
+                                                "sh512010":  1793.8,
                                                 "sh512070":  1793.2,
                                                 "sh512170":  1792.7,
                                                 "sh512200":  1792.2,
                                                 "sh512400":  1791.6,
-                                                "sh512580":  1791.1,
-                                                "sh512660":  1790.6,
-                                                "sh512690":  1790.0,
-                                                "sh512800":  1789.5,
-                                                "sh512880":  1789.0,
-                                                "sh512890":  1788.4,
-                                                "sh512940":  1787.9,
-                                                "sh512950":  1787.3,
-                                                "sh512980":  1786.8,
-                                                "sh515030":  1786.3,
-                                                "sh515070":  1785.7,
-                                                "sh515170":  1785.2,
-                                                "sh515210":  1784.7,
-                                                "sh515220":  1784.1,
-                                                "sh515790":  1783.5,
-                                                "sh515880":  1783.0,
-                                                "sh516110":  1782.5,
-                                                "sh516150":  1781.9,
-                                                "sh516160":  1781.4,
-                                                "sh516510":  1780.9,
-                                                "sh516860":  1780.3,
-                                                "sh516970":  1779.8,
-                                                "sh517520":  1779.2,
-                                                "sh518850":  1778.7,
-                                                "sh518880":  1778.2,
-                                                "sh560080":  1777.6,
-                                                "sh560780":  1777.1,
-                                                "sh562500":  1776.6,
-                                                "sh562960":  1776.0,
-                                                "sh588000":  1775.5,
-                                                "sh588080":  1775.0,
-                                                "sh588200":  1774.5,
-                                                "sz159157":  1773.9,
-                                                "sz159327":  1773.4,
-                                                "sz159545":  1772.9,
-                                                "sz159566":  1772.3,
-                                                "sz159570":  1771.8,
-                                                "sz159611":  1771.3,
-                                                "sz159625":  1770.8,
-                                                "sz159666":  1770.2,
-                                                "sz159732":  1769.7,
-                                                "sz159745":  1769.2,
-                                                "sz159755":  1768.6,
-                                                "sz159766":  1768.1,
-                                                "sz159825":  1767.5,
-                                                "sz159852":  1767.0,
-                                                "sz159859":  1766.4,
-                                                "sz159865":  1765.9,
-                                                "sz159869":  1765.3,
-                                                "sz159870":  1764.8,
-                                                "sz159928":  1764.2,
-                                                "sz159934":  1763.7,
-                                                "sz159937":  1763.1,
-                                                "sz159949":  1762.5,
-                                                "sz159981":  1762.0,
-                                                "sz159995":  1761.5,
-                                                "sz159996":  1760.9,
-                                                "sz159998":  1760.4
+                                                "sh512580":  1791.0,
+                                                "sh512660":  1790.4,
+                                                "sh512690":  1789.9,
+                                                "sh512800":  1789.3,
+                                                "sh512880":  1788.8,
+                                                "sh512890":  1788.2,
+                                                "sh512940":  1787.6,
+                                                "sh512950":  1787.0,
+                                                "sh512980":  1786.5,
+                                                "sh515030":  1785.8,
+                                                "sh515070":  1785.2,
+                                                "sh515170":  1784.6,
+                                                "sh515210":  1784.0,
+                                                "sh515220":  1783.5,
+                                                "sh515790":  1783.0,
+                                                "sh515880":  1782.5,
+                                                "sh516110":  1782.0,
+                                                "sh516150":  1781.4,
+                                                "sh516160":  1780.9,
+                                                "sh516510":  1780.4,
+                                                "sh516860":  1779.8,
+                                                "sh516970":  1779.3,
+                                                "sh517520":  1778.7,
+                                                "sh518850":  1778.2,
+                                                "sh518880":  1777.7,
+                                                "sh560080":  1777.2,
+                                                "sh560780":  1776.6,
+                                                "sh562500":  1776.0,
+                                                "sh562960":  1775.5,
+                                                "sh588000":  1775.0,
+                                                "sh588080":  1774.4,
+                                                "sh588200":  1773.9,
+                                                "sz159157":  1773.4,
+                                                "sz159327":  1772.9,
+                                                "sz159545":  1772.3,
+                                                "sz159566":  1771.7,
+                                                "sz159570":  1771.2,
+                                                "sz159611":  1770.7,
+                                                "sz159625":  1770.2,
+                                                "sz159666":  1769.6,
+                                                "sz159732":  1769.1,
+                                                "sz159745":  1768.5,
+                                                "sz159755":  1768.0,
+                                                "sz159766":  1767.5,
+                                                "sz159825":  1766.9,
+                                                "sz159852":  1766.4,
+                                                "sz159859":  1765.9,
+                                                "sz159865":  1765.4,
+                                                "sz159869":  1764.8,
+                                                "sz159870":  1764.3,
+                                                "sz159928":  1763.8,
+                                                "sz159934":  1763.2,
+                                                "sz159937":  1762.7,
+                                                "sz159949":  1762.2,
+                                                "sz159981":  1761.6,
+                                                "sz159995":  1761.1,
+                                                "sz159996":  1760.6,
+                                                "sz159998":  1760.1
                                             },
                 "refresh":  {
                                 "ok":  true,
@@ -4608,7 +4608,7 @@
                           "fullVersion":  "仅本地 contracts/board.json（不得直接推公开仓）"
                       },
     "_freshness":  {
-                       "checkedAt":  "2026-11-16 17:31:28",
+                       "checkedAt":  "2026-11-16 18:01:28",
                        "worst":  "critical",
                        "staleCount":  2,
                        "items":  [
@@ -4616,7 +4616,7 @@
                                          "id":  "holdings",
                                          "label":  "持仓快照",
                                          "asOf":  "2026-11-05 22:55",
-                                         "ageDays":  10.77,
+                                         "ageDays":  10.8,
                                          "maxAgeDays":  1.5,
                                          "stale":  true
                                      },
@@ -4624,7 +4624,7 @@
                                          "id":  "engine-policy",
                                          "label":  "引擎政策契约",
                                          "asOf":  "2026-11-07 22:55",
-                                         "ageDays":  8.77,
+                                         "ageDays":  8.8,
                                          "maxAgeDays":  14,
                                          "stale":  false
                                      },
@@ -4632,7 +4632,7 @@
                                          "id":  "factor-registry",
                                          "label":  "因子登记表",
                                          "asOf":  "2026-11-02 23:27",
-                                         "ageDays":  13.75,
+                                         "ageDays":  13.77,
                                          "maxAgeDays":  30,
                                          "stale":  false
                                      },
@@ -4640,7 +4640,7 @@
                                          "id":  "news-mapping",
                                          "label":  "新闻映射",
                                          "asOf":  "2026-11-02 23:26",
-                                         "ageDays":  13.75,
+                                         "ageDays":  13.77,
                                          "maxAgeDays":  30,
                                          "stale":  false
                                      },
@@ -4648,7 +4648,7 @@
                                          "id":  "chain-rules",
                                          "label":  "推演规则",
                                          "asOf":  "2026-11-02 23:23",
-                                         "ageDays":  13.76,
+                                         "ageDays":  13.78,
                                          "maxAgeDays":  30,
                                          "stale":  false
                                      },
@@ -4656,7 +4656,7 @@
                                          "id":  "decisions",
                                          "label":  "决策账本",
                                          "asOf":  "2026-11-02 23:43",
-                                         "ageDays":  13.74,
+                                         "ageDays":  13.76,
                                          "maxAgeDays":  7,
                                          "stale":  true
                                      },
@@ -4664,14 +4664,14 @@
                                          "id":  "rules",
                                          "label":  "风控规则",
                                          "asOf":  "2026-11-09 10:24",
-                                         "ageDays":  7.3,
+                                         "ageDays":  7.32,
                                          "maxAgeDays":  14,
                                          "stale":  false
                                      },
                                      {
                                          "id":  "market-live",
                                          "label":  "行情快照",
-                                         "asOf":  "2026-11-16 17:30",
+                                         "asOf":  "2026-11-16 18:00",
                                          "ageDays":  0,
                                          "maxAgeDays":  0.25,
                                          "stale":  false
@@ -4680,201 +4680,18 @@
                        "banner":  "持仓快照过期：仓位与减仓额为推算值，不是实时真值"
                    },
     "nationalTeam":  {
-                         "ok":  true,
-                         "lastSuccess":  "2026-11-16 17:24:12",
-                         "asOf":  "2026-11-16 17:24:12",
+                         "ok":  false,
+                         "lastSuccess":  null,
+                         "asOf":  null,
                          "note":  "",
                          "items":  [
-                                       {
-                                           "code":  "510330",
-                                           "name":  "510330",
-                                           "shares":  15395649800,
-                                           "deltaShares":  0,
-                                           "deltaPct":  0,
-                                           "deltaWan":  0
-                                       },
-                                       {
-                                           "code":  "510350",
-                                           "name":  "510350",
-                                           "shares":  888414700,
-                                           "deltaShares":  0,
-                                           "deltaPct":  0,
-                                           "deltaWan":  0
-                                       },
-                                       {
-                                           "code":  "510320",
-                                           "name":  "510320",
-                                           "shares":  901068500,
-                                           "deltaShares":  0,
-                                           "deltaPct":  0,
-                                           "deltaWan":  0
-                                       },
-                                       {
-                                           "code":  "510300",
-                                           "name":  "沪深300ETF",
-                                           "shares":  45623287700,
-                                           "deltaShares":  0,
-                                           "deltaPct":  0,
-                                           "deltaWan":  0
-                                       },
-                                       {
-                                           "code":  "510310",
-                                           "name":  "510310",
-                                           "shares":  25855844000,
-                                           "deltaShares":  0,
-                                           "deltaPct":  0,
-                                           "deltaWan":  0
-                                       },
-                                       {
-                                           "code":  "510500",
-                                           "name":  "中证500ETF",
-                                           "shares":  8938168600,
-                                           "deltaShares":  0,
-                                           "deltaPct":  0,
-                                           "deltaWan":  0
-                                       },
-                                       {
-                                           "code":  "588000",
-                                           "name":  "科创50ETF(华夏)",
-                                           "shares":  103391668200,
-                                           "deltaShares":  0,
-                                           "deltaPct":  0,
-                                           "deltaWan":  0
-                                       },
-                                       {
-                                           "code":  "588080",
-                                           "name":  "科创50ETF(易方达)",
-                                           "shares":  34141628100,
-                                           "deltaShares":  0,
-                                           "deltaPct":  0,
-                                           "deltaWan":  0
-                                       },
-                                       {
-                                           "code":  "512880",
-                                           "name":  "证券ETF",
-                                           "shares":  54407291500,
-                                           "deltaShares":  0,
-                                           "deltaPct":  0,
-                                           "deltaWan":  0
-                                       },
-                                       {
-                                           "code":  "510880",
-                                           "name":  "红利ETF",
-                                           "shares":  5842175700,
-                                           "deltaShares":  0,
-                                           "deltaPct":  0,
-                                           "deltaWan":  0
-                                       },
-                                       {
-                                           "code":  "512100",
-                                           "name":  "中证1000ETF",
-                                           "shares":  17135217600,
-                                           "deltaShares":  0,
-                                           "deltaPct":  0,
-                                           "deltaWan":  0
-                                       },
-                                       {
-                                           "code":  "159949",
-                                           "name":  "创业板50ETF",
-                                           "shares":  24200785113,
-                                           "deltaShares":  0,
-                                           "deltaPct":  0,
-                                           "deltaWan":  0
-                                       },
-                                       {
-                                           "code":  "510050",
-                                           "name":  "上证50ETF",
-                                           "shares":  16198866800,
-                                           "deltaShares":  0,
-                                           "deltaPct":  0,
-                                           "deltaWan":  0
-                                       },
-                                       {
-                                           "code":  "159922",
-                                           "name":  "159922",
-                                           "shares":  3497676765,
-                                           "deltaShares":  0,
-                                           "deltaPct":  0,
-                                           "deltaWan":  0
-                                       },
-                                       {
-                                           "code":  "159845",
-                                           "name":  "159845",
-                                           "shares":  3171425606,
-                                           "deltaShares":  0,
-                                           "deltaPct":  0,
-                                           "deltaWan":  0
-                                       },
-                                       {
-                                           "code":  "159915",
-                                           "name":  "创业板ETF",
-                                           "shares":  45200454936,
-                                           "deltaShares":  0,
-                                           "deltaPct":  0,
-                                           "deltaWan":  0
-                                       },
-                                       {
-                                           "code":  "510060",
-                                           "name":  "510060",
-                                           "shares":  34959200,
-                                           "deltaShares":  0,
-                                           "deltaPct":  0,
-                                           "deltaWan":  0
-                                       },
-                                       {
-                                           "code":  "510210",
-                                           "name":  "上证综指ETF",
-                                           "shares":  18947192600,
-                                           "deltaShares":  0,
-                                           "deltaPct":  0,
-                                           "deltaWan":  0
-                                       },
-                                       {
-                                           "code":  "510270",
-                                           "name":  "510270",
-                                           "shares":  18832100,
-                                           "deltaShares":  0,
-                                           "deltaPct":  0,
-                                           "deltaWan":  0
-                                       },
-                                       {
-                                           "code":  "510190",
-                                           "name":  "510190",
-                                           "shares":  24650800,
-                                           "deltaShares":  0,
-                                           "deltaPct":  0,
-                                           "deltaWan":  0
-                                       },
-                                       {
-                                           "code":  "510100",
-                                           "name":  "510100",
-                                           "shares":  1031006800,
-                                           "deltaShares":  0,
-                                           "deltaPct":  0,
-                                           "deltaWan":  0
-                                       },
-                                       {
-                                           "code":  "510180",
-                                           "name":  "上证180ETF",
-                                           "shares":  4451057700,
-                                           "deltaShares":  0,
-                                           "deltaPct":  0,
-                                           "deltaWan":  0
-                                       }
+
                                    ],
-                         "error":  null,
-                         "discipline":  "ETF 份额变化来自全市场申赎，机构/套利/个人共同参与。「净申购=国家队买入」属推断，不得写成确证。",
-                         "dateCurrent":  "2026-11-16",
-                         "datePrev":  "2026-11-15",
-                         "summary":  {
-                                         "total":  22,
-                                         "up":  0,
-                                         "down":  0,
-                                         "flat":  22
-                                     }
+                         "error":  "使用“1”个参数调用“DownloadString”时发生异常:“操作超时”",
+                         "discipline":  "ETF 份额变化来自全市场申赎，机构/套利/个人共同参与。「净申购=国家队买入」属推断，不得写成确证。"
                      },
     "notifications":  {
-                          "generatedAt":  "2026-11-16 17:31:59",
+                          "generatedAt":  "2026-11-16 18:03:08",
                           "count":  1,
                           "byLevel":  {
                                           "urgent":  0,
@@ -4894,7 +4711,7 @@
                           "policy":  "通知内容脱敏：不含金额、不含持仓名称；明细需解锁查看"
                       },
     "market":  {
-                   "generatedAt":  "2026-11-16 17:30:43",
+                   "generatedAt":  "2026-11-16 18:00:43",
                    "source":  "qt.gtimg.cn（指数）+ hq.sinajs.cn（外盘/汇率）",
                    "note":  "cn10y / us30y 无可用公开接口，已如实标 missing；下游不得把缺失当 0 或沿用旧值。",
                    "okCount":  5,
@@ -4947,12 +4764,12 @@
                                                  "ok":  true,
                                                  "kind":  "quote",
                                                  "error":  null,
-                                                 "asOf":  "2026-11-16 17:30:42",
+                                                 "asOf":  "2026-11-16 18:00:42",
                                                  "value":  {
                                                                "code":  "hf_OIL",
                                                                "name":  "布伦特原油",
-                                                               "price":  94.884,
-                                                               "asOf":  "2026-11-16 17:30:42",
+                                                               "price":  95.726,
+                                                               "asOf":  "2026-11-16 18:00:42",
                                                                "label":  "布伦特原油"
                                                            }
                                              },
@@ -4960,12 +4777,12 @@
                                                "ok":  true,
                                                "kind":  "quote",
                                                "error":  null,
-                                               "asOf":  "2026-11-16 17:30:37",
+                                               "asOf":  "2026-11-16 18:00:43",
                                                "value":  {
                                                              "code":  "hf_CL",
                                                              "name":  "纽约原油",
-                                                             "price":  88.044,
-                                                             "asOf":  "2026-11-16 17:30:37",
+                                                             "price":  88.662,
+                                                             "asOf":  "2026-11-16 18:00:43",
                                                              "label":  "纽约原油"
                                                          }
                                            },
@@ -4973,12 +4790,12 @@
                                                 "ok":  true,
                                                 "kind":  "quote",
                                                 "error":  null,
-                                                "asOf":  "2026-11-16 17:30:31",
+                                                "asOf":  "2026-11-16 18:00:40",
                                                 "value":  {
                                                               "code":  "hf_GC",
                                                               "name":  "纽约黄金",
-                                                              "price":  3858.752,
-                                                              "asOf":  "2026-11-16 17:30:31",
+                                                              "price":  3858.785,
+                                                              "asOf":  "2026-11-16 18:00:40",
                                                               "label":  "纽约黄金"
                                                           }
                                             },
@@ -4986,12 +4803,12 @@
                                                   "ok":  true,
                                                   "kind":  "quote",
                                                   "error":  null,
-                                                  "asOf":  "2026-11-16 17:30:01",
+                                                  "asOf":  "2026-11-16 18:00:01",
                                                   "value":  {
                                                                 "code":  "USDCNY",
                                                                 "name":  "美元人民币",
-                                                                "price":  6.6656,
-                                                                "asOf":  "2026-11-16 17:30:01",
+                                                                "price":  6.6662,
+                                                                "asOf":  "2026-11-16 18:00:01",
                                                                 "label":  "美元人民币"
                                                             }
                                               },
@@ -5012,7 +4829,7 @@
                                }
                },
     "automation":  {
-                       "generatedAt":  "2026-11-16 17:32:01",
+                       "generatedAt":  "2026-11-16 18:03:11",
                        "jobsSha256":  "c6d339af4d374b049e4cdf4fe6790343aabf0a683f2b3f68f2c6ee724e44a521",
                        "source":  "jobs.json + \\DSH\\ 计划任务 + _audit/jobs/status.json（触发层）；harness schedule store + _audit/refresh-log.jsonl（数据层）",
                        "note":  "单向耦合：触发层(计划任务/jobs.py) → 本文件 → board.json → 页面。页面无法反向触发任务。schedules 为 Harness 历史侧，superseded=true 表示已迁出、不再是驱动者。",
@@ -5023,7 +4840,7 @@
                                              "kind":  "every",
                                              "everySeconds":  1800,
                                              "scheduledAt":  "2026-11-09T14:43:56.989Z",
-                                             "nextRunAt":  "2026-11-16 17:43:56",
+                                             "nextRunAt":  "2026-11-16 18:13:56",
                                              "status":  "paused",
                                              "superseded":  true
                                          }
@@ -5070,9 +4887,9 @@
                                             "title":  "数据实时性流水线",
                                             "schedule":  "every 30min",
                                             "state":  "Running",
-                                            "lastRunAt":  "2026-11-16 17:30:41",
+                                            "lastRunAt":  "2026-11-16 18:00:41",
                                             "lastResult":  267009,
-                                            "nextRunAt":  "2026-11-16 18:00:40",
+                                            "nextRunAt":  "2026-11-16 18:30:40",
                                             "level":  "warn",
                                             "exitCode":  2,
                                             "failStreak":  0
@@ -5119,12 +4936,6 @@
                                              }
                                          ],
                        "lastRuns":  [
-                                        {
-                                            "at":  "2026-11-16T07:33:17+08:00",
-                                            "overall":  "WARN",
-                                            "durationMs":  155718,
-                                            "dataAgeMin":  1.9
-                                        },
                                         {
                                             "at":  "2026-11-16T08:04:49+08:00",
                                             "overall":  "WARN",
@@ -5238,6 +5049,12 @@
                                             "overall":  "WARN",
                                             "durationMs":  267923,
                                             "dataAgeMin":  3.7
+                                        },
+                                        {
+                                            "at":  "2026-11-16T17:33:32+08:00",
+                                            "overall":  "WARN",
+                                            "durationMs":  170486,
+                                            "dataAgeMin":  2.1
                                         }
                                     ],
                        "stats":  {
@@ -5245,8 +5062,8 @@
                                      "ok":  8,
                                      "warn":  12,
                                      "fail":  0,
-                                     "consecutiveBad":  1,
-                                     "lastRunAt":  "2026-11-16T17:05:09+08:00",
+                                     "consecutiveBad":  2,
+                                     "lastRunAt":  "2026-11-16T17:33:32+08:00",
                                      "lastOverall":  "WARN"
                                  },
                        "health":  {
@@ -5260,7 +5077,7 @@
     "holdingsIntegrity":  {
                               "status":  "BLOCK",
                               "canRecommend":  false,
-                              "checkedAt":  "2026-11-16T17:32:02.006003+08:00",
+                              "checkedAt":  "2026-11-16T18:03:11.730526+08:00",
                               "schemaVersion":  "1.0",
                               "issues":  [
                                              {
@@ -5272,7 +5089,7 @@
                                              {
                                                  "id":  "holdings",
                                                  "status":  "BLOCK",
-                                                 "maxAgeHours":  258.7357066675,
+                                                 "maxAgeHours":  259.2550745905555,
                                                  "thresholdHours":  36.0
                                              },
                                              {
@@ -5298,113 +5115,7 @@
                                          },
                               "source":  "investment-os/tools/export-holdings-integrity.py",
                               "keyId":  "board-v1",
-                              "signedDigest":  "ff20fe2f1f42b393fe5c28232067ba0a7f8873bd95efca047a7b6a87ae49b17c",
-                              "signature":  "8922e7654ff43edabd8d632eeb167c3250b34bd4ab0c5daaaa1463a792bb6becd76489a3cbf0308cbabf960da8aa1fb66445dfed22c339d7f16548ce37515c0a"
-                          },
-    "decisionIntegrity": {
-        "schema": "decision-integrity/v1",
-        "source": "finhub-data/tools/board_integrity.py",
-        "status": "BLOCK",
-        "canRecommend": false,
-        "checkedAt": "2026-11-16T17:32:18.882385+08:00",
-        "policy": {
-            "maxHoldingsAgeHours": 36.0,
-            "maxMarketAgeDays": 4.0,
-            "maxBoardAgeHours": 24.0,
-            "requiredIndexCodes": [
-                "sh000001",
-                "sh000300",
-                "sz399001",
-                "sz399006"
-            ],
-            "unresolvedPolicyItemsBlock": true,
-            "requiresHoldingsVerdict": true,
-            "holdingsVerdictMaxAgeHours": 24.0,
-            "requiresHoldingsVerdictSignature": true,
-            "thresholdSource": "contracts/thresholds.json",
-            "thresholdDigest": "2388dbea35bff856eca566bd579a9f304c8ed4304dc7c3bbeb53bea6aa3063d1"
-        },
-        "checks": [
-            {
-                "id": "board",
-                "maxAgeHours": 24.0
-            },
-            {
-                "id": "holdings",
-                "ageHours": 259.2,
-                "maxAgeHours": 36.0
-            },
-            {
-                "id": "holdingsVerdict",
-                "status": "BLOCK",
-                "maxAgeHours": 24.0,
-                "engineStatus": "BLOCK",
-                "engineIssues": [
-                    "HOLDINGS_STALE"
-                ],
-                "canRecommend": false,
-                "checkedAt": "2026-11-16T17:32:02.006003+08:00",
-                "schemaVersion": "1.0",
-                "signatureVerified": true
-            },
-            {
-                "id": "market",
-                "indices": 4,
-                "expectedIndices": 4,
-                "maxAgeDays": 4.0
-            },
-            {
-                "id": "policy",
-                "unresolvedItems": 4,
-                "status": "BLOCK"
-            }
-        ],
-        "issues": [
-            {
-                "code": "HOLDINGS_STALE",
-                "message": "持仓快照超过36小时",
-                "actual": 259.2
-            },
-            {
-                "code": "HOLDINGS_MARKED_STALE",
-                "message": "上游已标记持仓快照过期"
-            },
-            {
-                "code": "HOLDINGS_FRESHNESS_STALE",
-                "message": "全局 freshness 中的持仓快照超过36小时",
-                "actual": 10.77
-            },
-            {
-                "code": "HOLDINGS_VERDICT_BLOCK",
-                "message": "引擎闸门 A 判定持仓输入不可用于决策，数据仓必须一并阻断",
-                "actual": [
-                    "HOLDINGS_STALE"
-                ],
-                "engineStatus": "BLOCK"
-            },
-            {
-                "code": "POLICY_UNRESOLVED",
-                "message": "政策契约仍存在未裁定 warn/gap 项，暂不允许给出动作",
-                "actual": [
-                    {
-                        "name": "再平衡方式",
-                        "status": "warn"
-                    },
-                    {
-                        "name": "风险预算",
-                        "status": "warn"
-                    },
-                    {
-                        "name": "回撤熔断",
-                        "status": "warn"
-                    },
-                    {
-                        "name": "交易频率上限",
-                        "status": "gap"
-                    }
-                ]
-            }
-        ],
-        "message": "决策已阻断：输入时效、行情完整性或政策口径尚未通过审计"
-    }
+                              "signedDigest":  "6ae7e65b6911f2abb6f156ce29a426d7537e4f89b52e945d249b3b675701392b",
+                              "signature":  "24e981da82c50d9b3cdf5c63c5f94c7b21c0d2e8043074252414fcb85c20461108acfc67aed9e2ebfedc1a704c4347c24bfe7c8d63374bc8f0f9293d6313b40b"
+                          }
 }
