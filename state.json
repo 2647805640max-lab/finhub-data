@@ -1,6 +1,6 @@
 {
- "generatedAt": "2026-11-16 09:22:21",
- "ts": 1794792141635,
+ "generatedAt": "2026-11-16 09:25:17",
+ "ts": 1794792317324,
  "overseas": {
   "fetchedAt": 1794791306799,
   "quotes": {
@@ -548,7 +548,7 @@
   "rule": "单条快讯永不触发推演；假设卡只是待验证项，不改 action；缺口优先于结论"
  },
  "freshness": {
-  "builtAt": "2026-11-16 09:20:12",
+  "builtAt": "2026-11-16 09:23:06",
   "inSession": true,
   "items": [
    {
@@ -570,7 +570,7 @@
     "tier": "daily",
     "source": "东财 datacenter（收盘口径，唯一记录源）",
     "asof": "2026-11-13 16:00",
-    "ageHours": 65.3,
+    "ageHours": 65.4,
     "valid": false,
     "limitHours": 40,
     "invalidIf": "中国10Y 超过 40 小时未更新（含一个交易日）；美债 T+1，放宽到 96 小时",
@@ -582,7 +582,7 @@
     "name": "商品盘中观测",
     "tier": "quote",
     "source": "新浪 hf_（非判定口径）",
-    "asof": "2026-11-16 09:19",
+    "asof": "2026-11-16 09:22",
     "ageHours": 0.0,
     "valid": true,
     "limitHours": 40,
@@ -595,7 +595,7 @@
     "name": "投资引擎裁决",
     "tier": "daily",
     "source": "invest-engine core_engine_v1_1（收盘序列）",
-    "asof": "2026-11-16 09:19",
+    "asof": "2026-11-16 09:22",
     "ageHours": 0.0,
     "valid": true,
     "limitHours": 40,
@@ -648,7 +648,7 @@
     "tier": "daily",
     "source": "~/projects/daily-news/digest_*.md",
     "asof": "2026-11-15 16:00",
-    "ageHours": 17.3,
+    "ageHours": 17.4,
     "valid": true,
     "limitHours": 40,
     "invalidIf": "digest 不是当天的（超过 40 小时）或条目为空",
@@ -661,7 +661,7 @@
     "tier": "daily",
     "source": "DeepSeek 打分（按 digest 日期缓存）",
     "asof": "2026-11-15 16:00",
-    "ageHours": 17.3,
+    "ageHours": 17.4,
     "valid": true,
     "limitHours": 40,
     "invalidIf": "与 digest 不同日 / 打分报错",
@@ -674,7 +674,7 @@
     "tier": "manual",
     "source": "手工登记（券商/建行/支付宝）+ ~/.dsh/finwatch",
     "asof": "2026-11-05 16:00",
-    "ageHours": 257.3,
+    "ageHours": 257.4,
     "valid": false,
     "limitHours": 168,
     "invalidIf": "超过 7 天未更新（手工快照，不自动采）",
@@ -686,7 +686,7 @@
     "name": "告警",
     "tier": "quote",
     "source": "finwatch alerts.json",
-    "asof": "2026-11-16 09:19",
+    "asof": "2026-11-16 09:22",
     "ageHours": 0.0,
     "valid": true,
     "limitHours": 168,
@@ -700,7 +700,7 @@
     "tier": "daily",
     "source": "E:/q4-2026/reports/chain-model.md + daily-log",
     "asof": "2026-11-16 16:00",
-    "ageHours": -6.7,
+    "ageHours": -6.6,
     "valid": true,
     "limitHours": 96,
     "invalidIf": "超过 96 小时未更新",
@@ -715,7 +715,7 @@
     "reason": "已 65 小时未更新（阈值 40h）",
     "hard": true,
     "asof": "2026-11-13 16:00",
-    "ageHours": 65.3
+    "ageHours": 65.4
    },
    {
     "key": "holdings",
@@ -723,7 +723,7 @@
     "reason": "已 257 小时未更新（阈值 168h）",
     "hard": false,
     "asof": "2026-11-05 16:00",
-    "ageHours": 257.3
+    "ageHours": 257.4
    }
   ],
   "counts": {
@@ -1225,6 +1225,6 @@
   "source": "local-fallback",
   "degraded": true,
   "reason": "vps_unavailable",
-  "observedAt": "2026-11-16 09:22:49"
+  "observedAt": "2026-11-16 09:25:45"
  }
 }
