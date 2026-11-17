@@ -1,8 +1,8 @@
 {
- "generatedAt": "2026-11-17 15:41:15",
- "ts": 1794901275519,
+ "generatedAt": "2026-11-17 16:12:19",
+ "ts": 1794903139035,
  "overseas": {
-  "fetchedAt": 1794899523106,
+  "fetchedAt": 1794901335922,
   "quotes": {
    "items": [
     {
@@ -37,9 +37,9 @@
      "name": "恒生指数",
      "kind": "idx",
      "unit": "",
-     "price": 23530.55,
-     "chgPct": -0.94,
-     "asof": "2026-11-17 06:57"
+     "price": 23542.99,
+     "chgPct": -0.89,
+     "asof": "2026-11-17 07:27"
     },
     {
      "code": "^DJI",
@@ -82,27 +82,27 @@
      "name": "美元指数",
      "kind": "idx",
      "unit": "",
-     "price": 103.47,
-     "chgPct": -0.07,
-     "asof": "2026-11-17 07:02"
+     "price": 103.5,
+     "chgPct": -0.05,
+     "asof": "2026-11-17 07:32"
     },
     {
      "code": "GC=F",
      "name": "COMEX黄金",
      "kind": "fut",
      "unit": "usd",
-     "price": 3880.7,
-     "chgPct": 0.72,
-     "asof": "2026-11-17 07:02"
+     "price": 3878.5,
+     "chgPct": 0.66,
+     "asof": "2026-11-17 07:32"
     },
     {
      "code": "CL=F",
      "name": "WTI原油",
      "kind": "fut",
      "unit": "usd",
-     "price": 84.8,
-     "chgPct": -1.07,
-     "asof": "2026-11-17 07:02"
+     "price": 85.08,
+     "chgPct": -0.75,
+     "asof": "2026-11-17 07:32"
     },
     {
      "code": "HG=F",
@@ -110,8 +110,8 @@
      "kind": "fut",
      "unit": "usd",
      "price": 5.97,
-     "chgPct": -0.56,
-     "asof": "2026-11-17 07:02"
+     "chgPct": -0.62,
+     "asof": "2026-11-17 07:31"
     },
     {
      "code": "^TNX",
@@ -133,7 +133,7 @@
     }
    ],
    "errors": null,
-   "fetchedAt": 1794899524435
+   "fetchedAt": 1794901337217
   },
   "fred": {
    "items": [
@@ -897,7 +897,7 @@
     "amount": 108717961.0
    }
   ],
-  "fetchedAt": 1794899522406
+  "fetchedAt": 1794901334071
  },
  "bonds": {
   "asof": "2026-11-16",
@@ -922,22 +922,22 @@
  },
  "commodity": {
   "OIL": {
-   "price": 91.424,
+   "price": 92.187,
    "prev": 92.44,
-   "chgPct": -1.1,
-   "time": "15:12:05"
+   "chgPct": -0.27,
+   "time": "15:42:16"
   },
   "CL": {
-   "price": 84.789,
+   "price": 85.464,
    "prev": 85.72,
-   "chgPct": -1.09,
-   "time": "15:12:05"
+   "chgPct": -0.3,
+   "time": "15:42:19"
   },
   "XAU": {
-   "price": 3876.31,
+   "price": 3872.84,
    "prev": 3856.24,
-   "chgPct": 0.52,
-   "time": "15:11:00"
+   "chgPct": 0.43,
+   "time": "15:42:00"
   }
  },
  "engine": {
@@ -1054,7 +1054,7 @@
    "schemaVersion": "1.0",
    "status": "PASS",
    "canRecommend": true,
-   "checkedAt": "2026-11-17T15:12:10.821221+08:00",
+   "checkedAt": "2026-11-17T15:42:25.096247+08:00",
    "policy": {
     "maxMarketAgeDays": 4.0,
     "requiredIndices": [
@@ -1102,9 +1102,9 @@
     "code": "^HSI",
     "name": "恒生指数",
     "kind": "idx",
-    "price": 23530.55,
-    "chgPct": -0.94,
-    "asof": "2026-11-17 06:57",
+    "price": 23542.99,
+    "chgPct": -0.89,
+    "asof": "2026-11-17 07:27",
     "src": "yahoo"
    },
    {
@@ -1175,7 +1175,7 @@
    }
   ],
   "errors": null,
-  "fetchedAt": 1794899526102
+  "fetchedAt": 1794901340272
  },
  "causal": {
   "tier": "causal",
@@ -1257,7 +1257,7 @@
     },
     {
      "name": "恒生指数",
-     "chgPct": -0.94,
+     "chgPct": -0.89,
      "note": "情绪/联动，无稳定传导机制"
     },
     {
@@ -1307,46 +1307,12 @@
   },
   "rule": "因果因子（有机制+历史可复现）可改 action；相关因子只进评分，永不投票",
   "asof": "2026-11-16",
-  "builtAt": "2026-11-17 15:12:13",
-  "yields": {
-   "record": {
-    "value": 5.12,
-    "date": "2026-11-16",
-    "src": "东财 datacenter"
-   },
-   "check": {
-    "value": 5.15,
-    "date": "2026-11-13",
-    "src": "FRED"
-   },
-   "deltaBp": -3.0,
-   "verdict": "日期不同（记录源 2026-11-16 / 校验源 2026-11-13），差值 -3bp 属 T+1 差异，不视为矛盾"
-  }
+  "builtAt": "2026-11-17 15:42:27"
  },
  "runtime": {
   "source": "local",
   "degraded": false,
   "reason": null,
-  "observedAt": "2026-11-17 15:41:44"
- },
- "discipline": {
-  "status": "COMPLIANT",
-  "strictRiskPct": 10.71,
-  "strictRiskCapPct": 15,
-  "targetStrictRiskPct": 15,
-  "goldPct": 27.81,
-  "goldAlertPct": 30,
-  "goldMaxPct": 35,
-  "thesisGate": "valid",
-  "breaches": []
- },
- "externalSignal": {
-  "marketAction": "WAIT",
-  "addRiskAllowed": false,
-  "marketRegime": "external-caution",
-  "confidence": "observed"
- },
- "combined": "HOLD_NO_NEW_RISK",
- "disciplineAsOf": "2026-11-05",
- "disciplineGeneratedAt": "2026-11-17T07:42:07.866Z"
+  "observedAt": "2026-11-17 16:12:47"
+ }
 }
