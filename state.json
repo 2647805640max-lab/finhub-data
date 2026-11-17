@@ -487,16 +487,16 @@
   "errors": null
  },
  "burst": {
-  "builtAt": "2026-11-18 06:27:55",
+  "builtAt": "2026-11-18 06:58:50",
   "poll": {
    "ok": true,
    "cached": false,
-   "newItems": 13,
+   "newItems": 11,
    "error": null
   },
   "cluster": {
    "windowHours": 6,
-   "recent": 82,
+   "recent": 86,
    "clusters": [
     {
      "keyword": "亿美元",
@@ -505,6 +505,33 @@
       "SpaceX最快本周启动400亿美元AI芯片债务融资的部分发行",
       "英伟达预计第四季度营收1274亿至1326亿美元 高于市场预期",
       "英伟达董事会批准增加1500亿美元股票回购计划，剩余股票回购授权额度为2273亿美元"
+     ]
+    },
+    {
+     "keyword": "英伟达临时",
+     "n": 7,
+     "sample": [
+      "英伟达临时CEO克雷斯称 英伟达各代GPU租赁价格全面上涨",
+      "英伟达临时CEO克雷斯称Vera Rubin NVL72与Vera CPU于第三季度开始量产出货 采用台积电技术",
+      "英伟达临时CEO表示 根据多年期协议 Hopper GPU的重新签约价格最高达到原价的两倍"
+     ]
+    },
+    {
+     "keyword": "克雷斯称",
+     "n": 5,
+     "sample": [
+      "英伟达临时CEO克雷斯称 英伟达各代GPU租赁价格全面上涨",
+      "英伟达临时CEO克雷斯称Vera Rubin NVL72与Vera CPU于第三季度开始量产出货 采用台积电技术",
+      "英伟达临时CEO克雷斯称，英伟达将严格审视提供融资支持的企业，数据中心担保仅在设施就绪后启动，建设期间不提供，若数据中心"
+     ]
+    },
+    {
+     "keyword": "英伟达董事会",
+     "n": 4,
+     "sample": [
+      "英伟达董事会批准增加1500亿美元股票回购计划，剩余股票回购授权额度为2273亿美元",
+      "英伟达董事会主席表示 公司不打算让黄仁勋复职",
+      "英伟达董事会批准增加1500亿美元股票回购计划 剩余股票回购授权额度为2273亿美元"
      ]
     },
     {
@@ -532,24 +559,6 @@
       "英伟达预计第四季度营收1274亿至1326亿美元 高于市场预期",
       "英伟达股价盘后涨超2%，公司预计第四季度营收1261亿至1339亿美元，高于市场预期",
       "英伟达预计第四季度营收1261亿至1339亿美元 高于市场预期"
-     ]
-    },
-    {
-     "keyword": "英伟达董事会",
-     "n": 3,
-     "sample": [
-      "英伟达董事会批准增加1500亿美元股票回购计划，剩余股票回购授权额度为2273亿美元",
-      "英伟达董事会主席表示 公司不打算让黄仁勋复职",
-      "英伟达董事会批准增加1500亿美元股票回购计划 剩余股票回购授权额度为2273亿美元"
-     ]
-    },
-    {
-     "keyword": "英伟达临时",
-     "n": 3,
-     "sample": [
-      "英伟达临时CEO克雷斯称 英伟达各代GPU租赁价格全面上涨",
-      "英伟达临时CEO克雷斯称Vera Rubin NVL72与Vera CPU于第三季度开始量产出货 采用台积电技术",
-      "英伟达临时CEO表示 根据多年期协议 Hopper GPU的重新签约价格最高达到原价的两倍"
      ]
     }
    ]
@@ -603,17 +612,17 @@
    {
     "key": "holdings",
     "name": "持仓快照",
-    "reason": "已 302 小时未更新（阈值 168h）",
+    "reason": "已 303 小时未更新（阈值 168h）",
     "hard": false,
     "asof": "2026-11-05 16:00",
-    "ageHours": 302.5
+    "ageHours": 303.0
    }
   ],
   "incomplete": false,
   "rule": "单条快讯永不触发推演；假设卡只是待验证项，不改 action；缺口优先于结论"
  },
  "freshness": {
-  "builtAt": "2026-11-18 06:27:55",
+  "builtAt": "2026-11-18 06:58:50",
   "inSession": false,
   "items": [
    {
@@ -621,7 +630,7 @@
     "name": "A股四大指数",
     "tier": "quote",
     "source": "新浪实时（本机）/ VPS",
-    "asof": "2026-11-18 06:20",
+    "asof": "2026-11-18 06:50",
     "ageHours": 0.1,
     "valid": true,
     "limitHours": 26,
@@ -635,7 +644,7 @@
     "tier": "daily",
     "source": "东财 datacenter（收盘口径，唯一记录源）",
     "asof": "2026-11-17 16:00",
-    "ageHours": 14.5,
+    "ageHours": 15.0,
     "valid": true,
     "limitHours": 96,
     "invalidIf": "中国10Y 超过 40 小时未更新（含一个交易日）；美债 T+1，放宽到 96 小时",
@@ -647,7 +656,7 @@
     "name": "商品盘中观测",
     "tier": "quote",
     "source": "新浪 hf_（非判定口径）",
-    "asof": "2026-11-18 06:27",
+    "asof": "2026-11-18 06:58",
     "ageHours": 0.0,
     "valid": true,
     "limitHours": 96,
@@ -660,7 +669,7 @@
     "name": "投资引擎裁决",
     "tier": "daily",
     "source": "invest-engine core_engine_v1_1（收盘序列）",
-    "asof": "2026-11-18 06:27",
+    "asof": "2026-11-18 06:58",
     "ageHours": 0.0,
     "valid": true,
     "limitHours": 96,
@@ -673,7 +682,7 @@
     "name": "扩展指数/商品主力",
     "tier": "quote",
     "source": "VPS 海外层 / 新浪",
-    "asof": "2026-11-18 06:20",
+    "asof": "2026-11-18 06:50",
     "ageHours": 0.1,
     "valid": true,
     "limitHours": 96,
@@ -686,7 +695,7 @@
     "name": "海外宏观（VIX/美元/金/美债）",
     "tier": "quote",
     "source": "Yahoo + FRED（VPS 直连）",
-    "asof": "2026-11-18 06:20",
+    "asof": "2026-11-18 06:50",
     "ageHours": 0.1,
     "valid": true,
     "limitHours": 96,
@@ -699,7 +708,7 @@
     "name": "因子推演（因果层 C1-C4）",
     "tier": "daily",
     "source": "macro_causal.build（东财+腾讯日线）",
-    "asof": "2026-11-18 06:20",
+    "asof": "2026-11-18 06:51",
     "ageHours": 0.1,
     "valid": true,
     "limitHours": 96,
@@ -713,7 +722,7 @@
     "tier": "daily",
     "source": "~/projects/daily-news/digest_*.md",
     "asof": "2026-11-17 16:00",
-    "ageHours": 14.5,
+    "ageHours": 15.0,
     "valid": true,
     "limitHours": 40,
     "invalidIf": "digest 不是当天的（超过 40 小时）或条目为空",
@@ -726,7 +735,7 @@
     "tier": "daily",
     "source": "DeepSeek 打分（按 digest 日期缓存）",
     "asof": "2026-11-17 16:00",
-    "ageHours": 14.5,
+    "ageHours": 15.0,
     "valid": true,
     "limitHours": 40,
     "invalidIf": "与 digest 不同日 / 打分报错",
@@ -739,11 +748,11 @@
     "tier": "manual",
     "source": "手工登记（券商/建行/支付宝）+ ~/.dsh/finwatch",
     "asof": "2026-11-05 16:00",
-    "ageHours": 302.5,
+    "ageHours": 303.0,
     "valid": false,
     "limitHours": 168,
     "invalidIf": "超过 7 天未更新（手工快照，不自动采）",
-    "reason": "已 302 小时未更新（阈值 168h）",
+    "reason": "已 303 小时未更新（阈值 168h）",
     "hard": false
    },
    {
@@ -751,7 +760,7 @@
     "name": "告警",
     "tier": "quote",
     "source": "finwatch alerts.json",
-    "asof": "2026-11-18 06:27",
+    "asof": "2026-11-18 06:58",
     "ageHours": 0.0,
     "valid": true,
     "limitHours": 168,
@@ -765,7 +774,7 @@
     "tier": "daily",
     "source": "E:/q4-2026/reports/chain-model.md + daily-log",
     "asof": "2026-11-17 16:00",
-    "ageHours": 14.5,
+    "ageHours": 15.0,
     "valid": true,
     "limitHours": 96,
     "invalidIf": "超过 96 小时未更新",
@@ -777,10 +786,10 @@
    {
     "key": "holdings",
     "name": "持仓快照",
-    "reason": "已 302 小时未更新（阈值 168h）",
+    "reason": "已 303 小时未更新（阈值 168h）",
     "hard": false,
     "asof": "2026-11-05 16:00",
-    "ageHours": 302.5
+    "ageHours": 303.0
    }
   ],
   "counts": {
@@ -1276,12 +1285,46 @@
   },
   "rule": "因果因子（有机制+历史可复现）可改 action；相关因子只进评分，永不投票",
   "asof": "2026-11-16",
-  "builtAt": "2026-11-18 06:51:01"
+  "builtAt": "2026-11-18 06:51:01",
+  "yields": {
+   "record": {
+    "value": 5.12,
+    "date": "2026-11-16",
+    "src": "东财 datacenter"
+   },
+   "check": {
+    "value": 5.12,
+    "date": "2026-11-16",
+    "src": "FRED"
+   },
+   "deltaBp": 0.0,
+   "verdict": "两源一致（差 +0bp）"
+  }
  },
  "runtime": {
   "source": "local",
   "degraded": false,
   "reason": null,
   "observedAt": "2026-11-18 06:58:34"
- }
+ },
+ "discipline": {
+  "status": "COMPLIANT",
+  "strictRiskPct": 10.71,
+  "strictRiskCapPct": 15,
+  "targetStrictRiskPct": 15,
+  "goldPct": 27.81,
+  "goldAlertPct": 30,
+  "goldMaxPct": 35,
+  "thesisGate": "valid",
+  "breaches": []
+ },
+ "externalSignal": {
+  "marketAction": "WAIT",
+  "addRiskAllowed": false,
+  "marketRegime": "external-caution",
+  "confidence": "observed"
+ },
+ "combined": "HOLD_NO_NEW_RISK",
+ "disciplineAsOf": "2026-11-05",
+ "disciplineGeneratedAt": "2026-11-17T22:58:55.355Z"
 }
