@@ -1,6 +1,6 @@
 {
- "generatedAt": "2026-11-17 13:39:05",
- "ts": 1794893945536,
+ "generatedAt": "2026-11-17 13:43:28",
+ "ts": 1794894208672,
  "source": "vps",
  "tunnelUrl": "https://trunk-lamb-spyware-instant.trycloudflare.com",
  "market": {
@@ -8,75 +8,75 @@
    {
     "code": "sh000001",
     "name": "上证指数",
-    "price": 3596.7824,
-    "chg": -5.7874,
-    "chgPct": -0.16
+    "price": 3594.3738,
+    "chg": -8.196,
+    "chgPct": -0.23
    },
    {
     "code": "sh000300",
     "name": "沪深300",
-    "price": 3977.3303,
-    "chg": -2.4732,
-    "chgPct": -0.06
+    "price": 3975.6457,
+    "chg": -4.1578,
+    "chgPct": -0.1
    },
    {
     "code": "sz399001",
     "name": "深证成指",
-    "price": 10695.89,
-    "chg": 5.112,
-    "chgPct": 0.05
+    "price": 10686.83,
+    "chg": -3.947,
+    "chgPct": -0.04
    },
    {
     "code": "sz399006",
     "name": "创业板指",
-    "price": 2303.17,
-    "chg": -16.851,
-    "chgPct": -0.73
+    "price": 2301.6,
+    "chg": -18.417,
+    "chgPct": -0.79
    }
   ],
   "watch": [
    {
     "code": "sh518880",
     "name": "黄金ETF华安",
-    "price": 7.923,
+    "price": 7.914,
     "prev": 7.852,
-    "chgPct": 0.9,
-    "amount": 2529242701.0
+    "chgPct": 0.79,
+    "amount": 2579124255.0
    },
    {
     "code": "sh512400",
     "name": "有色ETF南方",
-    "price": 1.343,
+    "price": 1.339,
     "prev": 1.332,
-    "chgPct": 0.83,
-    "amount": 371729880.0
+    "chgPct": 0.53,
+    "amount": 377593233.0
    },
    {
     "code": "sh512480",
     "name": "半导体ETF国联安",
-    "price": 0.762,
+    "price": 0.761,
     "prev": 0.749,
-    "chgPct": 1.74,
-    "amount": 1053740355.0
+    "chgPct": 1.6,
+    "amount": 1060948569.0
    },
    {
     "code": "sh515790",
     "name": "光伏ETF",
-    "price": 0.67,
+    "price": 0.669,
     "prev": 0.677,
-    "chgPct": -1.03,
-    "amount": 141101249.0
+    "chgPct": -1.18,
+    "amount": 143902009.0
    },
    {
     "code": "sh516010",
     "name": "游戏动漫ETF",
-    "price": 0.971,
+    "price": 0.97,
     "prev": 0.986,
-    "chgPct": -1.52,
-    "amount": 83234131.0
+    "chgPct": -1.62,
+    "amount": 83711403.0
    }
   ],
-  "fetchedAt": 1794893946340
+  "fetchedAt": 1794894209475
  },
  "bonds": {
   "asof": "2026-11-16",
@@ -100,7 +100,7 @@
   }
  },
  "overseas": {
-  "fetchedAt": 1794893947914,
+  "fetchedAt": 1794894210231,
   "quotes": {
    "items": [
     {
@@ -108,9 +108,9 @@
      "name": "韩国KOSPI",
      "kind": "idx",
      "unit": "",
-     "price": 4988.23,
-     "chgPct": -2.2,
-     "asof": "2026-11-17 05:19"
+     "price": 5002.5,
+     "chgPct": -1.92,
+     "asof": "2026-11-17 05:23"
     },
     {
      "code": "^SOX",
@@ -126,18 +126,18 @@
      "name": "日经225",
      "kind": "idx",
      "unit": "",
-     "price": 59044.0,
-     "chgPct": -1.04,
-     "asof": "2026-11-17 05:24"
+     "price": 59066.58,
+     "chgPct": -1.0,
+     "asof": "2026-11-17 05:28"
     },
     {
      "code": "^HSI",
      "name": "恒生指数",
      "kind": "idx",
      "unit": "",
-     "price": 23595.12,
-     "chgPct": -0.67,
-     "asof": "2026-11-17 05:24"
+     "price": 23599.98,
+     "chgPct": -0.65,
+     "asof": "2026-11-17 05:28"
     },
     {
      "code": "^DJI",
@@ -181,35 +181,35 @@
      "kind": "idx",
      "unit": "",
      "price": 103.49,
-     "chgPct": -0.05,
-     "asof": "2026-11-17 05:29"
+     "chgPct": -0.06,
+     "asof": "2026-11-17 05:33"
     },
     {
      "code": "GC=F",
      "name": "COMEX黄金",
      "kind": "fut",
      "unit": "usd",
-     "price": 3884.8,
-     "chgPct": 0.82,
-     "asof": "2026-11-17 05:29"
+     "price": 3887.0,
+     "chgPct": 0.88,
+     "asof": "2026-11-17 05:33"
     },
     {
      "code": "CL=F",
      "name": "WTI原油",
      "kind": "fut",
      "unit": "usd",
-     "price": 84.85,
-     "chgPct": -1.01,
-     "asof": "2026-11-17 05:29"
+     "price": 84.9,
+     "chgPct": -0.96,
+     "asof": "2026-11-17 05:33"
     },
     {
      "code": "HG=F",
      "name": "COMEX铜",
      "kind": "fut",
      "unit": "usd",
-     "price": 6.0,
-     "chgPct": -0.12,
-     "asof": "2026-11-17 05:29"
+     "price": 6.01,
+     "chgPct": 0.01,
+     "asof": "2026-11-17 05:33"
     },
     {
      "code": "^TNX",
@@ -231,7 +231,7 @@
     }
    ],
    "errors": null,
-   "fetchedAt": 1794893949293
+   "fetchedAt": 1794894211542
   },
   "fred": {
    "items": [
@@ -599,18 +599,18 @@
     "code": "^N225",
     "name": "日经225",
     "kind": "idx",
-    "price": 59044.0,
-    "chgPct": -1.04,
-    "asof": "2026-11-17 05:24",
+    "price": 59066.58,
+    "chgPct": -1.0,
+    "asof": "2026-11-17 05:28",
     "src": "yahoo"
    },
    {
     "code": "^HSI",
     "name": "恒生指数",
     "kind": "idx",
-    "price": 23595.12,
-    "chgPct": -0.67,
-    "asof": "2026-11-17 05:24",
+    "price": 23599.98,
+    "chgPct": -0.65,
+    "asof": "2026-11-17 05:28",
     "src": "yahoo"
    },
    {
@@ -626,9 +626,9 @@
     "code": "^KS11",
     "name": "韩国KOSPI",
     "kind": "idx",
-    "price": 4988.23,
-    "chgPct": -2.2,
-    "asof": "2026-11-17 05:19",
+    "price": 5002.5,
+    "chgPct": -1.92,
+    "asof": "2026-11-17 05:23",
     "src": "yahoo"
    },
    {
@@ -653,9 +653,9 @@
     "code": "nf_LC0",
     "name": "碳酸锂主连",
     "kind": "fut",
-    "price": 88640.0,
+    "price": 89280.0,
     "prev": 88580.0,
-    "chgPct": 0.07,
+    "chgPct": 0.79,
     "asof": "2026-11-17",
     "src": "sina"
    },
@@ -673,34 +673,34 @@
     "code": "nf_M0",
     "name": "豆粕主连",
     "kind": "fut",
-    "price": 3077.0,
+    "price": 3078.0,
     "prev": 3131.0,
-    "chgPct": -1.72,
+    "chgPct": -1.69,
     "asof": "2026-11-17",
     "src": "sina"
    }
   ],
   "errors": null,
-  "fetchedAt": 1794893950343
+  "fetchedAt": 1794894212643
  },
  "commodity": {
   "OIL": {
-   "price": 91.665,
+   "price": 91.831,
    "prev": 92.44,
-   "chgPct": -0.84,
-   "time": "13:38:38"
+   "chgPct": -0.66,
+   "time": "13:43:32"
   },
   "CL": {
-   "price": 84.967,
+   "price": 85.003,
    "prev": 85.72,
-   "chgPct": -0.88,
-   "time": "13:39:08"
+   "chgPct": -0.84,
+   "time": "13:43:32"
   },
   "XAU": {
-   "price": 3882.61,
+   "price": 3878.82,
    "prev": 3856.24,
-   "chgPct": 0.68,
-   "time": "13:39:00"
+   "chgPct": 0.59,
+   "time": "13:43:00"
   }
  },
  "engine": {
@@ -721,18 +721,18 @@
   "advice": "市场层出现降低风险敞口的信号；结合实际持仓、成本与流动性评估。",
   "evidence": [
    "[上证指数][机会15] 关口位置偏低：posInRange=0.0%（近B带）",
-   "[上证指数][机会15] 250日回撤 -15.23%，深度区机会溢价",
+   "[上证指数][机会15] 250日回撤 -15.27%，深度区机会溢价",
    "[沪深300][机会15] 关口位置偏低：posInRange=0.0%（近B带）",
-   "[沪深300][机会15] 250日回撤 -21.39%，深度区机会溢价",
-   "[深证成指][机会15] 关口位置偏低：posInRange=0.1%（近B带）",
-   "[深证成指][机会15] 250日回撤 -34.67%，深度区机会溢价",
+   "[沪深300][机会15] 250日回撤 -21.42%，深度区机会溢价",
+   "[深证成指][机会15] 关口位置偏低：posInRange=0.0%（近B带）",
+   "[深证成指][机会15] 250日回撤 -34.72%，深度区机会溢价",
    "[创业板指][机会15] 关口位置偏低：posInRange=0.0%（近B带）",
-   "[创业板指][机会15] 250日回撤 -47.32%，深度区机会溢价",
+   "[创业板指][机会15] 250日回撤 -47.36%，深度区机会溢价",
    "[上证指数][风险40] X3 趋势破位：跌下ma20且空头排列+周能量low",
    "[沪深300][风险75] X3 趋势破位：跌下ma20且空头排列+周能量low",
-   "[沪深300][风险75] X4 深度风险：250d回撤-21.39%仍单边下跌",
+   "[沪深300][风险75] X4 深度风险：250d回撤-21.42%仍单边下跌",
    "[深证成指][风险75] X3 趋势破位：跌下ma20且空头排列+周能量low",
-   "[深证成指][风险75] X4 深度风险：250d回撤-34.67%仍单边下跌",
+   "[深证成指][风险75] X4 深度风险：250d回撤-34.72%仍单边下跌",
    "[创业板指][风险40] X3 趋势破位：跌下ma20且空头排列+周能量low"
   ],
   "perIndex": [
@@ -747,7 +747,7 @@
     },
     "opp": 15.0,
     "risk": 40.0,
-    "dd60": -9.87,
+    "dd60": -9.91,
     "posInRangePct": 0.0
    },
    {
@@ -761,7 +761,7 @@
     },
     "opp": 15.0,
     "risk": 75.0,
-    "dd60": -15.84,
+    "dd60": -15.87,
     "posInRangePct": 0.0
    },
    {
@@ -775,8 +775,8 @@
     },
     "opp": 15.0,
     "risk": 75.0,
-    "dd60": -26.85,
-    "posInRangePct": 0.1
+    "dd60": -26.91,
+    "posInRangePct": 0.0
    },
    {
     "name": "创业板指",
@@ -789,7 +789,7 @@
     },
     "opp": 15.0,
     "risk": 40.0,
-    "dd60": -37.84,
+    "dd60": -37.89,
     "posInRangePct": 0.0
    }
   ],
@@ -817,7 +817,7 @@
    "schemaVersion": "1.0",
    "status": "PASS",
    "canRecommend": true,
-   "checkedAt": "2026-11-17T13:39:14.991727+08:00",
+   "checkedAt": "2026-11-17T13:43:37.222553+08:00",
    "policy": {
     "maxMarketAgeDays": 4.0,
     "requiredIndices": [
@@ -879,7 +879,7 @@
    {
     "id": "C3",
     "name": "黄金持有成本（实际利率）",
-    "read": "美10Y +3bp，金价20日 -6.3%",
+    "read": "美10Y +3bp，金价20日 -6.5%",
     "asof": "2026-11-16",
     "mechanism": "黄金不生息，持有它的代价就是实际利率；利率下行 = 持有成本下降（不是「降息就一定涨」，看的是利率方向与幅度）",
     "target": "黄金ETF",
@@ -907,7 +907,7 @@
    }
   ],
   "correlation": {
-   "score": -19.1,
+   "score": -18.0,
    "items": [
     {
      "name": "费城半导体",
@@ -916,12 +916,12 @@
     },
     {
      "name": "日经225",
-     "chgPct": -1.04,
+     "chgPct": -1.0,
      "note": "情绪/联动，无稳定传导机制"
     },
     {
      "name": "恒生指数",
-     "chgPct": -0.67,
+     "chgPct": -0.65,
      "note": "情绪/联动，无稳定传导机制"
     },
     {
@@ -931,7 +931,7 @@
     },
     {
      "name": "韩国KOSPI",
-     "chgPct": -2.2,
+     "chgPct": -1.92,
      "note": "情绪/联动，无稳定传导机制"
     },
     {
@@ -946,7 +946,7 @@
     },
     {
      "name": "碳酸锂主连",
-     "chgPct": 0.07,
+     "chgPct": 0.79,
      "note": "情绪/联动，无稳定传导机制"
     },
     {
@@ -956,7 +956,7 @@
     },
     {
      "name": "豆粕主连",
-     "chgPct": -1.72,
+     "chgPct": -1.69,
      "note": "情绪/联动，无稳定传导机制"
     }
    ],
@@ -966,26 +966,12 @@
   "context": {
    "us10Chg": 3.0,
    "cn10Chg": -2.1,
-   "goldMom20": -6.35,
-   "growthMom20": -15.88
+   "goldMom20": -6.47,
+   "growthMom20": -15.97
   },
   "rule": "因果因子（有机制+历史可复现）可改 action；相关因子只进评分，永不投票",
   "asof": "2026-11-16",
-  "builtAt": "2026-11-17 13:39:17",
-  "yields": {
-   "record": {
-    "value": 5.12,
-    "date": "2026-11-16",
-    "src": "东财 datacenter"
-   },
-   "check": {
-    "value": 5.15,
-    "date": "2026-11-13",
-    "src": "FRED"
-   },
-   "deltaBp": -3.0,
-   "verdict": "日期不同（记录源 2026-11-16 / 校验源 2026-11-13），差值 -3bp 属 T+1 差异，不视为矛盾"
-  }
+  "builtAt": "2026-11-17 13:43:39"
  },
  "freshness": {
   "builtAt": "2026-11-17 13:41:31",
@@ -1311,25 +1297,5 @@
   "incomplete": false,
   "rule": "单条快讯永不触发推演；假设卡只是待验证项，不改 action；缺口优先于结论"
  },
- "extrasAsOf": "2026-11-17 13:36:20",
- "discipline": {
-  "status": "COMPLIANT",
-  "strictRiskPct": 10.71,
-  "strictRiskCapPct": 15,
-  "targetStrictRiskPct": 15,
-  "goldPct": 27.81,
-  "goldAlertPct": 30,
-  "goldMaxPct": 35,
-  "thesisGate": "valid",
-  "breaches": []
- },
- "externalSignal": {
-  "marketAction": "WAIT",
-  "addRiskAllowed": false,
-  "marketRegime": "external-caution",
-  "confidence": "observed"
- },
- "combined": "HOLD_NO_NEW_RISK",
- "disciplineAsOf": "2026-11-05",
- "disciplineGeneratedAt": "2026-11-17T05:41:36.270Z"
+ "extrasAsOf": "2026-11-17 13:36:20"
 }
