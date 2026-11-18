@@ -1,6 +1,6 @@
 {
- "generatedAt": "2026-11-18 15:05:50",
- "ts": 1794985550887,
+ "generatedAt": "2026-11-18 15:08:03",
+ "ts": 1794985683035,
  "source": "vps",
  "tunnelUrl": "https://trunk-lamb-spyware-instant.trycloudflare.com",
  "market": {
@@ -76,7 +76,7 @@
     "amount": 107564482.0
    }
   ],
-  "fetchedAt": 1794985551837
+  "fetchedAt": 1794985683866
  },
  "bonds": {
   "asof": "2026-11-17",
@@ -100,7 +100,7 @@
   }
  },
  "overseas": {
-  "fetchedAt": 1794985552591,
+  "fetchedAt": 1794985684552,
   "quotes": {
    "items": [
     {
@@ -135,9 +135,9 @@
      "name": "恒生指数",
      "kind": "idx",
      "unit": "",
-     "price": 23251.09,
-     "chgPct": -1.09,
-     "asof": "2026-11-18 06:50"
+     "price": 23245.2,
+     "chgPct": -1.12,
+     "asof": "2026-11-18 06:53"
     },
     {
      "code": "^DJI",
@@ -180,27 +180,27 @@
      "name": "美元指数",
      "kind": "idx",
      "unit": "",
-     "price": 103.69,
-     "chgPct": 0.2,
-     "asof": "2026-11-18 06:55"
+     "price": 103.68,
+     "chgPct": 0.19,
+     "asof": "2026-11-18 06:58"
     },
     {
      "code": "GC=F",
      "name": "COMEX黄金",
      "kind": "fut",
      "unit": "usd",
-     "price": 3780.4,
-     "chgPct": -2.17,
-     "asof": "2026-11-18 06:55"
+     "price": 3779.2,
+     "chgPct": -2.2,
+     "asof": "2026-11-18 06:58"
     },
     {
      "code": "CL=F",
      "name": "WTI原油",
      "kind": "fut",
      "unit": "usd",
-     "price": 84.03,
-     "chgPct": -2.3,
-     "asof": "2026-11-18 06:55"
+     "price": 84.11,
+     "chgPct": -2.21,
+     "asof": "2026-11-18 06:57"
     },
     {
      "code": "HG=F",
@@ -208,8 +208,8 @@
      "kind": "fut",
      "unit": "usd",
      "price": 5.82,
-     "chgPct": -2.79,
-     "asof": "2026-11-18 06:55"
+     "chgPct": -2.82,
+     "asof": "2026-11-18 06:58"
     },
     {
      "code": "^TNX",
@@ -231,7 +231,7 @@
     }
    ],
    "errors": null,
-   "fetchedAt": 1794985553944
+   "fetchedAt": 1794985685823
   },
   "fred": {
    "items": [
@@ -608,9 +608,9 @@
     "code": "^HSI",
     "name": "恒生指数",
     "kind": "idx",
-    "price": 23251.09,
-    "chgPct": -1.09,
-    "asof": "2026-11-18 06:50",
+    "price": 23245.2,
+    "chgPct": -1.12,
+    "asof": "2026-11-18 06:53",
     "src": "yahoo"
    },
    {
@@ -681,26 +681,26 @@
    }
   ],
   "errors": null,
-  "fetchedAt": 1794985556239
+  "fetchedAt": 1794985696006
  },
  "commodity": {
   "OIL": {
-   "price": 91.624,
+   "price": 91.537,
    "prev": 93.14,
-   "chgPct": -1.63,
-   "time": "15:05:55"
+   "chgPct": -1.72,
+   "time": "15:08:13"
   },
   "CL": {
-   "price": 82.787,
+   "price": 82.706,
    "prev": 84.65,
-   "chgPct": -2.2,
-   "time": "15:05:55"
+   "chgPct": -2.3,
+   "time": "15:08:13"
   },
   "XAU": {
-   "price": 3771.27,
+   "price": 3771.62,
    "prev": 3849.17,
-   "chgPct": -2.02,
-   "time": "15:05:00"
+   "chgPct": -2.01,
+   "time": "15:08:00"
   }
  },
  "engine": {
@@ -818,7 +818,7 @@
    "schemaVersion": "1.0",
    "status": "PASS",
    "canRecommend": true,
-   "checkedAt": "2026-11-18T15:06:00.827508+08:00",
+   "checkedAt": "2026-11-18T15:08:20.970532+08:00",
    "policy": {
     "maxMarketAgeDays": 4.0,
     "requiredIndices": [
@@ -922,7 +922,7 @@
     },
     {
      "name": "恒生指数",
-     "chgPct": -1.09,
+     "chgPct": -1.12,
      "note": "情绪/联动，无稳定传导机制"
     },
     {
@@ -972,7 +972,7 @@
   },
   "rule": "因果因子（有机制+历史可复现）可改 action；相关因子只进评分，永不投票",
   "asof": "2026-11-17",
-  "builtAt": "2026-11-18 15:06:03"
+  "builtAt": "2026-11-18 15:08:23"
  },
  "freshness": {
   "builtAt": "2026-11-18 15:01:31",
