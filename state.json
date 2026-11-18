@@ -972,10 +972,24 @@
   },
   "rule": "因果因子（有机制+历史可复现）可改 action；相关因子只进评分，永不投票",
   "asof": "2026-11-17",
-  "builtAt": "2026-11-18 10:29:30"
+  "builtAt": "2026-11-18 10:29:30",
+  "yields": {
+   "record": {
+    "value": 5.1,
+    "date": "2026-11-17",
+    "src": "东财 datacenter"
+   },
+   "check": {
+    "value": 5.12,
+    "date": "2026-11-16",
+    "src": "FRED"
+   },
+   "deltaBp": -2.0,
+   "verdict": "日期不同（记录源 2026-11-17 / 校验源 2026-11-16），差值 -2bp 属 T+1 差异，不视为矛盾"
+  }
  },
  "freshness": {
-  "builtAt": "2026-11-18 10:27:35",
+  "builtAt": "2026-11-18 10:30:05",
   "inSession": true,
   "items": [
    {
@@ -983,7 +997,7 @@
     "name": "A股四大指数",
     "tier": "quote",
     "source": "新浪实时（本机）/ VPS",
-    "asof": "2026-11-18 10:27",
+    "asof": "2026-11-18 10:29",
     "ageHours": 0.0,
     "valid": true,
     "limitHours": 0.5,
@@ -1009,7 +1023,7 @@
     "name": "商品盘中观测",
     "tier": "quote",
     "source": "新浪 hf_（非判定口径）",
-    "asof": "2026-11-18 10:27",
+    "asof": "2026-11-18 10:29",
     "ageHours": 0.0,
     "valid": true,
     "limitHours": 40,
@@ -1022,7 +1036,7 @@
     "name": "投资引擎裁决",
     "tier": "daily",
     "source": "invest-engine core_engine_v1_1（收盘序列）",
-    "asof": "2026-11-18 10:27",
+    "asof": "2026-11-18 10:29",
     "ageHours": 0.0,
     "valid": true,
     "limitHours": 40,
@@ -1035,7 +1049,7 @@
     "name": "扩展指数/商品主力",
     "tier": "quote",
     "source": "VPS 海外层 / 新浪",
-    "asof": "2026-11-18 10:27",
+    "asof": "2026-11-18 10:29",
     "ageHours": 0.0,
     "valid": true,
     "limitHours": 40,
@@ -1048,7 +1062,7 @@
     "name": "海外宏观（VIX/美元/金/美债）",
     "tier": "quote",
     "source": "Yahoo + FRED（VPS 直连）",
-    "asof": "2026-11-18 10:27",
+    "asof": "2026-11-18 10:29",
     "ageHours": 0.0,
     "valid": true,
     "limitHours": 40,
@@ -1061,7 +1075,7 @@
     "name": "因子推演（因果层 C1-C4）",
     "tier": "daily",
     "source": "macro_causal.build（东财+腾讯日线）",
-    "asof": "2026-11-18 10:27",
+    "asof": "2026-11-18 10:29",
     "ageHours": 0.0,
     "valid": true,
     "limitHours": 40,
@@ -1105,7 +1119,7 @@
     "valid": false,
     "limitHours": 168,
     "invalidIf": "超过 7 天未更新（手工快照，不自动采）",
-    "reason": "已 306 小时未更新（阈值 168h）",
+    "reason": "已 307 小时未更新（阈值 168h）",
     "hard": false
    },
    {
@@ -1113,7 +1127,7 @@
     "name": "告警",
     "tier": "quote",
     "source": "finwatch alerts.json",
-    "asof": "2026-11-18 10:27",
+    "asof": "2026-11-18 10:29",
     "ageHours": 0.0,
     "valid": true,
     "limitHours": 168,
@@ -1139,7 +1153,7 @@
    {
     "key": "holdings",
     "name": "持仓快照",
-    "reason": "已 306 小时未更新（阈值 168h）",
+    "reason": "已 307 小时未更新（阈值 168h）",
     "hard": false,
     "asof": "2026-11-05 16:00",
     "ageHours": 306.5
@@ -1155,16 +1169,16 @@
   "confidenceAdjust": "提示"
  },
  "burst": {
-  "builtAt": "2026-11-18 10:20:02",
+  "builtAt": "2026-11-18 10:30:05",
   "poll": {
    "ok": true,
    "cached": false,
-   "newItems": 13,
+   "newItems": 6,
    "error": null
   },
   "cluster": {
    "windowHours": 6,
-   "recent": 224,
+   "recent": 228,
    "clusters": [
     {
      "keyword": "英伟达临时",
@@ -1261,14 +1275,34 @@
    {
     "key": "holdings",
     "name": "持仓快照",
-    "reason": "已 306 小时未更新（阈值 168h）",
+    "reason": "已 307 小时未更新（阈值 168h）",
     "hard": false,
     "asof": "2026-11-05 16:00",
-    "ageHours": 306.3
+    "ageHours": 306.5
    }
   ],
   "incomplete": false,
   "rule": "单条快讯永不触发推演；假设卡只是待验证项，不改 action；缺口优先于结论"
  },
- "extrasAsOf": "2026-11-18 10:25:05"
+ "extrasAsOf": "2026-11-18 10:25:05",
+ "discipline": {
+  "status": "COMPLIANT",
+  "strictRiskPct": 10.71,
+  "strictRiskCapPct": 15,
+  "targetStrictRiskPct": 15,
+  "goldPct": 27.81,
+  "goldAlertPct": 30,
+  "goldMaxPct": 35,
+  "thesisGate": "valid",
+  "breaches": []
+ },
+ "externalSignal": {
+  "marketAction": "WAIT",
+  "addRiskAllowed": false,
+  "marketRegime": "external-caution",
+  "confidence": "observed"
+ },
+ "combined": "HOLD_NO_NEW_RISK",
+ "disciplineAsOf": "2026-11-05",
+ "disciplineGeneratedAt": "2026-11-18T02:30:10.318Z"
 }
