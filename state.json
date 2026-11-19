@@ -487,20 +487,20 @@
   "errors": null
  },
  "burst": {
-  "builtAt": "2026-11-20 01:09:08",
+  "builtAt": "2026-11-20 01:40:20",
   "poll": {
    "ok": true,
    "cached": false,
-   "newItems": 12,
+   "newItems": 13,
    "error": null
   },
   "cluster": {
    "windowHours": 6,
-   "recent": 188,
+   "recent": 175,
    "clusters": [
     {
      "keyword": "美元",
-     "n": 7,
+     "n": 8,
      "sample": [
       "沃尔玛全年预计调整后每股收益2.84美元至2.89美元",
       "Anthropic上市首日开盘价预计为99.60美元",
@@ -535,12 +535,12 @@
      ]
     },
     {
-     "keyword": "摩根大通预计",
-     "n": 3,
+     "keyword": "万亿美元",
+     "n": 4,
      "sample": [
-      "摩根大通预计2028年美联储将降息两次",
-      "摩根大通预计美联储将加息三次",
-      "摩根大通预计美国第四季度同比GDP增速为1.9%"
+      "Anthropic上市首日交易前10分钟内市值升至最高2.09万亿美元",
+      "Anthropic上市首日开盘涨34% 市值达到1.5万亿美元",
+      "Anthropic开盘市值预计达2万亿美元"
      ]
     },
     {
@@ -553,21 +553,21 @@
      ]
     },
     {
+     "keyword": "纳斯达克",
+     "n": 3,
+     "sample": [
+      "纳斯达克：Anthropic IPO 将于美国东部时间上午9:50开始报价",
+      "纳斯达克100指数跌幅进一步收窄至0.4%",
+      "纳斯达克100指数跌幅收窄至1% 此前一度跌近2%"
+     ]
+    },
+    {
      "keyword": "阿里",
      "n": 3,
      "sample": [
       "阿里CEO吴泳铭：未来绝大部分模型都会完全依赖于国产芯片做训练",
       "阿里CEO吴泳铭：AI算力全球依然供不应求 国内近两年尤其紧缺",
       "阿里CEO吴泳铭：正在评估算力出口规则对海外云业务的影响"
-     ]
-    },
-    {
-     "keyword": "标普",
-     "n": 3,
-     "sample": [
-      "标普500指数指数涨幅收窄",
-      "标普500指数涨幅收窄",
-      "标普500指数下跌近1% 触及盘中低点"
      ]
     }
    ]
@@ -607,17 +607,17 @@
    {
     "key": "holdings",
     "name": "持仓快照",
-    "reason": "已 345 小时未更新（阈值 168h）",
+    "reason": "已 346 小时未更新（阈值 168h）",
     "hard": false,
     "asof": "2026-11-05 16:00",
-    "ageHours": 345.2
+    "ageHours": 345.7
    }
   ],
   "incomplete": false,
   "rule": "单条快讯永不触发推演；假设卡只是待验证项，不改 action；缺口优先于结论"
  },
  "freshness": {
-  "builtAt": "2026-11-20 01:09:08",
+  "builtAt": "2026-11-20 01:40:20",
   "inSession": false,
   "items": [
    {
@@ -625,7 +625,7 @@
     "name": "A股四大指数",
     "tier": "quote",
     "source": "新浪实时（本机）/ VPS",
-    "asof": "2026-11-20 01:08",
+    "asof": "2026-11-20 01:39",
     "ageHours": 0.0,
     "valid": true,
     "limitHours": 26,
@@ -639,7 +639,7 @@
     "tier": "daily",
     "source": "东财 datacenter（收盘口径，唯一记录源）",
     "asof": "2026-11-19 16:00",
-    "ageHours": 9.2,
+    "ageHours": 9.7,
     "valid": true,
     "limitHours": 96,
     "invalidIf": "中国10Y 超过 40 小时未更新（含一个交易日）；美债 T+1，放宽到 96 小时",
@@ -651,7 +651,7 @@
     "name": "商品盘中观测",
     "tier": "quote",
     "source": "新浪 hf_（非判定口径）",
-    "asof": "2026-11-20 01:08",
+    "asof": "2026-11-20 01:39",
     "ageHours": 0.0,
     "valid": true,
     "limitHours": 96,
@@ -664,7 +664,7 @@
     "name": "投资引擎裁决",
     "tier": "daily",
     "source": "invest-engine core_engine_v1_1（收盘序列）",
-    "asof": "2026-11-20 01:08",
+    "asof": "2026-11-20 01:39",
     "ageHours": 0.0,
     "valid": true,
     "limitHours": 96,
@@ -677,7 +677,7 @@
     "name": "扩展指数/商品主力",
     "tier": "quote",
     "source": "VPS 海外层 / 新浪",
-    "asof": "2026-11-20 01:08",
+    "asof": "2026-11-20 01:39",
     "ageHours": 0.0,
     "valid": true,
     "limitHours": 96,
@@ -691,7 +691,7 @@
     "tier": "quote",
     "source": "Yahoo + FRED（VPS 直连）",
     "asof": "2026-11-19 18:43",
-    "ageHours": 6.4,
+    "ageHours": 6.9,
     "valid": true,
     "limitHours": 96,
     "invalidIf": "超过 96 小时未更新",
@@ -703,7 +703,7 @@
     "name": "因子推演（因果层 C1-C4）",
     "tier": "daily",
     "source": "macro_causal.build（东财+腾讯日线）",
-    "asof": "2026-11-20 01:08",
+    "asof": "2026-11-20 01:39",
     "ageHours": 0.0,
     "valid": true,
     "limitHours": 96,
@@ -717,7 +717,7 @@
     "tier": "daily",
     "source": "~/projects/daily-news/digest_*.md",
     "asof": "2026-11-19 16:00",
-    "ageHours": 9.2,
+    "ageHours": 9.7,
     "valid": true,
     "limitHours": 40,
     "invalidIf": "digest 不是当天的（超过 40 小时）或条目为空",
@@ -730,7 +730,7 @@
     "tier": "daily",
     "source": "DeepSeek 打分（按 digest 日期缓存）",
     "asof": "2026-11-19 16:00",
-    "ageHours": 9.2,
+    "ageHours": 9.7,
     "valid": true,
     "limitHours": 40,
     "invalidIf": "与 digest 不同日 / 打分报错",
@@ -743,11 +743,11 @@
     "tier": "manual",
     "source": "手工登记（券商/建行/支付宝）+ ~/.dsh/finwatch",
     "asof": "2026-11-05 16:00",
-    "ageHours": 345.2,
+    "ageHours": 345.7,
     "valid": false,
     "limitHours": 168,
     "invalidIf": "超过 7 天未更新（手工快照，不自动采）",
-    "reason": "已 345 小时未更新（阈值 168h）",
+    "reason": "已 346 小时未更新（阈值 168h）",
     "hard": false
    },
    {
@@ -755,7 +755,7 @@
     "name": "告警",
     "tier": "quote",
     "source": "finwatch alerts.json",
-    "asof": "2026-11-20 01:08",
+    "asof": "2026-11-20 01:39",
     "ageHours": 0.0,
     "valid": true,
     "limitHours": 168,
@@ -769,7 +769,7 @@
     "tier": "daily",
     "source": "E:/q4-2026/reports/chain-model.md + daily-log",
     "asof": "2026-11-19 16:00",
-    "ageHours": 9.2,
+    "ageHours": 9.7,
     "valid": true,
     "limitHours": 96,
     "invalidIf": "超过 96 小时未更新",
@@ -781,10 +781,10 @@
    {
     "key": "holdings",
     "name": "持仓快照",
-    "reason": "已 345 小时未更新（阈值 168h）",
+    "reason": "已 346 小时未更新（阈值 168h）",
     "hard": false,
     "asof": "2026-11-05 16:00",
-    "ageHours": 345.2
+    "ageHours": 345.7
    }
   ],
   "counts": {
@@ -1207,5 +1207,25 @@
   "degraded": false,
   "reason": null,
   "observedAt": "2026-11-20 01:39:38"
- }
+ },
+ "discipline": {
+  "status": "COMPLIANT",
+  "strictRiskPct": 10.71,
+  "strictRiskCapPct": 15,
+  "targetStrictRiskPct": 15,
+  "goldPct": 27.81,
+  "goldAlertPct": 30,
+  "goldMaxPct": 35,
+  "thesisGate": "valid",
+  "breaches": []
+ },
+ "externalSignal": {
+  "marketAction": "WAIT",
+  "addRiskAllowed": false,
+  "marketRegime": "external-caution",
+  "confidence": "observed"
+ },
+ "combined": "HOLD_NO_NEW_RISK",
+ "disciplineAsOf": "2026-11-05",
+ "disciplineGeneratedAt": "2026-11-19T17:40:27.992Z"
 }
