@@ -487,16 +487,16 @@
   "errors": null
  },
  "burst": {
-  "builtAt": "2026-11-19 21:30:19",
+  "builtAt": "2026-11-19 22:01:50",
   "poll": {
    "ok": true,
    "cached": false,
-   "newItems": 17,
+   "newItems": 15,
    "error": null
   },
   "cluster": {
    "windowHours": 6,
-   "recent": 255,
+   "recent": 235,
    "clusters": [
     {
      "keyword": "阿里巴巴",
@@ -544,15 +544,6 @@
      ]
     },
     {
-     "keyword": "预计",
-     "n": 3,
-     "sample": [
-      "印尼财政部长：预计2026年GDP增长5.5%-5.6%",
-      "2027届全国普通高校毕业生规模预计1299万人",
-      "冰岛央行行长预计2027年上半年将降息"
-     ]
-    },
-    {
      "keyword": "习近平",
      "n": 3,
      "sample": [
@@ -568,6 +559,15 @@
       "报道：LG显示公司取消3万亿韩元OLED生产设施投资计划",
       "报道：普京称俄罗斯将回应针对克里米亚大桥的袭击",
       "报道：普京称俄罗斯准备继续就乌克兰问题举行谈判"
+     ]
+    },
+    {
+     "keyword": "买入",
+     "n": 3,
+     "sample": [
+      "花旗：维持三大中资电讯股“买入”评级 明年算力基建建设料重回焦点",
+      "花旗：英伟达业绩强化核心投资论点 维持“买入”评级及目标价225美元",
+      "Melius Research首次覆盖Anthropic并给予“买入”评级"
      ]
     }
    ]
@@ -594,8 +594,7 @@
     "event": "地缘冲突",
     "confidence": "mid",
     "keywords": [
-     "谈判",
-     "袭击"
+     "谈判"
     ],
     "clusterDocs": 0,
     "buckets": [
@@ -627,14 +626,14 @@
     "reason": "已 342 小时未更新（阈值 168h）",
     "hard": false,
     "asof": "2026-11-05 16:00",
-    "ageHours": 341.5
+    "ageHours": 342.0
    }
   ],
   "incomplete": false,
   "rule": "单条快讯永不触发推演；假设卡只是待验证项，不改 action；缺口优先于结论"
  },
  "freshness": {
-  "builtAt": "2026-11-19 21:30:19",
+  "builtAt": "2026-11-19 22:01:50",
   "inSession": false,
   "items": [
    {
@@ -642,7 +641,7 @@
     "name": "A股四大指数",
     "tier": "quote",
     "source": "新浪实时（本机）/ VPS",
-    "asof": "2026-11-19 21:29",
+    "asof": "2026-11-19 22:00",
     "ageHours": 0.0,
     "valid": true,
     "limitHours": 26,
@@ -656,7 +655,7 @@
     "tier": "daily",
     "source": "东财 datacenter（收盘口径，唯一记录源）",
     "asof": "2026-11-19 16:00",
-    "ageHours": 5.5,
+    "ageHours": 6.0,
     "valid": true,
     "limitHours": 96,
     "invalidIf": "中国10Y 超过 40 小时未更新（含一个交易日）；美债 T+1，放宽到 96 小时",
@@ -668,7 +667,7 @@
     "name": "商品盘中观测",
     "tier": "quote",
     "source": "新浪 hf_（非判定口径）",
-    "asof": "2026-11-19 21:29",
+    "asof": "2026-11-19 22:00",
     "ageHours": 0.0,
     "valid": true,
     "limitHours": 96,
@@ -681,7 +680,7 @@
     "name": "投资引擎裁决",
     "tier": "daily",
     "source": "invest-engine core_engine_v1_1（收盘序列）",
-    "asof": "2026-11-19 21:29",
+    "asof": "2026-11-19 22:00",
     "ageHours": 0.0,
     "valid": true,
     "limitHours": 96,
@@ -694,7 +693,7 @@
     "name": "扩展指数/商品主力",
     "tier": "quote",
     "source": "VPS 海外层 / 新浪",
-    "asof": "2026-11-19 21:29",
+    "asof": "2026-11-19 22:01",
     "ageHours": 0.0,
     "valid": true,
     "limitHours": 96,
@@ -708,7 +707,7 @@
     "tier": "quote",
     "source": "Yahoo + FRED（VPS 直连）",
     "asof": "2026-11-19 18:43",
-    "ageHours": 2.8,
+    "ageHours": 3.3,
     "valid": true,
     "limitHours": 96,
     "invalidIf": "超过 96 小时未更新",
@@ -720,7 +719,7 @@
     "name": "因子推演（因果层 C1-C4）",
     "tier": "daily",
     "source": "macro_causal.build（东财+腾讯日线）",
-    "asof": "2026-11-19 21:29",
+    "asof": "2026-11-19 22:01",
     "ageHours": 0.0,
     "valid": true,
     "limitHours": 96,
@@ -734,7 +733,7 @@
     "tier": "daily",
     "source": "~/projects/daily-news/digest_*.md",
     "asof": "2026-11-19 16:00",
-    "ageHours": 5.5,
+    "ageHours": 6.0,
     "valid": true,
     "limitHours": 40,
     "invalidIf": "digest 不是当天的（超过 40 小时）或条目为空",
@@ -747,7 +746,7 @@
     "tier": "daily",
     "source": "DeepSeek 打分（按 digest 日期缓存）",
     "asof": "2026-11-19 16:00",
-    "ageHours": 5.5,
+    "ageHours": 6.0,
     "valid": true,
     "limitHours": 40,
     "invalidIf": "与 digest 不同日 / 打分报错",
@@ -760,7 +759,7 @@
     "tier": "manual",
     "source": "手工登记（券商/建行/支付宝）+ ~/.dsh/finwatch",
     "asof": "2026-11-05 16:00",
-    "ageHours": 341.5,
+    "ageHours": 342.0,
     "valid": false,
     "limitHours": 168,
     "invalidIf": "超过 7 天未更新（手工快照，不自动采）",
@@ -772,7 +771,7 @@
     "name": "告警",
     "tier": "quote",
     "source": "finwatch alerts.json",
-    "asof": "2026-11-19 21:29",
+    "asof": "2026-11-19 22:00",
     "ageHours": 0.0,
     "valid": true,
     "limitHours": 168,
@@ -786,7 +785,7 @@
     "tier": "daily",
     "source": "E:/q4-2026/reports/chain-model.md + daily-log",
     "asof": "2026-11-19 16:00",
-    "ageHours": 5.5,
+    "ageHours": 6.0,
     "valid": true,
     "limitHours": 96,
     "invalidIf": "超过 96 小时未更新",
@@ -801,7 +800,7 @@
     "reason": "已 342 小时未更新（阈值 168h）",
     "hard": false,
     "asof": "2026-11-05 16:00",
-    "ageHours": 341.5
+    "ageHours": 342.0
    }
   ],
   "counts": {
@@ -1224,5 +1223,25 @@
   "degraded": false,
   "reason": null,
   "observedAt": "2026-11-19 22:01:08"
- }
+ },
+ "discipline": {
+  "status": "COMPLIANT",
+  "strictRiskPct": 10.71,
+  "strictRiskCapPct": 15,
+  "targetStrictRiskPct": 15,
+  "goldPct": 27.81,
+  "goldAlertPct": 30,
+  "goldMaxPct": 35,
+  "thesisGate": "valid",
+  "breaches": []
+ },
+ "externalSignal": {
+  "marketAction": "WAIT",
+  "addRiskAllowed": false,
+  "marketRegime": "external-caution",
+  "confidence": "observed"
+ },
+ "combined": "HOLD_NO_NEW_RISK",
+ "disciplineAsOf": "2026-11-05",
+ "disciplineGeneratedAt": "2026-11-19T14:01:57.167Z"
 }
