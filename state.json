@@ -487,26 +487,17 @@
   "errors": null
  },
  "burst": {
-  "builtAt": "2026-11-19 19:55:31",
+  "builtAt": "2026-11-19 20:27:13",
   "poll": {
    "ok": true,
    "cached": false,
-   "newItems": 22,
+   "newItems": 23,
    "error": null
   },
   "cluster": {
    "windowHours": 6,
-   "recent": 278,
+   "recent": 272,
    "clusters": [
-    {
-     "keyword": "评级",
-     "n": 6,
-     "sample": [
-      "摩根大通：腾讯控股AI亏损扩大或令短期股价受压 维持“增持”评级",
-      "大摩：维持腾讯控股目标价550港元及“增持”评级",
-      "巴克莱将欧洲奢侈品板块评级下调至“减配”评级"
-     ]
-    },
     {
      "keyword": "马斯克",
      "n": 5,
@@ -517,12 +508,21 @@
      ]
     },
     {
-     "keyword": "吉林",
+     "keyword": "阿里巴巴",
+     "n": 5,
+     "sample": [
+      "阿里巴巴：2027财年第二季度营收2715.2亿元 同比增长10%",
+      "阿里巴巴：截至2026年9月30日止季度 资本支出504.77亿元",
+      "阿里巴巴：截至2026年9月30日止季度 公司斥资2.21亿美元回购224万股美国存托股"
+     ]
+    },
+    {
+     "keyword": "评级",
      "n": 4,
      "sample": [
-      "吉林：到2030年新一代智能终端、智能体等应用普及率超90%",
-      "吉林：统筹布局算力基础设施 科学谋划算力设施建设",
-      "吉林：发展智能网联汽车 支持迭代高阶自动驾驶技术"
+      "巴克莱将欧洲奢侈品板块评级下调至“减配”评级",
+      "里昂：将腾讯控股目标价降至650港元 重申“高度确信跑赢大市”评级",
+      "花旗：维持三大中资电讯股“买入”评级 明年算力基建建设料重回焦点"
      ]
     },
     {
@@ -535,21 +535,21 @@
      ]
     },
     {
-     "keyword": "阿里巴巴",
-     "n": 4,
-     "sample": [
-      "阿里巴巴：2027财年第二季度营收2715.2亿元 同比增长10%",
-      "阿里巴巴：截至2026年9月30日止季度 资本支出504.77亿元",
-      "阿里巴巴：截至2026年9月30日止季度 公司斥资2.21亿美元回购224万股美国存托股"
-     ]
-    },
-    {
      "keyword": "商务部",
      "n": 3,
      "sample": [
       "商务部：中美贸易理事会农业工作组将于近期召开首次会议",
       "商务部：智能眼镜、外骨骼助力器、具身智能机器人等智能新品销售额高速增长",
       "商务部：今年“双十一”整体平稳"
+     ]
+    },
+    {
+     "keyword": "欧洲斯托克",
+     "n": 3,
+     "sample": [
+      "欧洲斯托克50指数期货上涨0.63%",
+      "欧洲主要股指开盘 欧洲斯托克50指数开盘涨0.65%",
+      "欧洲斯托克600指数回吐涨幅"
      ]
     },
     {
@@ -626,14 +626,14 @@
     "reason": "已 340 小时未更新（阈值 168h）",
     "hard": false,
     "asof": "2026-11-05 16:00",
-    "ageHours": 339.9
+    "ageHours": 340.5
    }
   ],
   "incomplete": false,
   "rule": "单条快讯永不触发推演；假设卡只是待验证项，不改 action；缺口优先于结论"
  },
  "freshness": {
-  "builtAt": "2026-11-19 19:55:31",
+  "builtAt": "2026-11-19 20:27:13",
   "inSession": false,
   "items": [
    {
@@ -641,7 +641,7 @@
     "name": "A股四大指数",
     "tier": "quote",
     "source": "新浪实时（本机）/ VPS",
-    "asof": "2026-11-19 19:53",
+    "asof": "2026-11-19 20:26",
     "ageHours": 0.0,
     "valid": true,
     "limitHours": 26,
@@ -655,7 +655,7 @@
     "tier": "daily",
     "source": "东财 datacenter（收盘口径，唯一记录源）",
     "asof": "2026-11-19 16:00",
-    "ageHours": 3.9,
+    "ageHours": 4.5,
     "valid": true,
     "limitHours": 96,
     "invalidIf": "中国10Y 超过 40 小时未更新（含一个交易日）；美债 T+1，放宽到 96 小时",
@@ -667,7 +667,7 @@
     "name": "商品盘中观测",
     "tier": "quote",
     "source": "新浪 hf_（非判定口径）",
-    "asof": "2026-11-19 19:53",
+    "asof": "2026-11-19 20:26",
     "ageHours": 0.0,
     "valid": true,
     "limitHours": 96,
@@ -680,7 +680,7 @@
     "name": "投资引擎裁决",
     "tier": "daily",
     "source": "invest-engine core_engine_v1_1（收盘序列）",
-    "asof": "2026-11-19 19:53",
+    "asof": "2026-11-19 20:26",
     "ageHours": 0.0,
     "valid": true,
     "limitHours": 96,
@@ -693,7 +693,7 @@
     "name": "扩展指数/商品主力",
     "tier": "quote",
     "source": "VPS 海外层 / 新浪",
-    "asof": "2026-11-19 19:54",
+    "asof": "2026-11-19 20:26",
     "ageHours": 0.0,
     "valid": true,
     "limitHours": 96,
@@ -707,7 +707,7 @@
     "tier": "quote",
     "source": "Yahoo + FRED（VPS 直连）",
     "asof": "2026-11-19 18:43",
-    "ageHours": 1.2,
+    "ageHours": 1.7,
     "valid": true,
     "limitHours": 96,
     "invalidIf": "超过 96 小时未更新",
@@ -719,7 +719,7 @@
     "name": "因子推演（因果层 C1-C4）",
     "tier": "daily",
     "source": "macro_causal.build（东财+腾讯日线）",
-    "asof": "2026-11-19 19:54",
+    "asof": "2026-11-19 20:26",
     "ageHours": 0.0,
     "valid": true,
     "limitHours": 96,
@@ -733,7 +733,7 @@
     "tier": "daily",
     "source": "~/projects/daily-news/digest_*.md",
     "asof": "2026-11-19 16:00",
-    "ageHours": 3.9,
+    "ageHours": 4.5,
     "valid": true,
     "limitHours": 40,
     "invalidIf": "digest 不是当天的（超过 40 小时）或条目为空",
@@ -746,7 +746,7 @@
     "tier": "daily",
     "source": "DeepSeek 打分（按 digest 日期缓存）",
     "asof": "2026-11-19 16:00",
-    "ageHours": 3.9,
+    "ageHours": 4.5,
     "valid": true,
     "limitHours": 40,
     "invalidIf": "与 digest 不同日 / 打分报错",
@@ -759,7 +759,7 @@
     "tier": "manual",
     "source": "手工登记（券商/建行/支付宝）+ ~/.dsh/finwatch",
     "asof": "2026-11-05 16:00",
-    "ageHours": 339.9,
+    "ageHours": 340.5,
     "valid": false,
     "limitHours": 168,
     "invalidIf": "超过 7 天未更新（手工快照，不自动采）",
@@ -771,7 +771,7 @@
     "name": "告警",
     "tier": "quote",
     "source": "finwatch alerts.json",
-    "asof": "2026-11-19 19:53",
+    "asof": "2026-11-19 20:26",
     "ageHours": 0.0,
     "valid": true,
     "limitHours": 168,
@@ -785,7 +785,7 @@
     "tier": "daily",
     "source": "E:/q4-2026/reports/chain-model.md + daily-log",
     "asof": "2026-11-19 16:00",
-    "ageHours": 3.9,
+    "ageHours": 4.5,
     "valid": true,
     "limitHours": 96,
     "invalidIf": "超过 96 小时未更新",
@@ -800,7 +800,7 @@
     "reason": "已 340 小时未更新（阈值 168h）",
     "hard": false,
     "asof": "2026-11-05 16:00",
-    "ageHours": 339.9
+    "ageHours": 340.5
    }
   ],
   "counts": {
@@ -1223,5 +1223,25 @@
   "degraded": false,
   "reason": null,
   "observedAt": "2026-11-19 20:26:33"
- }
+ },
+ "discipline": {
+  "status": "COMPLIANT",
+  "strictRiskPct": 10.71,
+  "strictRiskCapPct": 15,
+  "targetStrictRiskPct": 15,
+  "goldPct": 27.81,
+  "goldAlertPct": 30,
+  "goldMaxPct": 35,
+  "thesisGate": "valid",
+  "breaches": []
+ },
+ "externalSignal": {
+  "marketAction": "WAIT",
+  "addRiskAllowed": false,
+  "marketRegime": "external-caution",
+  "confidence": "observed"
+ },
+ "combined": "HOLD_NO_NEW_RISK",
+ "disciplineAsOf": "2026-11-05",
+ "disciplineGeneratedAt": "2026-11-19T12:27:20.820Z"
 }
