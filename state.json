@@ -487,24 +487,24 @@
   "errors": null
  },
  "burst": {
-  "builtAt": "2026-11-19 23:35:31",
+  "builtAt": "2026-11-20 00:06:40",
   "poll": {
    "ok": true,
    "cached": false,
-   "newItems": 26,
+   "newItems": 15,
    "error": null
   },
   "cluster": {
    "windowHours": 6,
-   "recent": 213,
+   "recent": 211,
    "clusters": [
     {
      "keyword": "阿里巴巴",
-     "n": 7,
+     "n": 6,
      "sample": [
-      "阿里巴巴：2027财年第二季度营收2715.2亿元 同比增长10%",
       "阿里巴巴：截至2026年9月30日止季度 资本支出504.77亿元",
-      "阿里巴巴：截至2026年9月30日止季度 公司斥资2.21亿美元回购224万股美国存托股"
+      "阿里巴巴：截至2026年9月30日止季度 公司斥资2.21亿美元回购224万股美国存托股",
+      "阿里巴巴：88VIP会员增至约6600万 闲鱼日活同比增长23%"
      ]
     },
     {
@@ -517,12 +517,12 @@
      ]
     },
     {
-     "keyword": "马斯克",
-     "n": 4,
+     "keyword": "美元",
+     "n": 5,
      "sample": [
-      "马斯克：预计未来12-18个月Optimus机器人能做家务劳动",
-      "马斯克：目前SpaceX每个月约新增0.5GW算力 明年底将提速至每月1GW",
-      "马斯克：特斯拉不会放弃民用车 将推出可乘坐6-7人无人驾驶版Model Y"
+      "沃尔玛全年预计调整后每股收益2.84美元至2.89美元",
+      "Anthropic上市首日开盘价预计为99.60美元",
+      "现货黄金日内跌幅扩大至1% 报3686.11美元/盎司"
      ]
     },
     {
@@ -553,21 +553,21 @@
      ]
     },
     {
-     "keyword": "美元",
+     "keyword": "费城半导体指",
      "n": 4,
      "sample": [
-      "沃尔玛全年预计调整后每股收益2.84美元至2.89美元",
-      "Anthropic上市首日开盘价预计为99.60美元",
-      "现货黄金日内跌幅扩大至1% 报3686.11美元/盎司"
+      "费城半导体指数涨幅扩大至4%",
+      "费城半导体指数盘初上涨2.8% 报9938.33点",
+      "费城半导体指数涨幅扩大至4%：Coherent涨超10% 英特尔、美光涨逾5%"
      ]
     },
     {
      "keyword": "万股",
      "n": 3,
      "sample": [
-      "海光信息：首次回购137.68万股 耗资2.35亿元",
       "鹏鼎控股：累计回购公司股份572.02万股 支付3.4亿元",
-      "金科股份：首次回购公司股份545.83万股"
+      "金科股份：首次回购公司股份545.83万股",
+      "农大科技：累计回购83.8万股"
      ]
     }
    ]
@@ -602,19 +602,6 @@
     ],
     "type": "watch",
     "note": "单关键词或密度不足，只进观察清单"
-   },
-   {
-    "event": "信用事件",
-    "confidence": "high",
-    "keywords": [
-     "调查"
-    ],
-    "clusterDocs": 0,
-    "buckets": [
-     "权益"
-    ],
-    "type": "watch",
-    "note": "单关键词或密度不足，只进观察清单"
    }
   ],
   "gaps": [
@@ -624,14 +611,14 @@
     "reason": "已 344 小时未更新（阈值 168h）",
     "hard": false,
     "asof": "2026-11-05 16:00",
-    "ageHours": 343.6
+    "ageHours": 344.1
    }
   ],
   "incomplete": false,
   "rule": "单条快讯永不触发推演；假设卡只是待验证项，不改 action；缺口优先于结论"
  },
  "freshness": {
-  "builtAt": "2026-11-19 23:35:31",
+  "builtAt": "2026-11-20 00:06:40",
   "inSession": false,
   "items": [
    {
@@ -639,7 +626,7 @@
     "name": "A股四大指数",
     "tier": "quote",
     "source": "新浪实时（本机）/ VPS",
-    "asof": "2026-11-19 23:34",
+    "asof": "2026-11-20 00:05",
     "ageHours": 0.0,
     "valid": true,
     "limitHours": 26,
@@ -653,7 +640,7 @@
     "tier": "daily",
     "source": "东财 datacenter（收盘口径，唯一记录源）",
     "asof": "2026-11-19 16:00",
-    "ageHours": 7.6,
+    "ageHours": 8.1,
     "valid": true,
     "limitHours": 96,
     "invalidIf": "中国10Y 超过 40 小时未更新（含一个交易日）；美债 T+1，放宽到 96 小时",
@@ -665,7 +652,7 @@
     "name": "商品盘中观测",
     "tier": "quote",
     "source": "新浪 hf_（非判定口径）",
-    "asof": "2026-11-19 23:34",
+    "asof": "2026-11-20 00:05",
     "ageHours": 0.0,
     "valid": true,
     "limitHours": 96,
@@ -678,7 +665,7 @@
     "name": "投资引擎裁决",
     "tier": "daily",
     "source": "invest-engine core_engine_v1_1（收盘序列）",
-    "asof": "2026-11-19 23:34",
+    "asof": "2026-11-20 00:05",
     "ageHours": 0.0,
     "valid": true,
     "limitHours": 96,
@@ -691,7 +678,7 @@
     "name": "扩展指数/商品主力",
     "tier": "quote",
     "source": "VPS 海外层 / 新浪",
-    "asof": "2026-11-19 23:34",
+    "asof": "2026-11-20 00:05",
     "ageHours": 0.0,
     "valid": true,
     "limitHours": 96,
@@ -705,7 +692,7 @@
     "tier": "quote",
     "source": "Yahoo + FRED（VPS 直连）",
     "asof": "2026-11-19 18:43",
-    "ageHours": 4.9,
+    "ageHours": 5.4,
     "valid": true,
     "limitHours": 96,
     "invalidIf": "超过 96 小时未更新",
@@ -717,7 +704,7 @@
     "name": "因子推演（因果层 C1-C4）",
     "tier": "daily",
     "source": "macro_causal.build（东财+腾讯日线）",
-    "asof": "2026-11-19 23:34",
+    "asof": "2026-11-20 00:05",
     "ageHours": 0.0,
     "valid": true,
     "limitHours": 96,
@@ -731,7 +718,7 @@
     "tier": "daily",
     "source": "~/projects/daily-news/digest_*.md",
     "asof": "2026-11-19 16:00",
-    "ageHours": 7.6,
+    "ageHours": 8.1,
     "valid": true,
     "limitHours": 40,
     "invalidIf": "digest 不是当天的（超过 40 小时）或条目为空",
@@ -744,7 +731,7 @@
     "tier": "daily",
     "source": "DeepSeek 打分（按 digest 日期缓存）",
     "asof": "2026-11-19 16:00",
-    "ageHours": 7.6,
+    "ageHours": 8.1,
     "valid": true,
     "limitHours": 40,
     "invalidIf": "与 digest 不同日 / 打分报错",
@@ -757,7 +744,7 @@
     "tier": "manual",
     "source": "手工登记（券商/建行/支付宝）+ ~/.dsh/finwatch",
     "asof": "2026-11-05 16:00",
-    "ageHours": 343.6,
+    "ageHours": 344.1,
     "valid": false,
     "limitHours": 168,
     "invalidIf": "超过 7 天未更新（手工快照，不自动采）",
@@ -769,7 +756,7 @@
     "name": "告警",
     "tier": "quote",
     "source": "finwatch alerts.json",
-    "asof": "2026-11-19 23:34",
+    "asof": "2026-11-20 00:05",
     "ageHours": 0.0,
     "valid": true,
     "limitHours": 168,
@@ -783,7 +770,7 @@
     "tier": "daily",
     "source": "E:/q4-2026/reports/chain-model.md + daily-log",
     "asof": "2026-11-19 16:00",
-    "ageHours": 7.6,
+    "ageHours": 8.1,
     "valid": true,
     "limitHours": 96,
     "invalidIf": "超过 96 小时未更新",
@@ -798,7 +785,7 @@
     "reason": "已 344 小时未更新（阈值 168h）",
     "hard": false,
     "asof": "2026-11-05 16:00",
-    "ageHours": 343.6
+    "ageHours": 344.1
    }
   ],
   "counts": {
@@ -1221,5 +1208,25 @@
   "degraded": false,
   "reason": null,
   "observedAt": "2026-11-20 00:05:57"
- }
+ },
+ "discipline": {
+  "status": "COMPLIANT",
+  "strictRiskPct": 10.71,
+  "strictRiskCapPct": 15,
+  "targetStrictRiskPct": 15,
+  "goldPct": 27.81,
+  "goldAlertPct": 30,
+  "goldMaxPct": 35,
+  "thesisGate": "valid",
+  "breaches": []
+ },
+ "externalSignal": {
+  "marketAction": "WAIT",
+  "addRiskAllowed": false,
+  "marketRegime": "external-caution",
+  "confidence": "observed"
+ },
+ "combined": "HOLD_NO_NEW_RISK",
+ "disciplineAsOf": "2026-11-05",
+ "disciplineGeneratedAt": "2026-11-19T16:06:47.667Z"
 }
