@@ -1,6 +1,6 @@
 {
- "generatedAt": "2026-11-19 11:33:51",
- "ts": 1795059231649,
+ "generatedAt": "2026-11-19 11:36:05",
+ "ts": 1795059365110,
  "source": "vps",
  "tunnelUrl": "https://trunk-lamb-spyware-instant.trycloudflare.com",
  "market": {
@@ -76,7 +76,7 @@
     "amount": 42855540.0
    }
   ],
-  "fetchedAt": 1795059232475
+  "fetchedAt": 1795059365934
  },
  "bonds": {
   "asof": "2026-11-18",
@@ -100,7 +100,7 @@
   }
  },
  "overseas": {
-  "fetchedAt": 1795059233383,
+  "fetchedAt": 1795059366806,
   "quotes": {
    "items": [
     {
@@ -108,9 +108,9 @@
      "name": "韩国KOSPI",
      "kind": "idx",
      "unit": "",
-     "price": 4984.0,
-     "chgPct": -1.65,
-     "asof": "2026-11-19 03:13"
+     "price": 4981.46,
+     "chgPct": -1.7,
+     "asof": "2026-11-19 03:16"
     },
     {
      "code": "^SOX",
@@ -135,9 +135,9 @@
      "name": "恒生指数",
      "kind": "idx",
      "unit": "",
-     "price": 22828.68,
+     "price": 22828.94,
      "chgPct": -2.0,
-     "asof": "2026-11-19 03:18"
+     "asof": "2026-11-19 03:21"
     },
     {
      "code": "^DJI",
@@ -180,36 +180,36 @@
      "name": "美元指数",
      "kind": "idx",
      "unit": "",
-     "price": 103.95,
-     "chgPct": 0.08,
-     "asof": "2026-11-19 03:23"
+     "price": 103.94,
+     "chgPct": 0.07,
+     "asof": "2026-11-19 03:26"
     },
     {
      "code": "GC=F",
      "name": "COMEX黄金",
      "kind": "fut",
      "unit": "usd",
-     "price": 3710.1,
-     "chgPct": -0.85,
-     "asof": "2026-11-19 03:23"
+     "price": 3713.8,
+     "chgPct": -0.75,
+     "asof": "2026-11-19 03:26"
     },
     {
      "code": "CL=F",
      "name": "WTI原油",
      "kind": "fut",
      "unit": "usd",
-     "price": 81.8,
-     "chgPct": -0.62,
-     "asof": "2026-11-19 03:23"
+     "price": 81.83,
+     "chgPct": -0.58,
+     "asof": "2026-11-19 03:26"
     },
     {
      "code": "HG=F",
      "name": "COMEX铜",
      "kind": "fut",
      "unit": "usd",
-     "price": 5.63,
-     "chgPct": -0.66,
-     "asof": "2026-11-19 03:23"
+     "price": 5.64,
+     "chgPct": -0.54,
+     "asof": "2026-11-19 03:26"
     },
     {
      "code": "^TNX",
@@ -231,7 +231,7 @@
     }
    ],
    "errors": null,
-   "fetchedAt": 1795059234774
+   "fetchedAt": 1795059368114
   },
   "fred": {
    "items": [
@@ -608,9 +608,9 @@
     "code": "^HSI",
     "name": "恒生指数",
     "kind": "idx",
-    "price": 22828.68,
+    "price": 22828.94,
     "chgPct": -2.0,
-    "asof": "2026-11-19 03:18",
+    "asof": "2026-11-19 03:21",
     "src": "yahoo"
    },
    {
@@ -626,9 +626,9 @@
     "code": "^KS11",
     "name": "韩国KOSPI",
     "kind": "idx",
-    "price": 4984.0,
-    "chgPct": -1.65,
-    "asof": "2026-11-19 03:13",
+    "price": 4981.46,
+    "chgPct": -1.7,
+    "asof": "2026-11-19 03:16",
     "src": "yahoo"
    },
    {
@@ -681,26 +681,26 @@
    }
   ],
   "errors": null,
-  "fetchedAt": 1795059236632
+  "fetchedAt": 1795059369400
  },
  "commodity": {
   "OIL": {
-   "price": 91.652,
+   "price": 91.678,
    "prev": 91.95,
-   "chgPct": -0.32,
-   "time": "11:33:32"
+   "chgPct": -0.3,
+   "time": "11:36:07"
   },
   "CL": {
-   "price": 81.806,
+   "price": 81.827,
    "prev": 82.31,
-   "chgPct": -0.61,
-   "time": "11:33:40"
+   "chgPct": -0.59,
+   "time": "11:36:06"
   },
   "XAU": {
-   "price": 3712.77,
+   "price": 3713.56,
    "prev": 3724.67,
-   "chgPct": -0.32,
-   "time": "11:33:00"
+   "chgPct": -0.3,
+   "time": "11:36:00"
   }
  },
  "engine": {
@@ -818,7 +818,7 @@
    "schemaVersion": "1.0",
    "status": "PASS",
    "canRecommend": true,
-   "checkedAt": "2026-11-19T11:34:02.159597+08:00",
+   "checkedAt": "2026-11-19T11:36:13.973291+08:00",
    "policy": {
     "maxMarketAgeDays": 4.0,
     "requiredIndices": [
@@ -932,7 +932,7 @@
     },
     {
      "name": "韩国KOSPI",
-     "chgPct": -1.65,
+     "chgPct": -1.7,
      "note": "情绪/联动，无稳定传导机制"
     },
     {
@@ -972,7 +972,7 @@
   },
   "rule": "因果因子（有机制+历史可复现）可改 action；相关因子只进评分，永不投票",
   "asof": "2026-11-18",
-  "builtAt": "2026-11-19 11:34:05"
+  "builtAt": "2026-11-19 11:36:16"
  },
  "freshness": {
   "builtAt": "2026-11-19 11:31:04",
