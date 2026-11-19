@@ -1,6 +1,6 @@
 {
     "schema":  "board/v1",
-    "generatedAt":  "2026-11-20 04:01:26",
+    "generatedAt":  "2026-11-20 04:31:27",
     "generatedBy":  "[已移除]",
     "ips":  {
                 "asOf":  "2026-11-07 22:55:52",
@@ -1706,7 +1706,7 @@
                                     },
                                     {
                                         "item":  "决策账本",
-                                        "asOf":  "2026-11-20 04:01",
+                                        "asOf":  "2026-11-20 04:31",
                                         "ageDays":  0,
                                         "stale":  false
                                     }
@@ -1918,7 +1918,7 @@
                 },
     "qis":  {
                 "schema":  "factors-qis/v1",
-                "generatedAt":  "2026-11-20 04:00:44",
+                "generatedAt":  "2026-11-20 04:30:44",
                 "producer":  "tools/qis-factors.py（因子演算唯一生产者）",
                 "consumer":  "08:45 推演任务只读本文件，不得自行演算或自行判阈",
                 "caliber_status":  "registered_production",
@@ -1992,76 +1992,76 @@
                                                   }
                                               ]
                              },
-                "cacheAgeSeconds":  1795.9,
+                "cacheAgeSeconds":  1797.7,
                 "cacheAgeSecondsBySymbol":  {
-                                                "sh510050":  1795.9,
-                                                "sh510170":  1795.4,
-                                                "sh510210":  1794.9,
-                                                "sh510300":  1794.4,
-                                                "sh510500":  1793.9,
-                                                "sh512010":  1792.2,
-                                                "sh512070":  1791.7,
-                                                "sh512170":  1791.2,
-                                                "sh512200":  1790.7,
-                                                "sh512400":  1790.1,
-                                                "sh512580":  1789.6,
-                                                "sh512660":  1789.1,
-                                                "sh512690":  1788.5,
-                                                "sh512800":  1788.0,
-                                                "sh512880":  1787.4,
-                                                "sh512890":  1786.9,
-                                                "sh512940":  1786.4,
-                                                "sh512950":  1785.9,
-                                                "sh512980":  1785.3,
-                                                "sh515030":  1784.8,
-                                                "sh515070":  1784.3,
-                                                "sh515170":  1783.8,
-                                                "sh515210":  1783.3,
-                                                "sh515220":  1782.7,
-                                                "sh515790":  1782.2,
-                                                "sh515880":  1781.7,
-                                                "sh516110":  1781.2,
-                                                "sh516150":  1780.6,
-                                                "sh516160":  1780.1,
-                                                "sh516510":  1779.6,
-                                                "sh516860":  1779.0,
-                                                "sh516970":  1778.5,
-                                                "sh517520":  1778.0,
-                                                "sh518850":  1777.5,
-                                                "sh518880":  1777.0,
-                                                "sh560080":  1776.5,
-                                                "sh560780":  1776.0,
-                                                "sh562500":  1775.4,
-                                                "sh562960":  1774.9,
-                                                "sh588000":  1774.4,
-                                                "sh588080":  1773.9,
-                                                "sh588200":  1773.4,
-                                                "sz159157":  1772.8,
-                                                "sz159327":  1772.3,
-                                                "sz159545":  1771.8,
-                                                "sz159566":  1771.3,
-                                                "sz159570":  1770.8,
-                                                "sz159611":  1770.2,
-                                                "sz159625":  1769.7,
-                                                "sz159666":  1769.1,
-                                                "sz159732":  1768.6,
-                                                "sz159745":  1768.1,
-                                                "sz159755":  1767.6,
-                                                "sz159766":  1767.1,
-                                                "sz159825":  1766.5,
-                                                "sz159852":  1766.0,
-                                                "sz159859":  1765.5,
-                                                "sz159865":  1765.0,
-                                                "sz159869":  1764.5,
-                                                "sz159870":  1763.9,
-                                                "sz159928":  1763.4,
-                                                "sz159934":  1762.8,
-                                                "sz159937":  1762.3,
-                                                "sz159949":  1761.8,
-                                                "sz159981":  1761.2,
-                                                "sz159995":  1760.7,
-                                                "sz159996":  1760.2,
-                                                "sz159998":  1759.7
+                                                "sh510050":  1797.7,
+                                                "sh510170":  1797.1,
+                                                "sh510210":  1796.6,
+                                                "sh510300":  1796.1,
+                                                "sh510500":  1795.6,
+                                                "sh512010":  1794.0,
+                                                "sh512070":  1793.5,
+                                                "sh512170":  1793.0,
+                                                "sh512200":  1792.4,
+                                                "sh512400":  1791.9,
+                                                "sh512580":  1791.3,
+                                                "sh512660":  1790.8,
+                                                "sh512690":  1790.3,
+                                                "sh512800":  1789.8,
+                                                "sh512880":  1789.3,
+                                                "sh512890":  1788.8,
+                                                "sh512940":  1788.2,
+                                                "sh512950":  1787.7,
+                                                "sh512980":  1787.2,
+                                                "sh515030":  1786.7,
+                                                "sh515070":  1786.1,
+                                                "sh515170":  1785.6,
+                                                "sh515210":  1785.0,
+                                                "sh515220":  1784.5,
+                                                "sh515790":  1784.0,
+                                                "sh515880":  1783.5,
+                                                "sh516110":  1782.9,
+                                                "sh516150":  1782.4,
+                                                "sh516160":  1781.9,
+                                                "sh516510":  1781.4,
+                                                "sh516860":  1780.8,
+                                                "sh516970":  1780.3,
+                                                "sh517520":  1779.8,
+                                                "sh518850":  1779.2,
+                                                "sh518880":  1778.7,
+                                                "sh560080":  1778.2,
+                                                "sh560780":  1777.6,
+                                                "sh562500":  1777.1,
+                                                "sh562960":  1776.5,
+                                                "sh588000":  1776.0,
+                                                "sh588080":  1775.5,
+                                                "sh588200":  1774.9,
+                                                "sz159157":  1774.4,
+                                                "sz159327":  1773.9,
+                                                "sz159545":  1773.3,
+                                                "sz159566":  1772.8,
+                                                "sz159570":  1772.3,
+                                                "sz159611":  1771.7,
+                                                "sz159625":  1771.2,
+                                                "sz159666":  1770.7,
+                                                "sz159732":  1770.2,
+                                                "sz159745":  1769.7,
+                                                "sz159755":  1769.2,
+                                                "sz159766":  1768.6,
+                                                "sz159825":  1768.1,
+                                                "sz159852":  1767.6,
+                                                "sz159859":  1767.1,
+                                                "sz159865":  1766.5,
+                                                "sz159869":  1766.0,
+                                                "sz159870":  1765.5,
+                                                "sz159928":  1765.0,
+                                                "sz159934":  1764.4,
+                                                "sz159937":  1763.9,
+                                                "sz159949":  1763.4,
+                                                "sz159981":  1762.9,
+                                                "sz159995":  1762.4,
+                                                "sz159996":  1761.8,
+                                                "sz159998":  1761.3
                                             },
                 "refresh":  {
                                 "ok":  true,
@@ -4640,7 +4640,7 @@
                           "fullVersion":  "仅本地 contracts/board.json（不得直接推公开仓）"
                       },
     "_freshness":  {
-                       "checkedAt":  "2026-11-20 04:01:27",
+                       "checkedAt":  "2026-11-20 04:31:28",
                        "worst":  "critical",
                        "staleCount":  2,
                        "items":  [
@@ -4648,7 +4648,7 @@
                                          "id":  "holdings",
                                          "label":  "持仓快照",
                                          "asOf":  "2026-11-05 22:55",
-                                         "ageDays":  14.21,
+                                         "ageDays":  14.23,
                                          "maxAgeDays":  1.5,
                                          "stale":  true
                                      },
@@ -4656,7 +4656,7 @@
                                          "id":  "engine-policy",
                                          "label":  "引擎政策契约",
                                          "asOf":  "2026-11-07 22:55",
-                                         "ageDays":  12.21,
+                                         "ageDays":  12.23,
                                          "maxAgeDays":  14,
                                          "stale":  false
                                      },
@@ -4664,7 +4664,7 @@
                                          "id":  "factor-registry",
                                          "label":  "因子登记表",
                                          "asOf":  "2026-11-02 23:27",
-                                         "ageDays":  17.19,
+                                         "ageDays":  17.21,
                                          "maxAgeDays":  30,
                                          "stale":  false
                                      },
@@ -4672,7 +4672,7 @@
                                          "id":  "news-mapping",
                                          "label":  "新闻映射",
                                          "asOf":  "2026-11-02 23:26",
-                                         "ageDays":  17.19,
+                                         "ageDays":  17.21,
                                          "maxAgeDays":  30,
                                          "stale":  false
                                      },
@@ -4680,7 +4680,7 @@
                                          "id":  "chain-rules",
                                          "label":  "推演规则",
                                          "asOf":  "2026-11-02 23:23",
-                                         "ageDays":  17.19,
+                                         "ageDays":  17.21,
                                          "maxAgeDays":  30,
                                          "stale":  false
                                      },
@@ -4688,7 +4688,7 @@
                                          "id":  "decisions",
                                          "label":  "决策账本",
                                          "asOf":  "2026-11-02 23:43",
-                                         "ageDays":  17.18,
+                                         "ageDays":  17.2,
                                          "maxAgeDays":  7,
                                          "stale":  true
                                      },
@@ -4696,14 +4696,14 @@
                                          "id":  "rules",
                                          "label":  "风控规则",
                                          "asOf":  "2026-11-09 10:24",
-                                         "ageDays":  10.73,
+                                         "ageDays":  10.75,
                                          "maxAgeDays":  14,
                                          "stale":  false
                                      },
                                      {
                                          "id":  "market-live",
                                          "label":  "行情快照",
-                                         "asOf":  "2026-11-20 04:00",
+                                         "asOf":  "2026-11-20 04:30",
                                          "ageDays":  0,
                                          "maxAgeDays":  0.25,
                                          "stale":  false
@@ -4713,8 +4713,8 @@
                    },
     "nationalTeam":  {
                          "ok":  true,
-                         "lastSuccess":  "2026-11-20 03:47:45",
-                         "asOf":  "2026-11-20 03:47:45",
+                         "lastSuccess":  "2026-11-20 04:17:46",
+                         "asOf":  "2026-11-20 04:17:46",
                          "note":  "",
                          "items":  [
                                        {
@@ -4906,7 +4906,7 @@
                                      }
                      },
     "notifications":  {
-                          "generatedAt":  "2026-11-20 04:01:28",
+                          "generatedAt":  "2026-11-20 04:31:29",
                           "count":  1,
                           "byLevel":  {
                                           "urgent":  0,
@@ -4926,7 +4926,7 @@
                           "policy":  "通知内容脱敏：不含金额、不含持仓名称；明细需解锁查看"
                       },
     "market":  {
-                   "generatedAt":  "2026-11-20 04:00:44",
+                   "generatedAt":  "2026-11-20 04:30:44",
                    "source":  "qt.gtimg.cn（指数）+ hq.sinajs.cn（外盘/汇率）",
                    "note":  "cn10y / us30y 无可用公开接口，已如实标 missing；下游不得把缺失当 0 或沿用旧值。",
                    "okCount":  5,
@@ -4979,12 +4979,12 @@
                                                  "ok":  true,
                                                  "kind":  "quote",
                                                  "error":  null,
-                                                 "asOf":  "2026-11-20 04:00:42",
+                                                 "asOf":  "2026-11-20 04:30:43",
                                                  "value":  {
                                                                "code":  "hf_OIL",
                                                                "name":  "布伦特原油",
                                                                "price":  92.091,
-                                                               "asOf":  "2026-11-20 04:00:42",
+                                                               "asOf":  "2026-11-20 04:30:43",
                                                                "label":  "布伦特原油"
                                                            }
                                              },
@@ -4992,12 +4992,12 @@
                                                "ok":  true,
                                                "kind":  "quote",
                                                "error":  null,
-                                               "asOf":  "2026-11-20 04:00:43",
+                                               "asOf":  "2026-11-20 04:30:43",
                                                "value":  {
                                                              "code":  "hf_CL",
                                                              "name":  "纽约原油",
-                                                             "price":  82.898,
-                                                             "asOf":  "2026-11-20 04:00:43",
+                                                             "price":  82.967,
+                                                             "asOf":  "2026-11-20 04:30:43",
                                                              "label":  "纽约原油"
                                                          }
                                            },
@@ -5005,12 +5005,12 @@
                                                 "ok":  true,
                                                 "kind":  "quote",
                                                 "error":  null,
-                                                "asOf":  "2026-11-20 04:00:41",
+                                                "asOf":  "2026-11-20 04:30:42",
                                                 "value":  {
                                                               "code":  "hf_GC",
                                                               "name":  "纽约黄金",
-                                                              "price":  3666.8,
-                                                              "asOf":  "2026-11-20 04:00:41",
+                                                              "price":  3667.577,
+                                                              "asOf":  "2026-11-20 04:30:42",
                                                               "label":  "纽约黄金"
                                                           }
                                             },
@@ -5044,7 +5044,7 @@
                                }
                },
     "automation":  {
-                       "generatedAt":  "2026-11-20 04:01:30",
+                       "generatedAt":  "2026-11-20 04:31:31",
                        "jobsSha256":  "c6d339af4d374b049e4cdf4fe6790343aabf0a683f2b3f68f2c6ee724e44a521",
                        "source":  "jobs.json + \\DSH\\ 计划任务 + _audit/jobs/status.json（触发层）；harness schedule store + _audit/refresh-log.jsonl（数据层）",
                        "note":  "单向耦合：触发层(计划任务/jobs.py) → 本文件 → board.json → 页面。页面无法反向触发任务。schedules 为 Harness 历史侧，superseded=true 表示已迁出、不再是驱动者。",
@@ -5055,7 +5055,7 @@
                                              "kind":  "every",
                                              "everySeconds":  1800,
                                              "scheduledAt":  "2026-11-09T14:43:56.989Z",
-                                             "nextRunAt":  "2026-11-20 04:13:56",
+                                             "nextRunAt":  "2026-11-20 04:43:56",
                                              "status":  "paused",
                                              "superseded":  true
                                          }
@@ -5102,9 +5102,9 @@
                                             "title":  "数据实时性流水线",
                                             "schedule":  "every 30min",
                                             "state":  "Running",
-                                            "lastRunAt":  "2026-11-20 04:00:41",
+                                            "lastRunAt":  "2026-11-20 04:30:41",
                                             "lastResult":  267009,
-                                            "nextRunAt":  "2026-11-20 04:30:40",
+                                            "nextRunAt":  "2026-11-20 05:00:40",
                                             "level":  "warn",
                                             "exitCode":  2,
                                             "failStreak":  0
@@ -5151,12 +5151,6 @@
                                              }
                                          ],
                        "lastRuns":  [
-                                        {
-                                            "at":  "2026-11-19T18:01:56+08:00",
-                                            "overall":  "OK",
-                                            "durationMs":  75064,
-                                            "dataAgeMin":  0.5
-                                        },
                                         {
                                             "at":  "2026-11-19T18:34:28+08:00",
                                             "overall":  "WARN",
@@ -5270,20 +5264,26 @@
                                             "overall":  "WARN",
                                             "durationMs":  227636,
                                             "dataAgeMin":  3
+                                        },
+                                        {
+                                            "at":  "2026-11-20T04:03:48+08:00",
+                                            "overall":  "WARN",
+                                            "durationMs":  186475,
+                                            "dataAgeMin":  2.4
                                         }
                                     ],
                        "stats":  {
                                      "total":  20,
-                                     "ok":  5,
-                                     "warn":  15,
+                                     "ok":  4,
+                                     "warn":  16,
                                      "fail":  0,
-                                     "consecutiveBad":  2,
-                                     "lastRunAt":  "2026-11-20T03:34:30+08:00",
+                                     "consecutiveBad":  3,
+                                     "lastRunAt":  "2026-11-20T04:03:48+08:00",
                                      "lastOverall":  "WARN"
                                  },
                        "health":  {
-                                      "status":  "warning",
-                                      "reason":  "最近一次 WARN（部分采集失败或线上未确认）"
+                                      "status":  "degraded",
+                                      "reason":  "连续 3 次异常（最近 = WARN）"
                                   },
                        "degraded":  [
 
@@ -5292,7 +5292,7 @@
     "holdingsIntegrity":  {
                               "status":  "BLOCK",
                               "canRecommend":  false,
-                              "checkedAt":  "2026-11-20T04:01:30.687021+08:00",
+                              "checkedAt":  "2026-11-20T04:31:31.693282+08:00",
                               "schemaVersion":  "1.0",
                               "issues":  [
                                              {
@@ -5304,7 +5304,7 @@
                                              {
                                                  "id":  "holdings",
                                                  "status":  "BLOCK",
-                                                 "maxAgeHours":  341.22700695027777,
+                                                 "maxAgeHours":  341.7272864672222,
                                                  "thresholdHours":  36.0
                                              },
                                              {
@@ -5330,113 +5330,7 @@
                                          },
                               "source":  "investment-os/tools/export-holdings-integrity.py",
                               "keyId":  "board-v1",
-                              "signedDigest":  "46ac283b1bb6bf2f8a47e9a64e05f4aac9dd72eccfb8ad207d8c58f5c6ae9662",
-                              "signature":  "9aa92e968367885c04d09c14513e9c89a5ed1d78cbe0e983617b2c406ada9e46ede6ae2ec31ada6f54d4066724205966dcd46407842c502924fbecebbfd5b30c"
-                          },
-    "decisionIntegrity": {
-        "schema": "decision-integrity/v1",
-        "source": "finhub-data/tools/board_integrity.py",
-        "status": "BLOCK",
-        "canRecommend": false,
-        "checkedAt": "2026-11-20T04:01:51.202804+08:00",
-        "policy": {
-            "maxHoldingsAgeHours": 36.0,
-            "maxMarketAgeDays": 4.0,
-            "maxBoardAgeHours": 24.0,
-            "requiredIndexCodes": [
-                "sh000001",
-                "sh000300",
-                "sz399001",
-                "sz399006"
-            ],
-            "unresolvedPolicyItemsBlock": true,
-            "requiresHoldingsVerdict": true,
-            "holdingsVerdictMaxAgeHours": 24.0,
-            "requiresHoldingsVerdictSignature": true,
-            "thresholdSource": "contracts/thresholds.json",
-            "thresholdDigest": "2388dbea35bff856eca566bd579a9f304c8ed4304dc7c3bbeb53bea6aa3063d1"
-        },
-        "checks": [
-            {
-                "id": "board",
-                "maxAgeHours": 24.0
-            },
-            {
-                "id": "holdings",
-                "ageHours": 340.8,
-                "maxAgeHours": 36.0
-            },
-            {
-                "id": "holdingsVerdict",
-                "status": "BLOCK",
-                "maxAgeHours": 24.0,
-                "engineStatus": "BLOCK",
-                "engineIssues": [
-                    "HOLDINGS_STALE"
-                ],
-                "canRecommend": false,
-                "checkedAt": "2026-11-20T04:01:30.687021+08:00",
-                "schemaVersion": "1.0",
-                "signatureVerified": true
-            },
-            {
-                "id": "market",
-                "indices": 4,
-                "expectedIndices": 4,
-                "maxAgeDays": 4.0
-            },
-            {
-                "id": "policy",
-                "unresolvedItems": 4,
-                "status": "BLOCK"
-            }
-        ],
-        "issues": [
-            {
-                "code": "HOLDINGS_STALE",
-                "message": "持仓快照超过36小时",
-                "actual": 340.8
-            },
-            {
-                "code": "HOLDINGS_MARKED_STALE",
-                "message": "上游已标记持仓快照过期"
-            },
-            {
-                "code": "HOLDINGS_FRESHNESS_STALE",
-                "message": "全局 freshness 中的持仓快照超过36小时",
-                "actual": 14.21
-            },
-            {
-                "code": "HOLDINGS_VERDICT_BLOCK",
-                "message": "引擎闸门 A 判定持仓输入不可用于决策，数据仓必须一并阻断",
-                "actual": [
-                    "HOLDINGS_STALE"
-                ],
-                "engineStatus": "BLOCK"
-            },
-            {
-                "code": "POLICY_UNRESOLVED",
-                "message": "政策契约仍存在未裁定 warn/gap 项，暂不允许给出动作",
-                "actual": [
-                    {
-                        "name": "再平衡方式",
-                        "status": "warn"
-                    },
-                    {
-                        "name": "风险预算",
-                        "status": "warn"
-                    },
-                    {
-                        "name": "回撤熔断",
-                        "status": "warn"
-                    },
-                    {
-                        "name": "交易频率上限",
-                        "status": "gap"
-                    }
-                ]
-            }
-        ],
-        "message": "决策已阻断：输入时效、行情完整性或政策口径尚未通过审计"
-    }
+                              "signedDigest":  "dc0693d1f8576beb4bff8ce905ce5bcd250f7e5bcb2ddf3efb35dfe765604a00",
+                              "signature":  "2b09e59fd51c2caa2f1f20a818165742e6310c93a7fb7bb25501099c6bc02d63c6830235d9741312f9da04b64bcb6e00195aca38f48715fa88e4b8fa29f9c003"
+                          }
 }
